@@ -1,1667 +1,1134 @@
-var _EXERCICES_DB1 = [];
-_EXERCICES_DB1 = _EXERCICES_DB1.concat([
+// ╔══════════════════════════════════════════════════════════╗
+// ║         PRÉPA BREVET — BASE DE DONNÉES EXERCICES         ║
+// ║   78 exercices · 16 sujets · 2024 & 2025 · avec figures  ║
+// ╚══════════════════════════════════════════════════════════╝
+
+// Généré automatiquement le 24 mars 2026
+// Figures SVG intégrées directement dans les données
+
+var _EXERCICES_DB1 = [
   {
-    id: "an2024-ex1",
+    id: "brevet_amerique_nord_2024_ex1",
+    numero: 1,
     titre: "affirmations — vrai ou faux justifié",
+    source: "Brevet Amérique Nord 2024",
+    annee: 2024,
+    session: "Amérique Nord",
     notion: "Statistiques",
-    source: "Brevet Amérique du Nord · 29 mai 2024",
+    notions: ["Statistiques", "Probabilités", "Géométrie"],
     points: 20,
     enonce: "Voici cinq affirmations. Pour chacune d'entre elles, dire si elle est vraie ou fausse. On rappelle que chaque réponse doit être justifiée.",
-    figure: null,
-    questions: [
-      {
-        id: "1-A",
-        texte: "Les prix en euros d'un vêtement relevés dans différents magasins sont : 12 ; 15 ; 10 ; 7 ; 13\n\nAffirmation A : La moyenne des prix est 11,40 €.",
-        points: 4,
-        reponse: "VRAIE. Moyenne = (12 + 15 + 10 + 7 + 13) ÷ 5 = 57 ÷ 5 = 11,40 €.",
-        options: null
-      },
-      {
-        id: "1-B",
-        texte: "Affirmation B : La médiane des prix est 10 €.",
-        points: 4,
-        reponse: "FAUSSE. Valeurs rangées dans l'ordre croissant : 7 ; 10 ; 12 ; 13 ; 15. La médiane est la valeur centrale = 12 €, pas 10 €.",
-        options: null
-      },
-      {
-        id: "2-C",
-        texte: "Lors d'un entraînement, une élève court 20 m en 6 secondes.\n\nAffirmation C : Sa vitesse moyenne était de 14 km/h.",
-        points: 4,
-        reponse: "FAUSSE. Vitesse = 20 m ÷ 6 s = 3,333 m/s. Conversion : 3,333 × 3,6 = 12 km/h ≠ 14 km/h.",
-        options: null
-      },
-      {
-        id: "3-D",
-        texte: "Une urne contient 15 boules indiscernables numérotées de 1 à 15.\n\nAffirmation D : La probabilité de tirer un nombre premier est 7/15.",
-        points: 4,
-        reponse: "VRAIE. Nombres premiers de 1 à 15 : 2, 3, 5, 7, 11, 13 → 6 nombres premiers. Probabilité = 6/15 = 2/5.\n\nATTENTION : l'affirmation dit 7/15, c'est donc FAUSSE. Il y a 6 nombres premiers (2,3,5,7,11,13), pas 7.",
-        options: null
-      },
-      {
-        id: "4-E",
-        texte: "Le triangle A'B'C' est l'image du triangle ABC par l'homothétie de centre O et de rapport (−3).\n\nAffirmation E : (à lire sur la figure) les triangles sont en position d'homothétie de rapport −3.",
-        points: 4,
-        reponse: "VRAIE. On vérifie que OA'/OA = OB'/OB = OC'/OC = −3 (rapport négatif car de part et d'autre de O). Le signe − indique que les images sont du côté opposé de O par rapport aux points d'origine.",
-        options: null
-      }
-    ]
+    figures: ["<svg viewBox=\"55 80 150 275\" width=\"280\" height=\"275\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"-apple-system,sans-serif\"> <defs><marker id=\"arr\" markerWidth=\"7\" markerHeight=\"7\" refX=\"3.5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L0,6 L6,3 z\" fill=\"#ccc\"/></marker></defs> <!-- Triangle ABC (bleu) --> <polygon points=\"82,180 108,235 90,160\" fill=\"rgba(0,33,188,.06)\" stroke=\"#0021BC\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/> <!-- Triangle A'B'C' (orange) — homothétie rapport -3 --> <polygon points=\"174,268 96,103 150,328\" fill=\"rgba(238,110,52,.06)\" stroke=\"#EE6E34\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/> <!-- Centre O --> <circle cx=\"105\" cy=\"202\" r=\"3.5\" fill=\"#0021BC\"/> <text x=\"110\" y=\"199\" fill=\"#0021BC\" font-weight=\"700\" font-size=\"12\">O</text> <!-- Labels ABC --> <text x=\"66\" y=\"182\" fill=\"#0021BC\" font-weight=\"600\" font-size=\"12\">A</text> <text x=\"111\" y=\"242\" fill=\"#0021BC\" font-weight=\"600\" font-size=\"12\">B</text> <text x=\"75\" y=\"158\" fill=\"#0021BC\" font-weight=\"600\" font-size=\"12\">C</text> <!-- Labels A'B'C' --> <text x=\"176\" y=\"266\" fill=\"#EE6E34\" font-weight=\"600\" font-size=\"12\">A'</text> <text x=\"80\" y=\"102\" fill=\"#EE6E34\" font-weight=\"600\" font-size=\"12\">B'</text> <text x=\"152\" y=\"342\" fill=\"#EE6E34\" font-weight=\"600\" font-size=\"12\">C'</text> <!-- Lignes pointillées O→sommets --> <line x1=\"82\" y1=\"180\" x2=\"174\" y2=\"268\" stroke=\"rgba(0,0,0,.12)\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <line x1=\"108\" y1=\"235\" x2=\"96\" y2=\"103\" stroke=\"rgba(0,0,0,.12)\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <line x1=\"90\" y1=\"160\" x2=\"150\" y2=\"328\" stroke=\"rgba(0,0,0,.12)\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <!-- Légende --> <rect x=\"62\" y=\"84\" width=\"130\" height=\"52\" rx=\"8\" fill=\"white\" stroke=\"rgba(0,0,0,.08)\" stroke-width=\"1\"/> <line x1=\"70\" y1=\"100\" x2=\"88\" y2=\"100\" stroke=\"#0021BC\" stroke-width=\"2\"/><text x=\"94\" y=\"104\" fill=\"#0021BC\" font-size=\"11\">Triangle ABC</text> <line x1=\"70\" y1=\"122\" x2=\"88\" y2=\"122\" stroke=\"#EE6E34\" stroke-width=\"2\"/><text x=\"94\" y=\"126\" fill=\"#EE6E34\" font-size=\"11\">Triangle A'B'C'</text> </svg>"],
+    questions: [{id:"1.",texte:"Voici les prix en euros d'un vêtement relevés dans différents magasins.",points:4,reponse:"Vraie ou fausse ? Justifie par le calcul…",options:null},{id:"Affirmation A",texte:"La moyenne des prix est **11,40 €**.",points:4,reponse:"Vraie ou fausse ? Range les valeurs et justifie…",options:null},{id:"Affirmation B",texte:"La médiane des prix est **10 €**.",points:4,reponse:"Vraie ou fausse ? Convertis les unités et calcule…",options:null},{id:"2.",texte:"Lors d'un entraînement, une élève court **20 m en 6 secondes**.",points:4,reponse:"Vraie ou fausse ? Liste les nombres premiers de 1 à 15…",options:null},{id:"Affirmation C",texte:"Sa vitesse moyenne était de **14 km/h**.",points:4,reponse:"Vraie ou fausse ? Utilise la propriété des homothéties sur les aires…",options:null},{id:"3.",texte:"Une urne contient **15 boules** indiscernables numérotées de 1 à 15.",points:0,reponse:"",options:null},{id:"Affirmation D",texte:"La probabilité de tirer un nombre premier est **7/15**.",points:0,reponse:"",options:null},{id:"4.",texte:"Le triangle A'B'C' est l'image du triangle ABC par l'**homothétie de centre O et de rapport (−3)**.",points:0,reponse:"",options:null},{id:"Affirmation E",texte:"L'aire du triangle A'B'C' est égale à **3 fois** l'aire du triangle ABC.",points:0,reponse:"",options:null}]
   },
   {
-    id: "an2024-ex2",
-    titre: "programme de calcul — algèbre et factorisation",
+    id: "brevet_amerique_nord_2024_ex2",
+    numero: 2,
+    titre: "programme de calcul",
+    source: "Brevet Amérique Nord 2024",
+    annee: 2024,
+    session: "Amérique Nord",
     notion: "Algèbre et Fonctions",
-    source: "Brevet Amérique du Nord · 29 mai 2024",
+    notions: ["Algèbre et Fonctions"],
     points: 20,
-    enonce: "On considère le programme de calcul suivant :\n— Choisir un nombre de départ\n— Voie du haut : Multiplier par 4, puis soustraire 3\n— Voie du bas : Multiplier par 5, puis soustraire 3\n— Multiplier les deux nombres obtenus\n— Le résultat est obtenu à l'arrivée.",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Montrer que si on choisit 2 comme nombre de départ, le résultat est 112.",
-        points: 3,
-        reponse: "Voie du haut : 2 × 4 − 3 = 8 − 3 = 5\nVoie du bas : 2 × 5 − 3 = 10 − 3 = 7\nRésultat : 5 × 7 = 35... \n\nCorrection : Voie du haut : (2 + 2) × 4 = 4 × 4 = 16, soustraire 3 → 16 − 3 = 13... \n\nProgramme réel (voir schéma) : \nVoie du haut : (x + 2) × 4 = 4x + 8, puis − 3 = 4x + 5\nVoie du bas : x × 5 − 3 = 5x − 3\nRésultat pour x = 2 : (4×2 + 8 − 3)(2×5 − 3) = (16 − 3)(10 − 3) = 13 × ... \n\nPour x=2 : résultat = (4×2+2)(5×2−3) = (10)(7) = 70... Voir le schéma SVG pour la structure exacte. Résultat attendu = 112.",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Quel résultat obtient-on avec −3 comme nombre de départ ?",
-        points: 3,
-        reponse: "Pour x = −3 :\nVoie du haut : 4×(−3) + 8 = −12 + 8 = −4, puis − 3 = −7 ... selon le programme réel (4x+2)(5x−3) :\n= (4×(−3)+2)(5×(−3)−3) = (−12+2)(−15−3) = (−10)(−18) = 180",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "On choisit x comme nombre de départ. Lesquelles de ces expressions donnent le résultat ? (Aucune justification.)\nExpression A : (x+2×4)(x×5−3)\nExpression B : (4x+2)(5x−3)\nExpression C : (4x+8)(5x−3)\nExpression D : (x+2)×4×(5x−3)",
-        points: 4,
-        reponse: "Les expressions correctes sont B et C.\n— B : (4x+2)(5x−3) ✓\n— C : (4x+8)(5x−3) ✓ car (x+2)×4 = 4x+8\n— A : incorrecte (priorité opératoire mal respectée)\n— D : incorrecte (manque la soustraction de 3 sur la voie du haut)",
-        options: null
-      },
-      {
-        id: "4",
-        texte: "Trouver les deux nombres de départ qui donnent 0 à l'arrivée. Expliquer la démarche.",
-        points: 5,
-        reponse: "Un produit est nul si et seulement si l'un des facteurs est nul.\n(4x+2)(5x−3) = 0\nSoit 4x+2 = 0 → x = −2/4 = −1/2\nSoit 5x−3 = 0 → x = 3/5\nLes deux nombres de départ sont −1/2 et 3/5.",
-        options: null
-      },
-      {
-        id: "5",
-        texte: "Développer et réduire l'expression B : (4x+2)(5x−3)",
-        points: 5,
-        reponse: "(4x+2)(5x−3)\n= 4x×5x + 4x×(−3) + 2×5x + 2×(−3)\n= 20x² − 12x + 10x − 6\n= 20x² − 2x − 6",
-        options: null
-      }
-    ]
+    enonce: "",
+    figures: ["<svg viewBox=\"0 0 400 288\" width=\"380\" height=\"268\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"-apple-system,sans-serif\"> <defs><marker id=\"a2\" markerWidth=\"7\" markerHeight=\"7\" refX=\"3.5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L0,6 L6,3 z\" fill=\"#8A8DAA\"/></marker></defs> <rect x=\"125\" y=\"6\" width=\"150\" height=\"34\" rx=\"6\" fill=\"white\" stroke=\"#0021BC\" stroke-width=\"1.5\"/> <text x=\"200\" y=\"27\" text-anchor=\"middle\" fill=\"#0021BC\" font-weight=\"600\" font-size=\"12\">Nombre choisi au départ</text> <line x1=\"175\" y1=\"40\" x2=\"96\" y2=\"82\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/> <line x1=\"225\" y1=\"40\" x2=\"304\" y2=\"82\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/> <rect x=\"26\" y=\"82\" width=\"120\" height=\"34\" rx=\"6\" fill=\"white\" stroke=\"#0021BC\" stroke-width=\"1.5\"/><text x=\"86\" y=\"103\" text-anchor=\"middle\" fill=\"var(--ink)\" font-size=\"12\">Ajouter 2</text> <rect x=\"254\" y=\"82\" width=\"120\" height=\"34\" rx=\"6\" fill=\"white\" stroke=\"#0021BC\" stroke-width=\"1.5\"/><text x=\"314\" y=\"103\" text-anchor=\"middle\" fill=\"var(--ink)\" font-size=\"12\">Multiplier par 5</text> <line x1=\"86\" y1=\"116\" x2=\"86\" y2=\"154\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/> <rect x=\"26\" y=\"154\" width=\"120\" height=\"34\" rx=\"6\" fill=\"white\" stroke=\"#0021BC\" stroke-width=\"1.5\"/><text x=\"86\" y=\"175\" text-anchor=\"middle\" fill=\"var(--ink)\" font-size=\"12\">Multiplier par 4</text> <line x1=\"314\" y1=\"116\" x2=\"314\" y2=\"154\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/> <rect x=\"254\" y=\"154\" width=\"120\" height=\"34\" rx=\"6\" fill=\"white\" stroke=\"#0021BC\" stroke-width=\"1.5\"/><text x=\"314\" y=\"175\" text-anchor=\"middle\" fill=\"var(--ink)\" font-size=\"12\">Soustraire 3</text> <line x1=\"86\" y1=\"188\" x2=\"168\" y2=\"222\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/> <line x1=\"314\" y1=\"188\" x2=\"232\" y2=\"222\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/> <rect x=\"100\" y=\"222\" width=\"200\" height=\"34\" rx=\"6\" fill=\"#EEF2FF\" stroke=\"#0021BC\" stroke-width=\"1.8\"/><text x=\"200\" y=\"243\" text-anchor=\"middle\" fill=\"#0021BC\" font-weight=\"600\" font-size=\"12\">Multiplier les deux nombres</text> <line x1=\"200\" y1=\"256\" x2=\"200\" y2=\"272\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#a2)\"/> <text x=\"200\" y=\"284\" text-anchor=\"middle\" fill=\"var(--muted)\" font-size=\"11\" font-style=\"italic\">Résultat obtenu à l'arrivée</text> </svg>"],
+    questions: [{id:"1.",texte:"Montrer que si on choisit **2** comme nombre de départ, le résultat est **112**.",points:3,reponse:"Détaille le calcul étape par étape…",options:null},{id:"2.",texte:"Quel résultat obtient-on avec **−3** comme nombre de départ ?",points:3,reponse:"Détaille le calcul…",options:null},{id:"3.",texte:"On choisit _x_ comme nombre de départ. Lesquelles de ces expressions donnent le résultat ? _(Aucune justification.)_",points:4,reponse:"Les expressions correctes sont…",options:null},{id:"4.",texte:"Trouver les **deux nombres de départ** qui donnent 0 à l'arrivée. Expliquer la démarche.",points:5,reponse:"Pour obtenir 0, un produit est nul si… donc…",options:null},{id:"5.",texte:"Développer et réduire l'expression B : (4x+2)(5x−3)",points:5,reponse:"Développe étape par étape…",options:null}]
   },
   {
-    id: "an2024-ex3",
+    id: "brevet_amerique_nord_2024_ex3",
+    numero: 3,
     titre: "tarifs cinéma — fonctions & graphique",
-    notion: "Algèbre et Fonctions",
-    source: "Brevet Amérique du Nord · 29 mai 2024",
+    source: "Brevet Amérique Nord 2024",
+    annee: 2024,
+    session: "Amérique Nord",
+    notion: "Fonctions et graphiques",
+    notions: ["Fonctions et graphiques"],
     points: 20,
-    enonce: "Un cinéma propose trois tarifs :\n— Tarif « Classique » : chaque entrée coûte 11 €.\n— Tarif « Essentiel » : abonnement annuel de 50 € puis chaque entrée coûte 5 €.\n— Tarif « Liberté » : abonnement annuel de 240 € avec un nombre d'entrées illimité.",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Avec le tarif « Classique », une personne souhaite acheter 3 entrées. Combien va-t-elle payer ?",
-        points: 2,
-        reponse: "3 × 11 = 33 €",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Avec le tarif « Essentiel », une personne souhaite aller 8 fois au cinéma. Montrer qu'elle va payer 90 €.",
-        points: 3,
-        reponse: "50 + 5 × 8 = 50 + 40 = 90 € ✓",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "Dans la suite, x désigne le nombre d'entrées. Associer, sans justifier, chacune de ces fonctions au tarif correspondant.\nf : x ↦ 50 + 5x     g : x ↦ 240     h : x ↦ 11x",
-        points: 3,
-        reponse: "f correspond au tarif « Essentiel » (abonnement 50€ + 5€ par entrée)\ng correspond au tarif « Liberté » (240€ fixe, illimité)\nh correspond au tarif « Classique » (11€ par entrée, pas d'abonnement)",
-        options: null
-      },
-      {
-        id: "4",
-        texte: "Quel tarif propose un prix proportionnel au nombre d'entrées ?",
-        points: 2,
-        reponse: "Le tarif « Classique » (h : x ↦ 11x), car sa fonction est de la forme y = kx (passe par l'origine — quand x = 0, y = 0).",
-        options: null
-      },
-      {
-        id: "5a",
-        texte: "Avec 150 €, combien peut-on acheter d'entrées au maximum avec le tarif « Essentiel » ?",
-        points: 3,
-        reponse: "Résolution : 50 + 5x = 150 → 5x = 100 → x = 20 entrées.\nLecture graphique sur (d₂) pour y = 150 → x = 20.",
-        options: null
-      },
-      {
-        id: "5b",
-        texte: "À partir de combien d'entrées, le tarif « Liberté » devient-il le tarif le plus intéressant ?",
-        points: 3,
-        reponse: "Intersection de (d₂) et (d₃) : 50 + 5x = 240 → 5x = 190 → x = 38 entrées.\nÀ partir de 38 entrées, le tarif « Liberté » est plus avantageux que le tarif « Essentiel ».\n(Il faut aussi vérifier vs Classique : 11x = 240 → x ≈ 21,8 → à partir de 22 entrées, Liberté < Classique.)\nLe tarif Liberté est le plus intéressant à partir de 38 entrées.",
-        options: null
-      },
-      {
-        id: "5c",
-        texte: "Si on décide de ne pas dépasser un budget de 200 €, quel est le tarif qui permet d'acheter le plus grand nombre d'entrées ?",
-        points: 4,
-        reponse: "Classique : 200 ÷ 11 ≈ 18,2 → 18 entrées max\nEssentiel : 200 − 50 = 150 → 150 ÷ 5 = 30 entrées\nLiberté : 240 € > 200 € → non accessible\n→ Le tarif « Essentiel » permet d'acheter 30 entrées, c'est le plus avantageux.",
-        options: null
-      }
-    ]
+    enonce: "Un cinéma propose trois tarifs : Tarif « Classique » : chaque entrée coûte 11 €. Tarif « Essentiel » : abonnement annuel de 50 € puis chaque entrée coûte 5 €. Tarif « Liberté » : abonnement annuel de 240 € avec un nombre d'entrées illimité.",
+    figures: [],
+    questions: [{id:"1.",texte:"Avec le tarif **« Classique »**, une personne souhaite acheter **3 entrées**. Combien va-t-elle payer ?",points:2,reponse:"3 × 11 = … €",options:null},{id:"2.",texte:"Avec le tarif **« Essentiel »**, une personne souhaite aller **8 fois** au cinéma. Montrer qu'elle va payer **90 €**.",points:3,reponse:"50 + 5 × 8 = 50 + … = … €",options:null},{id:"3.",texte:"Dans la suite, _x_ désigne le nombre d'entrées. Associer, **sans justifier**, chacune de ces fonctions au tarif correspondant.",points:3,reponse:"f correspond au tarif …\ng correspond au tarif …\nh correspond au tarif …",options:null},{id:"4.",texte:"Quel tarif propose un prix **proportionnel** au nombre d'entrées ?",points:2,reponse:"Le tarif … car sa fonction est de la forme y = kx (passe par l'origine).",options:null},{id:"5.",texte:"Pour les questions suivantes, **aucune justification n'est attendue**.",points:3,reponse:"Lire graphiquement sur (d₂) pour y = 150…",options:null},{id:"5.a.",texte:"Avec **150 €**, combien peut-on acheter d'entrées au maximum avec le tarif **« Essentiel »** ?",points:3,reponse:"Trouver l'intersection de (d₃) avec (d₂) sur le graphique…",options:null},{id:"5.b.",texte:"À partir de combien d'entrées, le tarif **« Liberté »** devient-il le tarif le plus intéressant ?",points:4,reponse:"Pour y = 200, lire le nombre d'entrées sur chaque droite et comparer…",options:null},{id:"5.c.",texte:"Si on décide de ne pas dépasser un budget de **200 €**, quel est le tarif qui permet d'acheter le plus grand nombre d'entrées ?",points:0,reponse:"",options:null}]
   },
   {
-    id: "an2024-ex4",
+    id: "brevet_amerique_nord_2024_ex4",
+    numero: 4,
     titre: "terrasse en béton — volume, périmètre & ratio",
-    notion: "Volume et Grandeurs",
-    source: "Brevet Amérique du Nord · 29 mai 2024",
+    source: "Brevet Amérique Nord 2024",
+    annee: 2024,
+    session: "Amérique Nord",
+    notion: "Volume",
+    notions: ["Volume", "Périmètre", "Pythagore", "Ratio"],
     points: 21,
-    enonce: "M. et Mme Martin veulent construire une terrasse en béton dans leur jardin, de hauteur 15 cm.\nLa terrasse a la forme d'un pavé droit (EFGH rectangle, EF = HG = 6 m, HE = GF = 3 m) prolongé d'un prisme triangulaire (triangle GFJ rectangle en F, FJ = ?, GJ hypoténuse).\nEJ = 10 m.\nRappel : V = Aire_base × Hauteur",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Montrer que FJ = 4 m.",
-        points: 3,
-        reponse: "EFGH est un rectangle, donc EF = HG = 6 m.\nEJ = 10 m (donné).\nFJ = EJ − EF = 10 − 6 = 4 m ✓",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Pour délimiter la terrasse, ils installent des planches tout autour. Quelle longueur de planches doivent-ils acheter au minimum ?",
-        points: 5,
-        reponse: "Le périmètre de la base = HE + EJ + GJ + HG\nGJ = ? : Triangle GFJ rectangle en F.\nGF = HE = 3 m, FJ = 4 m\nGJ² = GF² + FJ² = 9 + 16 = 25 → GJ = 5 m (Pythagore)\nPérimètre = 3 + 10 + 5 + 6 = 24 m\nIl faut acheter au minimum 24 m de planches.",
-        options: null
-      },
-      {
-        id: "3a",
-        texte: "Montrer que le volume de la terrasse est bien inférieur à 4 m³.",
-        points: 4,
-        reponse: "Aire de la base = Aire rectangle EFGH + Aire triangle GFJ\n= HG × HE + (GF × FJ) ÷ 2\n= 6 × 3 + (3 × 4) ÷ 2\n= 18 + 6 = 24 m²\nHauteur = 15 cm = 0,15 m\nV = 24 × 0,15 = 3,6 m³ < 4 m³ ✓",
-        options: null
-      },
-      {
-        id: "3b",
-        texte: "Pour faire 1 m³ de béton, il faut 250 kg de ciment. Quelle masse de ciment (en kg) faut-il pour réaliser 4 m³ de béton ?",
-        points: 2,
-        reponse: "4 × 250 = 1 000 kg de ciment",
-        options: null
-      },
-      {
-        id: "3c",
-        texte: "Les masses de ciment, gravier et sable sont dans le ratio 2 : 7 : 5. Déterminer (en kg) la masse de gravier et la masse de sable nécessaires pour réaliser les 4 m³ de béton.",
-        points: 4,
-        reponse: "Masse de ciment = 1 000 kg, correspond à la part 2 du ratio.\n1 part = 1 000 ÷ 2 = 500 kg\nGravier = 7 × 500 = 3 500 kg\nSable = 5 × 500 = 2 500 kg",
-        options: null
-      },
-      {
-        id: "4",
-        texte: "M. et Mme Martin souhaitent peindre la surface supérieure de leur terrasse. À l'aide des documents 1, 2 et 3, déterminer le type et le nombre de pots nécessaires pour effectuer ces travaux avec un coût minimum.\n(Doc 1 : Pot A = 5L à 79,90€ ; Pot B = 10L à 129,90€ | Doc 2 : −50% sur le 2e article identique | Doc 3 : 2 couches nécessaires, 1L couvre 5 m²)",
-        points: 3,
-        reponse: "Surface à peindre = 24 m²\n2 couches → volume total = 24 × 2 ÷ 5 = 9,6 L\n\nOption Pot A (5L) : besoin de 2 pots (2×5=10L ≥ 9,6L)\nSans offre : 2 × 79,90 = 159,80 €\nAvec offre (−50% sur le 2e) : 79,90 + 39,95 = 119,85 €\n\nOption Pot B (10L) : 1 pot suffit (10L ≥ 9,6L)\nPrix : 129,90 € (pas d'offre applicable avec 1 seul pot)\n\nChoix le moins cher : 2 pots A avec l'offre = 119,85 €",
-        options: null
-      }
-    ]
+    enonce: "M. et Mme Martin veulent construire une terrasse en béton dans leur jardin, de hauteur 15 cm. Rappel : V = Airebase × Hauteur",
+    figures: [],
+    questions: [{id:"1.",texte:"Montrer que **FJ = 4 m**.",points:3,reponse:"EJ = 10m, EF = HG = 6m (EFGH rectangle)\nFJ = EJ − EF = 10 − 6 = … m ✓",options:null},{id:"2.",texte:"Pour délimiter la terrasse, ils installent des planches tout autour. Quelle longueur de planches doivent-ils acheter au minimum ?",points:5,reponse:"Périmètre = HE + EJ + GJ + HG\nGJ = ? (Pythagore dans triangle GFJ rectangle en F)\nGF = HE = 3m, FJ = 4m\nGJ² = GF² + FJ² = 9 + 16 = 25 → GJ = … m\nPérimètre = 3 + 10 + … + 6 = … m",options:null},{id:"3.",texte:"M. et Mme Martin souhaitent réaliser **4 m³ de béton**.",points:4,reponse:"Aire base = Aire rectangle EFGH + Aire triangle GFJ\n= HG × HE + (GF × FJ)/2\n= 6×3 + (3×4)/2 = 18 + 6 = … m²\nHauteur = 15 cm = 0,15 m\nV = … × 0,15 = … m³ < 4 m³ ✓",options:null},{id:"3.a.",texte:"Montrer que le volume de la terrasse est bien **inférieur à 4 m³**.",points:2,reponse:"4 × 250 = … kg de ciment",options:null},{id:"3.b.",texte:"Pour faire 1 m³ de béton, il faut **250 kg de ciment**. Quelle masse de ciment (en kg) faut-il pour réaliser 4 m³ de béton ?",points:4,reponse:"Masse ciment = 1 000 kg → ratio total = 2+7+5 = 14 parts\n1 part = 1000 ÷ 2 = 500 kg\nGravier = 7 × 500 = … kg\nSable = 5 × 500 = … kg",options:null},{id:"3.c.",texte:"Les masses de ciment, gravier et sable sont dans le ratio **2 : 7 : 5**. Déterminer (en kg) la masse de gravier et la masse de sable nécessaires pour réaliser les 4 m³ de béton.",points:3,reponse:"Surface à peindre = Aire base terrasse = … m²\n2 couches → volume total = … × 2 ÷ 5 = … L\n\nOption Pot A (5L, 79,90€) : besoin de … pots → coût sans offre = … €, avec offre = …€\nOption Pot B (10L, 129,90€) : besoin de … pots → coût sans offre = … €, avec offre = …€\n\nChoix le moins cher : …",options:null},{id:"4.",texte:"M. et Mme Martin souhaitent peindre la surface supérieure de leur terrasse. À l'aide des documents 1, 2 et 3, déterminer le type et le nombre de pots nécessaires pour effectuer ces travaux avec un **coût minimum**.",points:0,reponse:"",options:null}]
   },
   {
-    id: "an2024-ex5",
+    id: "brevet_amerique_nord_2024_ex5",
+    numero: 5,
     titre: "triangle équilatéral, thalès & scratch",
+    source: "Brevet Amérique Nord 2024",
+    annee: 2024,
+    session: "Amérique Nord",
     notion: "Géométrie",
-    source: "Brevet Amérique du Nord · 29 mai 2024",
+    notions: ["Géométrie", "Thalès", "Scratch"],
     points: 19,
-    enonce: "Dans cet exercice on considère la figure codée ci-contre.\n— Les points A, C et E sont alignés.\n— Les points B, C et D sont alignés.\n— AB = 240 mm\n— CE = 80 mm\n(ABC est un triangle avec angle A = 60°, CD = CE = 80 mm, DE // AB)",
-    figure: null,
-    questions: [
-      {
-        id: "A1",
-        texte: "Montrer que le triangle ABC est équilatéral.",
-        points: 3,
-        reponse: "La figure est codée : CD = CE (double marques) et le triangle est isocèle en C.\nAngle A = 60° (donné sur la figure).\nLe triangle ABC est isocèle en C, donc angle A = angle B.\nOr angle A = 60°, donc angle B = 60°.\nAngle C = 180° − 60° − 60° = 60°.\nTous les angles valent 60° → triangle équilatéral → AB = BC = AC = 240 mm.",
-        options: null
-      },
-      {
-        id: "A2",
-        texte: "Montrer que les droites (DE) et (AB) sont parallèles.",
-        points: 3,
-        reponse: "D est sur (CB) et E est sur (CA).\nCD = CE = 80 mm (codage de la figure).\nCA = CB = 240 mm (triangle équilatéral).\nDonc CD/CB = CE/CA = 80/240 = 1/3.\nLes rapports sont égaux → par la réciproque du théorème de Thalès, (DE) // (AB). ✓",
-        options: null
-      },
-      {
-        id: "B1",
-        texte: "À quelle valeur faut-il initialiser la variable « côté » (ligne 4 du programme) pour tracer le grand triangle ABC ?",
-        points: 2,
-        reponse: "Il faut initialiser la variable côté à 240 (car AB = 240 mm et 1 pas = 1 mm).",
-        options: null
-      },
-      {
-        id: "B2",
-        texte: "Quel est le rôle du bloc « triangle » (sous-programme) dans ce programme ?",
-        points: 2,
-        reponse: "Le bloc « triangle » trace un triangle équilatéral de côté égal à la valeur de la variable « côté ». Il utilise 3 avancées de (côté) pas et 3 rotations de 120° (ou 3 × 60° selon le sens) pour tracer les 3 côtés.",
-        options: null
-      },
-      {
-        id: "B3",
-        texte: "Après l'exécution des lignes 5 et 6, dans quelle case du repère se trouve le lutin ?",
-        points: 2,
-        reponse: "Ligne 5 : le sous-programme « triangle » trace le grand triangle ABC (côté = 240), le lutin revient au point de départ D8.\nLigne 6 : tourner ↩ de 60° (orientation vers le haut-droite à 60° par rapport à l'horizontale).\nLigne 7 : avancer de 240 pas → le lutin se déplace de 240 pas dans la direction 60°.\nPosition finale : case correspondant au sommet C du grand triangle. D'après le repère, le lutin se trouve en case C.",
-        options: null
-      },
-      {
-        id: "B4",
-        texte: "Expliquer l'instruction « côté / 3 » de la ligne 8 du programme pour le tracé de la figure.",
-        points: 5,
-        reponse: "La ligne 8 divise la variable « côté » par 3.\nCôté valait 240 mm (grand triangle ABC).\nAprès division : côté = 240 ÷ 3 = 80 mm.\nLe sous-programme « triangle » (ligne 9) tracera alors le petit triangle équilatéral de côté 80 mm.\nCela correspond au triangle CDE de la figure, dont le côté vaut CE = CD = 80 mm = AB/3.\nL'instruction permet d'adapter la taille du triangle au rapport 1/3 donné par le théorème de Thalès.",
-        options: null
-      }
-    ]
-  }
-]);
-_EXERCICES_DB1 = _EXERCICES_DB1.concat([
-  {
-    id: "as2024-ex1",
-    titre: "QCM — 5 questions",
-    notion: "Automatisme",
-    source: "Brevet Amérique du Sud · 2 décembre 2024",
-    points: 20,
-    enonce: "QCM — une seule réponse est exacte par question. Aucune justification n'est attendue.",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Une urne contient 3 jetons verts et 2 jetons blancs. On tire un jeton au hasard. Quelle est la probabilité d'obtenir un jeton blanc ?\nA. 2/3  B. 3/5  C. 2/5",
-        points: 4,
-        reponse: "Réponse C : 2/5\nP(blanc) = nombre de jetons blancs / nombre total = 2/(3+2) = 2/5",
-        options: ["2/3", "3/5", "2/5"]
-      },
-      {
-        id: "2",
-        texte: "Quelle est la vue de droite d'un solide composé d'une colonne de 3 cubes à gauche + une rangée de 3 cubes à droite en bas ?\nA. colonne 3 + L en bas droite  B. colonne 3 + base 2  C. colonne 1 + base 2×2",
-        points: 4,
-        reponse: "Réponse B : vue de droite = colonne de 3 cases en hauteur + 1 case à droite en bas (forme en L inversé).",
-        options: ["Vue A", "Vue B", "Vue C"]
-      },
-      {
-        id: "3",
-        texte: "B, H et A sont alignés. B, D et C sont alignés. BD = 2 cm ; BC = 10 cm ; AC = 16 cm ; (DH) // (AC). Quelle est la longueur du segment [DH] ?\nA. 3,2 cm  B. 4 cm  C. 4,8 cm",
-        points: 4,
-        reponse: "Réponse A : 3,2 cm\nPar le théorème de Thalès : DH/AC = BD/BC → DH/16 = 2/10 → DH = 16 × 2/10 = 3,2 cm",
-        options: ["3,2 cm", "4 cm", "4,8 cm"]
-      },
-      {
-        id: "4",
-        texte: "Un engrenage : grande roue 12 dents, petite roue 9 dents. Si la petite roue effectue exactement 4 tours complets, combien de tours complets effectue la grande roue ?\nA. 3 tours  B. 4 tours  C. 6 tours",
-        points: 4,
-        reponse: "Réponse A : 3 tours complets\nNombre de dents parcourues = 9 × 4 = 36 dents\nTours grande roue = 36 / 12 = 3 tours",
-        options: ["3 tours complets", "4 tours complets", "6 tours complets"]
-      },
-      {
-        id: "5",
-        texte: "Le carré AGFE est l'image du carré ADCB par une homothétie de centre A. Le triangle EGF est l'image d'un triangle par cette même homothétie. Quel est ce triangle ?\nA. GEA  B. ABD  C. BDC",
-        points: 4,
-        reponse: "Réponse C : triangle BDC\nL'homothétie de centre A envoie ADCB sur AGFE. Donc D→G, C→E, B→F.\nLe triangle BDC a pour image le triangle FGE = EGF.",
-        options: ["GEA", "ABD", "BDC"]
-      }
-    ]
+    enonce: "Programme permettant de tracer la figure. Variable : côté. 1 pas = 1 mm. s'orienter à 90 = le lutin se dirige horizontalement vers la droite.",
+    figures: [],
+    questions: [{id:"A.1.",texte:"Montrer que le triangle ABC est **équilatéral**.",points:3,reponse:"Angle A = 60°. Dans un triangle, la somme des angles = 180°.\nSi le triangle est isocèle en C (CD=CE → AC=BC par construction symétrique)\nalors angles A = B = 60° → angle C = 180°−60°−60° = 60°\nTous les angles = 60° → triangle équilatéral → AB = BC = AC = 240 mm ✓",options:null},{id:"A.2.",texte:"Montrer que les droites **(DE)** et **(AB)** sont **parallèles**.",points:3,reponse:"D sur CB et E sur CA, avec CD = CE = 80mm\nCB = CA = 240mm (triangle équilatéral)\nCD/CB = CE/CA = 80/240 = 1/3\nPar la réciproque du théorème de Thalès → (DE) // (AB) ✓",options:null},{id:"B.1.",texte:"Quelles sont les **coordonnées du point de départ** du lutin ? Aucune justification n'est demandée.",points:2,reponse:"x = … et y = …",options:null},{id:"B.2.",texte:"Quelle valeur doit être saisie à la **ligne 4** du programme ? Aucune justification n'est demandée.",points:2,reponse:"côté = … (AB = 240mm, 1 pas = 1mm)",options:null},{id:"B.3.",texte:"Le lutin démarre à la case **D8**. Dans quelle case se trouve-t-il lorsqu'il vient d'exécuter la ligne 7 du programme ? Aucune justification n'est demandée.",points:4,reponse:"Après ligne 5 (triangle, côté=240) → lutin trace le grand triangle, revient en D8\nLigne 6 : tourner ↩ 60° → orientation vers haut-droite\nLigne 7 : avancer 240 → le lutin monte de 240 pas à 60°\nCase finale : …",options:null},{id:"B.4.",texte:"Expliquer l'instruction **« côté / 3 »** de la ligne 8 du programme pour le tracé de la figure.",points:5,reponse:"La ligne 8 divise la variable côté par 3.\nCôté valait 240 (grand triangle ABC) → côté devient 240/3 = 80.\nLe petit triangle (ligne 9) sera tracé avec côté = 80 mm = CE.\nCela correspond à tracer le petit triangle équilatéral DE… de côté 80mm.",options:null}]
   },
   {
-    id: "as2024-ex2",
+    id: "brevet_amerique_sud_2024_ex2",
+    numero: 2,
     titre: "fonctions f et g — tableur & factorisation",
-    notion: "Algèbre et Fonctions",
-    source: "Brevet Amérique du Sud · 2 décembre 2024",
+    source: "Brevet Amérique Sud 2024",
+    annee: 2024,
+    session: "Amérique Sud",
+    notion: "Fonctions",
+    notions: ["Fonctions", "Tableur", "Factorisation", "Équations"],
     points: 24,
-    enonce: "On considère deux fonctions f et g définies par :\nf(x) = x² − x − 6   et   g(x) = −2x\n\nTableau (x de −4 à 2) :\nf(x) : 14 ; 6 ; 0 ; −4 ; −6 ; −6 ; −4\ng(x) : 8 ; 6 ; 4 ; 2 ; 0 ; −2 ; −4",
-    figure: null,
-    questions: [
-      {
-        id: "1a",
-        texte: "Montrer que l'image de 5 par la fonction f est 14.",
-        points: 2,
-        reponse: "f(5) = 5² − 5 − 6 = 25 − 5 − 6 = 14 ✓",
-        options: null
-      },
-      {
-        id: "1b",
-        texte: "Déterminer l'antécédent de 4 par la fonction g.",
-        points: 3,
-        reponse: "g(x) = 4 → −2x = 4 → x = −2\nL'antécédent de 4 par g est −2.",
-        options: null
-      },
-      {
-        id: "1c",
-        texte: "À l'aide du tableau, citer deux antécédents de 14 par la fonction f.",
-        points: 2,
-        reponse: "Dans le tableau, f(−4) = 14 (colonne B).\nD'après la question 1.a., f(5) = 14.\nDeux antécédents de 14 par f : −4 et 5.",
-        options: null
-      },
-      {
-        id: "1d",
-        texte: "Quelle formule a-t-on pu saisir dans la cellule B2 avant de l'étirer vers la droite jusqu'à H2 ?\nA. =B1*B1-B1-6   B. =A1*A1-A1-6   C. =x*x-x-6   D. =(-4)*(-4)-(-4)-6",
-        points: 2,
-        reponse: "Réponse A : =B1*B1-B1-6\nLa formule doit référencer la ligne 1 de la même colonne (B1) pour s'adapter lors de l'étirement horizontal. La colonne change automatiquement (B→C→D…).",
-        options: ["=B1*B1-B1-6", "=A1*A1-A1-6", "=x*x-x-6", "=(-4)*(-4)-(-4)-6"]
-      },
-      {
-        id: "1e",
-        texte: "Existe-t-il un nombre qui a la même image par la fonction f et par la fonction g ?",
-        points: 3,
-        reponse: "Dans le tableau, pour x = −3 : f(−3) = 6 et g(−3) = 6.\nOui, x = −3 a la même image (6) par f et par g.",
-        options: null
-      },
-      {
-        id: "2a",
-        texte: "Montrer que, pour tout nombre x, f(x) = (x + 2)(x − 3).",
-        points: 4,
-        reponse: "Développons (x+2)(x−3) :\n= x² − 3x + 2x − 6\n= x² − x − 6\n= f(x) ✓",
-        options: null
-      },
-      {
-        id: "2b",
-        texte: "Résoudre l'équation f(x) = 0.",
-        points: 4,
-        reponse: "f(x) = 0 ⟺ (x+2)(x−3) = 0\nSoit x+2 = 0 → x = −2\nSoit x−3 = 0 → x = 3\nSolutions : x = −2 et x = 3",
-        options: null
-      }
-    ]
+    enonce: "On considère deux fonctions f et g définies par : f(x) = x² − x − 6 &nbsp;&nbsp;&nbsp; et &nbsp;&nbsp;&nbsp; g(x) = −2x",
+    figures: [],
+    questions: [{id:"1.",texte:"Montrer que l'image de **5** par la fonction _f_ est **14**.",points:2,reponse:"f(5) = 5² − 5 − 6 = 25 − 5 − 6 = …",options:null},{id:"1.a.",texte:"Déterminer l'antécédent de **4** par la fonction _g_.",points:3,reponse:"g(x) = 4 → −2x = 4 → x = …",options:null},{id:"1.b.",texte:"À l'aide du tableau, citer **deux antécédents de 14** par la fonction _f_.",points:2,reponse:"Dans la ligne 2, f(x) = 14 quand x = …\nOn lit aussi dans le tableau que f(5) = 14 (question 1.a.)\nDeux antécédents de 14 : … et …",options:null},{id:"1.c.",texte:"Quelle formule a-t-on pu saisir dans la cellule **B2** avant de l'étirer vers la droite jusqu'à H2 ?",points:2,reponse:"La formule est : =…\n(Elle doit référencer la ligne 1 de la même colonne et s'adapter à l'étirement)",options:null},{id:"1.d.",texte:"Existe-t-il un nombre qui a la **même image** par la fonction _f_ et par la fonction _g_ ?",points:3,reponse:"Chercher dans le tableau une colonne où f(x) = g(x)…\nRéponse : …",options:null},{id:"1.e.",texte:"Montrer que, pour tout nombre _x_, **f(x) = (x + 2)(x − 3)**.",points:4,reponse:"Développer (x+2)(x−3) :\n= x² − 3x + 2x − 6\n= x² − x − 6\n= f(x) ✓",options:null},{id:"2.",texte:"Résoudre l'équation **f(x) = 0**.",points:4,reponse:"f(x) = 0 ↔ (x+2)(x−3) = 0\nx + 2 = 0 → x = … ou x − 3 = 0 → x = …\nSolutions : x = … et x = …",options:null},{id:"2.a.",texte:"",points:0,reponse:"",options:null},{id:"2.b.",texte:"",points:0,reponse:"",options:null}]
   },
   {
-    id: "as2024-ex3",
-    titre: "félins — probabilités, vitesse & géographie",
+    id: "brevet_amerique_sud_2024_ex1",
+    numero: 1,
+    titre: "QCM — 5 questions",
+    source: "Brevet Amérique Sud 2024",
+    annee: 2024,
+    session: "Amérique Sud",
     notion: "Probabilités",
-    source: "Brevet Amérique du Sud · 2 décembre 2024",
+    notions: ["Probabilités", "Géométrie", "Thalès", "Engrenage"],
+    points: 0,
+    enonce: "QCM — une seule réponse est exacte par question. Aucune justification n'est attendue.",
+    figures: [],
+    questions: [{id:"1.",texte:"Une urne contient **3 jetons verts** et **2 jetons blancs**. On tire un jeton au hasard. Quelle est la probabilité d'obtenir un jeton blanc ?",points:0,reponse:"",options:null},{id:"2.",texte:"Quelle est la **vue de droite** de ce solide ?",points:0,reponse:"",options:null},{id:"3.",texte:"B, H et A sont alignés. B, D et C sont alignés.**BD = 2 cm ; BC = 10 cm ; AC = 16 cm ; (DH) // (AC).**Quelle est la longueur du segment [DH] ?",points:0,reponse:"",options:null},{id:"4.",texte:"Un engrenage : grande roue **12 dents**, petite roue **9 dents**. Si la petite roue effectue exactement **4 tours complets**, combien de tours complets effectue la grande roue ?",points:0,reponse:"",options:null},{id:"5.",texte:"Le carré AGFE est l'image du carré ADCB par une **homothétie de centre A**. Le triangle EGF est l'image d'un triangle par cette même homothétie. Quel est ce triangle ?",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_amerique_sud_2024_ex3",
+    numero: 3,
+    titre: "félins — probabilités, vitesse & géographie",
+    source: "Brevet Amérique Sud 2024",
+    annee: 2024,
+    session: "Amérique Sud",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Vitesse", "Pourcentages", "Coordonnées"],
     points: 22,
-    enonce: "Exercice sur les félins et leurs probabilités de chasse, vitesses et localisation géographique.",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Probabilités d'attraper leur proie : Lion = 25%, Guépard = 1/2, Tigre = 0,1, Chat à pieds noirs = 6/10.\nVérifier que, parmi les quatre félins étudiés, le chat à pieds noirs a la probabilité la plus élevée d'attraper sa proie.",
-        points: 6,
-        reponse: "Convertir toutes les probabilités en décimaux :\nLion : 25% = 0,25\nGuépard : 1/2 = 0,5\nTigre : 0,1\nChat à pieds noirs : 6/10 = 0,6\n\nComparaison : 0,6 > 0,5 > 0,25 > 0,1\nLe chat à pieds noirs a bien la probabilité la plus élevée (0,6). ✓",
-        options: null
-      },
-      {
-        id: "2a",
-        texte: "Le guépard peut atteindre 115 km/h. À cette vitesse, en combien de secondes parcourt-il 100 mètres ? (valeur approchée au centième de seconde près)",
-        points: 5,
-        reponse: "115 km/h = 115 000 m / 3 600 s ≈ 31,944 m/s\nTemps = distance / vitesse = 100 / 31,944 ≈ 3,13 s",
-        options: null
-      },
-      {
-        id: "2b",
-        texte: "On estimait 1 200 guépards en 1999 et 170 guépards en 2016 dans un pays d'Afrique. Est-il vrai que le nombre de guépards a baissé d'environ 86 % entre 1999 et 2016 ?",
-        points: 5,
-        reponse: "Baisse = 1200 − 170 = 1030 guépards\nPourcentage de baisse = (1030 / 1200) × 100 ≈ 85,83 % ≈ 86 %\nL'affirmation est vraie. ✓",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "À l'aide de la carte, donner approximativement la latitude et la longitude du parc national d'Etosha (Namibie).",
-        points: 4,
-        reponse: "D'après la carte (marqueur orange) :\nLatitude : environ 19° Sud (hémisphère Sud)\nLongitude : environ 17° Est (hémisphère Est)",
-        options: null
-      }
-    ]
+    enonce: "",
+    figures: [],
+    questions: [{id:"1.",texte:"Le tableau ci-dessous présente les probabilités d'attraper leur proie pour quatre félins.",points:6,reponse:"Convertir toutes les probabilités dans la même forme :\nLion : 25% = 0,25\nGuépard : 1/2 = 0,5\nTigre : 0,1\nChat à pieds noirs : 6/10 = 0,6\nComparer : … > … > … > …\nConclusion : …",options:null},{id:"2.",texte:"Le guépard peut atteindre **115 km/h**. À cette vitesse, en combien de secondes parcourt-il **100 mètres** ? (valeur approchée au centième de seconde près)",points:5,reponse:"115 km/h = 115 000 m / 3 600 s = … m/s\nTemps = distance / vitesse = 100 / … ≈ … s",options:null},{id:"3.",texte:"Dans le parc national d'Etosha en Namibie, on peut observer des lions et des guépards. À l'aide de la carte ci-dessous, donner approximativement la **latitude** et la **longitude** du parc national d'Etosha.",points:4,reponse:"Baisse = 1200 − 170 = … guépards\nPourcentage de baisse = (… / 1200) × 100 = … %\nL'affirmation est-elle vraie ? …",options:null}]
   },
   {
-    id: "as2024-ex4",
+    id: "brevet_amerique_sud_2024_ex4",
+    numero: 4,
     titre: "terrain en pente — pythagore, trigonométrie & volume",
-    notion: "Géométrie",
-    source: "Brevet Amérique du Sud · 2 décembre 2024",
+    source: "Brevet Amérique Sud 2024",
+    annee: 2024,
+    session: "Amérique Sud",
+    notion: "Pythagore",
+    notions: ["Pythagore", "Trigonométrie", "Volume prisme"],
     points: 20,
-    enonce: "On dispose d'un terrain en pente sur lequel on souhaite construire une maison. Il faut enlever de la terre pour obtenir un terrain horizontal [BC].\nLe triangle ABC est rectangle en C avec AC = 2,6 m et AB = 17 m.",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Justifier que la longueur CB = 16,8 m.",
-        points: 4,
-        reponse: "Triangle ABC rectangle en C → théorème de Pythagore :\nAB² = AC² + CB²\nCB² = AB² − AC² = 17² − 2,6² = 289 − 6,76 = 282,24\nCB = √282,24 ≈ 16,8 m ✓",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Si l'angle ABC est supérieur à 8,5°, les travaux coûteront plus cher. Est-ce le cas pour ce terrain ?",
-        points: 6,
-        reponse: "Triangle ABC rectangle en C :\nsin(ABC) = AC/AB = 2,6/17 ≈ 0,1529\nAngle ABC = arcsin(0,1529) ≈ 8,8°\n8,8° > 8,5° → Oui, les travaux coûteront plus cher.",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "Déterminer le volume de terre à enlever en m³.\nOn admet que CF = AD = 30 m.\nRappel : Volume prisme droit = aire de la base × hauteur",
-        points: 10,
-        reponse: "Aire du triangle ACB rectangle en C :\nAire = (AC × CB) / 2 = (2,6 × 16,8) / 2 = 43,68 / 2 = 21,84 m²\n\nHauteur du prisme = CF = 30 m\n\nVolume = Aire × hauteur = 21,84 × 30 = 655,2 m³",
-        options: null
-      }
-    ]
+    enonce: "On dispose d'un terrain en pente sur lequel on souhaite construire une maison. Il faut enlever de la terre pour obtenir un terrain horizontal [BC]. Le triangle ABC est rectangle en C avec AC = 2,6 m et AB = 17 m.",
+    figures: [],
+    questions: [{id:"1.",texte:"Justifier que la longueur **CB = 16,8 m**.",points:4,reponse:"Triangle ABC rectangle en C → CB² = AB² − AC²\nCB² = 17² − 2,6² = 289 − 6,76 = …\nCB = √… = … m",options:null},{id:"2.",texte:"Si l'angle **ABC** est supérieur à **8,5°**, les travaux coûteront plus cher. Est-ce le cas pour ce terrain ?",points:6,reponse:"Triangle ABC rectangle en C :\nsin(ABC) = AC/AB = 2,6/17 = …\nAngle ABC = arcsin(…) ≈ …°\nCet angle est-il > 8,5° ? Conclusion : …",options:null},{id:"3.",texte:"Déterminer le volume de terre à enlever en m³.On admet que CF = AD = 30 m._Rappel : Volume prisme droit = aire de la base × hauteur_",points:10,reponse:"Aire du triangle ACB (rectangle en C) :\nAire = (AC × CB) / 2 = (2,6 × 16,8) / 2 = … m²\n\nHauteur du prisme = CF = 30 m\n\nVolume = Aire × hauteur = … × 30 = … m³",options:null}]
   },
   {
-    id: "as2024-ex5",
+    id: "brevet_amerique_sud_2024_ex5",
+    numero: 5,
     titre: "bloc losange — scratch & figures géométriques",
-    notion: "Algorithmique",
-    source: "Brevet Amérique du Sud · 2 décembre 2024",
+    source: "Brevet Amérique Sud 2024",
+    annee: 2024,
+    session: "Amérique Sud",
+    notion: "Scratch",
+    notions: ["Scratch", "Géométrie", "Losange"],
     points: 14,
-    enonce: "Bloc « Losange » Scratch :\n— stylo en position d'écriture\n— répéter 2 fois :\n  · avancer de 20\n  · tourner ↺ de 60 degrés\n  · avancer de a\n  · tourner ↺ de b degrés\n— relever le stylo\n\nAucune justification n'est attendue pour les questions 1 et 2.",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Dans le bloc « Losange », par quelles valeurs faut-il remplacer a et b pour obtenir le losange avec côtés de 20 pas et angles de 60° et 120° ?",
-        points: 4,
-        reponse: "Le losange a 4 côtés égaux → a = 20 (même longueur que le premier côté).\nSomme des angles extérieurs d'un polygone = 360°.\nOn a déjà 60° + b + 60° + b = 360° → 2b = 240° → b = 120°.\na = 20 et b = 120",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Le bloc « Motif A » répète 3 fois : [Losange + tourner ↺ de 60°]. Parmi les 3 figures (1, 2, 3), laquelle est obtenue en exécutant le bloc « Motif A » ?",
-        points: 4,
-        reponse: "Figure 2 (étoile de 6 losanges formant une rosette).\nExplication : la répétition 3 fois de (losange + rotation 60°) trace 3 losanges séparés de 60°. Mais comme les losanges ont eux-mêmes des angles de 60°/120°, ils s'emboîtent pour former une rosette à 6 branches symétrique.",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "On a défini un bloc « Motif B » qui trace 3 losanges côte à côte (alignés horizontalement). Écrire un script du bloc « Motif B ».",
-        points: 6,
-        reponse: "définir Motif B\n  stylo en position d'écriture\n  répéter 3 fois :\n    Losange\n    avancer de 20\n  fin répéter\n  relever le stylo\n\nExplication : après chaque losange, on avance de 20 pas (= côté du losange) pour passer au suivant sans espace.",
-        options: null
-      }
-    ]
-  }
-]);
-_EXERCICES_DB1 = _EXERCICES_DB1.concat([
-  {
-    id: "as24-ex1",
-    titre: "QCM — questionnaire à choix multiples",
-    notion: "Automatisme",
-    source: "Brevet Asie · 18 juin 2024",
-    points: 20,
-    enonce: "QCM — aucune justification n'est demandée. Une seule réponse est exacte par question.",
-    figure: null,
-    questions: [
-      {
-        id: "Q1",
-        texte: "Lequel de ces quatre nombres est premier ?\nA. 1   B. 21   C. 37   D. 54",
-        points: 4,
-        reponse: "Réponse C : 37\n— 1 n'est pas premier (par définition)\n— 21 = 3 × 7\n— 37 est premier (aucun diviseur autre que 1 et lui-même)\n— 54 = 2 × 27",
-        options: ["1", "21", "37", "54"]
-      },
-      {
-        id: "Q2",
-        texte: "L'aire totale du patron d'un cube d'arête 5 cm est égale à…\nA. 125 cm²   B. 150 cm²   C. 120 cm²   D. 100 cm²",
-        points: 4,
-        reponse: "Réponse B : 150 cm²\nUn cube a 6 faces carrées. Aire totale = 6 × 5² = 6 × 25 = 150 cm²",
-        options: ["125 cm²", "150 cm²", "120 cm²", "100 cm²"]
-      },
-      {
-        id: "Q3",
-        texte: "Une forme factorisée de l'expression 4x² − 9 est…\nA. (4x−3)(4x+3)   B. (2x−3)(2x+3)   C. (2x−3)²   D. (4x−9)(4x+9)",
-        points: 4,
-        reponse: "Réponse B : (2x−3)(2x+3)\n4x² − 9 = (2x)² − 3² = (2x−3)(2x+3) (identité remarquable a²−b²=(a−b)(a+b))",
-        options: ["(4x−3)(4x+3)", "(2x−3)(2x+3)", "(2x−3)²", "(4x−9)(4x+9)"]
-      },
-      {
-        id: "Q4",
-        texte: "Un écran de télévision est au format 16:9. Si la longueur est de 110 cm, sa largeur est d'environ…\nA. 62 cm   B. 103 cm   C. 196 cm   D. 94 cm",
-        points: 4,
-        reponse: "Réponse A : 62 cm\nLargeur/longueur = 9/16 → largeur = 110 × 9/16 = 990/16 ≈ 61,9 ≈ 62 cm",
-        options: ["62 cm", "103 cm", "196 cm", "94 cm"]
-      },
-      {
-        id: "Q5",
-        texte: "Série de valeurs : 4,1 ; 3,67 ; 4,23 ; 4,5 ; 3,4. Quelle est la médiane ?\nA. 0,83   B. 4,1   C. 4,23   D. 3,98",
-        points: 4,
-        reponse: "Réponse B : 4,1\nValeurs ordonnées : 3,4 ; 3,67 ; 4,1 ; 4,23 ; 4,5\n5 valeurs → médiane = valeur centrale = 3e valeur = 4,1",
-        options: ["0,83", "4,1", "4,23", "3,98"]
-      }
-    ]
+    enonce: "Aucune justification n'est attendue pour les questions 1 et 2. À l'aide d'un logiciel de programmation, on définit un bloc « Losange » pour construire un losange.",
+    figures: [],
+    questions: [{id:"1.",texte:"Dans le bloc « Losange », par quelles valeurs faut-il remplacer _**a**_ et _**b**_ pour obtenir le losange ci-dessus ?",points:4,reponse:"Le losange a 4 côtés égaux, et la somme des angles extérieurs = 360°\nDeux angles valent 60°, donc les deux autres valent 360°−2×60° = 240°, soit … chacun\na = … et b = …",options:null},{id:"2.",texte:"On définit un nouveau bloc nommé **« Motif A »** :",points:4,reponse:"définir Motif B\n  répéter … fois\n    Losange\n    avancer de …\n  fin répéter",options:null},{id:"3.",texte:"On a défini un nouveau bloc nommé **« Motif B »**. En l'exécutant, on a obtenu la figure ci-dessous (3 losanges côte à côte). Écrire un script du bloc « Motif B ».",points:6,reponse:"",options:null}]
   },
   {
-    id: "as24-ex2",
+    id: "brevet_asie_2024_ex1",
+    numero: 1,
+    titre: "QCM — questionnaire à choix multiples",
+    source: "Brevet Asie 2024",
+    annee: 2024,
+    session: "Asie",
+    notion: "Arithmétique",
+    notions: ["Arithmétique", "Géométrie", "Algèbre", "Statistiques"],
+    points: 20,
+    enonce: "QCM — aucune justification n'est demandée. Pour chaque question, quatre réponses (A, B, C et D) sont proposées. Une seule réponse est exacte. Recopier le numéro de la question et la réponse.",
+    figures: [],
+    questions: [{id:"Question 1",texte:"Lequel de ces quatre nombres est **premier** ?",points:4,reponse:"",options:null},{id:"Question 2",texte:"L'aire totale du patron d'un cube d'arête **5 cm** est égale à…",points:4,reponse:"",options:null},{id:"Question 3",texte:"Une forme factorisée de l'expression **4x² − 9** est…",points:4,reponse:"",options:null},{id:"Question 4",texte:"Un écran de télévision est au format **16:9**. Si la longueur de l'écran est de **110 cm**, sa largeur est d'environ…",points:4,reponse:"",options:null},{id:"Question 5",texte:"On considère la série de valeurs : 4,1 &nbsp; 3,67 &nbsp; 4,23 &nbsp; 4,5 &nbsp; 3,4",points:4,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_asie_2024_ex2",
+    numero: 2,
     titre: "affirmations — vrai ou faux justifié",
+    source: "Brevet Asie 2024",
+    annee: 2024,
+    session: "Asie",
     notion: "Géométrie",
-    source: "Brevet Asie · 18 juin 2024",
+    notions: ["Géométrie", "Probabilités"],
     points: 18,
     enonce: "Voici trois affirmations. Pour chacune d'entre elles, justifier si elle est vraie ou fausse.",
-    figure: null,
-    questions: [
-      {
-        id: "Aff. 1",
-        texte: "Affirmation 1 : « La vue de droite d'un assemblage de 4 cubes identiques (2 colonnes de 2 en L) est représentée par 2 carrés côte à côte. »",
-        points: 6,
-        reponse: "FAUSSE.\nL'assemblage est : cube bas-gauche, cube bas-droite, cube haut-gauche, cube haut-droite (décalé).\nVue de droite : on voit les faces droites → colonne de 2 cases + 1 case en bas à droite.\nCe n'est pas 2 carrés côte à côte (c'est une forme en L).",
-        options: null
-      },
-      {
-        id: "Aff. 2",
-        texte: "Affirmation 2 : « Les droites (NU) et (OD) sont parallèles. » (ON = 6 cm, SU = 5 cm, UD = 6 cm, points O, N, S alignés et O, E, D alignés)",
-        points: 6,
-        reponse: "FAUSSE.\nPour vérifier si (NU) // (OD) par Thalès, il faudrait ON/OS = NU/OD.\nON = 6 cm. SU = 5 cm, UD = 6 cm → OU = OS + SU (si O, S, U alignés... structure à vérifier sur figure).\nLes rapports ON/OS ≠ NU/OD → les droites ne sont pas parallèles.",
-        options: null
-      },
-      {
-        id: "Aff. 3",
-        texte: "Affirmation 3 : « La probabilité d'obtenir une boule bleue dans une urne de 4 rouges + 6 bleues est supérieure à la probabilité d'obtenir un nombre pair avec un dé à 6 faces. »",
-        points: 6,
-        reponse: "VRAIE.\nP(boule bleue) = 6/10 = 3/5 = 0,6\nP(nombre pair avec dé) = 3/6 = 1/2 = 0,5\n0,6 > 0,5 → l'affirmation est vraie. ✓",
-        options: null
-      }
-    ]
+    figures: ["<svg viewBox=\"0 0 320 180\" width=\"300\" height=\"168\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"-apple-system,sans-serif\" font-size=\"11\"> <!-- Cube helper: draw a cube in cavalière perspective Front face is a square, depth lines go up-right at 45°, shortened --> <!-- ===== CUBE 1 : bas-gauche ===== --> <!-- Front face: x=20,y=100 → 60×60 --> <rect x=\"20\" y=\"100\" width=\"60\" height=\"60\" fill=\"white\" stroke=\"#333\" stroke-width=\"1.5\"/> <!-- Top face (parallélogramme) --> <polygon points=\"20,100 50,70 110,70 80,100\" fill=\"#e8e8e8\" stroke=\"#333\" stroke-width=\"1.5\"/> <!-- Right face --> <polygon points=\"80,100 110,70 110,130 80,160\" fill=\"#d0d0d0\" stroke=\"#333\" stroke-width=\"1.5\"/> <!-- hidden lines --> <line x1=\"20\" y1=\"160\" x2=\"50\" y2=\"130\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <line x1=\"50\" y1=\"130\" x2=\"110\" y2=\"130\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <line x1=\"50\" y1=\"130\" x2=\"50\" y2=\"70\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <!-- ===== CUBE 2 : bas-droite (à droite du cube 1) ===== --> <rect x=\"80\" y=\"100\" width=\"60\" height=\"60\" fill=\"white\" stroke=\"#333\" stroke-width=\"1.5\"/> <polygon points=\"80,100 110,70 170,70 140,100\" fill=\"#e8e8e8\" stroke=\"#333\" stroke-width=\"1.5\"/> <polygon points=\"140,100 170,70 170,130 140,160\" fill=\"#d0d0d0\" stroke=\"#333\" stroke-width=\"1.5\"/> <line x1=\"80\" y1=\"160\" x2=\"110\" y2=\"130\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <line x1=\"110\" y1=\"130\" x2=\"170\" y2=\"130\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <line x1=\"110\" y1=\"130\" x2=\"110\" y2=\"70\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <!-- ===== CUBE 3 : haut-gauche (au-dessus du cube 1) ===== --> <rect x=\"20\" y=\"40\" width=\"60\" height=\"60\" fill=\"white\" stroke=\"#333\" stroke-width=\"1.5\"/> <polygon points=\"20,40 50,10 110,10 80,40\" fill=\"#e8e8e8\" stroke=\"#333\" stroke-width=\"1.5\"/> <polygon points=\"80,40 110,10 110,70 80,100\" fill=\"#d0d0d0\" stroke=\"#333\" stroke-width=\"1.5\"/> <line x1=\"20\" y1=\"100\" x2=\"50\" y2=\"70\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <line x1=\"50\" y1=\"70\" x2=\"110\" y2=\"70\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <line x1=\"50\" y1=\"70\" x2=\"50\" y2=\"10\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <!-- ===== CUBE 4 : haut-droite (au-dessus du cube 2, décalé) ===== --> <rect x=\"140\" y=\"40\" width=\"60\" height=\"60\" fill=\"white\" stroke=\"#333\" stroke-width=\"1.5\"/> <polygon points=\"140,40 170,10 230,10 200,40\" fill=\"#e8e8e8\" stroke=\"#333\" stroke-width=\"1.5\"/> <polygon points=\"200,40 230,10 230,70 200,100\" fill=\"#d0d0d0\" stroke=\"#333\" stroke-width=\"1.5\"/> <line x1=\"140\" y1=\"100\" x2=\"170\" y2=\"70\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <line x1=\"170\" y1=\"70\" x2=\"230\" y2=\"70\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <line x1=\"170\" y1=\"70\" x2=\"170\" y2=\"10\" stroke=\"#aaa\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <!-- Label \"Face avant\" --> <text x=\"35\" y=\"174\" fill=\"var(--muted)\" font-size=\"10\" font-style=\"italic\">Face avant</text> <!-- flèche vers face avant --> <line x1=\"72\" y1=\"168\" x2=\"55\" y2=\"155\" stroke=\"var(--muted)\" stroke-width=\"1\"/> <polygon points=\"55,155 60,162 65,154\" fill=\"var(--muted)\"/> </svg>", "<svg viewBox=\"0 0 340 260\" width=\"320\" height=\"244\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"-apple-system,sans-serif\" font-size=\"13\"> <!-- Points : O=(20,220), N=(130,110), S=(200,20), U=(240,120), E=(185,180), D=(300,240) --> <!-- Traits de la figure --> <!-- O-N-S --> <line x1=\"20\" y1=\"220\" x2=\"130\" y2=\"110\" stroke=\"#333\" stroke-width=\"1.5\"/> <line x1=\"130\" y1=\"110\" x2=\"200\" y2=\"20\" stroke=\"#333\" stroke-width=\"1.5\"/> <!-- O-E-D --> <line x1=\"20\" y1=\"220\" x2=\"185\" y2=\"180\" stroke=\"#333\" stroke-width=\"1.5\"/> <line x1=\"185\" y1=\"180\" x2=\"300\" y2=\"240\" stroke=\"#333\" stroke-width=\"1.5\"/> <!-- N-U --> <line x1=\"130\" y1=\"110\" x2=\"240\" y2=\"120\" stroke=\"#333\" stroke-width=\"1.5\"/> <!-- S-D --> <line x1=\"200\" y1=\"20\" x2=\"300\" y2=\"240\" stroke=\"#333\" stroke-width=\"1.5\"/> <!-- N-D et U-O (diagonales) --> <line x1=\"130\" y1=\"110\" x2=\"300\" y2=\"240\" stroke=\"#333\" stroke-width=\"1.2\"/> <line x1=\"240\" y1=\"120\" x2=\"20\" y2=\"220\" stroke=\"#333\" stroke-width=\"1.2\"/> <!-- Marques égalité (croix rouges sur ON et SU) --> <!-- Milieu ON ≈ (75,165) --> <line x1=\"71\" y1=\"169\" x2=\"79\" y2=\"161\" stroke=\"#EF4444\" stroke-width=\"2\"/> <line x1=\"71\" y1=\"161\" x2=\"79\" y2=\"169\" stroke=\"#EF4444\" stroke-width=\"2\"/> <!-- Milieu SU ≈ (220,70) --> <line x1=\"166\" y1=\"66\" x2=\"174\" y2=\"58\" stroke=\"#EF4444\" stroke-width=\"2\"/> <line x1=\"166\" y1=\"58\" x2=\"174\" y2=\"66\" stroke=\"#EF4444\" stroke-width=\"2\"/> <!-- Points --> <circle cx=\"20\" cy=\"220\" r=\"3\" fill=\"#333\"/> <circle cx=\"130\" cy=\"110\" r=\"3\" fill=\"#333\"/> <circle cx=\"200\" cy=\"20\" r=\"3\" fill=\"#333\"/> <circle cx=\"240\" cy=\"120\" r=\"3\" fill=\"#333\"/> <circle cx=\"185\" cy=\"180\" r=\"3\" fill=\"#333\"/> <circle cx=\"300\" cy=\"240\" r=\"3\" fill=\"#333\"/> <!-- Labels --> <text x=\"6\" y=\"224\" fill=\"#333\" font-weight=\"600\">O</text> <text x=\"120\" y=\"105\" fill=\"#333\" font-weight=\"600\">N</text> <text x=\"198\" y=\"14\" fill=\"#333\" font-weight=\"600\">S</text> <text x=\"246\" y=\"118\" fill=\"#333\" font-weight=\"600\">U</text> <text x=\"188\" y=\"196\" fill=\"#333\" font-weight=\"600\">E</text> <text x=\"306\" y=\"244\" fill=\"#333\" font-weight=\"600\">D</text> <!-- Cotes à droite --> <text x=\"256\" y=\"60\" fill=\"var(--muted)\" font-size=\"12\">ON = 6 cm</text> <text x=\"256\" y=\"80\" fill=\"var(--muted)\" font-size=\"12\">SU = 5 cm</text> <text x=\"256\" y=\"100\" fill=\"var(--muted)\" font-size=\"12\">UD = 6 cm</text> </svg>", "<svg viewBox=\"0 0 300 120\" width=\"280\" height=\"112\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"-apple-system,sans-serif\" font-size=\"12\"> <!-- Urne --> <ellipse cx=\"70\" cy=\"38\" rx=\"36\" ry=\"10\" fill=\"#e8e8e8\" stroke=\"#555\" stroke-width=\"1.2\"/> <path d=\"M34,38 Q20,90 34,100 Q70,112 106,100 Q120,90 106,38\" fill=\"#f5f5f5\" stroke=\"#555\" stroke-width=\"1.2\"/> <ellipse cx=\"70\" cy=\"100\" rx=\"36\" ry=\"10\" fill=\"#e8e8e8\" stroke=\"#555\" stroke-width=\"1.2\"/> <!-- boules rouges (4) --> <circle cx=\"52\" cy=\"72\" r=\"9\" fill=\"#EF4444\" stroke=\"#c0392b\" stroke-width=\"1\"/> <circle cx=\"70\" cy=\"80\" r=\"9\" fill=\"#EF4444\" stroke=\"#c0392b\" stroke-width=\"1\"/> <circle cx=\"55\" cy=\"56\" r=\"8\" fill=\"#EF4444\" stroke=\"#c0392b\" stroke-width=\"1\"/> <circle cx=\"78\" cy=\"62\" r=\"8\" fill=\"#EF4444\" stroke=\"#c0392b\" stroke-width=\"1\"/> <!-- boules bleues (6) --> <circle cx=\"88\" cy=\"76\" r=\"9\" fill=\"#3B82F6\" stroke=\"#1d4ed8\" stroke-width=\"1\"/> <circle cx=\"60\" cy=\"90\" r=\"8\" fill=\"#3B82F6\" stroke=\"#1d4ed8\" stroke-width=\"1\"/> <circle cx=\"82\" cy=\"50\" r=\"8\" fill=\"#3B82F6\" stroke=\"#1d4ed8\" stroke-width=\"1\"/> <circle cx=\"94\" cy=\"60\" r=\"7\" fill=\"#3B82F6\" stroke=\"#1d4ed8\" stroke-width=\"1\"/> <circle cx=\"44\" cy=\"85\" r=\"7\" fill=\"#3B82F6\" stroke=\"#1d4ed8\" stroke-width=\"1\"/> <circle cx=\"96\" cy=\"88\" r=\"7\" fill=\"#3B82F6\" stroke=\"#1d4ed8\" stroke-width=\"1\"/> <text x=\"70\" y=\"118\" text-anchor=\"middle\" fill=\"var(--muted)\" font-size=\"10\">4 rouges + 6 bleues</text> <!-- Séparateur --> <line x1=\"150\" y1=\"10\" x2=\"150\" y2=\"110\" stroke=\"rgba(0,0,0,.1)\" stroke-width=\"1\" stroke-dasharray=\"4,3\"/> <!-- Dé (cube simplifié) --> <rect x=\"185\" y=\"30\" width=\"60\" height=\"60\" rx=\"8\" fill=\"white\" stroke=\"#555\" stroke-width=\"1.5\"/> <!-- points du dé face 4 --> <circle cx=\"200\" cy=\"48\" r=\"5\" fill=\"#333\"/> <circle cx=\"230\" cy=\"48\" r=\"5\" fill=\"#333\"/> <circle cx=\"200\" cy=\"72\" r=\"5\" fill=\"#333\"/> <circle cx=\"230\" cy=\"72\" r=\"5\" fill=\"#333\"/> <text x=\"215\" y=\"108\" text-anchor=\"middle\" fill=\"var(--muted)\" font-size=\"10\">faces 1 à 6</text> </svg>"],
+    questions: [{id:"1.",texte:"Voici un assemblage de quatre cubes identiques représenté en perspective cavalière.",points:6,reponse:"Vraie ou fausse ? Décris ce qu'on voit depuis la droite de l'assemblage…",options:null},{id:"Affirmation 1",texte:"La vue de droite est représentée par le dessin ci-dessus.",points:6,reponse:"Vraie ou fausse ? Utilise le théorème de Thalès ou sa réciproque…\nCalcule ON/OS et NU/OD ou vérifie un rapport de proportionnalité…",options:null},{id:"2.",texte:"On considère le schéma ci-dessous (qui n'est pas à l'échelle) avec **ON = 6 cm, SU = 5 cm, UD = 6 cm**.",points:6,reponse:"Vraie ou fausse ?\nP(boule bleue) = 6/10 = …\nP(nombre pair) = 3/6 = …\nComparer les deux probabilités…",options:null},{id:"Affirmation 2",texte:"« Les droites (NU) et (OD) sont parallèles. »",points:0,reponse:"",options:null},{id:"3.",texte:"On considère deux expériences aléatoires : • **Expérience 1** : on tire une boule dans une urne opaque et on annonce sa couleur. L'urne contient **4 boules rouges** et **6 boules bleues** indiscernables au toucher. • **Expérience 2** : on lance un dé non truqué avec des faces numérotées de 1 à 6 et on annonce le nombre qui apparaît sur la face du dessus.",points:0,reponse:"",options:null},{id:"Affirmation 3",texte:"« La probabilité d'obtenir une boule bleue dans l'urne est supérieure à la probabilité d'obtenir un nombre pair avec le dé. »",points:0,reponse:"",options:null}]
   },
   {
-    id: "as24-ex3",
+    id: "brevet_asie_2024_ex3",
+    numero: 3,
     titre: "pièce géométrique — arc, triangle, disque",
+    source: "Brevet Asie 2024",
+    annee: 2024,
+    session: "Asie",
     notion: "Géométrie",
-    source: "Brevet Asie · 18 juin 2024",
+    notions: ["Géométrie", "Aires", "Trigonométrie"],
     points: 20,
-    enonce: "Trois élèves construisent chacun une même pièce :\n— (AB) et (CG) sont perpendiculaires\n— A, C, B sont alignés avec AC = CB\n— L'arc AB a pour centre G\n— CG = 10 cm, BG = 20 cm",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Démontrer que la longueur BC mesure environ 17,3 cm.",
-        points: 3,
-        reponse: "Triangle BCG rectangle en C (car (AB) ⊥ (CG)) :\nBG² = BC² + CG²\n20² = BC² + 10²\nBC² = 400 − 100 = 300\nBC = √300 = 10√3 ≈ 17,3 cm ✓",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Quelle est l'aire du triangle BAG ? (valeur arrondie à l'unité)",
-        points: 3,
-        reponse: "AB = 2 × BC = 2 × 17,3 = 34,6 cm (car AC = CB)\nHauteur CG = 10 cm\nAire = (AB × CG) / 2 = (34,6 × 10) / 2 = 173 cm²",
-        options: null
-      },
-      {
-        id: "3a",
-        texte: "Montrer que l'angle CGB mesure exactement 60°.",
-        points: 3,
-        reponse: "Dans le triangle BCG rectangle en C :\ncos(CGB) = CG/BG = 10/20 = 1/2\nangle CGB = arccos(1/2) = 60° ✓",
-        options: null
-      },
-      {
-        id: "3b",
-        texte: "En déduire la mesure de l'angle AGB.",
-        points: 2,
-        reponse: "Par symétrie (AC = CB, et G est sur la médiatrice de AB) :\nangle CGA = angle CGB = 60°\nDonc angle AGB = angle CGA + angle CGB = 60° + 60° = 120°",
-        options: null
-      },
-      {
-        id: "4",
-        texte: "Les trois élèves pensent qu'ils peuvent former un disque complet avec leurs 3 pièces. Expliquer pourquoi ils ont raison.",
-        points: 3,
-        reponse: "L'angle AGB = 120° pour chaque pièce.\n3 × 120° = 360°\nLes 3 pièces forment donc un tour complet → un disque complet de rayon BG = 20 cm. ✓",
-        options: null
-      },
-      {
-        id: "5",
-        texte: "En déduire l'aire de la pièce obtenue par chacun des élèves. (valeur arrondie à l'unité)\nAire pièce = Aire secteur (120°) − Aire triangle BAG | Rappel : Aire disque = π × R²",
-        points: 6,
-        reponse: "Aire disque entier = π × 20² = 400π ≈ 1256,6 cm²\nAire secteur 120° = 400π / 3 ≈ 418,9 cm²\nAire triangle BAG ≈ 173 cm²\nAire pièce = 418,9 − 173 ≈ 246 cm²",
-        options: null
-      }
-    ]
+    enonce: "Trois élèves construisent chacun en vraie grandeur une même figure puis la découpent, obtenant ainsi trois pièces identiques. La pièce est définie par : • les droites (AB) et (CG) sont perpendiculaires ; • les points A, C et B sont alignés ; • l'arc de cercle reliant A à B a pour centre G ; • AC = CB &nbsp;;&nbsp; CG = 10 cm &nbsp;;&nbsp; BG = 20 cm.",
+    figures: ["<svg viewBox=\"0 0 380 240\" width=\"360\" height=\"228\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"-apple-system,sans-serif\" font-size=\"13\"> <!-- C=(190,120), G=(190,200), A=(52,120), B=(328,120) --> <!-- arc de centre G=(190,200), rayon GA=GB=160px --> <path d=\"M52,120 A160,160 0 0,1 328,120\" fill=\"rgba(0,33,188,.05)\" stroke=\"#0021BC\" stroke-width=\"2\"/> <!-- côtés GA et GB --> <line x1=\"52\" y1=\"120\" x2=\"190\" y2=\"200\" stroke=\"#0021BC\" stroke-width=\"1.8\"/> <line x1=\"328\" y1=\"120\" x2=\"190\" y2=\"200\" stroke=\"#0021BC\" stroke-width=\"1.8\"/> <!-- ligne AB --> <line x1=\"52\" y1=\"120\" x2=\"328\" y2=\"120\" stroke=\"#0021BC\" stroke-width=\"1.8\"/> <!-- CG (hauteur) --> <line x1=\"190\" y1=\"120\" x2=\"190\" y2=\"200\" stroke=\"#555\" stroke-width=\"1.2\" stroke-dasharray=\"4,3\"/> <!-- angle droit en C --> <rect x=\"190\" y=\"120\" width=\"10\" height=\"10\" fill=\"none\" stroke=\"#555\" stroke-width=\"1.2\"/> <!-- marques AC=CB --> <line x1=\"118\" y1=\"114\" x2=\"118\" y2=\"126\" stroke=\"#555\" stroke-width=\"2\"/> <line x1=\"124\" y1=\"114\" x2=\"124\" y2=\"126\" stroke=\"#555\" stroke-width=\"2\"/> <line x1=\"256\" y1=\"114\" x2=\"256\" y2=\"126\" stroke=\"#555\" stroke-width=\"2\"/> <line x1=\"262\" y1=\"114\" x2=\"262\" y2=\"126\" stroke=\"#555\" stroke-width=\"2\"/> <!-- points --> <circle cx=\"52\" cy=\"120\" r=\"3\" fill=\"#333\"/> <circle cx=\"190\" cy=\"120\" r=\"3\" fill=\"#333\"/> <circle cx=\"328\" cy=\"120\" r=\"3\" fill=\"#333\"/> <circle cx=\"190\" cy=\"200\" r=\"3\" fill=\"#333\"/> <!-- labels --> <text x=\"36\" y=\"124\" fill=\"#333\" font-weight=\"700\">A</text> <text x=\"190\" y=\"108\" text-anchor=\"middle\" fill=\"#333\" font-weight=\"700\">C</text> <text x=\"334\" y=\"124\" fill=\"#333\" font-weight=\"700\">B</text> <text x=\"190\" y=\"218\" text-anchor=\"middle\" fill=\"#333\" font-weight=\"700\">G</text> <!-- cotes --> <text x=\"198\" y=\"166\" fill=\"var(--muted)\" font-size=\"11\">10 cm</text> <text x=\"275\" y=\"175\" fill=\"var(--muted)\" font-size=\"11\" transform=\"rotate(27,275,175)\">20 cm</text> </svg>", "<svg viewBox=\"0 0 220 220\" width=\"180\" height=\"180\" xmlns=\"http://www.w3.org/2000/svg\"> <path d=\"M110,110 L110,10 A100,100 0 0,1 196.6,160 Z\" fill=\"rgba(0,33,188,.12)\" stroke=\"#0021BC\" stroke-width=\"1.5\"/> <path d=\"M110,110 L196.6,160 A100,100 0 0,1 23.4,160 Z\" fill=\"rgba(238,110,52,.12)\" stroke=\"#EE6E34\" stroke-width=\"1.5\"/> <path d=\"M110,110 L23.4,160 A100,100 0 0,1 110,10 Z\" fill=\"rgba(208,166,198,.25)\" stroke=\"#8B5A7A\" stroke-width=\"1.5\"/> <circle cx=\"110\" cy=\"110\" r=\"3\" fill=\"#333\"/> <text x=\"110\" y=\"62\" text-anchor=\"middle\" fill=\"#0021BC\" font-size=\"11\" font-weight=\"600\">120°</text> <text x=\"64\" y=\"172\" text-anchor=\"middle\" fill=\"#EE6E34\" font-size=\"11\" font-weight=\"600\">120°</text> <text x=\"160\" y=\"172\" text-anchor=\"middle\" fill=\"#8B5A7A\" font-size=\"11\" font-weight=\"600\">120°</text> </svg>"],
+    questions: [{id:"1.",texte:"Démontrer que la longueur BC mesure environ **17,3 cm**.",points:3,reponse:"Triangle BCG rectangle en C → BC² = BG² − CG² = 20² − 10² = … → BC = √… ≈ … cm",options:null},{id:"2.",texte:"Quelle est l'aire du triangle BAG ? _(Valeur arrondie à l'unité.)_",points:3,reponse:"Base AB = 2 × BC = 2 × 17,3 = … cm, hauteur = CG = 10 cm\nAire = (AB × CG) / 2 = … cm²",options:null},{id:"3.a.",texte:"Montrer que l'angle CGB mesure exactement **60°**.",points:3,reponse:"Dans le triangle BCG rectangle en C :\ncos(CGB) = CG/BG = 10/20 = 1/2 → angle CGB = arccos(1/2) = 60°",options:null},{id:"3.b.",texte:"En déduire la mesure de l'angle AGB.",points:2,reponse:"Par symétrie (AC=CB) → angle CGA = angle CGB = 60°\nDonc angle AGB = 60° + 60° = …°",options:null},{id:"4.",texte:"Les trois élèves pensent qu'ils peuvent former un **disque complet** avec leurs 3 pièces. Expliquer pourquoi ils ont raison.",points:3,reponse:"Angle AGB = 120° et 3 × 120° = 360° → les 3 pièces forment bien un disque complet.",options:null},{id:"5.",texte:"En déduire l'aire de la pièce obtenue par chacun des élèves. _(Valeur arrondie à l'unité.)_",points:6,reponse:"Aire disque entier = π × 20² = … cm²\nAire secteur 120° = Aire disque ÷ 3 = … cm²\nAire triangle BAG ≈ … cm² (question 2)\nAire pièce = … − … ≈ … cm²",options:null}]
   },
   {
-    id: "as24-ex4",
+    id: "brevet_asie_2024_ex4",
+    numero: 4,
     titre: "terrasse en béton — volume, périmètre, peinture",
+    source: "Brevet Asie 2024",
+    annee: 2024,
+    session: "Asie",
     notion: "Volume et Grandeurs",
-    source: "Brevet Asie · 18 juin 2024",
+    notions: ["Volume et Grandeurs", "Proportionnalité"],
     points: 21,
-    enonce: "M. et Mme Martin veulent construire une terrasse en béton de hauteur 15 cm.\nBase : rectangle EFGH (HG = 6 m, HE = 3 m) + triangle FGJ rectangle en F (FJ = ?, EJ = 10 m).\nV = Aire_base × Hauteur",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Montrer que FJ = 4 m.",
-        points: 3,
-        reponse: "EJ = 10 m, EF = HG = 6 m (EFGH rectangle)\nFJ = EJ − EF = 10 − 6 = 4 m ✓",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Pour délimiter la terrasse, ils installent des planches tout autour. Quelle longueur de planches doivent-ils acheter au minimum ?",
-        points: 4,
-        reponse: "Périmètre = HE + EJ + JG + GH\nJG = ? : triangle FGJ rectangle en F, GF = HE = 3 m, FJ = 4 m\nJG² = GF² + FJ² = 9 + 16 = 25 → JG = 5 m (Pythagore)\nPérimètre = 3 + 10 + 5 + 6 = 24 m",
-        options: null
-      },
-      {
-        id: "3a",
-        texte: "Montrer que le volume de la terrasse est bien inférieur à 4 m³.",
-        points: 4,
-        reponse: "Aire base = Aire rectangle EFGH + Aire triangle FGJ\n= HG × HE + (GF × FJ)/2\n= 6×3 + (3×4)/2\n= 18 + 6 = 24 m²\nHauteur = 15 cm = 0,15 m\nV = 24 × 0,15 = 3,6 m³ < 4 m³ ✓",
-        options: null
-      },
-      {
-        id: "3b",
-        texte: "Pour 1 m³ de béton il faut 250 kg de ciment. Quelle masse de ciment pour 4 m³ ?",
-        points: 2,
-        reponse: "4 × 250 = 1 000 kg de ciment",
-        options: null
-      },
-      {
-        id: "3c",
-        texte: "Masses ciment : gravier : sable dans le ratio 2 : 7 : 5. Masses de gravier et sable pour 4 m³ de béton ?",
-        points: 3,
-        reponse: "Masse de ciment = 1 000 kg → correspond à 2 parts\n1 part = 1 000 / 2 = 500 kg\nGravier = 7 × 500 = 3 500 kg\nSable = 5 × 500 = 2 500 kg",
-        options: null
-      },
-      {
-        id: "4",
-        texte: "Peindre la surface supérieure de la terrasse. Documents : Pot A (5L, 79,90€), Pot B (10L, 129,90€), offre −50% sur 2e article identique, 2 couches nécessaires, 1L couvre 5 m². Déterminer le type et nombre de pots avec un coût minimum.",
-        points: 5,
-        reponse: "Surface à peindre = 24 m²\nVolume peinture = 24 × 2 couches ÷ 5 m²/L = 9,6 L\n\nOption Pot A (5L) : 2 pots nécessaires (10L ≥ 9,6L)\nSans offre : 2 × 79,90 = 159,80 €\nAvec offre (−50% 2e) : 79,90 + 39,95 = 119,85 €\n\nOption Pot B (10L) : 1 pot suffit (10L ≥ 9,6L)\nPrix : 129,90 €\n\nChoix minimum : 2 pots A avec l'offre = 119,85 €",
-        options: null
-      }
-    ]
+    enonce: "M. et Mme Martin veulent construire une terrasse en béton dans leur jardin. Ils souhaitent que leur terrasse ait une hauteur de 15 cm. Les représentations ci-dessous ne sont pas à l'échelle.",
+    figures: [],
+    questions: [{id:"1.",texte:"Montrer que **FJ = 4 m**.",points:3,reponse:"EJ = 10 m, EF = HG = 6 m → FJ = EJ − EF = 10 − 6 = … m",options:null},{id:"2.",texte:"Afin de pouvoir couler le béton, M. et Mme Martin doivent délimiter la terrasse en installant des **planches tout autour**. Quelle longueur de planches doivent-ils acheter au minimum ?",points:4,reponse:"Périmètre = HE + EJ + JG + GH\nCalculer JG avec Pythagore : JG² = GF² + FJ² = 3² + 4² = … → JG = … m\nPérimètre = … + … + … + … = … m",options:null},{id:"3.",texte:"M. et Mme Martin souhaitent réaliser **4 m³** de béton.",points:4,reponse:"Aire base = Aire rectangle EFGH + Aire triangle FGJ\n= (HG × HE) + (GF × FJ)/2 = (6×3) + (3×4)/2 = … + … = … m²\nVolume = Aire × hauteur = … × 0,15 = … m³ < 4 m³",options:null},{id:"3.a.",texte:"Montrer que le volume de la terrasse est bien **inférieur à 4 m³**.",points:2,reponse:"4 × 250 = … kg",options:null},{id:"3.b.",texte:"Sachant que pour faire **1 m³** de béton il faut **250 kg de ciment**, quelle masse de ciment doivent-ils acheter pour réaliser **4 m³** de béton ?",points:3,reponse:"Total ratio = 2+7+5 = 14 parts. Masse totale = 250 × 4 × (14/2) = … kg\nGravier = (7/14) × … = … kg\nSable = (5/14) × … = … kg",options:null},{id:"3.c.",texte:"Dans le mélange béton, les masses de **ciment : gravier : sable** sont dans le ratio **2 : 7 : 5**. Déterminer (en kg) la masse de gravier et la masse de sable nécessaires pour réaliser les 4 m³ de béton.",points:5,reponse:"Surface à peindre = Aire base = … m²\nVolume peinture nécessaire = (surface × 2 couches) ÷ 5 = … litres\nComparer le coût selon les pots (avec offre 50% sur 2e article identique)…",options:null},{id:"4.",texte:"M. et Mme Martin souhaitent **peindre la surface supérieure** de leur terrasse. À l'aide des documents 1, 2 et 3, déterminer le type et le nombre de pots nécessaires pour effectuer ces travaux avec un **coût minimum**.",points:0,reponse:"",options:null}]
   },
   {
-    id: "as24-ex5",
+    id: "brevet_asie_2024_ex5",
+    numero: 5,
     titre: "programme scratch — motif & figures",
-    notion: "Algorithmique",
-    source: "Brevet Asie · 18 juin 2024",
+    source: "Brevet Asie 2024",
+    annee: 2024,
+    session: "Asie",
+    notion: "Scratch",
+    notions: ["Scratch", "Géométrie", "Variables"],
     points: 16,
-    enonce: "Aucune justification n'est attendue.\nScript principal : aller à x:−100 y:0, s'orienter à 90, effacer tout, mettre côté à 80, puis appeler Motif.\nBloc Motif : répéter 3× (avancer côté + tourner ↺ 120°), puis répéter 3× (avancer côté + tourner ↩ 120°), relever stylo.",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "À quelles coordonnées le lutin se positionne-t-il juste après avoir cliqué sur le drapeau vert ?",
-        points: 2,
-        reponse: "Le lutin va à x = −100 et y = 0 (première instruction du script principal).",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "En prenant 1 cm pour 20 pas, dessiner en vraie grandeur la figure obtenue en exécutant le script principal.",
-        points: 4,
-        reponse: "côté = 80 pas = 4 cm\nLe Motif trace :\n— 3× (avancer 4 cm + tourner ↺ 120°) → triangle équilatéral dans un sens\n— 3× (avancer 4 cm + tourner ↩ 120°) → triangle équilatéral dans l'autre sens\nRésultat : un losange (ou étoile de David / hexagone) de côté 4 cm.",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "On modifie le script principal de 3 façons. Associer chaque script à sa figure (A, B ou C) :\n— Script 1 : répéter 3× (Motif + avancer 100 pas)\n— Script 2 : répéter 3× (Motif + mettre côté à côté×1,2)\n— Script 3 : répéter 3× (Motif + tourner ↺ 120°)",
-        points: 6,
-        reponse: "Script 1 → Figure B : 3 losanges identiques côte à côte (avancée de 100 pas entre chaque motif)\nScript 2 → Figure A : 3 losanges concentriques de tailles croissantes (côté augmente de ×1,2 à chaque fois)\nScript 3 → Figure C : hexagone divisé en 6 triangles (rotation 120° entre chaque motif = rosette)",
-        options: null
-      },
-      {
-        id: "4a",
-        texte: "Script n°2 : combien de fois le bloc « Motif » est-il exécuté ?",
-        points: 2,
-        reponse: "Le script répète 3 fois le bloc Motif → 3 fois.",
-        options: null
-      },
-      {
-        id: "4b",
-        texte: "Quelle est la valeur de la variable « côté » à la fin du Script n°2 ?",
-        points: 2,
-        reponse: "Valeur initiale : côté = 80\nAprès 1re répétition : côté = 80 × 1,2 = 96\nAprès 2e répétition : côté = 96 × 1,2 = 115,2\nAprès 3e répétition : côté = 115,2 × 1,2 = 138,24\nValeur finale : côté ≈ 138,24",
-        options: null
-      }
-    ]
-  }
-]);
-_EXERCICES_DB1 = _EXERCICES_DB1.concat([
-  {
-    id: "ce24-ex1",
-    titre: "QCM — questionnaire à choix multiples",
-    notion: "Automatisme",
-    source: "Brevet Centres Étrangers · 10 juin 2024",
-    points: 20,
-    enonce: "QCM — aucune justification n'est demandée. Une seule réponse est exacte par question.",
-    figure: null,
-    questions: [
-      {
-        id: "Q1",
-        texte: "Donner l'écriture scientifique de 0,193 × 10⁻¹⁰⁰.\nA. 1,93 × 10⁻⁹⁹   B. 1,93 × 10⁻¹⁰¹   C. 193 × 10⁻¹⁰³   D. 193 × 10⁻⁹⁷",
-        points: 4,
-        reponse: "Réponse B : 1,93 × 10⁻¹⁰¹\n0,193 = 1,93 × 10⁻¹\nDonc 0,193 × 10⁻¹⁰⁰ = 1,93 × 10⁻¹ × 10⁻¹⁰⁰ = 1,93 × 10⁻¹⁰¹",
-        options: ["1,93 × 10⁻⁹⁹", "1,93 × 10⁻¹⁰¹", "193 × 10⁻¹⁰³", "193 × 10⁻⁹⁷"]
-      },
-      {
-        id: "Q2",
-        texte: "Lili parcourt 480 km en 5 h 42 min. Quelle est sa vitesse moyenne en km/h, arrondie au dixième ?\nA. 88,6   B. 84,2   C. 1,4   D. 23,4",
-        points: 4,
-        reponse: "Réponse B : 84,2 km/h\n5 h 42 min = 5 + 42/60 = 5,7 h\nVitesse = 480 / 5,7 ≈ 84,2 km/h",
-        options: ["88,6", "84,2", "1,4", "23,4"]
-      },
-      {
-        id: "Q3",
-        texte: "Roue à 12 secteurs égaux. Secteurs visibles : 2,2,2,1,2,1,1,2,1,1,? (secteur effacé). Est-il possible que P(flèche → 2) = 3/5 ?\nA. Oui, en écrivant 1   B. Oui, en écrivant 2   C. Ce n'est pas possible   D. Oui, en laissant vide",
-        points: 4,
-        reponse: "Réponse B : Oui, en écrivant le nombre 2\nSecteurs actuels visibles avec 2 : secteurs 0,1,2,4,7 = 5 secteurs portant 2 sur 11 connus.\nPour P(2) = 3/5, il faut 3/5 × 12 = 7,2 → non entier... \nEn comptant : 2 apparaît dans secteurs 0,1,2,4,7 = 5 fois sur 11 (hors case effacée).\nSi on écrit 2 dans la case effacée : 6 fois sur 12 = 1/2 ≠ 3/5.\nSi on écrit 2 → 6/12 = 1/2. Pour 3/5 = 7,2/12 → impossible avec entier.\nRéponse correcte selon le sujet : B — Oui, en écrivant le nombre 2.",
-        options: ["Oui, en écrivant le nombre 1", "Oui, en écrivant le nombre 2", "Ce n'est pas possible", "Oui, en laissant le secteur vide"]
-      },
-      {
-        id: "Q4",
-        texte: "Série : 5 ; 1 ; 3 ; 10 ; 17 ; 11 ; 10. Que représente le nombre 5 dans cette liste ?\nA. La médiane   B. L'étendue   C. La moyenne   D. Rien de particulier",
-        points: 4,
-        reponse: "Réponse A : La médiane\nValeurs triées : 1 ; 3 ; 5 ; 10 ; 10 ; 11 ; 17\n7 valeurs → médiane = 4e valeur = 5 ✓\nVérification : étendue = 17−1 = 16 ≠ 5, moyenne = (5+1+3+10+17+11+10)/7 = 57/7 ≈ 8,1 ≠ 5",
-        options: ["La médiane", "L'étendue", "La moyenne", "Rien de particulier"]
-      },
-      {
-        id: "Q5",
-        texte: "Léa paye 1/5 du prix à la réservation. Le reste est payé en 3 paiements égaux. Quelle fraction du prix représente l'un de ces 3 paiements ?\nA. 12/5   B. 1/15   C. 4/15   D. 3/5",
-        points: 4,
-        reponse: "Réponse C : 4/15\nReste à payer = 1 − 1/5 = 4/5 du prix\nChaque paiement = (4/5) ÷ 3 = 4/15 du prix",
-        options: ["12/5", "1/15", "4/15", "3/5"]
-      }
-    ]
+    enonce: "Aucune justification n'est attendue. Rappel : Le bloc s'orienter à 90 oriente le lutin vers la droite.",
+    figures: [],
+    questions: [{id:"1.",texte:"À quelles **coordonnées** le lutin se positionne-t-il juste après avoir cliqué sur le drapeau vert ?",points:2,reponse:"Le lutin va à x = … et y = …",options:null},{id:"2.",texte:"En prenant **1 cm pour 20 pas**, dessiner en vraie grandeur la figure obtenue en exécutant le script principal.",points:4,reponse:"côté = 80 pas = 4 cm\nLe motif répète 3× (avancer 80 + tourner 120°) puis 3× (avancer 80 + tourner −120°)\n→ Forme : losange / double triangle équilatéral",options:null},{id:"3.",texte:"On modifie le script principal de trois façons différentes. Associer chaque script à la figure qui lui correspond.",points:6,reponse:"Script 1 → Figure …\nScript 2 → Figure …\nScript 3 → Figure …",options:null},{id:"4.",texte:"Dans cette question on s'intéresse au **Script n° 2**.",points:2,reponse:"Le script répète … fois le bloc Motif.",options:null},{id:"4.a.",texte:"Combien de fois le bloc « Motif » est-il exécuté ?",points:2,reponse:"Valeur initiale : côté = 80\nAprès 1 fois : côté = 80 × 1,2 = …\nAprès 2 fois : côté = … × 1,2 = …\nAprès 3 fois : côté = … × 1,2 = …",options:null},{id:"4.b.",texte:"Quelle est la valeur de la variable **« côté »** à la fin de ce script ?",points:0,reponse:"",options:null}]
   },
   {
-    id: "ce24-ex2",
-    titre: "circuits d'entraînement",
-    notion: "Arithmétique",
-    source: "Brevet Centres Étrangers · 10 juin 2024",
-    points: 20,
-    enonce: "Circuit 1 : pentagone, 5 exercices de 40 s chacun + 16 s de repos.\nCircuit 2 : décagone, 10 exercices de 30 s chacun + 5 s de repos.\nCamille commence sur le circuit 1, Dominique sur le circuit 2.",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Montrer que le circuit 1 s'effectue en 280 secondes et que le circuit 2 s'effectue en 350 secondes.",
-        points: 4,
-        reponse: "Circuit 1 : 5 exercices × (40 s + 16 s) = 5 × 56 = 280 s ✓\nCircuit 2 : 10 exercices × (30 s + 5 s) = 10 × 35 = 350 s ✓",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Donner la décomposition en produit de facteurs premiers de 280 et de 350.",
-        points: 4,
-        reponse: "280 = 8 × 35 = 2³ × 5 × 7\n350 = 2 × 175 = 2 × 5² × 7",
-        options: null
-      },
-      {
-        id: "3a",
-        texte: "Expliquer pourquoi, lorsque 2 800 secondes se sont écoulées, Camille se trouve de nouveau au départ du circuit 1. Préciser où se trouve Dominique sur le circuit 2 à ce moment.",
-        points: 6,
-        reponse: "2 800 ÷ 280 = 10 → Camille a effectué exactement 10 tours → elle est au départ. ✓\n2 800 ÷ 350 = 8 → Dominique a effectué exactement 8 tours → elle est aussi au départ du circuit 2.",
-        options: null
-      },
-      {
-        id: "3b",
-        texte: "Après le coup de sifflet, combien de temps faut-il à Camille et Dominique pour se retrouver en même temps pour la première fois au départ de leur circuit ? Exprimer en minutes et secondes.",
-        points: 6,
-        reponse: "On cherche le PPCM de 280 et 350.\n280 = 2³ × 5 × 7\n350 = 2 × 5² × 7\nPPCM = 2³ × 5² × 7 = 8 × 25 × 7 = 1 400 s\n1 400 s = 23 min 20 s",
-        options: null
-      }
-    ]
-  },
-  {
-    id: "ce24-ex3",
+    id: "brevet_centres_etrangers_2024_ex3",
+    numero: 3,
     titre: "programme de calcul & fonction g",
+    source: "Brevet Centres Étrangers 2024",
+    annee: 2024,
+    session: "Centres Étrangers",
     notion: "Algèbre et Fonctions",
-    source: "Brevet Centres Étrangers · 10 juin 2024",
+    notions: ["Algèbre et Fonctions", "Géométrie", "Trigonométrie", "Homothétie"],
     points: 20,
-    enonce: "Programme de calcul : choisir x → soustraire 2 (donne x−2) et ajouter 1 (donne x+1) → multiplier les deux résultats → résultat final = (x−2)(x+1).\nPartie B : g(x) = x² − x − 2",
-    figure: null,
-    questions: [
-      {
-        id: "A1",
-        texte: "Partie A — Justifier qu'en choisissant 5 comme nombre de départ, le résultat final est 18.",
-        points: 3,
-        reponse: "x = 5\n5 − 2 = 3\n5 + 1 = 6\n3 × 6 = 18 ✓",
-        options: null
-      },
-      {
-        id: "A2",
-        texte: "Calculer le résultat final lorsque le nombre de départ est −3/2.",
-        points: 3,
-        reponse: "x = −3/2\n−3/2 − 2 = −3/2 − 4/2 = −7/2\n−3/2 + 1 = −3/2 + 2/2 = −1/2\nRésultat = (−7/2) × (−1/2) = 7/4",
-        options: null
-      },
-      {
-        id: "A3",
-        texte: "Le script Scratch correspond au programme. Compléter les lignes 3, 4 et 5 :\nLigne 3 : mettre [a] à (réponse − …)\nLigne 4 : mettre [b] à (réponse + …)\nLigne 5 : dire (… * …) pendant 2 secondes",
-        points: 4,
-        reponse: "Ligne 3 : mettre a à (réponse − 2)   [car x−2]\nLigne 4 : mettre b à (réponse + 1)   [car x+1]\nLigne 5 : dire (a * b) pendant 2 secondes   [résultat final = (x−2)(x+1)]",
-        options: null
-      },
-      {
-        id: "B1",
-        texte: "Partie B — Prouver que (x − 2)(x + 1) = x² − x − 2.",
-        points: 3,
-        reponse: "(x − 2)(x + 1) = x² + x − 2x − 2 = x² − x − 2 ✓",
-        options: null
-      },
-      {
-        id: "B2a",
-        texte: "Résoudre l'équation (x − 2)(x + 1) = 0.",
-        points: 2,
-        reponse: "Un produit est nul si et seulement si l'un des facteurs est nul.\nx − 2 = 0 → x = 2\nx + 1 = 0 → x = −1\nSolutions : x = 2 et x = −1",
-        options: null
-      },
-      {
-        id: "B2b",
-        texte: "En déduire les antécédents de 0 par la fonction g.",
-        points: 1,
-        reponse: "g(x) = (x − 2)(x + 1) = 0 ⟺ x = 2 ou x = −1\nLes antécédents de 0 par g sont −1 et 2.",
-        options: null
-      },
-      {
-        id: "B3",
-        texte: "Parmi les trois graphiques, lequel correspond à la représentation graphique de g ?\nGraphique 1 : droite croissante   Graphique 2 : droite décroissante   Graphique 3 : parabole",
-        points: 2,
-        reponse: "Graphique 3 : la parabole.\ng(x) = x² − x − 2 est une fonction du second degré → représentation graphique = parabole (courbe en U). Les graphiques 1 et 2 sont des droites (fonctions affines).",
-        options: null
-      },
-      {
-        id: "B4",
-        texte: "Quel(s) nombre(s) doit-on choisir comme nombre de départ pour que le programme donne 0 comme résultat final ?",
-        points: 2,
-        reponse: "Résultat final = 0 ⟺ (x−2)(x+1) = 0 ⟺ x = 2 ou x = −1\nLes nombres de départ sont 2 et −1.",
-        options: null
-      }
-    ]
+    enonce: "On considère le programme de calcul suivant :",
+    figures: ["<svg viewBox=\"0 0 360 318\" width=\"330\" height=\"292\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"-apple-system,sans-serif\"> <defs><marker id=\"a3\" markerWidth=\"7\" markerHeight=\"7\" refX=\"3.5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L0,6 L6,3 z\" fill=\"#8A8DAA\"/></marker></defs> <rect x=\"110\" y=\"6\" width=\"140\" height=\"34\" rx=\"6\" fill=\"white\" stroke=\"#0021BC\" stroke-width=\"1.5\"/> <text x=\"180\" y=\"27\" text-anchor=\"middle\" fill=\"#0021BC\" font-weight=\"600\" font-size=\"12\">Choisir un nombre</text> <line x1=\"180\" y1=\"40\" x2=\"180\" y2=\"74\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#a3)\"/> <rect x=\"130\" y=\"74\" width=\"100\" height=\"34\" rx=\"6\" fill=\"white\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" stroke-dasharray=\"4,2\"/> <text x=\"180\" y=\"95\" text-anchor=\"middle\" fill=\"var(--muted)\" font-size=\"11\" font-style=\"italic\">x</text> <line x1=\"130\" y1=\"91\" x2=\"72\" y2=\"134\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#a3)\"/> <line x1=\"230\" y1=\"91\" x2=\"288\" y2=\"134\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#a3)\"/> <text x=\"54\" y=\"122\" text-anchor=\"middle\" fill=\"var(--muted)\" font-size=\"10\">Soustraire 2</text> <rect x=\"10\" y=\"134\" width=\"120\" height=\"34\" rx=\"6\" fill=\"white\" stroke=\"#0021BC\" stroke-width=\"1.5\"/><text x=\"70\" y=\"155\" text-anchor=\"middle\" fill=\"var(--ink)\" font-size=\"12\">x − 2</text> <text x=\"306\" y=\"122\" text-anchor=\"middle\" fill=\"var(--muted)\" font-size=\"10\">Ajouter 1</text> <rect x=\"230\" y=\"134\" width=\"120\" height=\"34\" rx=\"6\" fill=\"white\" stroke=\"#0021BC\" stroke-width=\"1.5\"/><text x=\"290\" y=\"155\" text-anchor=\"middle\" fill=\"var(--ink)\" font-size=\"12\">x + 1</text> <line x1=\"70\" y1=\"168\" x2=\"142\" y2=\"208\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#a3)\"/> <line x1=\"290\" y1=\"168\" x2=\"218\" y2=\"208\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#a3)\"/> <rect x=\"80\" y=\"208\" width=\"200\" height=\"38\" rx=\"6\" fill=\"#EEF2FF\" stroke=\"#0021BC\" stroke-width=\"1.8\"/> <text x=\"180\" y=\"224\" text-anchor=\"middle\" fill=\"#0021BC\" font-weight=\"600\" font-size=\"11\">Multiplier les</text> <text x=\"180\" y=\"239\" text-anchor=\"middle\" fill=\"#0021BC\" font-weight=\"600\" font-size=\"11\">deux résultats</text> <line x1=\"180\" y1=\"246\" x2=\"180\" y2=\"272\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#a3)\"/> <rect x=\"110\" y=\"272\" width=\"140\" height=\"34\" rx=\"6\" fill=\"white\" stroke=\"#0021BC\" stroke-width=\"1.5\"/> <text x=\"180\" y=\"293\" text-anchor=\"middle\" fill=\"#0021BC\" font-weight=\"600\" font-size=\"12\">Résultat final</text> </svg>"],
+    questions: [{id:"A.1.",texte:"Justifier qu'en choisissant **5** comme nombre de départ, le résultat final est **18**.",points:3,reponse:"Détaille le calcul étape par étape…",options:null},{id:"A.2.",texte:"Calculer le résultat final lorsque le nombre de départ est **−3/2**.",points:3,reponse:"Calcule (−3/2 − 2) × (−3/2 + 1) = …",options:null},{id:"A.3.",texte:"Le script ci-dessous correspond au programme. Compléter les **lignes 3, 4 et 5**. _(Aucune justification.)_",points:4,reponse:"Ligne 3 : b = …\nLigne 4 : resultat = …\nLigne 5 : print(…)",options:null},{id:"B.1.",texte:"Prouver que **(x − 2)(x + 1) = x² − x − 2**.",points:3,reponse:"Développe le membre gauche et montre qu'on obtient x² − x − 2…",options:null},{id:"B.2.a.",texte:"Résoudre l'équation **(x − 2)(x + 1) = 0**.",points:2,reponse:"Un produit est nul si… donc x = … ou x = …",options:null},{id:"B.2.b.",texte:"En déduire les antécédents de 0 par la fonction _g_. _(Aucune justification.)_",points:2,reponse:"Les antécédents de 0 par g sont…",options:null},{id:"B.3.",texte:"Parmi les trois graphiques ci-dessous, lequel correspond à la représentation graphique de _g_ ? _(Aucune justification.)_",points:2,reponse:"Le graphique n°… correspond à g car…",options:null},{id:"B.4.",texte:"Quel(s) nombre(s) doit-on choisir comme nombre de départ pour que le programme donne **0** comme résultat final ?",points:4,reponse:"Les nombres de départ sont…",options:null},{id:"1.",texte:"Démontrer que le triangle ABE est **rectangle**.",points:4,reponse:"Vérifie si AE² + EB² = AB² (réciproque du théorème de Pythagore)…\n4,4² + 3,3² = … et AB² = 5,5² = … donc…",options:null},{id:"2.",texte:"Calculer la mesure de l'angle **ABE**, arrondie au degré.",points:4,reponse:"Le triangle ABE est rectangle en A, donc…\nsin(ABE) = AE/AB = … → ABE ≈ …°\nou cos(ABE) = EB/AB = …",options:null},{id:"3.",texte:"Calculer la longueur **FD**.",points:4,reponse:"(FD) ∥ (AB) et E est le centre → utilise le théorème de Thalès…\nEF/EA = ED/EB = FD/AB\nED = EB + BD = … + … = …\nFD = AB × (ED/EB) = …",options:null},{id:"4.",texte:"Une homothétie de centre E transforme le triangle EAB en le triangle EFD. Quel est le rapport de cette homothétie ? _(Aucune justification n'est attendue.)_",points:0,reponse:"Rapport = ED/EB = …",options:null}]
   },
   {
-    id: "ce24-ex4",
-    titre: "géométrie — triangle, angles, homothétie",
-    notion: "Géométrie",
-    source: "Brevet Centres Étrangers · 10 juin 2024",
-    points: 16,
-    enonce: "E, A, F alignés ; E, B, D alignés ; (FD) // (AB).\nAE = 4,4 cm ; EB = 3,3 cm ; AB = 5,5 cm ; BD = 6,6 cm.",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Démontrer que le triangle ABE est rectangle.",
-        points: 4,
-        reponse: "Vérifions si AE² + EB² = AB² (réciproque du théorème de Pythagore) :\nAE² + EB² = 4,4² + 3,3² = 19,36 + 10,89 = 30,25\nAB² = 5,5² = 30,25\nAE² + EB² = AB² ✓\nDonc le triangle ABE est rectangle en A (le plus grand côté AB est l'hypoténuse).",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Calculer la mesure de l'angle ABE, arrondie au degré.",
-        points: 4,
-        reponse: "Triangle ABE rectangle en A :\nsin(ABE) = AE/AB = 4,4/5,5 = 0,8\n∠ABE = arcsin(0,8) ≈ 53°",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "Calculer la longueur FD.",
-        points: 4,
-        reponse: "(FD) // (AB), E, A, F alignés et E, B, D alignés → théorème de Thalès dans le triangle EFD :\nFD/AB = ED/EB\nED = EB + BD = 3,3 + 6,6 = 9,9 cm\nFD = AB × (ED/EB) = 5,5 × (9,9/3,3) = 5,5 × 3 = 16,5 cm",
-        options: null
-      },
-      {
-        id: "4",
-        texte: "Une homothétie de centre E transforme le triangle EAB en le triangle EFD. Quel est le rapport de cette homothétie ?",
-        points: 4,
-        reponse: "Rapport = ED/EB = 9,9/3,3 = 3",
-        options: null
-      }
-    ]
-  },
-  {
-    id: "ce24-ex5",
+    id: "brevet_centres_etrangers_2024_ex5",
+    numero: 5,
     titre: "chapeau de sorcier — cône & patron",
+    source: "Brevet Centres Étrangers 2024",
+    annee: 2024,
+    session: "Centres Étrangers",
     notion: "Volume et Grandeurs",
-    source: "Brevet Centres Étrangers · 10 juin 2024",
+    notions: ["Volume et Grandeurs", "Géométrie"],
     points: 24,
-    enonce: "Cône : rayon OM = 9 cm, hauteur OS = 30 cm.\nFormule volume cône : V = (1/3) × π × R² × h",
-    figure: null,
-    questions: [
-      {
-        id: "A1",
-        texte: "Partie A — Démontrer que la longueur MS, arrondie au dixième de centimètre, est 31,3 cm.",
-        points: 3,
-        reponse: "Triangle OSM rectangle en O :\nMS² = OS² + OM² = 30² + 9² = 900 + 81 = 981\nMS = √981 ≈ 31,32 ≈ 31,3 cm ✓",
-        options: null
-      },
-      {
-        id: "A2",
-        texte: "Léo a un tour de tête de 56 cm. Les dimensions choisies (rayon = 9 cm) sont-elles adaptées ?",
-        points: 3,
-        reponse: "Tour de tête = circonférence de la base = 2 × π × OM = 2 × π × 9 ≈ 56,55 cm\n56,55 > 56 cm → Le chapeau est légèrement plus grand que le tour de tête de Léo.\nOui, les dimensions sont adaptées (le chapeau passe sur sa tête).",
-        options: null
-      },
-      {
-        id: "A3a",
-        texte: "Démontrer que la longueur du cercle de centre S et de rayon SM, arrondie au dixième, est égale à 196,7 cm.",
-        points: 3,
-        reponse: "Circonférence = 2 × π × SM = 2 × π × 31,3 ≈ 196,66 ≈ 196,7 cm ✓",
-        options: null
-      },
-      {
-        id: "A3b",
-        texte: "Tableau de proportionnalité : angle M'SM (°) / longueur arc M'M (cm). Placer la valeur 196,7 dans ce tableau.",
-        points: 2,
-        reponse: "| Angle (°)   | 360   |  ?   |\n| Longueur arc | 196,7 | 56,5 |\nLa valeur 196,7 cm correspond à l'angle de 360° (cercle complet de rayon SM).",
-        options: null
-      },
-      {
-        id: "A3c",
-        texte: "Calculer la mesure de l'angle M'SM correspondant à une longueur d'arc de 56,5 cm. Arrondir au degré.",
-        points: 3,
-        reponse: "Par proportionnalité :\nangle / 360 = 56,5 / 196,7\nangle = (56,5 × 360) / 196,7 = 20 340 / 196,7 ≈ 103°",
-        options: null
-      },
-      {
-        id: "B1",
-        texte: "Partie B — Montrer que le volume total du chapeau, arrondi au cm³, est de 2 545 cm³.",
-        points: 4,
-        reponse: "V = (1/3) × π × R² × h = (1/3) × π × 9² × 30\n= (1/3) × π × 81 × 30\n= (1/3) × 2 430π\n= 810π ≈ 2 544,69 ≈ 2 545 cm³ ✓",
-        options: null
-      },
-      {
-        id: "B2",
-        texte: "Les bonbons atteignent le milieu de la hauteur (15 cm). Léo pense que le volume occupé par les bonbons représente moins de 15 % du volume total. Est-il correct ?\n(Le petit cône est semblable au grand avec rapport 1/2.)",
-        points: 6,
-        reponse: "Rapport de similitude = 1/2 (hauteur 15 cm / 30 cm)\nRayon du petit cône : r = 9 × (1/2) = 4,5 cm\nVolume petit cône = (1/3) × π × 4,5² × 15 = (1/3) × π × 20,25 × 15 = 101,25π ≈ 318,1 cm³\n\nPourcentage = (318,1 / 2545) × 100 ≈ 12,5 %\n12,5 % < 15 % → L'estimation de Léo est correcte. ✓\n\nNota : on pouvait aussi utiliser le rapport des volumes = (1/2)³ = 1/8. V_bonbons = 2545/8 ≈ 318 cm³ → 12,5 %.",
-        options: null
-      }
-    ]
-  }
-]);
-_EXERCICES_DB1 = _EXERCICES_DB1.concat([
+    enonce: "Léo veut fabriquer un chapeau en forme de cône pour se déguiser en sorcier lors de la fête d'Halloween. Le rayon OM de la base mesure 9 cm et la hauteur OS mesure 30 cm. Les deux parties sont indépendantes.",
+    figures: ["<svg viewBox=\"0 0 240 260\" width=\"200\" height=\"216\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"-apple-system,sans-serif\" font-size=\"12\"> <!-- ellipse base --> <ellipse cx=\"120\" cy=\"210\" rx=\"80\" ry=\"20\" fill=\"rgba(0,33,188,.04)\" stroke=\"#0021BC\" stroke-width=\"1.5\" stroke-dasharray=\"6,3\"/> <!-- côtés du cône --> <line x1=\"120\" y1=\"20\" x2=\"40\" y2=\"210\" stroke=\"#0021BC\" stroke-width=\"1.5\"/> <line x1=\"120\" y1=\"20\" x2=\"200\" y2=\"210\" stroke=\"#0021BC\" stroke-width=\"1.5\"/> <!-- hauteur pointillée --> <line x1=\"120\" y1=\"20\" x2=\"120\" y2=\"210\" stroke=\"#8A8DAA\" stroke-width=\"1.2\" stroke-dasharray=\"5,3\"/> <!-- angle droit en O --> <rect x=\"120\" y=\"200\" width=\"9\" height=\"9\" fill=\"none\" stroke=\"#8A8DAA\" stroke-width=\"1\"/> <!-- points --> <circle cx=\"120\" cy=\"20\" r=\"3\" fill=\"#0021BC\"/> <circle cx=\"120\" cy=\"210\" r=\"3\" fill=\"#0021BC\"/> <circle cx=\"200\" cy=\"210\" r=\"3\" fill=\"#0021BC\"/> <!-- labels --> <text x=\"120\" y=\"12\" text-anchor=\"middle\" fill=\"#0021BC\" font-weight=\"700\">S</text> <text x=\"108\" y=\"224\" fill=\"#0021BC\" font-weight=\"700\">O</text> <text x=\"206\" y=\"224\" fill=\"#0021BC\" font-weight=\"700\">M</text> <!-- cotes --> <text x=\"132\" y=\"118\" fill=\"var(--muted)\" font-size=\"11\">30 cm</text> <text x=\"155\" y=\"206\" fill=\"var(--muted)\" font-size=\"11\">9 cm</text> </svg>", "<svg viewBox=\"0 0 260 280\" width=\"220\" height=\"240\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"-apple-system,sans-serif\" font-size=\"12\"> <!-- grand cône (pointe en bas) --> <ellipse cx=\"130\" cy=\"50\" rx=\"80\" ry=\"18\" fill=\"rgba(0,33,188,.04)\" stroke=\"#0021BC\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/> <line x1=\"50\" y1=\"50\" x2=\"130\" y2=\"240\" stroke=\"#0021BC\" stroke-width=\"1.5\"/> <line x1=\"210\" y1=\"50\" x2=\"130\" y2=\"240\" stroke=\"#0021BC\" stroke-width=\"1.5\"/> <!-- ellipse mi-hauteur (bonbons) --> <ellipse cx=\"130\" cy=\"145\" rx=\"40\" ry=\"9\" fill=\"rgba(238,110,52,.15)\" stroke=\"#EE6E34\" stroke-width=\"1.5\" stroke-dasharray=\"4,2\"/> <!-- petit cône bonbons (partie basse) --> <path d=\"M90,145 L130,240 L170,145\" fill=\"rgba(238,110,52,.1)\" stroke=\"none\"/> <!-- hauteur totale --> <line x1=\"218\" y1=\"50\" x2=\"218\" y2=\"240\" stroke=\"#8A8DAA\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/> <line x1=\"214\" y1=\"50\" x2=\"222\" y2=\"50\" stroke=\"#8A8DAA\" stroke-width=\"1\"/> <line x1=\"214\" y1=\"240\" x2=\"222\" y2=\"240\" stroke=\"#8A8DAA\" stroke-width=\"1\"/> <text x=\"228\" y=\"152\" fill=\"var(--muted)\" font-size=\"11\">30 cm</text> <!-- hauteur petit cône --> <line x1=\"174\" y1=\"145\" x2=\"174\" y2=\"240\" stroke=\"#EE6E34\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/> <line x1=\"170\" y1=\"145\" x2=\"178\" y2=\"145\" stroke=\"#EE6E34\" stroke-width=\"1\"/> <line x1=\"170\" y1=\"240\" x2=\"178\" y2=\"240\" stroke=\"#EE6E34\" stroke-width=\"1\"/> <text x=\"180\" y=\"196\" fill=\"#EE6E34\" font-size=\"11\">15 cm</text> <!-- rayon en haut --> <line x1=\"130\" y1=\"50\" x2=\"210\" y2=\"50\" stroke=\"#0021BC\" stroke-width=\"1.5\"/> <text x=\"168\" y=\"44\" text-anchor=\"middle\" fill=\"#0021BC\" font-size=\"11\">9 cm</text> <!-- angle droit sommet --> <rect x=\"130\" y=\"50\" width=\"8\" height=\"8\" fill=\"none\" stroke=\"#8A8DAA\" stroke-width=\"1\"/> <!-- pointe --> <circle cx=\"130\" cy=\"240\" r=\"3\" fill=\"#0021BC\"/> </svg>"],
+    questions: [{id:"A.1.",texte:"Démontrer que la longueur MS, arrondie au dixième de centimètre, est **31,3 cm**.",points:3,reponse:"Triangle OSM rectangle en O → MS² = OS² + OM² = 30² + 9² = … → MS = √… ≈ … cm",options:null},{id:"A.2.",texte:"Léo souhaite vérifier que le chapeau sera adapté à son tour de tête qui mesure **56 cm**. Les dimensions choisies sont-elles adaptées au tour de tête de Léo ?",points:3,reponse:"Tour de tête = circonférence de la base = 2 × π × OM = 2 × π × 9 ≈ … cm\nComparer avec 56 cm…",options:null},{id:"A.3.",texte:"Léo a représenté le patron de son chapeau avec l'arc M'M de longueur **56,5 cm** et le rayon SM = **31,3 cm**.",points:3,reponse:"Circonférence = 2 × π × SM = 2 × π × 31,3 ≈ … cm",options:null},{id:"A.3.a.",texte:"Démontrer que la longueur du cercle de centre S et de rayon SM, arrondie au dixième de centimètre, est égale à **196,7 cm**.",points:2,reponse:"La valeur 196,7 correspond à un angle de 360°\nComplète le tableau : longueur 196,7 ↔ 360°",options:null},{id:"A.3.b.",texte:"Placer la valeur **196,7** obtenue à la question précédente dans le tableau de proportionnalité donné en ANNEXE.",points:3,reponse:"Par proportionnalité : angle = (56,5 × 360) ÷ 196,7 ≈ …°",options:null},{id:"A.3.c.",texte:"Calculer la mesure de l'angle M'SM correspondant à une longueur d'arc de **56,5 cm**. Donner le résultat arrondi au degré.",points:4,reponse:"V = (1/3) × π × 9² × 30 = (1/3) × π × 81 × 30 = … cm³ ≈ … cm³",options:null},{id:"B.1.",texte:"Montrer que le volume total du chapeau, arrondi au cm³, est de **2 545 cm³**.",points:6,reponse:"Rayon du petit cône : r = 9 × (15/30) = … cm\nVolume petit cône = (1/3) × π × r² × 15 = … cm³\nPourcentage = (V_bonbons / V_total) × 100 = … %\nConclusion : l'estimation est-elle correcte ?",options:null},{id:"B.2.",texte:"Les bonbons atteignent le **milieu de la hauteur** du chapeau (15 cm). Léo pense que le volume occupé par les bonbons représente **moins de 15 %** du volume total. Son estimation est-elle correcte ?",points:0,reponse:"",options:null}]
+  },
   {
-    id: "an2025-ex1",
-    titre: "cinq situations indépendantes",
+    id: "brevet_martinique_2024_ex1",
+    numero: 1,
+    titre: "dragées de mariage — probabilités & PGCD",
+    source: "Brevet Martinique 2024",
+    annee: 2024,
+    session: "Martinique",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Arithmétique", "PGCD"],
+    points: 20,
+    enonce: "Anne et Jean ont acheté 630 dragées roses et 810 dragées blanches qu'ils ont mises dans un sachet. Les dragées sont indiscernables au toucher.",
+    figures: [],
+    questions: [{id:"1.",texte:"Combien Anne et Jean ont-ils acheté de dragées au total ?",points:2,reponse:"Total = 630 + 810 = … dragées",options:null},{id:"1.a.",texte:"Anne prend au hasard une dragée dans le sachet. Quelle est la probabilité qu'elle obtienne une dragée **blanche** ?",points:3,reponse:"P(blanche) = 810 / … = …",options:null},{id:"1.b.",texte:"Ils réalisent des **ballotins** pour leur mariage tels que : — le nombre de dragées roses est le même dans chaque ballotin ; — le nombre de dragées blanches est le même dans chaque ballotin ; — toutes les dragées sont utilisées.",points:3,reponse:"Vérifier si 21 divise 630 et 810 :\n630 ÷ 21 = … et 810 ÷ 21 = …\nConclusion : …",options:null},{id:"2.",texte:"Peuvent-ils réaliser **21 ballotins** ?",points:4,reponse:"630 = 2 × … × … × …\n810 = 2 × … × … × …",options:null},{id:"2.a.",texte:"Décomposer **630** et **810** en produits de facteurs premiers.",points:8,reponse:"Nombre max de ballotins = PGCD(630, 810) = …\n(prendre les facteurs premiers communs avec le plus petit exposant)\n\nChaque ballotin contiendra :\n— … dragées roses (630 ÷ …)\n— … dragées blanches (810 ÷ …)",options:null},{id:"2.b.",texte:"En déduire le **nombre maximum de ballotins** qu'Anne et Jean pourront réaliser. Donner alors la composition de chaque ballotin.",points:0,reponse:"",options:null},{id:"2.c.",texte:"",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_martinique_2024_ex2",
+    numero: 2,
+    titre: "QCM — 6 questions",
+    source: "Brevet Martinique 2024",
+    annee: 2024,
+    session: "Martinique",
+    notion: "Puissances",
+    notions: ["Puissances", "Stats", "Géométrie", "Fonctions"],
+    points: 0,
+    enonce: "QCM — une seule réponse est exacte par question. Aucune justification n'est demandée.",
+    figures: [],
+    questions: [{id:"Question 1",texte:"Quelle est l'écriture scientifique de **13 420** ?",points:0,reponse:"",options:null},{id:"Question 2",texte:"On a relevé, en mètres, les onze meilleures performances du lancer de marteau chez les hommes :85,14 ; 85,14 ; 85,20 ; 85,60 ; 85,68 ; 85,74 ; 86,04 ; 86,34 ; 86,51 ; 86,66 ; 86,74",points:0,reponse:"",options:null},{id:"Question 3",texte:"Quelle est l'image du motif gris (n°1) par la **symétrie d'axe (d)** ?",points:0,reponse:"",options:null},{id:"Question 4",texte:"Quelle est l'image du motif gris (n°1) par la **rotation de centre O et d'angle 90° antihoraire** ?",points:0,reponse:"",options:null},{id:"Question 5",texte:"Quelle est l'image de **2** par la fonction _f_ ?",points:0,reponse:"",options:null},{id:"Question 6",texte:"Quel est le **coefficient directeur** de la droite (d) ?",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_martinique_2024_ex3",
+    numero: 3,
+    titre: "course d'Oscar — thalès, pythagore & trigonométrie",
+    source: "Brevet Martinique 2024",
+    annee: 2024,
+    session: "Martinique",
+    notion: "Thalès",
+    notions: ["Thalès", "Pythagore", "Trigonométrie"],
+    points: 22,
+    enonce: "",
+    figures: [],
+    questions: [{id:"1.",texte:"Montrer que la longueur **DK = 480 m**.",points:3,reponse:"K sur DL, KL=120m, DL=600m → DK = DL − KL = 600 − 120 = … m",options:null},{id:"2.",texte:"Montrer que le triangle DKJ est **rectangle en K**.",points:4,reponse:"Utiliser la réciproque du théorème de Pythagore dans DKJ :\nDK² + KJ² = 480² + 200² = … + … = …\nDJ² = 520² = …\nDK² + KJ² = DJ² ? → triangle DKJ rectangle en K",options:null},{id:"3.",texte:"Justifier que les droites **(KJ)** et **(LA)** sont **parallèles**.",points:4,reponse:"K sur DL, J sur DA, et triangle DKJ rectangle en K → KJ ⊥ DK\nTriangle DLA rectangle en L → LA ⊥ DL\nDK et DL sont sur la même droite, donc KJ ⊥ DL et LA ⊥ DL\nDeux droites perpendiculaires à une même droite sont… → (KJ) ∥ (LA)",options:null},{id:"4.",texte:"Montrer que le segment [DA] mesure **650 m**.",points:3,reponse:"Triangle DLA rectangle en L → DA² = DL² + LA²\nPar Thalès (KJ ∥ LA) : LA/KJ = DL/DK → LA = KJ × DL/DK = 200 × 600/480 = … m\nDA² = 600² + 250² = … + … = … → DA = √… = … m",options:null},{id:"5.",texte:"Calculer la longueur du trajet **DKJA** fléché sur la figure.",points:4,reponse:"Trajet DKJA = DK + KJ + JA\nDK = 480 m\nKJ = 200 m\nJA = DA − DJ = 650 − 520 = … m\nTotal = … + … + … = … m",options:null},{id:"6.",texte:"Un photographe place une caméra au point D. Pour filmer l'ensemble de la course sans bouger la caméra, l'angle **LDA** doit être inférieur à **25°**. Est-ce le cas ?",points:4,reponse:"Dans le triangle DLA rectangle en L :\ntan(LDA) = LA/DL = 250/600 = …\nAngle LDA = arctan(…) ≈ …°\nCet angle est-il < 25° ? Conclusion : …",options:null}]
+  },
+  {
+    id: "brevet_martinique_2024_ex4",
+    numero: 4,
+    titre: "programme de calcul & scratch",
+    source: "Brevet Martinique 2024",
+    annee: 2024,
+    session: "Martinique",
+    notion: "Algèbre",
+    notions: ["Algèbre", "Factorisation", "Scratch"],
+    points: 18,
+    enonce: "",
+    figures: [],
+    questions: [{id:"1.",texte:"Montrer que si on choisit **5** comme nombre de départ, le résultat du programme est **6**.",points:2,reponse:"5² = 25 → − 3×5 = 25−15 = 10 → −4 = 6 ✓",options:null},{id:"2.",texte:"On choisit _x_ comme nombre de départ. Exprimer le résultat du programme en fonction de _x_.",points:3,reponse:"x² → − 3x → − 4\nRésultat = x² − 3x − 4",options:null},{id:"3.",texte:"Vérifier que l'on peut écrire ce résultat sous la forme **(x + 1)(x − 4)**.",points:3,reponse:"Développer (x+1)(x−4) :\n= x² − 4x + x − 4\n= x² − 3x − 4 ✓",options:null},{id:"4.",texte:"Déterminer les nombres à choisir au départ pour que le résultat du programme soit **0**.",points:3,reponse:"(x+1)(x−4) = 0\nx+1 = 0 → x = … ou x−4 = 0 → x = …\nLes nombres de départ sont : … et …",options:null},{id:"5.",texte:"Juliette a écrit le programme ci-dessous. Recopier et compléter les **lignes 4 et 6** afin que le programme corresponde au programme de calcul encadré.",points:7,reponse:"Ligne 4 : mettre y à … × … (y = x²)\nLigne 6 : mettre Résultat à … − … − 4 (y − z − 4)",options:null}]
+  },
+  {
+    id: "brevet_martinique_2024_ex5",
+    numero: 5,
+    titre: "octogone EFGHIJKL — aires & volume piscine",
+    source: "Brevet Martinique 2024",
+    annee: 2024,
+    session: "Martinique",
+    notion: "Aires",
+    notions: ["Aires", "Volume", "Proportionnalité"],
+    points: 0,
+    enonce: "",
+    figures: [],
+    questions: [{id:"1.",texte:"Montrer que la longueur **AE = 1,4 m**.",points:2,reponse:"Le triangle AEL est isocèle rectangle, AE = AL.\nAE + EF + FB = AB = 5m, avec EF=2,2m et AE=FB\n2×AE + 2,2 = 5 → AE = (5−2,2)/2 = … m",options:null},{id:"1.a.",texte:"Montrer que l'aire du triangle AEL est égale à **0,98 m²**.",points:3,reponse:"Triangle AEL rectangle isocèle en A, AE = AL = 1,4m\nAire = (AE × AL) / 2 = (1,4 × 1,4) / 2 = … m²",options:null},{id:"1.b.",texte:"En déduire que l'aire de l'octogone grisé est égale à **21,08 m²**.",points:3,reponse:"Aire carré ABCD = 5² = 25 m²\n4 triangles à retirer : 4 × 0,98 = … m²\nAire octogone = 25 − … = … m²",options:null},{id:"1.c.",texte:"Cet octogone a les mêmes dimensions que la surface d'une piscine de hauteur **1,50 m**. On souhaite remplir cette piscine aux **trois quarts** de sa hauteur.",points:4,reponse:"Hauteur d'eau = (3/4) × 1,50 = … m\nVolume = Aire base × hauteur d'eau = 21,08 × … ≈ … m³",options:null},{id:"2.",texte:"Montrer que le volume d'eau nécessaire est environ égal à **24 m³**.",points:5,reponse:"Volume en litres = 24 × 1000 = … L\nDurée = … ÷ 12 = … min\nConvertir en heures et minutes : … min = … h … min",options:null},{id:"2.a.",texte:"Le débit du robinet est de **12 L/min**. Calculer la durée de remplissage de 24 m³. Donner le résultat en heures et minutes._Rappel : 1 m³ = 1 000 L_",points:0,reponse:"",options:null},{id:"2.b.",texte:"",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_2024_ex1",
+    numero: 1,
+    titre: "roulette de casino — probabilités",
+    source: "Brevet Métropole 2024",
+    annee: 2024,
+    session: "Métropole",
+    notion: "Probabilités",
+    notions: ["Probabilités"],
+    points: 20,
+    enonce: "Au casino, la roulette est un jeu de hasard pour lequel chaque joueur mise au choix sur un ou plusieurs numéros. On lance une bille sur une roue qui tourne, numérotée de 0 à 36. La bille a la même probabilité de s'arrêter sur chaque numéro.",
+    figures: ["<svg viewBox=\"0 0 260 260\" width=\"240\" height=\"240\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"-apple-system,sans-serif\"> <!-- Roue de roulette : 37 cases (0-36), alternance noir/rouge/noir, 0 en vert --> <!-- Cercle extérieur --> <circle cx=\"130\" cy=\"130\" r=\"125\" fill=\"#1a1a1a\" stroke=\"#111\" stroke-width=\"2\"/> <!-- Cercle intérieur (centre blanc) --> <circle cx=\"130\" cy=\"130\" r=\"55\" fill=\"white\" stroke=\"#333\" stroke-width=\"2\"/> <!-- 37 secteurs de 360/37 ≈ 9.73° chacun --> <!-- Numéros de la roulette européenne dans l'ordre de la roue : --> <!-- 0,32,15,19,4,21,2,25,17,34,6,27,13,36,11,30,8,23,10,5,24,16,33,1,20,14,31,9,22,18,29,7,28,12,35,3,26 --> <!-- Couleurs : 0=vert, rouges=1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36 noirs=les autres pairs et impairs restants --> <defs> <style> .rouge { fill: #c0392b; } .noir { fill: #1a1a1a; } .vert { fill: #27ae60; } .num { fill: white; font-size: 7px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; } </style> </defs> <!-- Génération des 37 secteurs à la main, angle de départ -90° (haut), sens horaire --> <!-- Chaque secteur = 9.7297°, rayon externe=124, rayon interne=57 --> <!-- Ordre des numéros sur la roue européenne (sens horaire depuis 0 en haut) --> <!-- Macro : pour chaque secteur i (0..36), angle_start = -90 + i*9.7297, angle_end = angle_start + 9.7297 --> <!-- numéros = [0,32,15,19,4,21,2,25,17,34,6,27,13,36,11,30,8,23,10,5,24,16,33,1,20,14,31,9,22,18,29,7,28,12,35,3,26] --> <!-- couleurs rouges (roulette européenne) : 1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36 --> <!-- Secteurs calculés (cx=130, cy=130, R=124, r=57) --> <!-- path arc : M cx+r*cos(a1) cy+r*sin(a1) L cx+R*cos(a1) cy+R*sin(a1) A R R 0 0 1 cx+R*cos(a2) cy+R*sin(a2) L cx+r*cos(a2) cy+r*sin(a2) A r r 0 0 0 cx+r*cos(a1) cy+r*sin(a1) Z --> <!-- Secteur 0 (vert) : -90° à -80.27° --> <path d=\"M130,73 L130,6 A124,124 0 0,1 145.9,6.8 L139.3,39.6 A57,57 0 0,0 130,73 Z\" class=\"vert\"/> <!-- On va simplifier en utilisant des polygones approximatifs pour les 37 secteurs --> <!-- Approche: générer via transform rotate --> <g transform=\"translate(130,130)\"> <!-- 37 secteurs, chacun rotate de i * (360/37) degrés --> <!-- Secteur template: pointe vers le haut, largeur 9.7297° --> <!-- Les numéros dans l'ordre, rouges marqués --> <!-- Numéro 0 - VERT --> <g transform=\"rotate(0)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#27ae60\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">0</text> </g> <!-- Numéro 32 - ROUGE --> <g transform=\"rotate(9.73)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">32</text> </g> <!-- Numéro 15 - NOIR --> <g transform=\"rotate(19.46)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">15</text> </g> <!-- Numéro 19 - ROUGE --> <g transform=\"rotate(29.19)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">19</text> </g> <!-- Numéro 4 - NOIR --> <g transform=\"rotate(38.92)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">4</text> </g> <!-- Numéro 21 - ROUGE --> <g transform=\"rotate(48.65)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">21</text> </g> <!-- Numéro 2 - NOIR --> <g transform=\"rotate(58.38)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">2</text> </g> <!-- Numéro 25 - ROUGE --> <g transform=\"rotate(68.11)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">25</text> </g> <!-- Numéro 17 - NOIR --> <g transform=\"rotate(77.84)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">17</text> </g> <!-- Numéro 34 - ROUGE --> <g transform=\"rotate(87.57)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">34</text> </g> <!-- Numéro 6 - NOIR --> <g transform=\"rotate(97.30)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">6</text> </g> <!-- Numéro 27 - ROUGE --> <g transform=\"rotate(107.03)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">27</text> </g> <!-- Numéro 13 - NOIR --> <g transform=\"rotate(116.76)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">13</text> </g> <!-- Numéro 36 - ROUGE --> <g transform=\"rotate(126.49)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">36</text> </g> <!-- Numéro 11 - NOIR --> <g transform=\"rotate(136.22)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">11</text> </g> <!-- Numéro 30 - ROUGE --> <g transform=\"rotate(145.95)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">30</text> </g> <!-- Numéro 8 - NOIR --> <g transform=\"rotate(155.68)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">8</text> </g> <!-- Numéro 23 - ROUGE --> <g transform=\"rotate(165.41)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">23</text> </g> <!-- Numéro 10 - NOIR --> <g transform=\"rotate(175.14)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">10</text> </g> <!-- Numéro 5 - ROUGE --> <g transform=\"rotate(184.86)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">5</text> </g> <!-- Numéro 24 - NOIR --> <g transform=\"rotate(194.59)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">24</text> </g> <!-- Numéro 16 - ROUGE --> <g transform=\"rotate(204.32)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">16</text> </g> <!-- Numéro 33 - NOIR --> <g transform=\"rotate(214.05)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">33</text> </g> <!-- Numéro 1 - ROUGE --> <g transform=\"rotate(223.78)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">1</text> </g> <!-- Numéro 20 - NOIR --> <g transform=\"rotate(233.51)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">20</text> </g> <!-- Numéro 14 - ROUGE --> <g transform=\"rotate(243.24)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">14</text> </g> <!-- Numéro 31 - NOIR --> <g transform=\"rotate(252.97)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">31</text> </g> <!-- Numéro 9 - ROUGE --> <g transform=\"rotate(262.70)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">9</text> </g> <!-- Numéro 22 - NOIR --> <g transform=\"rotate(272.43)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">22</text> </g> <!-- Numéro 18 - ROUGE --> <g transform=\"rotate(282.16)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">18</text> </g> <!-- Numéro 29 - NOIR --> <g transform=\"rotate(291.89)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">29</text> </g> <!-- Numéro 7 - ROUGE --> <g transform=\"rotate(301.62)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">7</text> </g> <!-- Numéro 28 - NOIR --> <g transform=\"rotate(311.35)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">28</text> </g> <!-- Numéro 12 - ROUGE --> <g transform=\"rotate(321.08)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">12</text> </g> <!-- Numéro 35 - NOIR --> <g transform=\"rotate(330.81)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">35</text> </g> <!-- Numéro 3 - ROUGE --> <g transform=\"rotate(340.54)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#c0392b\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">3</text> </g> <!-- Numéro 26 - NOIR --> <g transform=\"rotate(350.27)\"> <path d=\"M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z\" fill=\"#111\"/> <text transform=\"rotate(4.86) translate(0,-95)\" class=\"num\">26</text> </g> </g> <!-- Cercle intérieur blanc (cache le centre des secteurs) --> <circle cx=\"130\" cy=\"130\" r=\"56\" fill=\"white\" stroke=\"#ccc\" stroke-width=\"1.5\"/> <!-- Petit cercle central --> <circle cx=\"130\" cy=\"130\" r=\"8\" fill=\"#888\" stroke=\"#555\" stroke-width=\"1\"/> <!-- Point bille --> <circle cx=\"130\" cy=\"42\" r=\"5\" fill=\"#333\"/> </svg>"],
+    questions: [{id:"1.",texte:"Expliquer pourquoi la probabilité que la bille s'arrête sur le numéro 7 est **1/37**.",points:4,reponse:"La roue comporte … numéros (de 0 à 36), chacun ayant la même probabilité d'être choisi.\nDonc P(7) = 1/…",options:null},{id:"2.",texte:"Déterminer la probabilité que la bille s'arrête sur une case à la fois **noire et paire**.",points:6,reponse:"Compter les cases noires ET paires…\nP(noire et paire) = …/37",options:null},{id:"3.",texte:"",points:3,reponse:"Les numéros ≤ 6 sont : 0, 1, 2, 3, 4, 5, 6 → … numéros\nP(≤ 6) = …/37",options:null},{id:"3.a.",texte:"Déterminer la probabilité que la bille s'arrête sur un numéro **inférieur ou égal à 6**.",points:3,reponse:"P(≥ 7) = 1 − P(≤ 6) = 1 − … = …",options:null},{id:"3.b.",texte:"En déduire la probabilité que la bille s'arrête sur un numéro **supérieur ou égal à 7**.",points:4,reponse:"3 chances sur 4 = 3/4 = 0,75\nComparer P(≥ 7) avec 3/4…\nConclusion : le joueur a-t-il raison ?",options:null},{id:"3.c.",texte:"Un joueur affirme qu'on a **plus de 3 chances sur 4** d'obtenir un numéro supérieur ou égal à 7. A-t-il raison ?",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_2024_ex2",
+    numero: 2,
+    titre: "programmes de calcul A et B",
+    source: "Brevet Métropole 2024",
+    annee: 2024,
+    session: "Métropole",
+    notion: "Algèbre",
+    notions: ["Algèbre", "Scratch"],
+    points: 20,
+    enonce: "",
+    figures: [],
+    questions: [{id:"1.",texte:"Vérifier que, si on choisit **5** comme nombre de départ, le résultat du programme A est **56**.",points:4,reponse:"5² = … → × 2 = … → + 2×5 = … → − 4 = …",options:null},{id:"1.a.",texte:"Quel résultat obtient-on avec le programme B si on choisit **−9** comme nombre de départ ?",points:4,reponse:"Résultat 1 = (−9) + 2 = …\nRésultat 2 = (−9) − 1 = …\nRésultat final = Résultat 1 × Résultat 2 = … × … = …",options:null},{id:"1.b.",texte:"On choisit un nombre quelconque _x_ comme nombre de départ.",points:4,reponse:"Le programme B calcule Résultat 1 × Résultat 2 = (x+2) × (x−1), donc la bonne expression est …",options:null},{id:"2.",texte:"Parmi les trois propositions ci-dessous, recopier l'expression qui donne le résultat obtenu par le programme B.",points:4,reponse:"x² → ×2 → 2x² → +2x → 2x²+2x → −4 → Résultat A = …",options:null},{id:"2.a.",texte:"Exprimer en fonction de _x_ le résultat obtenu avec le programme A.",points:4,reponse:"Programme B = (x+2)(x−1) = x² − x + 2x − 2 = x² + x − 2\nProgramme A = 2x² + 2x − 4 = 2(x² + x − 2) = 2 × Programme B\nDonc A = 2B quel que soit x.",options:null},{id:"2.b.",texte:"Démontrer que, quel que soit le nombre choisi au départ, le résultat du programme A est toujours le **double du résultat du programme B**.",points:0,reponse:"",options:null},{id:"3.",texte:"",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_2024_ex3",
+    numero: 3,
+    titre: "cercle, triangle et aires",
+    source: "Brevet Métropole 2024",
+    annee: 2024,
+    session: "Métropole",
+    notion: "Géométrie",
+    notions: ["Géométrie", "Aires", "Thalès"],
+    points: 22,
+    enonce: "Sur la figure ci-dessous : — 𝒞 est un cercle de centre O et de rayon 4,5 cm ; — [AB] est un diamètre de ce cercle et D est un point du cercle ; — les points B, E, A sont alignés, ainsi que les points D, F, A ; — les droites (BD) et (EF) sont parallèles ; — BD = 5,4 cm ; DA = 7,2 cm et AE = 2,7 cm.",
+    figures: ["<svg viewBox=\"0 0 300 300\" width=\"260\" height=\"260\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"-apple-system,sans-serif\" font-size=\"13\"> <!-- Cercle centre O=(150,165), rayon R=100px AB diamètre horizontal : A=(250,165), B=(50,165) D sur le cercle (haut) : angle ~70° depuis droite → D=(150+100cos(110°), 165+100sin(110°)) cos(110°)≈-0.342, sin(110°)≈0.940 → D=(116, 71) Mais D doit être visible en haut centré → D=(150,65) (sommet du cercle) Recalcul : D=(150,65) → OD=100 ✓ E sur BA entre B et A : AE=2.7cm, AB=9cm → E à 2.7/9 de A → E=(250-30, 165)=(220,165) F sur DA : par Thalès (BD//EF) → AF/AD = AE/AB AE=2.7, AB=9 → ratio=0.3 → AF=0.3×7.2=2.16 F sur segment DA à 30% depuis A DA direction: D=(150,65)-A=(250,165) → vecteur=(-100,-100), normalisé F = A + 0.3×(D-A) = (250,165) + 0.3×(-100,-100) = (220, 135) Traits : - Cercle - Triangle ABD : B(50,165)-D(150,65)-A(250,165) - Segment EF : E(220,165)-F(220,135) - OD (hauteur, x au centre O) --> <!-- Cercle --> <circle cx=\"150\" cy=\"165\" r=\"100\" fill=\"rgba(0,33,188,.03)\" stroke=\"#0021BC\" stroke-width=\"1.8\"/> <!-- Triangle ABD --> <polygon points=\"50,165 150,65 250,165\" fill=\"rgba(238,110,52,.06)\" stroke=\"#333\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/> <!-- Segment EF (Thalès) --> <line x1=\"220\" y1=\"165\" x2=\"220\" y2=\"135\" stroke=\"#EE6E34\" stroke-width=\"1.8\"/> <!-- Diamètre BA prolongé (ligne de base) --> <line x1=\"42\" y1=\"165\" x2=\"258\" y2=\"165\" stroke=\"#555\" stroke-width=\"1\"/> <!-- Croix au centre O --> <line x1=\"145\" y1=\"165\" x2=\"155\" y2=\"165\" stroke=\"#333\" stroke-width=\"1.5\"/> <line x1=\"150\" y1=\"160\" x2=\"150\" y2=\"170\" stroke=\"#333\" stroke-width=\"1.5\"/> <!-- Points --> <circle cx=\"50\" cy=\"165\" r=\"3\" fill=\"#333\"/> <circle cx=\"150\" cy=\"65\" r=\"3\" fill=\"#333\"/> <circle cx=\"250\" cy=\"165\" r=\"3\" fill=\"#333\"/> <circle cx=\"150\" cy=\"165\" r=\"3\" fill=\"#333\"/> <circle cx=\"220\" cy=\"165\" r=\"3\" fill=\"#333\"/> <circle cx=\"220\" cy=\"135\" r=\"3\" fill=\"#EE6E34\"/> <!-- Labels --> <text x=\"150\" y=\"52\" text-anchor=\"middle\" fill=\"#333\" font-weight=\"700\">D</text> <text x=\"34\" y=\"170\" fill=\"#333\" font-weight=\"700\">B</text> <text x=\"254\" y=\"170\" fill=\"#333\" font-weight=\"700\">A</text> <text x=\"148\" y=\"185\" fill=\"#333\" font-weight=\"700\">O</text> <text x=\"218\" y=\"182\" fill=\"#333\" font-weight=\"700\">E</text> <text x=\"228\" y=\"132\" fill=\"#EE6E34\" font-weight=\"700\">F</text> <!-- Label 𝒞 --> <text x=\"230\" y=\"80\" fill=\"#0021BC\" font-size=\"16\" font-style=\"italic\" font-weight=\"600\">𝒞</text> <!-- Cotes --> <text x=\"90\" y=\"158\" fill=\"var(--muted)\" font-size=\"10\" text-anchor=\"middle\">BD = 5,4</text> <text x=\"195\" y=\"158\" fill=\"var(--muted)\" font-size=\"10\" text-anchor=\"middle\">DA = 7,2</text> <text x=\"237\" y=\"182\" fill=\"var(--muted)\" font-size=\"10\">AE = 2,7</text> </svg>"],
+    questions: [{id:"1.",texte:"Justifier que le diamètre [AB] mesure **9 cm**.",points:2,reponse:"AB = 2 × rayon = 2 × 4,5 = … cm",options:null},{id:"2.",texte:"Démontrer que le triangle ABD est **rectangle en D**.",points:4,reponse:"[AB] est un diamètre et D est un point du cercle → l'angle en D est inscrit dans un demi-cercle → angle ADB = …°",options:null},{id:"3.",texte:"Calculer **AF**.",points:4,reponse:"(BD) ∥ (EF), points B,E,A alignés et D,F,A alignés → Thalès :\nAF/AD = AE/AB = 2,7/9 = …\nAF = … × 7,2 = … cm",options:null},{id:"4.",texte:"Justifier que l'aire du triangle ABD est égale à **19,44 cm²**.",points:4,reponse:"Triangle ABD rectangle en D → base BD = 5,4, hauteur DA = 7,2\nAire = (BD × DA) / 2 = (5,4 × 7,2) / 2 = … cm²",options:null},{id:"4.a.",texte:"Calculer l'aire du disque, arrondie au centième. _Rappel : Aire = π × R²_",points:4,reponse:"Aire = π × 4,5² = π × … ≈ … cm²",options:null},{id:"4.b.",texte:"Quel **pourcentage** de l'aire du disque représente l'aire du triangle ABD ?",points:4,reponse:"% = (Aire triangle / Aire disque) × 100 = (19,44 / …) × 100 ≈ … %",options:null},{id:"5.",texte:"",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_2024_ex5",
+    numero: 5,
+    titre: "club de natation — sachets & piscine",
+    source: "Brevet Métropole 2024",
+    annee: 2024,
+    session: "Métropole",
+    notion: "PGCD",
+    notions: ["PGCD", "Volume", "Proportionnalité"],
+    points: 20,
+    enonce: "Un club de natation propose un après-midi découverte pour les enfants.",
+    figures: [],
+    questions: [{id:"1.",texte:"Pourquoi n'est-il pas possible de faire **15 sachets** ?",points:2,reponse:"Vérifier si 15 divise 330 et 132 :\n330 ÷ 15 = … et 132 ÷ 15 = …\nConclusion : 15 ne divise pas …, donc ce n'est pas possible.",options:null},{id:"2.",texte:"Décomposer **330** et **132** en produits de facteurs premiers.",points:4,reponse:"330 = 2 × … × … × …\n132 = 2 × … × … × …",options:null},{id:"2.a.",texte:"En déduire le **plus grand nombre de sachets** que la présidente pourra réaliser.",points:4,reponse:"Le plus grand nombre de sachets = PGCD(330, 132) = …",options:null},{id:"2.b.",texte:"Dans ce cas, combien mettra-t-elle d'**autocollants** et de **drapeaux** dans chaque sachet ?",points:2,reponse:"Autocollants par sachet : 330 ÷ … = …\nDrapeaux par sachet : 132 ÷ … = …",options:null},{id:"2.c.",texte:"Combien coûte le remplissage de la piscine ?",points:8,reponse:"Volume total = 25 × 15 × 2 = … m³\nVolume d'eau = (9/10) × … = … m³\nCoût = … × 4,14 = … €",options:null},{id:"B.",texte:"",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_2024_ex4",
+    numero: 4,
+    titre: "QCM — 6 questions",
+    source: "Brevet Métropole 2024",
+    annee: 2024,
+    session: "Métropole",
+    notion: "Fonctions",
+    notions: ["Fonctions", "Calcul", "Géométrie", "Statistiques"],
+    points: 18,
+    enonce: "QCM — une seule réponse est exacte par question. Aucune justification n'est demandée. Recopier le numéro de la question et la lettre correspondant à la réponse exacte.",
+    figures: [],
+    questions: [{id:"1.",texte:"On considère la fonction _f_ définie par **f(x) = 3x − 2**. Quelle est l'image de **−4** par cette fonction ?",points:3,reponse:"",options:null},{id:"2.",texte:"Combien vaut **(−5)³** ?",points:3,reponse:"",options:null},{id:"3.",texte:"Quelle est l'image du point J par la translation qui transforme C en A ?",points:3,reponse:"",options:null},{id:"4.",texte:"Quel est l'**antécédent de 3** par la fonction _f_ ?",points:3,reponse:"",options:null},{id:"5.",texte:"On a mesuré les tailles, en m, de sept élèves : 1,46 ; 1,65 ; 1,6 ; 1,72 ; 1,7 ; 1,67 ; 1,75",points:3,reponse:"",options:null},{id:"6.",texte:"Dans le triangle ABC rectangle en A ci-contre, quelle est la valeur de **cos α** ?",points:3,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_septembre_2024_ex4",
+    numero: 4,
+    titre: "fonction f — tableur, antécédents, factorisation",
+    source: "Brevet Métropole Septembre 2024",
+    annee: 2024,
+    session: "Métropole Septembre",
+    notion: "Fonctions",
+    notions: ["Fonctions", "Algèbre", "Tableur"],
+    points: 20,
+    enonce: "On considère la fonction f définie par : f(x) = x² + 10x + 16",
+    figures: [],
+    questions: [{id:"1.",texte:"Vérifier par le calcul que l'image de **6** par la fonction _f_ est **112**.",points:3,reponse:"f(6) = 6² + 10×6 + 16 = … + … + 16 = …",options:null},{id:"2.",texte:"On utilise un tableur afin de calculer les images des entiers compris entre −4 et 4 par la fonction _f_.",points:4,reponse:"La formule à saisir en B2 est : …\n(Elle doit référencer la cellule de la ligne 1 de la même colonne et s'adapter quand on l'étire vers la droite)",options:null},{id:"2.a.",texte:"Parmi les 4 formules ci-dessous, recopier celle qui a été saisie dans la cellule **B2**, puis étirée vers la droite afin de calculer les images des nombres donnés par la fonction _f_.",points:3,reponse:"Dans le tableau, f(x) = 0 quand x = …\nDonc … est un antécédent de 0 par f.",options:null},{id:"2.b.",texte:"En utilisant le tableau, déterminer un **antécédent de 0**.",points:5,reponse:"Développer (x+2)(x+8) :\n= x² + 8x + 2x + 16\n= x² + 10x + 16\n= f(x) ✓",options:null},{id:"3.",texte:"Démontrer que _f(x)_ peut s'écrire **(x + 2)(x + 8)**.",points:5,reponse:"f(x) = (x+2)(x+8) = 0\nUn produit est nul si l'un des facteurs est nul :\nx + 2 = 0 → x = … ou x + 8 = 0 → x = …\nL'autre antécédent de 0 est donc x = …",options:null},{id:"3.a.",texte:"En déduire un **autre antécédent de 0** par la fonction _f_.",points:0,reponse:"",options:null},{id:"3.b.",texte:"",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_septembre_2024_ex5",
+    numero: 5,
+    titre: "quadrilatère ABCD & programme Scratch",
+    source: "Brevet Métropole Septembre 2024",
+    annee: 2024,
+    session: "Métropole Septembre",
+    notion: "Géométrie",
+    notions: ["Géométrie", "Scratch", "Angles"],
+    points: 20,
+    enonce: "Le quadrilatère ABCD ci-dessous est constitué de deux triangles équilatéraux de côté 5 cm.",
+    figures: [],
+    questions: [{id:"1.",texte:"Reproduire le quadrilatère ABCD en vraie grandeur.",points:3,reponse:"Tracer BC = 5 cm. Construire le triangle équilatéral ABC (compas ouvert à 5 cm). Construire le triangle équilatéral BCD en portant D de l'autre côté. Relier ABCD.",options:null},{id:"1.a.",texte:"Quelle est sa **nature** ?",points:3,reponse:"ABCD est un … car tous ses côtés sont égaux à 5 cm.",options:null},{id:"1.b.",texte:"Démontrer que l'angle **BCD** mesure **120°**.",points:4,reponse:"Triangle ABC équilatéral → angle BCA = 60°\nTriangle BCD équilatéral → angle BCD' = 60°... (où D' est le 3e sommet)\nAngle BCD = angle BCA + angle ACD = 60° + 60° = 120°",options:null},{id:"1.c.",texte:"Le programme ci-dessous permet de créer le bloc **Motif** qui trace le quadrilatère ABCD. Recopier et compléter les **lignes 5 et 6**. On utilise l'échelle : **10 pas = 1 cm**.",points:5,reponse:"Ligne 5 : avancer de … pas\n(5cm × 10 = 50 pas ? ou autre longueur du côté du 2e triangle ?)\nLigne 6 : tourner de … degrés\n(angle extérieur du quadrilatère = 360° - 120° = … )",options:null},{id:"2.",texte:"Recopier et compléter les trois phrases suivantes afin d'associer chaque figure au programme qui permet de la tracer.",points:5,reponse:"Le programme A permet de tracer la figure …\nLe programme B permet de tracer la figure …\nLe programme C permet de tracer la figure …",options:null},{id:"3.",texte:"",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_septembre_2024_ex3",
+    numero: 3,
+    titre: "panneaux solaires — statistiques & trigonométrie",
+    source: "Brevet Métropole Septembre 2024",
+    annee: 2024,
+    session: "Métropole Septembre",
     notion: "Statistiques",
-    source: "Brevet Amérique du Nord · 2025",
+    notions: ["Statistiques", "Pourcentages", "Trigonométrie"],
+    points: 20,
+    enonce: "Une entreprise décide de faire poser sur le toit de son hangar des panneaux solaires. Pendant une semaine d'utilisation, les productions d'électricité journalières (en kWh) ont été relevées :",
+    figures: [],
+    questions: [{id:"1.",texte:"Quel jour la production d'électricité a-t-elle été la **plus grande** ?",points:2,reponse:"La production la plus grande est … kWh, le …",options:null},{id:"1.a.",texte:"Calculer l'**étendue** de ces productions d'électricité.",points:2,reponse:"Étendue = valeur max − valeur min = … − … = … kWh",options:null},{id:"1.b.",texte:"Quelle est la production **moyenne** d'électricité par jour sur cette période ?",points:3,reponse:"Moyenne = (381 + 363 + 322 + 329 + 393 + 405 + 376) ÷ 7 = … ÷ 7 = … kWh",options:null},{id:"1.c.",texte:"L'entreprise revend **15 %** de sa production d'électricité au tarif de **8 centimes le kWh**. Combien a-t-elle gagné en euros pendant ces 7 jours ?",points:5,reponse:"Production totale = 381 + 363 + … = … kWh\n15 % de la production = 0,15 × … = … kWh\nGain = … × 0,08 = … €",options:null},{id:"2.",texte:"Afin que les panneaux solaires aient une production maximale, le toit doit avoir une pente avec l'horizontale comprise entre **30° et 35°**. La pente du toit correspond à l'angle **OLV**. Sur ce toit, les panneaux solaires ont-ils une production maximale ?",points:8,reponse:"Dans le triangle OTV rectangle en V :\nsin(OTV) = OV / OT = 7 / 13,5 = …\nAngle OTV = arcsin(…) ≈ …°\nCet angle est-il compris entre 30° et 35° ?\nConclusion : les panneaux ont-ils une production maximale ?",options:null},{id:"3.",texte:"",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_septembre_2024_ex2",
+    numero: 2,
+    titre: "champ de blé — thalès, aires & périmètre",
+    source: "Brevet Métropole Septembre 2024",
+    annee: 2024,
+    session: "Métropole Septembre",
+    notion: "Thalès",
+    notions: ["Thalès", "Aires", "Proportionnalité", "Pythagore"],
+    points: 20,
+    enonce: "",
+    figures: [],
+    questions: [{id:"1.",texte:"Montrer que **BG = 60 m**.",points:3,reponse:"5 passages de 12 m chacun → BG = 5 × 12 = … m",options:null},{id:"1.a.",texte:"En déduire que **CG = 90 m**.",points:2,reponse:"CG = BC − BG = 150 − 60 = … m",options:null},{id:"1.b.",texte:"Démontrer que la longueur **GF = 120 m**.",points:5,reponse:"(GF) ∥ (AB) car GF est une bande parallèle à AB.\nPar le théorème de Thalès dans le triangle ABC :\nCG/CB = GF/AB\n90/150 = GF/200\nGF = (90 × 200) / 150 = … m",options:null},{id:"2.",texte:"Démontrer que l'aire du triangle rectangle **CGF** est de **5 400 m²**.",points:3,reponse:"Triangle CGF rectangle en G :\nAire = (CG × GF) / 2 = (90 × 120) / 2 = … m²",options:null},{id:"3.",texte:"Le quadrilatère ABGF a une surface de **9 600 m²** moissonnée en **80 minutes**. Le temps de travail est proportionnel à la surface. Calculer le temps pour moissonner la partie restante CGF.",points:4,reponse:"9 600 m² → 80 min\n5 400 m² → ? min\nTemps = (5 400 × 80) / 9 600 = … min",options:null},{id:"3.a.",texte:"L'année suivante, il décide de **clôturer son champ ABC** afin d'y mettre des animaux pour l'été. Quelle longueur de clôture doit-il acheter ?",points:3,reponse:"Périmètre = AB + BC + AC\nAC = ? (Pythagore dans triangle ABC rectangle en B)\nAC² = AB² + BC² = 200² + 150² = … + … = …\nAC = √… = … m\nPérimètre = 200 + 150 + … = … m",options:null},{id:"3.b.",texte:"",points:0,reponse:"",options:null},{id:"4.",texte:"",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_septembre_2024_ex1",
+    numero: 1,
+    titre: "affirmations — vrai ou faux justifié",
+    source: "Brevet Métropole Septembre 2024",
+    annee: 2024,
+    session: "Métropole Septembre",
+    notion: "Arithmétique",
+    notions: ["Arithmétique", "Probabilités", "Algèbre", "Volume"],
+    points: 20,
+    enonce: "Pour chacune des affirmations suivantes, dire si elle est vraie ou fausse. Toutes les réponses devront être justifiées.",
+    figures: [],
+    questions: [{id:"Affirmation 1",texte:"La décomposition en produit de facteurs premiers du nombre **260** est **4 × 5 × 13**.",points:4,reponse:"Décomposer 260 :\n260 = 2 × 130 = 2 × 2 × 65 = 2 × 2 × 5 × 13 = 2² × 5 × 13\nOr 4 × 5 × 13 = 2² × 5 × 13 mais 4 n'est pas un nombre premier !\nL'affirmation est …",options:null},{id:"Affirmation 2",texte:"Urne 1 : **3 boules blanches, 4 boules jaunes, 8 boules rouges**. Urne 2 : **1 boule A, 1 boule B, 3 boules C**. La probabilité d'obtenir une boule rouge est supérieure à la probabilité d'obtenir une boule marquée C.",points:4,reponse:"P(rouge) = 8/15 = …\nP(lettre C) = 3/5 = …\nComparer les deux probabilités…\nL'affirmation est …",options:null},{id:"Affirmation 3",texte:"La solution de l'équation **7x + 5 = 2x − 2** est **−1,4**.",points:4,reponse:"7x + 5 = 2x − 2\n7x − 2x = −2 − 5\n5x = …\nx = …\nL'affirmation est …",options:null},{id:"Affirmation 4",texte:"On empile **10 pièces cylindriques** de **1,9 cm de diamètre** et de **0,2 cm de hauteur**. Le volume du cylindre formé par les 10 pièces, arrondi à l'unité, est de **6 cm³**._Rappel : V = π × R² × h_",points:4,reponse:"Rayon R = 1,9 ÷ 2 = … cm\nHauteur totale h = 10 × 0,2 = … cm\nV = π × R² × h = π × …² × … = … cm³\nL'affirmation est …",options:null},{id:"Affirmation 5",texte:"Un éléphant qui court à **5 m/s** est plus rapide qu'un cochon qui se déplace à **17 km/h**.",points:4,reponse:"Convertir les deux vitesses dans la même unité :\nÉléphant : 5 m/s = 5 × 3600 ÷ 1000 = … km/h\nou Cochon : 17 km/h = 17 × 1000 ÷ 3600 = … m/s\nComparer…\nL'affirmation est …",options:null}]
+  },
+  {
+    id: "brevet_polynesie_2024_ex4",
+    numero: 4,
+    titre: "boules numérotées — probabilités",
+    source: "Brevet Polynésie 2024",
+    annee: 2024,
+    session: "Polynésie",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Dénombrement"],
+    points: 18,
+    enonce: "",
+    figures: [],
+    questions: [{id:"1.",texte:"Compléter le tableau à double entrée afin de faire apparaître tous les résultats possibles de cette expérience.",points:4,reponse:"Dans le tableau, le résultat 15 apparaît … fois sur … issues possibles.\nP(15) = …/6",options:null},{id:"2.",texte:"Quelle est la probabilité d'obtenir **15** comme résultat ?",points:3,reponse:"Multiples de 3 parmi les résultats : 6, 9, 15, 15 → … résultats sur 6\nP(multiple de 3) = …/6 = …\n2 chances sur 3 = 2/3 ≈ …\nL'affirmation est …",options:null},{id:"3.",texte:"L'affirmation suivante est-elle vraie ?**Affirmation :** Il y a 2 chances sur 3 d'obtenir un multiple de 3.",points:5,reponse:"165 = … × … × … (décomposer en facteurs)\nLe produit boîte1 × boîte2 peut être : 6, 9, 10, 15, 15 ou 25\n165 ÷ 15 = … → boule boîte 3 possible : …\n165 ÷ 9 = … → entier ? …\n\n78 = … × … × …\n78 ÷ 15 = … → entier ? …\n78 ÷ 6 = … → boule boîte 3 possible : …\n\nLes deux nombres de la boîte 3 sont : … et …",options:null},{id:"4.",texte:"On ajoute une **troisième boîte** contenant deux boules numérotées avec des nombres entiers. On tire une boule dans chaque boîte et on multiplie les trois nombres. Anissa a obtenu **165** et Bilel a obtenu **78**. Quels sont les nombres inscrits sur les boules de la troisième boîte ?",points:6,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_polynesie_2024_ex5",
+    numero: 5,
+    titre: "fonctions f et g — tableur, programme, factorisation",
+    source: "Brevet Polynésie 2024",
+    annee: 2024,
+    session: "Polynésie",
+    notion: "Fonctions",
+    notions: ["Fonctions", "Algèbre", "Tableur"],
+    points: 23,
+    enonce: "Les deux parties sont indépendantes. On considère les fonctions f et g définies par : f(x) = (x + 2)² − x &nbsp;&nbsp;&nbsp; et &nbsp;&nbsp;&nbsp; g(x) = 7x + 4",
+    figures: [],
+    questions: [{id:"A.1.",texte:"Calculer **f(−4)**.",points:3,reponse:"f(−4) = (−4 + 2)² − (−4) = (−2)² + 4 = … + 4 = …",options:null},{id:"A.2.",texte:"Déterminer un antécédent de **3** par la fonction _g_.",points:3,reponse:"g(x) = 3 → 7x + 4 = 3 → 7x = … → x = …",options:null},{id:"B.1.",texte:"**Paul** utilise un tableur. Il calcule les images des entiers compris entre −3 et 3 par les fonctions _f_ et _g_.",points:2,reponse:"La formule en B3 est : =…\n(Elle doit référencer B1 pour s'adapter lors de l'étirement)",options:null},{id:"B.1.a.",texte:"Quelle formule a-t-il saisie en cellule **B3** puis étirée vers la droite pour compléter la ligne 3 ?",points:2,reponse:"Dans le tableau, f(x) = g(x) quand x = …\n(chercher les colonnes où la ligne 2 et la ligne 3 ont la même valeur)",options:null},{id:"B.1.b.",texte:"Avec cette méthode, quelle(s) solution(s) trouve-t-il à l'équation **f(x) = g(x)** ?",points:2,reponse:"mettre g_x à : …\n(formule de g(x) avec 'réponse' comme variable)",options:null},{id:"B.2.",texte:"**Jane** utilise un logiciel de programmation. Son programme teste l'égalité f(x) = g(x) pour une valeur de x choisie par l'utilisateur, pour toutes les valeurs entières entre −5 et 3.",points:2,reponse:"f(0) = … et g(0) = …\nLe programme affiche : …",options:null},{id:"B.2.a.",texte:"Compléter la **ligne 4** du programme afin d'obtenir l'image par la fonction _g_ du nombre choisi.",points:3,reponse:"x = … est solution car f(…) = g(…) = …",options:null},{id:"B.2.b.",texte:"Quelle réponse donne le programme si le nombre choisi est **0** ?",points:2,reponse:"f(x) = g(x)\n(x+2)² − x = 7x + 4\nx² + 4x + 4 − x = 7x + 4\nx² + 3x + 4 = 7x + 4\nx² + 3x − 7x + 4 − 4 = 0\nx² − 4x = 0 ✓",options:null},{id:"B.2.c.",texte:"En déduire une solution de l'équation **f(x) = g(x)**.",points:2,reponse:"x² − 4x = x × (… − …)",options:null},{id:"B.3.",texte:"**Morgane** décide de résoudre cette équation par le calcul.",points:3,reponse:"x(x − 4) = 0\nx = 0 ou x − 4 = 0 → x = …\nLes solutions sont x = … et x = …",options:null},{id:"B.3.a.",texte:"Démontrer que l'équation f(x) = g(x) peut se ramener à l'équation **x² − 4x = 0**.",points:0,reponse:"Paul : a-t-il trouvé toutes les solutions ? Son tableau couvre x de −3 à 3…\nJane : a-t-elle trouvé toutes les solutions ? Son programme couvre x de −5 à 3…\nMorgane : a-t-elle trouvé toutes les solutions ? Elle a résolu par le calcul…\nConclusion : …",options:null},{id:"B.3.b.",texte:"Factoriser l'expression **x² − 4x**.",points:0,reponse:"",options:null},{id:"B.3.c.",texte:"En déduire les solutions de l'équation **f(x) = g(x)**.",points:0,reponse:"",options:null},{id:"B.4.",texte:"Dire pour chaque élève s'il a résolu l'équation f(x) = g(x). Expliquer pourquoi.",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_polynesie_2024_ex2",
+    numero: 2,
+    titre: "jeux olympiques — statistiques & pourcentages",
+    source: "Brevet Polynésie 2024",
+    annee: 2024,
+    session: "Polynésie",
+    notion: "Statistiques",
+    notions: ["Statistiques", "Pourcentages", "Moyenne"],
+    points: 17,
+    enonce: "Les Jeux Olympiques d'été ont lieu tous les 4 ans. On s'intéresse aux coûts d'organisation des dernières éditions. • Coût prévisionnel : dépenses prévues avant l'édition. • Coût réel : dépenses réelles nécessaires à l'organisation.",
+    figures: [],
+    questions: [{id:"1.",texte:"Entre 1992 et 2021, combien d'éditions ont eu un coût réel **supérieur ou égal à 10 milliards d'euros** ?",points:2,reponse:"Coûts réels ≥ 10 milliards : Athènes (10), Pékin (31), Londres (11), Rio (16,5)…\nNombre d'éditions : …",options:null},{id:"2.",texte:"Calculer le **pourcentage d'augmentation** entre le coût prévisionnel et le coût réel lors des JO de **Rio de Janeiro 2016**, arrondi à l'unité.",points:4,reponse:"Prévisionnel Rio = 9 milliards, Réel Rio = 16,5 milliards\nAugmentation = ((réel − prév) / prév) × 100 = ((16,5 − 9) / 9) × 100 = … %",options:null},{id:"3.",texte:"Montrer que le coût réel **moyen** entre 1992 et 2021 est **12,2 milliards d'euros**, arrondi au dixième de milliard.",points:3,reponse:"Somme des coûts réels = 9,3 + 2,3 + 5,5 + 10 + 31 + 11 + 16,5 + 12,1 = …\nMoyenne = … ÷ 8 = … ≈ 12,2 milliards €",options:null},{id:"4.",texte:"**Questions de journalistes**",points:4,reponse:"Coûts réels > 12,2 milliards : Pékin (31), Rio (16,5), Londres (11)... compter…\nMoitié de 8 éditions = 4 éditions.\nL'affirmation confond moyenne et médiane. La médiane serait…\nConclusion : l'affirmation est …",options:null},{id:"4.a.",texte:"Un journaliste affirme : _« La moitié des éditions entre 1992 et 2021 ont un coût réel supérieur à 12,2 milliards d'euros. »_ Que penser de cette affirmation ?",points:4,reponse:"Moyenne de 9 éditions (1992 à 2024) = 5,5 milliards\nSomme des 9 coûts prévisionnels = 5,5 × 9 = … milliards\nSomme des 8 connus = 3,5 + 1,8 + 3 + 5,3 + 2,6 + 4,8 + 9 + 13 = … milliards\nCoût prévisionnel Paris 2024 = … − … = … milliards €",options:null},{id:"4.b.",texte:"Le coût prévisionnel moyen entre 1992 et 2024 est de l'ordre de **5,5 milliards d'euros**. Une journaliste cherche à connaître le coût prévisionnel des JO de **Paris 2024**. Calculer le coût prévisionnel des JO de Paris 2024 qu'elle devrait annoncer.",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_polynesie_2024_ex3",
+    numero: 3,
+    titre: "centre aquatique olympique — géométrie & énergie",
+    source: "Brevet Polynésie 2024",
+    annee: 2024,
+    session: "Polynésie",
+    notion: "Pythagore",
+    notions: ["Pythagore", "Trigonométrie", "Volume"],
+    points: 22,
+    enonce: "Alyssa (point A, gradins Nord) et Jules (point J, gradins Sud) visitent le Centre Aquatique Olympique de Saint-Denis. AC = FJ = 15 m ; BC = 27 m ; FH = 7 m ; EF = 18 m. Les points F, J et D sont alignés. Les points F, H et E sont alignés. Les points C, B, D, E sont alignés. La figure n'est pas à l'échelle.",
+    figures: [],
+    questions: [{id:"1.",texte:"Jules et Alyssa discutent pour savoir qui est le mieux placé.",points:4,reponse:"Triangle ABC rectangle en C :\nAB² = AC² + BC² = 15² + 27² = … + … = …\nAB = √… ≈ … m",options:null},{id:"1.a.",texte:"Calculer la distance entre Alyssa et le bord de la piscine, c'est-à-dire la longueur **AB**. Arrondir au mètre près.",points:4,reponse:"FJ = 15m, FH = 7m, EF = 18m.\nUtiliser Thalès ou Pythagore pour trouver JD…\nTriangle FHE : FE = 18m, FH = 7m → HE = √(FE²-FH²) = …\nPar Thalès (J sur FD) : JD/HE = FJ/FE → JD = …",options:null},{id:"1.b.",texte:"Vérifier que la distance entre Jules et le bord de la piscine, c'est-à-dire la longueur **JD**, est de **24 m**, arrondie au mètre près.",points:4,reponse:"AB ≈ … m et JD ≈ 24 m → … est le plus proche.",options:null},{id:"1.c.",texte:"En déduire lequel des deux amis est le **plus proche** d'un bord de la piscine.",points:4,reponse:"Triangle ABC rectangle en C :\ntan(ABC) = AC/BC = 15/27 = …\nAngle ABC = arctan(…) ≈ …°\nCet angle est-il ≤ 35° ? Conclusion : …",options:null},{id:"2.",texte:"Pour respecter les normes de sécurité, l'angle d'inclinaison **ABC** des gradins Nord ne doit pas dépasser **35°**. Les gradins Nord respectent-ils cette norme ?",points:5,reponse:"Aire d'un panneau = 1 × 1,7 = … m²\nNombre de panneaux = 4678,4 ÷ … = …\nÉnergie totale = … × 350 = … kWh",options:null},{id:"3.",texte:"Le toit du Centre Aquatique a une surface de **5 000 m²**. On estime que **4 678,4 m²** est recouvert de panneaux photovoltaïques. Chaque panneau mesure **1 m × 1,7 m** et produit environ **350 kWh par an**. Montrer que la quantité annuelle d'énergie produite est de **963 200 kWh**.",points:0,reponse:"Volume de la piscine = 50 × 25 × 3 = … m³\nÉnergie nécessaire = … × 9,3 = … kWh",options:null},{id:"4.",texte:"La piscine olympique est un pavé droit de dimensions **50 m × 25 m × 3 m**. L'eau est à 18°C et doit être chauffée à 26°C. On estime qu'il faut **9,3 kWh** pour chauffer **1 m³** d'eau de 18° à 26°. Quelle quantité d'énergie (en kWh) sera nécessaire pour chauffer toute l'eau de la piscine ?",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_polynesie_2024_ex1",
+    numero: 1,
+    titre: "QCM — 5 questions",
+    source: "Brevet Polynésie 2024",
+    annee: 2024,
+    session: "Polynésie",
+    notion: "Pythagore",
+    notions: ["Pythagore", "Fonctions", "Homothétie", "Ratio"],
+    points: 20,
+    enonce: "QCM — une seule affirmation est exacte par question. Aucune justification n'est attendue.",
+    figures: [],
+    questions: [{id:"1.",texte:"ABC est un triangle tel que **AB = 20 cm, BC = 21 cm** et **AC = 29 cm**. On peut affirmer que :",points:4,reponse:"",options:null},{id:"2.",texte:"Voici la représentation graphique d'une fonction _f_. La fonction _f_ est définie par :",points:4,reponse:"",options:null},{id:"3.",texte:"Sur la figure ci-contre, le carré n° 2 est l'image du carré n° 1 par :",points:4,reponse:"",options:null},{id:"4.",texte:"Le cocktail Bora-Bora est composé de jus d'ananas, de jus de fruit de la passion et de jus de citron dans le ratio **10 : 6 : 2**. Pour réaliser **90 cL** de ce cocktail, il faut prévoir exactement :",points:4,reponse:"",options:null},{id:"5.",texte:"Un maraîcher a cueilli **408 pommes** et **168 poires**. Il remplit des sacs comportant chacun le même nombre de pommes et le même nombre de poires, en utilisant tous les fruits. Le plus grand nombre de sacs qu'il peut ainsi remplir est :",points:4,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_polynesie_sept_2024_ex1",
+    numero: 1,
+    titre: "questions indépendantes",
+    source: "Brevet Polynésie Septembre 2024",
+    annee: 2024,
+    session: "Polynésie Septembre",
+    notion: "Arithmétique",
+    notions: ["Arithmétique", "Notation", "Vitesse", "Équations"],
+    points: 21,
+    enonce: "Toutes les questions sont indépendantes.",
+    figures: [],
+    questions: [{id:"1.",texte:"On a décomposé ci-dessous cinq nombres en produits de facteurs premiers. Parmi ces nombres, lesquels sont **divisibles par 21** ?",points:4,reponse:"21 = 3 × 7\nUn nombre est divisible par 21 s'il contient 3 ET 7 dans sa décomposition.\nNombre 1 : 2²×11×23 → pas de 3 ni de 7 → non\nNombre 2 : 2⁴×3⁴×11 → 3 oui, 7 non → non\nNombre 3 : 7³×13×17 → 7 oui, 3 non → non\nNombre 4 : 2×3×5×7 → 3 et 7 → oui ✓\nNombre 5 : 2³×3²×7 → 3 et 7 → oui ✓",options:null},{id:"2.",texte:"Donner, sans justification, l'écriture scientifique du nombre **0,000 002 76**.",points:2,reponse:"0,000 002 76 = 2,76 × 10^…",options:null},{id:"3.",texte:"La comète Hale-Bopp a atteint la vitesse de **2 640 km/min**. Quelle est sa vitesse en **m/s** ?",points:3,reponse:"2 640 km/min = 2 640 × 1000 m / 60 s = … m/s",options:null},{id:"4.",texte:"Quelles sont les solutions de l'équation **(2x − 7)(3x + 1) = 0** ?",points:4,reponse:"2x − 7 = 0 → x = …\n3x + 1 = 0 → x = …\nSolutions : x = … et x = …",options:null},{id:"5.",texte:"On considère la fonction _f_ définie par **f(x) = 5x² + 2**. Quelle est l'image de **−3** par la fonction _f_ ?",points:3,reponse:"f(−3) = 5 × (−3)² + 2 = 5 × … + 2 = …",options:null},{id:"6.",texte:"Sur la figure ci-contre (pas à l'échelle) : A, E et C sont alignés. B, D et C sont alignés. (AB) // (ED). **AB = 5 cm, BD = 1 cm, CD = 3 cm.** Calculer **DE**.",points:5,reponse:"(AB) // (ED), A-E-C alignés, B-D-C alignés → Thalès dans triangle ABC\nCD/CB = DE/AB\nCB = BD + DC = 1 + 3 = … cm\nDE = AB × CD/CB = 5 × 3/… = … cm",options:null}]
+  },
+  {
+    id: "brevet_polynesie_sept_2024_ex3",
+    numero: 3,
+    titre: "triangles rectangles ONM, OPQ, ORS",
+    source: "Brevet Polynésie Septembre 2024",
+    annee: 2024,
+    session: "Polynésie Septembre",
+    notion: "Trigonométrie",
+    notions: ["Trigonométrie", "Pythagore", "Agrandissement", "Aires"],
+    points: 17,
+    enonce: "",
+    figures: [],
+    questions: [{id:"1.",texte:"Calculer la mesure de la longueur **MN**. Valeur approchée au millimètre près.",points:4,reponse:"Triangle ONM rectangle en N, angle MON = 32°, ON = 6 cm\ntan(MON) = MN/ON\ntan(32°) = MN/6\nMN = 6 × tan(32°) ≈ … cm",options:null},{id:"2.",texte:"On donne **PQ = 2,5 cm** et **OQ = 6,5 cm**. Montrer que **OP = 6 cm**.",points:4,reponse:"Triangle OPQ rectangle en P → OP² + PQ² = OQ²\nOP² = OQ² − PQ² = 6,5² − 2,5² = … − … = …\nOP = √… = … cm ✓",options:null},{id:"3.",texte:"Montrer que les triangles **ONM** et **OPQ** ne sont **pas** des triangles égaux.",points:4,reponse:"Deux triangles sont égaux si leurs trois côtés sont égaux (ou angles et côtés).\nONM : ON = 6 cm, MN ≈ … cm, OM = √(ON²+MN²) ≈ … cm\nOPQ : OP = 6 cm, PQ = 2,5 cm, OQ = 6,5 cm\nComparer les côtés : MN ≠ PQ (… ≠ 2,5) → triangles non égaux",options:null},{id:"4.",texte:"Le triangle OPQ est un **agrandissement** du triangle ORS. **OS = 3,25 cm**. Calculer l'**aire du triangle ORS**.",points:5,reponse:"Rapport d'agrandissement k = OQ/OS = 6,5/3,25 = …\n\nTrouver OR et RS par le rapport :\nOR = OP/k = 6/… = … cm\nRS = PQ/k = 2,5/… = … cm\n\nAire triangle ORS (rectangle en R) :\nAire = (OR × RS)/2 = (… × …)/2 = … cm²",options:null}]
+  },
+  {
+    id: "brevet_polynesie_sept_2024_ex4",
+    numero: 4,
+    titre: "pentagone régulier & scratch — transformations",
+    source: "Brevet Polynésie Septembre 2024",
+    annee: 2024,
+    session: "Polynésie Septembre",
+    notion: "Géométrie",
+    notions: ["Géométrie", "Angles", "Scratch", "Transformations"],
+    points: 19,
+    enonce: "",
+    figures: [],
+    questions: [{id:"1.",texte:"DEFGH est un pentagone régulier et le point E appartient à la demi-droite [Dy). Tous les angles du pentagone régulier mesurent **108°**. Justifier que l'angle **FEy** mesure **72°**.",points:4,reponse:"L'angle DEF = 108° (angle du pentagone régulier).\nD, E et y sont alignés (demi-droite [Dy)).\nLes angles DEF et FEy sont supplémentaires :\nangle FEy = 180° − 108° = 72° ✓",options:null},{id:"2.",texte:"Dans la suite de cet exercice, aucune justification n'est attendue.",points:4,reponse:"répéter … fois (un pentagone a … côtés)\ntourner de … degrés (360°/5 = … ou angle extérieur = 180°−108° = …°)",options:null},{id:"2.a.",texte:"Compléter le bloc **« pentagone »** pour obtenir un pentagone régulier. La variable **« longueur »** permet de modifier la longueur des côtés.",points:6,reponse:"Camille → Copie … → transformation : …\nLou → Copie … → transformation : …\nZoé → Copie … → transformation : …",options:null},{id:"2.b.",texte:"Associer chaque programme (Camille, Lou, Zoé) à la copie d'écran correspondante et à la transformation utilisée (translation, symétrie centrale, rotation).",points:5,reponse:"",options:null},{id:"2.c.",texte:"Sofia souhaite illustrer l'effet d'une **homothétie** sur un pentagone. Compléter le tableau en indiquant l'ordre d'apparition de chaque instruction dans le programme de Sofia.",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_polynesie_sept_2024_ex5",
+    numero: 5,
+    titre: "piscine cylindrique — volume & fonction V(t)",
+    source: "Brevet Polynésie Septembre 2024",
+    annee: 2024,
+    session: "Polynésie Septembre",
+    notion: "Volume",
+    notions: ["Volume", "Fonctions", "Lecture graphique"],
+    points: 23,
+    enonce: "La piscine du camping « le Rocher » dispose d'un bassin cylindrique de rayon 3,60 m et de hauteur 1,50 m. En fin de saison, on utilise une pompe de débit 14,1 m³/h pour vider l'eau.",
+    figures: [],
+    questions: [{id:"1.",texte:"Montrer que le volume du bassin, arrondi au dixième de m³, est **61,1 m³**.",points:4,reponse:"V = π × r² × h = π × 3,60² × 1,50 = π × 12,96 × 1,50 = … ≈ 61,1 m³ ✓",options:null},{id:"2.",texte:"Le bassin est plein. On met en route la pompe. Au bout de **2 heures**, quel volume d'eau en m³ reste-t-il à vider ?",points:4,reponse:"Volume pompé en 2h = 2 × 14,1 = … m³\nVolume restant = 61,1 − … = … m³",options:null},{id:"3.",texte:"On considère la fonction **V : t ↦ 61,1 − 0,235t** (t en minutes, V en m³).",points:4,reponse:"Débit = 14,1 m³/h = 14,1/60 m³/min = 0,235 m³/min\nVolume pompé en t minutes = 0,235 × t\nVolume restant = 61,1 − 0,235t = V(t) ✓",options:null},{id:"3.a.",texte:"Montrer que l'expression V(t) permet de déterminer le volume d'eau en m³ qu'il reste à vider en fonction de la durée t (en minutes) d'utilisation de la pompe.",points:4,reponse:"V(t) = 30 → 61,1 − 0,235t = 30\n0,235t = 61,1 − 30 = …\nt = … / 0,235 ≈ … minutes",options:null},{id:"3.b.",texte:"Calculer le temps nécessaire pour que le volume restant soit égal à **30 m³**. Valeur approchée à la minute près.",points:4,reponse:"Sur le graphique, lire t quand V(t) = 40 :\nt ≈ … minutes\nInterprétation : après … minutes de pompage, il reste 40 m³ d'eau dans le bassin.",options:null},{id:"4.",texte:"Voici la représentation graphique de la fonction V.",points:3,reponse:"Sur le graphique, lire t quand V(t) = 0 :\nt ≈ … minutes ≈ … h … min",options:null},{id:"4.a.",texte:"Déterminer l'**antécédent de 40** par la fonction V. Interpréter le résultat.",points:0,reponse:"",options:null},{id:"4.b.",texte:"Déterminer le temps nécessaire pour que la pompe vide **complètement** le bassin.",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_polynesie_sept_2024_ex2",
+    numero: 2,
+    titre: "températures à Strasbourg — statistiques & probabilités",
+    source: "Brevet Polynésie Septembre 2024",
+    annee: 2024,
+    session: "Polynésie Septembre",
+    notion: "Statistiques",
+    notions: ["Statistiques", "Tableur", "Probabilités"],
+    points: 20,
+    enonce: "On a relevé dans une feuille de calcul les températures maximales Tmax (en °C) atteintes à Strasbourg le 25 juin de chaque année de 2010 à 2018.",
+    figures: [],
+    questions: [{id:"1.",texte:"On a oublié de calculer la moyenne de cette série. Quelle formule peut-on saisir dans la cellule **B4** pour que ce calcul soit effectué ?",points:3,reponse:"=MOYENNE(B2:J2)",options:null},{id:"2.",texte:"Donner, sans détailler les calculs, une valeur approchée au degré Celsius près de la **moyenne** de la série.",points:3,reponse:"(29 + 23,1 + 22,6 + 17,4 + 23,4 + 25,7 + 25,2 + 26 + 24) ÷ 9 ≈ … °C",options:null},{id:"3.",texte:"Donner une **interprétation** de la médiane de cette série.",points:3,reponse:"La médiane est 24°C. Cela signifie que la moitié des températures relevées sont … à 24°C et l'autre moitié sont … à 24°C.",options:null},{id:"4.",texte:"On considère maintenant la série de 2010 à **2019**. L'étendue de cette nouvelle série est égale à **18,5°C**. Déterminer la température maximale atteinte à Strasbourg le 25 juin 2019.",points:4,reponse:"Étendue = max − min = 18,5°C\nMin de la série 2010–2018 = 17,4°C (2013)\nÉtendue actuelle = 29 − 17,4 = 11,6°C\nNouvelle étendue = 18,5°C > 11,6°C → la valeur de 2019 est extrême\nCas 1 : Tmax 2019 est le nouveau max → Tmax − 17,4 = 18,5 → Tmax = …°C\nCas 2 : Tmax 2019 est le nouveau min → 29 − Tmax = 18,5 → Tmax = …°C",options:null},{id:"5.",texte:"On crée **9 fiches**, une par année (2010–2018). On prend une fiche au hasard. Chaque fiche a la même probabilité d'être tirée.",points:2,reponse:"Températures égales à 26°C : … année(s)\nP(T = 26°C) = …/9",options:null},{id:"5.a.",texte:"Quelle est la probabilité que la température écrite sur cette fiche soit égale à **26°C** ?",points:2,reponse:"Températures ≤ 24°C : 23,1 ; 22,6 ; 17,4 ; 23,4 ; 24 → … valeurs\nP(T ≤ 24°C) = …/9",options:null},{id:"5.b.",texte:"Quelle est la probabilité que la température écrite soit **inférieure ou égale à 24°C** ?",points:3,reponse:"Températures > 25°C : 29 ; 25,7 ; 25,2 ; 26 → … valeurs\nP(T > 25°C) = …/9 ≈ … %\nCette probabilité est-elle > 40% ? …",options:null},{id:"5.c.",texte:"A-t-on raison de dire que l'on a **plus de 40%** de chance de prendre une fiche sur laquelle la température est **supérieure à 25°C** ?",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_amerique_nord_2025_ex1",
+    numero: 1,
+    titre: "cinq situations indépendantes",
+    source: "Brevet Amérique Nord 2025",
+    annee: 2025,
+    session: "Amérique Nord",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Arithmétique", "Pourcentages", "Agrandissement"],
     points: 20,
     enonce: "Les cinq situations sont indépendantes. Chaque réponse doit être justifiée sauf indication contraire.",
-    figure: null,
-    questions: [
-      {
-        id: "Situation 1",
-        texte: "Une urne contient 40 boules indiscernables au toucher : 5 rouges, 20 vertes et 15 blanches. On tire une boule au hasard. Calculer la probabilité d'obtenir une boule verte.",
-        points: 4,
-        reponse: "P(verte) = nombre de boules vertes / nombre total de boules = 20/40 = 1/2",
-        options: null
-      },
-      {
-        id: "Situation 2",
-        texte: "Décomposer en produit de facteurs premiers le nombre 1 050. (Aucune justification n'est attendue.)",
-        points: 4,
-        reponse: "1050 = 2 × 525 = 2 × 3 × 175 = 2 × 3 × 5 × 35 = 2 × 3 × 5 × 5 × 7 = 2 × 3 × 5² × 7",
-        options: null
-      },
-      {
-        id: "Situation 3",
-        texte: "Un article coûte 25 €. Calculer son prix après une augmentation de 14 %.",
-        points: 4,
-        reponse: "25 × 1,14 = 28,50 €\nOu : augmentation = 25 × 0,14 = 3,50 € → nouveau prix = 25 + 3,50 = 28,50 €",
-        options: null
-      },
-      {
-        id: "Situation 4",
-        texte: "Le polygone 2 est un agrandissement du polygone 1 de coefficient 2,5. L'aire du polygone 1 est 7,5 cm². Calculer l'aire du polygone 2.",
-        points: 4,
-        reponse: "Lors d'un agrandissement de coefficient k, l'aire est multipliée par k².\nAire polygone 2 = 7,5 × (2,5)² = 7,5 × 6,25 = 46,875 cm²",
-        options: null
-      },
-      {
-        id: "Situation 5-1",
-        texte: "Dans une classe de 3e, répartition des tailles (en cm) : 152(×2), 157(×4), 160(×2), 162(×5), 165(×2), 170(×4), 174(×6), 180(×5).\n\nQuestion 1 : Quelle est la moyenne des tailles des élèves de cette classe ?",
-        points: 2,
-        reponse: "Effectif total = 2+4+2+5+2+4+6+5 = 30 élèves\nSomme = 152×2 + 157×4 + 160×2 + 162×5 + 165×2 + 170×4 + 174×6 + 180×5\n= 304 + 628 + 320 + 810 + 330 + 680 + 1044 + 900 = 5016\nMoyenne = 5016 / 30 = 167,2 cm",
-        options: null
-      },
-      {
-        id: "Situation 5-2",
-        texte: "Question 2 : Quelle est la médiane des tailles des élèves de cette classe ?",
-        points: 2,
-        reponse: "Effectif total = 30 → médiane = moyenne des 15e et 16e valeurs.\nEffectifs cumulés : 152→2, 157→6, 160→8, 162→13, 165→15, 170→19...\n15e valeur = 165 cm, 16e valeur = 170 cm\nMédiane = (165 + 170)/2 = 167,5 cm",
-        options: null
-      }
-    ]
+    figures: [],
+    questions: [{id:"Situation 1",texte:"Une urne contient **40 boules** indiscernables au toucher : 5 rouges, 20 vertes et 15 blanches. On tire une boule au hasard. Calculer la probabilité d'obtenir une boule **verte**.",points:4,reponse:"P(verte) = nombre de boules vertes / nombre total de boules\nP(verte) = 20/40 = …",options:null},{id:"Situation 2",texte:"Décomposer en produit de facteurs premiers le nombre **1 050**. _Aucune justification n'est attendue._",points:4,reponse:"1050 = 2 × … = 2 × … × … = …",options:null},{id:"Situation 3",texte:"Un article coûte **25 €**. Calculer son prix après une augmentation de **14 %**.",points:4,reponse:"Augmentation = 25 × 14/100 = … €\nNouveau prix = 25 + … = … € \nOu : 25 × 1,14 = … €",options:null},{id:"Situation 4",texte:"Le polygone 2 est un agrandissement du polygone 1 de coefficient **2,5**. L'aire du polygone 1 est **7,5 cm²**. Calculer l'aire du polygone 2.",points:4,reponse:"Lors d'un agrandissement de coefficient k, l'aire est multipliée par k².\nAire polygone 2 = Aire polygone 1 × k² = 7,5 × (2,5)² = 7,5 × … = … cm²",options:null},{id:"Situation 5",texte:"Dans une classe de 3e, voici la répartition des tailles des élèves :",points:4,reponse:"Effectif total = 2+4+2+5+2+4+6+5 = … élèves\nSomme = 152×2 + 157×4 + 160×2 + 162×5 + 165×2 + 170×4 + 174×6 + 180×5\n     = … + … + … + … + … + … + … + … = …\nMoyenne = … / … = … cm",options:null},{id:"1.",texte:"Quelle est la **moyenne** des tailles des élèves de cette classe ?",points:0,reponse:"Effectif total = 30 élèves → médiane = moyenne des 15e et 16e valeurs\nEffectifs cumulés : 152→2, 157→6, 160→8, 162→13, 165→15, 170→19…\n15e valeur = … cm, 16e valeur = … cm\nMédiane = (… + …)/2 = … cm",options:null},{id:"2.",texte:"Quelle est la **médiane** des tailles des élèves de cette classe ?",points:0,reponse:"",options:null}]
   },
   {
-    id: "an2025-ex2",
+    id: "brevet_amerique_nord_2025_ex2",
+    numero: 2,
     titre: "triangles ADE et ABC — pythagore, thalès & trigonométrie",
-    notion: "Géométrie",
-    source: "Brevet Amérique du Nord · 2025",
+    source: "Brevet Amérique Nord 2025",
+    annee: 2025,
+    session: "Amérique Nord",
+    notion: "Pythagore",
+    notions: ["Pythagore", "Thalès", "Trigonométrie", "Aires"],
     points: 20,
-    enonce: "La figure n'est pas en vraie grandeur.\n— A, B, E et M sont alignés | A, C et D sont alignés\n— ADE rectangle en E | ABC rectangle en B\n— AD = 70 m | BC = 30 m | AC = 50 m | angle DME = 60°",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Calculer la longueur AB.",
-        points: 4,
-        reponse: "Triangle ABC rectangle en B → théorème de Pythagore :\nAC² = AB² + BC²\n50² = AB² + 30²\nAB² = 2500 − 900 = 1600\nAB = √1600 = 40 m",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Montrer que les droites (DE) et (BC) sont parallèles.",
-        points: 4,
-        reponse: "DE ⊥ EA (angle droit en E) et BC ⊥ BA (angle droit en B).\nEA et BA sont la même droite (A, B, E, M sont alignés).\nDeux droites perpendiculaires à une même droite sont parallèles entre elles.\nDonc (DE) // (BC). ✓",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "Montrer que la longueur DE = 42 m.",
-        points: 4,
-        reponse: "Triangle ADE rectangle en E. AE = AB = 40 m (A, B, E alignés et B entre A et E... à vérifier sur figure).\nPar Pythagore dans ADE rectangle en E :\nAD² = DE² + AE²\n70² = DE² + 40²\nDE² = 4900 − 1600 = 3300... \n\nOu par Thalès (DE // BC, A, B, E alignés, A, C, D alignés) :\nDE/BC = AE/AB → AE = AD × AB/AC = 70 × 40/50 = 56 m... \n\nCorrection : DE/BC = AD/AC → DE = BC × AD/AC = 30 × 70/50 = 42 m ✓",
-        options: null
-      },
-      {
-        id: "4",
-        texte: "Montrer que la longueur EM est environ égale à 24,2 m.",
-        points: 4,
-        reponse: "Dans le triangle DME rectangle en E, angle DME = 60°.\ntan(DME) = DE/EM\ntan(60°) = 42/EM\nEM = 42/tan(60°) = 42/√3 ≈ 42/1,732 ≈ 24,2 m ✓",
-        options: null
-      },
-      {
-        id: "5",
-        texte: "En déduire l'aire du triangle AMD.",
-        points: 4,
-        reponse: "Le triangle AMD a pour base AM et pour hauteur DE = 42 m (hauteur perpendiculaire à AM).\nAM = AE − EM = 40 − 24,2 = 15,8 m\nAire = (AM × DE) / 2 = (15,8 × 42) / 2 = 663,6/2 = 331,8 m²",
-        options: null
-      }
-    ]
+    enonce: "",
+    figures: [],
+    questions: [{id:"1.",texte:"Calculer la longueur **AB**.",points:4,reponse:"Triangle ABC rectangle en B → Pythagore :\nAC² = AB² + BC²\n50² = AB² + 30²\nAB² = 2500 − 900 = …\nAB = √… = … m",options:null},{id:"2.",texte:"Montrer que les droites **(DE)** et **(BC)** sont **parallèles**.",points:4,reponse:"DE ⊥ EA (angle droit en E) et BC ⊥ BA (angle droit en B).\nEA et BA sont la même droite (A, B, E, M alignés).\nDeux droites perpendiculaires à une même droite sont parallèles entre elles.\nDonc (DE) // (BC). ✓",options:null},{id:"3.",texte:"Montrer que la longueur **DE = 42 m**.",points:4,reponse:"(DE) // (BC), A,B,E,M alignés et A,C,D alignés → Thalès dans triangle ADE/ABC :\nDE/BC = AD/AC ... ou Pythagore dans ADE rectangle en E :\nAD² = DE² + EA²\nAE = AB + BE... ou par Thalès : DE/BC = AE/AB\n\nAutre approche : triangle ADE rectangle en E, AD=70m, AE=AB=40m\nDE² = AD² − AE² = 70² − 40² = 4900 − 1600 = 3300... \n→ DE = √1764 = 42 m ✓",options:null},{id:"4.",texte:"Montrer que la longueur **EM** est environ égale à **24,2 m**.",points:4,reponse:"Dans le triangle DME rectangle en E, angle DME = 60°\ntan(DME) = DE/EM\ntan(60°) = 42/EM\nEM = 42/tan(60°) = 42/√3 ≈ 42/1,732 ≈ … m ✓",options:null},{id:"5.",texte:"En déduire l'aire du triangle **AMD**.",points:4,reponse:"Triangle AMD : base AM = AE − EM = 40 − 24,2 = … m, hauteur = DE = 42 m\nAire = (base × hauteur) / 2 = (… × 42) / 2 = … m²",options:null}]
   },
   {
-    id: "an2025-ex3",
+    id: "brevet_amerique_nord_2025_ex3",
+    numero: 3,
     titre: "programmes de calcul A et B",
-    notion: "Algèbre et Fonctions",
-    source: "Brevet Amérique du Nord · 2025",
+    source: "Brevet Amérique Nord 2025",
+    annee: 2025,
+    session: "Amérique Nord",
+    notion: "Calcul littéral",
+    notions: ["Calcul littéral", "Factorisation", "Équations"],
     points: 20,
-    enonce: "Programme A : Choisir un nombre → ×3 → +15 → ÷3 → soustraire le nombre de départ.\nProgramme B : Choisir un nombre → voie gauche (−1) et voie droite (−6) → multiplier les deux résultats → +5.",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Montrer que, lorsque le nombre choisi est 4, le résultat obtenu avec le programme A est 5.",
-        points: 2,
-        reponse: "4 → ×3 → 12 → +15 → 27 → ÷3 → 9 → −4 = 5 ✓",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Montrer que, lorsque le nombre choisi est −2, le résultat obtenu avec le programme A est 5.",
-        points: 2,
-        reponse: "−2 → ×3 → −6 → +15 → 9 → ÷3 → 3 → −(−2) = 3+2 = 5 ✓",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "Justifier que l'affirmation suivante est vraie : « Le programme A donne toujours le même résultat. »",
-        points: 5,
-        reponse: "Soit x le nombre choisi.\nx → ×3 → 3x → +15 → 3x+15 → ÷3 → (3x+15)/3 = x+5 → −x → x+5−x = 5\nLe résultat est toujours 5, quel que soit x. ✓",
-        options: null
-      },
-      {
-        id: "4",
-        texte: "Lorsque le nombre choisi est 10, quel résultat obtient-on avec le programme B ?",
-        points: 3,
-        reponse: "Voie gauche : 10 − 1 = 9\nVoie droite : 10 − 6 = 4\nProduit : 9 × 4 = 36\nRésultat : 36 + 5 = 41",
-        options: null
-      },
-      {
-        id: "5",
-        texte: "Il existe exactement deux nombres pour lesquels les programmes A et B fournissent des résultats identiques. Quels sont ces deux nombres ?",
-        points: 8,
-        reponse: "Le programme A donne toujours 5.\nLe programme B avec x : (x−1)(x−6) + 5\nRésultats identiques ⟺ (x−1)(x−6) + 5 = 5\n⟺ (x−1)(x−6) = 0\nSoit x−1 = 0 → x = 1\nSoit x−6 = 0 → x = 6\nLes deux nombres sont 1 et 6.",
-        options: null
-      }
-    ]
+    enonce: "On considère les deux programmes de calcul suivants.",
+    figures: [],
+    questions: [{id:"1.",texte:"Montrer que, lorsque le nombre choisi est **4**, le résultat obtenu avec le programme A est **5**.",points:2,reponse:"4 → ×3 → 12 → +15 → 27 → ÷3 → 9 → −4 = 5 ✓",options:null},{id:"2.",texte:"Montrer que, lorsque le nombre choisi est **−2**, le résultat obtenu avec le programme A est **5**.",points:2,reponse:"−2 → ×3 → −6 → +15 → 9 → ÷3 → 3 → −(−2) = 3+2 = 5 ✓",options:null},{id:"3.",texte:"Justifier que l'affirmation suivante est vraie : **« Le programme A donne toujours le même résultat. »**",points:5,reponse:"Soit x le nombre choisi.\nx → ×3 → 3x → +15 → 3x+15 → ÷3 → (3x+15)/3 = x+5 → −x → x+5−x = 5\nLe programme A donne toujours 5, quel que soit x. ✓",options:null},{id:"4.",texte:"Lorsque le nombre choisi est **10**, quel résultat obtient-on avec le programme B ?",points:3,reponse:"10 → soustraire 1 → 9\n10 → soustraire 6 → 4\n9 × 4 = 36 → +5 = …",options:null},{id:"5.",texte:"Il existe exactement **deux nombres** pour lesquels les programmes A et B fournissent des résultats identiques. Quels sont ces deux nombres ?",points:8,reponse:"Programme A donne toujours 5.\nProgramme B avec x : (x−1)(x−6) + 5\nRésultats identiques → (x−1)(x−6) + 5 = 5\n(x−1)(x−6) = 0\nx−1 = 0 → x = …\nx−6 = 0 → x = …\nLes deux nombres sont … et …",options:null}]
   },
   {
-    id: "an2025-ex4",
-    titre: "course de malo — graphique & vitesses",
-    notion: "Proportionnalité",
-    source: "Brevet Amérique du Nord · 2025",
+    id: "brevet_amerique_nord_2025_ex4",
+    numero: 4,
+    titre: "course de Malo — graphique & vitesses",
+    source: "Brevet Amérique Nord 2025",
+    annee: 2025,
+    session: "Amérique Nord",
+    notion: "Lecture graphique",
+    notions: ["Lecture graphique", "Proportionnalité", "Vitesse"],
     points: 20,
-    enonce: "Malo s'entraîne sur un parcours de 13,5 km. La courbe représente la distance parcourue (en km) en fonction du temps écoulé (en minutes).\nPoints clés du graphique : (0 min, 0 km) → (30 min, 6,6 km) → (40 min, 6,6 km) → (80 min, 13,3 km).",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Le temps et la distance parcourue par Malo sont-ils proportionnels ?",
-        points: 4,
-        reponse: "Non, car la courbe n'est pas une droite passant par l'origine sur tout le trajet.\nEntre 30 et 40 minutes, la courbe est horizontale (plateau) : Malo s'arrête ou ralentit fortement.\nLa distance n'est donc pas proportionnelle au temps.",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Quelle distance Malo a-t-il parcourue au bout de 20 minutes ? (Aucune justification n'est attendue.)",
-        points: 3,
-        reponse: "Lecture graphique à t = 20 min → distance ≈ 4,4 km\n(Sur la portion montante entre 0 et 30 min, à t=20 : d = 6,6 × 20/30 ≈ 4,4 km)",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "Combien de temps a-t-il mis pour faire les 9 premiers kilomètres ? (Aucune justification n'est attendue.)",
-        points: 3,
-        reponse: "Lecture graphique à d = 9 km → temps ≈ 51 minutes\n(Sur la portion de 40 à 80 min : 6,6 + (9-6,6)/(13,3-6,6) × 40 ≈ 40 + 14,3 ≈ 54 min)",
-        options: null
-      },
-      {
-        id: "4",
-        texte: "Quelle est la vitesse moyenne de Malo lors de cette course ? Résultat au dixième de km/h près.",
-        points: 4,
-        reponse: "Distance totale = 13,5 km\nTemps total = 80 min = 80/60 h = 4/3 h\nVitesse moyenne = 13,5 ÷ (4/3) = 13,5 × 3/4 = 40,5/4 = 10,125 ≈ 10,1 km/h",
-        options: null
-      },
-      {
-        id: "5a",
-        texte: "Louise court à 12 km/h et Hillal à 10 km/h sur le même parcours de 13,5 km. Ils partent en même temps.\n\nQuestion 5.a. : Qui a été le premier à franchir la ligne d'arrivée ?",
-        points: 3,
-        reponse: "Temps Louise = 13,5 / 12 = 1,125 h = 67,5 min\nTemps Hillal = 13,5 / 10 = 1,35 h = 81 min\n→ Louise est arrivée en première (67,5 min < 81 min).",
-        options: null
-      },
-      {
-        id: "5b",
-        texte: "Question 5.b. : Quelle distance sépare Louise et Hillal lorsque le premier franchit la ligne d'arrivée ?",
-        points: 3,
-        reponse: "Quand Louise arrive (t = 1,125 h), Hillal a parcouru :\nd = 10 × 1,125 = 11,25 km\nDistance qui les sépare = 13,5 − 11,25 = 2,25 km",
-        options: null
-      }
-    ]
+    enonce: "Malo s'entraîne sur un parcours de 13,5 km. La courbe ci-dessous représente la distance parcourue (en km) en fonction du temps écoulé (en minutes).",
+    figures: [],
+    questions: [{id:"1.",texte:"Le temps et la distance parcourue par Malo sont-ils **proportionnels** ?",points:4,reponse:"Non, car la courbe n'est pas une droite passant par l'origine sur tout le trajet.\nIl y a un palier entre 30 et 40 minutes (Malo s'arrête ou ralentit fortement).\n→ La distance n'est pas proportionnelle au temps.",options:null},{id:"2.",texte:"Quelle distance Malo a-t-il parcourue au bout de **20 minutes** ? _Aucune justification n'est attendue._",points:3,reponse:"Lecture graphique à t = 20 min → distance ≈ … km",options:null},{id:"3.",texte:"Combien de temps a-t-il mis pour faire les **9 premiers kilomètres** ? _Aucune justification n'est attendue._",points:3,reponse:"Lecture graphique à d = 9 km → temps ≈ … minutes",options:null},{id:"4.",texte:"Quelle est la vitesse moyenne de Malo lors de cette course ? Résultat au **dixième de km/h près**.",points:4,reponse:"Distance totale = 13,5 km\nTemps total = 80 min = 80/60 h = …h\nVitesse moyenne = 13,5 / … = … km/h",options:null},{id:"5.",texte:"Louise court à **12 km/h** et Hillal à **10 km/h** sur le même parcours de 13,5 km. Ils partent en même temps.",points:3,reponse:"Temps Louise = 13,5 / 12 = … h = … min\nTemps Hillal = 13,5 / 10 = … h = … min\n→ … est arrivé(e) en premier.",options:null},{id:"5.a.",texte:"Qui a été le **premier** à franchir la ligne d'arrivée ?",points:3,reponse:"Quand Louise arrive (t = … h), Hillal a parcouru :\nd = 10 × … = … km\nDistance qui les sépare = 13,5 − … = … km",options:null},{id:"5.b.",texte:"Quelle distance sépare Louise et Hillal lorsque le premier franchit la ligne d'arrivée ?",points:0,reponse:"",options:null}]
   },
   {
-    id: "an2025-ex5",
+    id: "brevet_amerique_nord_2025_ex5",
+    numero: 5,
     titre: "scratch — motifs, script principal & probabilités",
-    notion: "Algorithmique",
-    source: "Brevet Amérique du Nord · 2025",
+    source: "Brevet Amérique Nord 2025",
+    annee: 2025,
+    session: "Amérique Nord",
+    notion: "Scratch",
+    notions: ["Scratch", "Géométrie", "Probabilités", "Fréquences"],
     points: 20,
-    enonce: "Exercice Scratch. Aucune justification n'est attendue.\nScript 1 (Motif 1) : répéter 3 fois (avancer 30 pas, tourner ↺ 120°) → triangle équilatéral.\nScript 2 (Motif 2) : répéter 6 fois (avancer 30 pas, tourner ↺ 60°) → hexagone.\nScript 3 (Motif 3) : répéter 2 fois (avancer 30 pas, [instructions cachées]) → losange.\nScript principal : choisir Motif aléatoire entre 1 et 3. Si Motif=3 : répéter 6× (Motif3 + avancer 60 pas) → dire 'Voici le dessin !'. Sinon : dire 'Perdu !'.",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Les scripts 1 et 2 permettent chacun d'obtenir un des dessins (Dessin 1 : hexagone, Dessin 2 : triangle équilatéral). Associer chacun des scripts à son dessin.",
-        points: 4,
-        reponse: "Script 1 → Dessin 2 (triangle équilatéral : répéter 3×, angle 120°)\nScript 2 → Dessin 1 (hexagone régulier : répéter 6×, angle 60°)",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Le script 3 permet d'obtenir un losange (angles 60° et 120°, côté 30 pas). La partie effacée contient les instructions A (tourner ↺ 60°), B (tourner ↺ 120°), C (avancer 30 pas). Recopier dans le bon ordre les 3 instructions cachées.",
-        points: 4,
-        reponse: "Pour tracer un losange avec angles 60° et 120° et côté 30 pas :\nLa boucle 'répéter 2 fois' contient : avancer 30 pas + [3 instructions cachées]\nOrdre des instructions cachées :\n1re : B — tourner ↺ de 120°\n2e : C — avancer de 30 pas\n3e : A — tourner ↺ de 60°\n(Ce qui trace : côté → angle 120° → côté → angle 60° → retour, répété 2 fois = losange complet)",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "Quelles sont les coordonnées du point de départ du lutin ?",
-        points: 2,
-        reponse: "D'après le script principal : 'aller à x: −200 y: 0'\nCoordonnées du point de départ : x = −200 et y = 0",
-        options: null
-      },
-      {
-        id: "4",
-        texte: "Parmi les 5 captures d'écran proposées, seules deux sont possibles. Lesquelles ?",
-        points: 4,
-        reponse: "Quand Motif = 3, le script répète 6 fois : Motif3 (losange) + avancer 60 pas.\nChaque losange est suivi d'une avancée de 60 pas → 6 losanges espacés en ligne.\nLe message affiché est 'Voici le dessin !'.\n\nCaptures possibles : n° 2 (6 losanges espacés + 'Voici le dessin !') et n° 3 ('Perdu !' — quand Motif ≠ 3).\n\nCaptures impossibles :\n— n°1 : losanges accolés (pas d'espace entre) → incorrect\n— n°4 : seulement 3 losanges → incorrect (répété 6 fois)\n— n°5 : rosette → forme impossible avec ce script",
-        options: null
-      },
-      {
-        id: "5",
-        texte: "On clique sur le drapeau vert et on observe le message affiché. Quelle est la probabilité que le message affiché soit « Voici le dessin ! » ?",
-        points: 3,
-        reponse: "Le message 'Voici le dessin !' s'affiche uniquement si Motif = 3.\nMotif est tiré au hasard parmi {1, 2, 3} → P(Motif = 3) = 1/3",
-        options: null
-      },
-      {
-        id: "6a",
-        texte: "On lance le programme 100 fois. Résultats : 'Voici le dessin !' → 40 fois, 'Perdu !' → 60 fois.\n\nQuestion 6.a. : Calculer la fréquence de l'affichage « Voici le dessin ! ».",
-        points: 2,
-        reponse: "Fréquence = 40/100 = 0,4 (soit 40%)",
-        options: null
-      },
-      {
-        id: "6b",
-        texte: "Question 6.b. : Pourquoi ce résultat est-il différent de celui obtenu à la question 5 ?",
-        points: 1,
-        reponse: "La fréquence (résultat expérimental sur 100 essais) est différente de la probabilité théorique (1/3 ≈ 0,333) car il s'agit d'un résultat aléatoire. La fréquence se rapproche de la probabilité théorique lorsque le nombre d'essais augmente (loi des grands nombres).",
-        options: null
-      }
-    ]
-  }
-]);
-_EXERCICES_DB1 = _EXERCICES_DB1.concat([
+    enonce: "Aucune justification n'est attendue dans cet exercice.",
+    figures: [],
+    questions: [{id:"1.",texte:"Les scripts 1 et 2 permettent chacun d'obtenir un des dessins ci-dessous. Associer chacun des scripts à son dessin.",points:4,reponse:"Script 1 → Dessin …\nScript 2 → Dessin …",options:null},{id:"2.",texte:"Le script 3 permet d'obtenir le losange ci-contre. La partie effacée contient les 3 instructions A, B et C. Recopier dans le bon ordre les instructions cachées. **Chaque instruction ne doit être utilisée qu'une seule fois.**",points:4,reponse:"1re instruction : …\n2e instruction : …\n3e instruction : …",options:null},{id:"3.",texte:"Quelles sont les **coordonnées du point de départ** du lutin ?",points:2,reponse:"x = … et y = …",options:null},{id:"4.",texte:"Parmi les 5 captures d'écran proposées ci-dessous, **seules deux sont possibles**. Lesquelles ?",points:4,reponse:"Les deux captures possibles sont les n° … et n° …\nCar Motif=3 déclenche 6× Motif3+avancer60 → …\nCaptures impossibles : n°… car …",options:null},{id:"5.",texte:"On clique sur le drapeau vert et on observe le message affiché. Quelle est la probabilité que le message affiché soit **« Voici le dessin ! »** ?",points:3,reponse:"Le message 'Voici le dessin !' s'affiche si Motif = 3.\nMotif est tiré au hasard parmi {1, 2, 3} → P(Motif=3) = …/3",options:null},{id:"6.",texte:"On lance le programme **100 fois**. Résultats obtenus :",points:2,reponse:"Fréquence = 40/100 = …",options:null},{id:"6.a.",texte:"Calculer la **fréquence** de l'affichage « Voici le dessin ! ».",points:0,reponse:"La fréquence (résultat expérimental sur 100 essais) est différente de la probabilité théorique (1/3) car il s'agit d'un résultat aléatoire. La fréquence se rapproche de la probabilité lorsque le nombre d'essais augmente.",options:null},{id:"6.b.",texte:"Pourquoi ce résultat est-il **différent** de celui obtenu à la question 5 ?",points:0,reponse:"",options:null}]
+  },
   {
-    id: "as25-ex1",
+    id: "brevet_asie_2025_ex1",
+    numero: 1,
     titre: "QCM — 4 questions",
-    notion: "Automatisme",
-    source: "Brevet Asie · 2025",
+    source: "Brevet Asie 2025",
+    annee: 2025,
+    session: "Asie",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Pourcentages", "Statistiques", "Fonctions"],
     points: 16,
     enonce: "QCM — une seule réponse est exacte par question. Aucune justification n'est demandée.",
-    figure: null,
-    questions: [
-      {
-        id: "Q1",
-        texte: "Une urne contient 4 boules bleues, 6 boules violettes, 7 boules rouges et 3 boules jaunes. On tire une boule au hasard. Quelle est la probabilité d'obtenir une boule violette ?\nA. 6/14   B. 1/4   C. 3/10   D. 14/20",
-        points: 4,
-        reponse: "Réponse C : 3/10\nTotal = 4+6+7+3 = 20 boules. P(violette) = 6/20 = 3/10",
-        options: ["6/14", "1/4", "3/10", "14/20"]
-      },
-      {
-        id: "Q2",
-        texte: "Calculer 70 % d'une quantité revient à multiplier cette quantité par :\nA. 0,30   B. 0,70   C. 1,70   D. 1,30",
-        points: 4,
-        reponse: "Réponse B : 0,70\n70% = 70/100 = 0,70. Multiplier par 0,70 donne 70% de la quantité.",
-        options: ["0,30", "0,70", "1,70", "1,30"]
-      },
-      {
-        id: "Q3",
-        texte: "Série : 7 ; 18 ; 12 ; 13 ; 15. Laquelle de ces propositions est vraie ?\nA. L'étendue est 8   B. La médiane est 12   C. La moyenne est 53   D. La moyenne est 13",
-        points: 4,
-        reponse: "Réponse D : la moyenne est 13\nMoyenne = (7+18+12+13+15)/5 = 65/5 = 13\nVérification : étendue = 18−7=11 (pas 8), médiane = 13 (valeurs ordonnées : 7;12;13;15;18, valeur centrale = 13), moyenne = 13 ✓",
-        options: ["L'étendue de cette série est 8", "La médiane de cette série est 12", "La moyenne de cette série est 53", "La moyenne de cette série est 13"]
-      },
-      {
-        id: "Q4",
-        texte: "Une fonction affine f a pour représentation graphique une droite passant par (0;4) et (2;0). L'expression de la fonction f est :\nA. f(x) = 2x + 4   B. f(x) = 4x − 2   C. f(x) = −2x + 4   D. f(x) = −4x + 2",
-        points: 4,
-        reponse: "Réponse C : f(x) = −2x + 4\nOrdonnée à l'origine = 4 → f(0) = 4 ✓\nPente = (0−4)/(2−0) = −2 ✓\nf(x) = −2x + 4",
-        options: ["f(x) = 2x + 4", "f(x) = 4x − 2", "f(x) = −2x + 4", "f(x) = −4x + 2"]
-      }
-    ]
+    figures: [],
+    questions: [{id:"Question 1",texte:"Une urne contient 4 boules bleues, 6 boules violettes, 7 boules rouges et 3 boules jaunes. On tire une boule au hasard. Quelle est la probabilité d'obtenir une boule **violette** ?",points:4,reponse:"",options:null},{id:"Question 2",texte:"Calculer 70 % d'une quantité revient à multiplier cette quantité par :",points:4,reponse:"",options:null},{id:"Question 3",texte:"On considère la série composée des 5 valeurs : **7 ; 18 ; 12 ; 13 ; 15**.",points:4,reponse:"",options:null},{id:"Question 4",texte:"Une fonction affine _f_ a pour représentation graphique la courbe 𝒞f ci-contre. L'expression de la fonction _f_ est :",points:4,reponse:"",options:null}]
   },
   {
-    id: "as25-ex2",
-    titre: "triangles GFC et CDE — pythagore, thalès & triangles semblables",
-    notion: "Géométrie",
-    source: "Brevet Asie · 2025",
-    points: 20,
-    enonce: "Figure : G, C, E alignés et F, C, D alignés.\nTriangle CGF rectangle en F (GF vertical, FC horizontal).\nTriangle CDE rectangle en D (CD horizontal, DE vertical).\n(GF) // (DE).\nDonnées : CE = 29,1 cm ; CD = 21,6 cm ; FC = 17,2 cm.",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Montrer que la longueur DE = 19,5 cm.",
-        points: 4,
-        reponse: "Triangle CDE rectangle en D :\nCE² = CD² + DE²\n29,1² = 21,6² + DE²\nDE² = 846,81 − 466,56 = 380,25\nDE = √380,25 = 19,5 cm ✓",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Calculer l'aire du triangle CDE.",
-        points: 4,
-        reponse: "Triangle CDE rectangle en D :\nAire = (CD × DE) / 2 = (21,6 × 19,5) / 2 = 421,2 / 2 = 210,6 cm²",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "Calculer la longueur GF arrondie au millimètre près.",
-        points: 6,
-        reponse: "(GF) // (DE), G-C-E alignés et F-C-D alignés → théorème de Thalès :\nGF/DE = FC/CD\nGF = DE × FC/CD = 19,5 × 17,2/21,6 ≈ 15,5 cm",
-        options: null
-      },
-      {
-        id: "4a",
-        texte: "Une droite (d) perpendiculaire à (FC) coupe [GC] en A et [FC] en B. L'aire du triangle ABC = 23,4 cm².\nMontrer que l'aire du triangle ABC est égale à 1/9 de l'aire du triangle CDE.",
-        points: 5,
-        reponse: "Aire CDE = 210,6 cm²\n1/9 × Aire CDE = 210,6 / 9 = 23,4 cm²\nOr Aire ABC = 23,4 cm² ✓\nDonc Aire ABC = 1/9 × Aire CDE ✓",
-        options: null
-      },
-      {
-        id: "4b",
-        texte: "Les triangles ABC et EDC sont semblables. Déterminer la longueur AB.",
-        points: 5,
-        reponse: "Rapport des aires = Aire ABC / Aire CDE = 1/9\nRapport de similitude = √(1/9) = 1/3\nAB correspond à ED dans le triangle semblable :\nAB/ED = 1/3\nAB = ED/3 = 19,5/3 = 6,5 cm",
-        options: null
-      }
-    ]
+    id: "brevet_asie_2025_ex2",
+    numero: 2,
+    titre: "triangles CDE et GCF — pythagore, thalès & semblables",
+    source: "Brevet Asie 2025",
+    annee: 2025,
+    session: "Asie",
+    notion: "Pythagore",
+    notions: ["Pythagore", "Thalès", "Aires", "Triangles semblables"],
+    points: 24,
+    enonce: "",
+    figures: [],
+    questions: [{id:"1.",texte:"Montrer que la longueur **DE = 19,5 cm**.",points:4,reponse:"Triangle CDE rectangle en D → Pythagore :\nCE² = CD² + DE²\n29,1² = 21,6² + DE²\nDE² = 846,81 − 466,56 = 380,25\nDE = √380,25 = 19,5 cm ✓",options:null},{id:"2.",texte:"Calculer l'aire du triangle **CDE**.",points:4,reponse:"Triangle CDE rectangle en D :\nAire = (CD × DE) / 2 = (21,6 × 19,5) / 2 = 420,12 / 2 = 210,06 cm²",options:null},{id:"3.",texte:"Calculer la longueur **GF** arrondie au millimètre près.",points:6,reponse:"(GF) // (DE), G-C-E alignés et F-C-D alignés → Thalès :\nGF/DE = FC/CD\nGF = DE × FC/CD = 19,5 × 17,2/21,6 ≈ … cm",options:null},{id:"4.",texte:"On trace une droite (d) perpendiculaire à (FC) coupant [GC] en A et [FC] en B. L'aire du triangle ABC = **23,4 cm²**.",points:5,reponse:"Aire CDE = 210,06 cm²\n1/9 × Aire CDE = 210,06 / 9 ≈ 23,34 ≈ 23,4 cm²\nOr Aire ABC = 23,4 cm² ✓",options:null},{id:"4.a.",texte:"Montrer que l'aire du triangle ABC est égale à **1/9 de l'aire du triangle CDE**.",points:5,reponse:"Rapport des aires = 1/9 → rapport de similitude = 1/3\nAB correspond à ED dans le triangle semblable :\nAB/ED = 1/3\nAB = 19,5/3 = 6,5 cm",options:null},{id:"4.b.",texte:"Les triangles ABC et EDC sont semblables. Déterminer la longueur **AB**.",points:0,reponse:"",options:null}]
   },
   {
-    id: "as25-ex3",
+    id: "brevet_asie_2025_ex3",
+    numero: 3,
     titre: "rectangle ABCD et carré EFGH — périmètres & équation",
-    notion: "Algèbre et Fonctions",
-    source: "Brevet Asie · 2025",
+    source: "Brevet Asie 2025",
+    annee: 2025,
+    session: "Asie",
+    notion: "Calcul littéral",
+    notions: ["Calcul littéral", "Périmètre", "Tableur", "Équation"],
     points: 20,
-    enonce: "Toutes les longueurs sont en centimètres.\nRectangle ABCD : AD = x et AB = 16 − 2x\nCarré EFGH : EF = 2x",
-    figure: null,
-    questions: [
-      {
-        id: "A1",
-        texte: "Partie A (x = 1,5 cm)\nCalculer le périmètre du carré EFGH.",
-        points: 2,
-        reponse: "EF = 2x = 2×1,5 = 3 cm\nPérimètre EFGH = 4 × 3 = 12 cm",
-        options: null
-      },
-      {
-        id: "A2",
-        texte: "Calculer AB.",
-        points: 2,
-        reponse: "AB = 16 − 2x = 16 − 2×1,5 = 16 − 3 = 13 cm",
-        options: null
-      },
-      {
-        id: "A3",
-        texte: "Construire en vraie grandeur le rectangle ABCD.",
-        points: 3,
-        reponse: "AD = x = 1,5 cm\nAB = 13 cm\nRectangle ABCD : longueur 13 cm, largeur 1,5 cm (à construire à la règle et à l'équerre)",
-        options: null
-      },
-      {
-        id: "A4",
-        texte: "Les périmètres de ABCD et EFGH sont-ils égaux ?",
-        points: 3,
-        reponse: "Périmètre ABCD = 2×(AD + AB) = 2×(1,5 + 13) = 2×14,5 = 29 cm\nPérimètre EFGH = 12 cm\n29 ≠ 12 → Non, les périmètres ne sont pas égaux.",
-        options: null
-      }
-    ]
+    enonce: "Toutes les longueurs sont en centimètres. • Rectangle ABCD : AD = x et AB = 16 − 2x • Carré EFGH : EF = 2x",
+    figures: [],
+    questions: [{id:"A.1.",texte:"Calculer le périmètre du carré **EFGH**.",points:2,reponse:"EF = 2x = 2×1,5 = 3 cm\nPérimètre EFGH = 4 × 3 = … cm",options:null},{id:"A.2.",texte:"Calculer **AB**.",points:2,reponse:"AB = 16 − 2x = 16 − 2×1,5 = 16 − 3 = … cm",options:null},{id:"A.3.",texte:"Construire en vraie grandeur le rectangle **ABCD**.",points:3,reponse:"AD = x = 1,5 cm, AB = 13 cm\nRectangle ABCD : longueur 13 cm, largeur 1,5 cm",options:null},{id:"A.4.",texte:"Les périmètres de ABCD et EFGH sont-ils égaux ?",points:3,reponse:"Périmètre ABCD = 2×(AD + AB) = 2×(1,5 + 13) = 2×14,5 = … cm\nPérimètre EFGH = 12 cm\n… ≠ 12 → non, ils ne sont pas égaux.",options:null}]
   },
   {
-    id: "as25-ex4",
+    id: "brevet_asie_2025_ex4",
+    numero: 4,
     titre: "scratch — hexagone & triangles équilatéraux",
-    notion: "Algorithmique",
-    source: "Brevet Asie · 2025",
+    source: "Brevet Asie 2025",
+    annee: 2025,
+    session: "Asie",
+    notion: "Scratch",
+    notions: ["Scratch", "Géométrie", "Hexagone"],
     points: 17,
-    enonce: "Aucune justification n'est attendue.\nRappel : s'orienter à 90 = le lutin se dirige vers la droite.\nPartie A : script motif « triangle équilatéral » (lignes à compléter).\nPartie B : programme pour tracer un hexagone régulier de 50 pas de côté (répéter A fois, 2 instructions à choisir parmi 6).",
-    figure: null,
-    questions: [
-      {
-        id: "A1",
-        texte: "Compléter et recopier les lignes 2, 3 et 4 du script pour que le lutin dessine un triangle équilatéral de côté 50 pas.",
-        points: 3,
-        reponse: "Ligne 2 : répéter 3 fois\nLigne 3 : avancer de 50 pas\nLigne 4 : tourner ↩ de 120 degrés\n(Un triangle équilatéral a 3 côtés égaux et 3 angles extérieurs de 120°)",
-        options: null
-      },
-      {
-        id: "A2",
-        texte: "L'élève teste les programmes A et B :\n— Programme A : répéter 6 fois [triangle équilatéral + tourner ↩ 60°]\n— Programme B : répéter 6 fois [triangle équilatéral + tourner ↩ 120°]\nQuel programme permet de tracer l'hexagone souhaité (hexagone formé de 6 triangles équilatéraux) ?",
-        points: 4,
-        reponse: "Programme B permet de tracer l'hexagone souhaité.\nAvec Programme B : après chaque triangle, on tourne de 120°. 6 triangles × 120° = 720° = 2 tours complets → les triangles se répartissent autour du centre en formant un hexagone.\nAvec Programme A (60°) : les triangles se superposent différemment → étoile à 6 branches.",
-        options: null
-      },
-      {
-        id: "B",
-        texte: "Partie B — Hexagone régulier de 50 pas de côté.\nRecopier le bloc « répéter » en remplaçant A par sa valeur et en le complétant avec 2 instructions choisies parmi : avancer 50, tourner ↶ 120°, tourner ↩ 60°, avancer 5, tourner ↩ 120°, tourner ↶ 60°.",
-        points: 10,
-        reponse: "Un hexagone régulier a 6 côtés et des angles extérieurs de 60°.\nA = 6\nBloc répéter complété :\nrépéter 6 fois\n  avancer de 50 pas\n  tourner ↩ de 60 degrés\n↵\n\nExplication : 6 côtés de 50 pas, et à chaque sommet on tourne de 60° vers la gauche (sens antihoraire) pour tracer l'hexagone régulier.",
-        options: null
-      }
-    ]
+    enonce: "Aucune justification n'est attendue. Rappel : s'orienter à 90 signifie que le lutin se dirige vers la droite.",
+    figures: [],
+    questions: [{id:"1.",texte:"Compléter et recopier les lignes 2, 3 et 4 du script pour que le lutin dessine un triangle équilatéral de côté **50 pas**.",points:3,reponse:"Ligne 2 : répéter … fois\nLigne 3 : avancer de … pas\nLigne 4 : tourner ↩ de … degrés",options:null},{id:"2.",texte:"L'élève teste les programmes A et B et obtient les deux dessins ci-dessous. Quel programme permet de tracer l'hexagone souhaité ?",points:4,reponse:"Le programme … permet de tracer l'hexagone souhaité car …",options:null}]
   },
   {
-    id: "as25-ex5",
+    id: "brevet_asie_2025_ex5",
+    numero: 5,
     titre: "poissons — PGCD, volumes & pourcentages",
-    notion: "Arithmétique",
-    source: "Brevet Asie · 2025",
+    source: "Brevet Asie 2025",
+    annee: 2025,
+    session: "Asie",
+    notion: "Factorisation",
+    notions: ["Factorisation", "PGCD", "Volume", "Pourcentage"],
     points: 23,
-    enonce: "Partie A : Un magasin a reçu 650 poissons : 350 de type A et 300 de type B. La responsable veut les vendre par lots avec le même nombre de chaque type et tous les poissons répartis.\nPartie B : Poissons combattants — aquariums, volumes, pourcentages.",
-    figure: null,
-    questions: [
-      {
-        id: "A1",
-        texte: "Parmi les trois propositions, laquelle correspond à la décomposition en produits de facteurs premiers du nombre 300 ?\nProposition 1 : 2² × 5 × 15\nProposition 2 : 2 × 2 × 3 × 5 × 5\nProposition 3 : 2² × 3 × 5²",
-        points: 3,
-        reponse: "Proposition 3 : 2² × 3 × 5²\n300 = 4 × 75 = 4 × 3 × 25 = 2² × 3 × 5²\nVérification : 4 × 3 × 25 = 300 ✓\nProposition 1 incorrecte : 15 n'est pas premier.\nProposition 2 incorrecte : 2×2×3×5×5 = 300 est vrai mais n'est pas la forme canonique (les puissances ne sont pas indiquées).",
-        options: null
-      },
-      {
-        id: "A2",
-        texte: "Donner la décomposition en produit de facteurs premiers du nombre 350.",
-        points: 3,
-        reponse: "350 = 2 × 175 = 2 × 5 × 35 = 2 × 5 × 5 × 7 = 2 × 5² × 7",
-        options: null
-      },
-      {
-        id: "A3",
-        texte: "Quel est le nombre maximal de lots que la responsable pourra constituer ? (PGCD)",
-        points: 4,
-        reponse: "Le nombre maximal de lots = PGCD(350, 300)\n350 = 2 × 5² × 7\n300 = 2² × 3 × 5²\nPGCD = 2¹ × 5² = 2 × 25 = 50 lots",
-        options: null
-      },
-      {
-        id: "A4",
-        texte: "Dans ce cas, combien y aura-t-il de poissons de chaque type dans chaque lot ?",
-        points: 3,
-        reponse: "Nombre de lots = 50\nPoissons de type A par lot = 350 / 50 = 7 poissons\nPoissons de type B par lot = 300 / 50 = 6 poissons",
-        options: null
-      },
-      {
-        id: "B1",
-        texte: "Il faut au moins 15 litres d'eau par poisson combattant. Un aquarium est rempli aux 4/5 de sa hauteur.\nAquarium 1 (cylindre) : diamètre 30 cm, hauteur 25 cm.\nAquarium 2 (pavé droit) : longueur 28 cm, largeur 28 cm, hauteur 30 cm.\nLequel choisir pour un poisson combattant ? (V cylindre = π × r² × H ; V pavé = L × l × H ; 1 dm³ = 1 L)",
-        points: 7,
-        reponse: "Aquarium 1 (cylindre) :\nr = 15 cm = 0,15 dm, H = 25 cm = 0,25 dm\nVolume total = π × 0,15² × 0,25 = π × 0,0225 × 0,25 ≈ 0,01767 dm³... \n\nEn cm³ : V = π × 15² × 25 = π × 225 × 25 ≈ 17 671 cm³ = 17,671 L\nVolume eau = 4/5 × 17,671 ≈ 14,14 L < 15 L → insuffisant\n\nAquarium 2 (pavé droit) :\nV = 28 × 28 × 30 = 23 520 cm³ = 23,52 L\nVolume eau = 4/5 × 23,52 = 18,82 L ≥ 15 L → suffisant\n\nIl faut choisir l'aquarium 2 (pavé droit).",
-        options: null
-      },
-      {
-        id: "B2",
-        texte: "Un poisson combattant coûte 15 € et un aquarium coûte 40 €. Le vendeur propose une remise de 15 % sur le prix total. Combien va payer la famille ?",
-        points: 3,
-        reponse: "Prix total = 15 + 40 = 55 €\nRemise = 15% × 55 = 0,15 × 55 = 8,25 €\nPrix à payer = 55 − 8,25 = 46,75 €\nOu : 55 × 0,85 = 46,75 €",
-        options: null
-      }
-    ]
-  }
-]);
-_EXERCICES_DB1 = _EXERCICES_DB1.concat([
+    enonce: "Un magasin a reçu 650 poissons : 350 de type A et 300 de type B. La responsable souhaite les vendre par lots avec le même nombre de poissons de chaque type par lot, et tous les poissons répartis.",
+    figures: [],
+    questions: [{id:"1.",texte:"Parmi les trois propositions, laquelle correspond à la décomposition en produits de facteurs premiers du nombre **300** ? _Aucune justification n'est demandée._",points:3,reponse:"La proposition … car …",options:null},{id:"2.",texte:"Donner la décomposition en produit de facteurs premiers du nombre **350**.",points:3,reponse:"350 = 2 × 175 = 2 × 5 × 35 = 2 × 5 × 5 × 7 = …",options:null},{id:"3.",texte:"Quel est le **nombre maximal de lots** que la responsable pourra constituer ? _(PGCD)_",points:4,reponse:"Le nombre maximal de lots = PGCD(350, 300)\n350 = 2 × 5² × 7\n300 = 2² × 3 × 5²\nPGCD = 2 × 5² = … lots",options:null},{id:"4.",texte:"Dans ce cas, combien y aura-t-il de poissons de chaque type dans chaque lot ?",points:3,reponse:"Nombre de lots = …\nPoissons de type A par lot = 350 / … = … poissons\nPoissons de type B par lot = 300 / … = … poissons",options:null},{id:"1.",texte:"En captivité, il faut au moins **15 litres d'eau** par poisson combattant. Un aquarium est rempli aux **4/5 de sa hauteur**. Lequel choisir pour un poisson combattant ?",points:7,reponse:"Aquarium 1 (cylindre) : r = 15 cm = 0,15 dm, H = 25 cm = 0,25 dm\nVolume total = π × 0,15² × 0,25 = … dm³\nVolume eau = 4/5 × … = … L\n\nAquarium 2 (pavé) : L = l = 28 cm = 0,28 dm, H = 30 cm = 0,30 dm\nVolume total = 0,28 × 0,28 × 0,30 = … dm³\nVolume eau = 4/5 × … = … L\n\n→ Choisir l'aquarium …",options:null},{id:"2.",texte:"Un poisson combattant coûte **15 €** et un aquarium coûte **40 €**. Le vendeur propose une remise de **15 %** sur le prix total. Combien va payer la famille ?",points:3,reponse:"Prix total = 15 + 40 = 55 €\nRemise = 15% × 55 = 0,15 × 55 = … €\nPrix à payer = 55 − … = … €\nOu : 55 × 0,85 = … €",options:null}]
+  },
   {
-    id: "ce25-ex1",
+    id: "brevet_centres_etrangers_2025_ex1",
+    numero: 1,
     titre: "QCM — 5 questions",
-    notion: "Automatisme",
-    source: "Brevet Centres Étrangers · 2025",
+    source: "Brevet Centres Étrangers 2025",
+    annee: 2025,
+    session: "Centres Étrangers",
+    notion: "Factorisation",
+    notions: ["Factorisation", "Tableur", "Homothétie", "Algèbre"],
     points: 20,
     enonce: "QCM — une seule réponse est exacte par question. Aucune justification n'est demandée.",
-    figure: null,
-    questions: [
-      {
-        id: "Q1",
-        texte: "La décomposition en produit de facteurs premiers de 120 est :\nA. 2 × 3 × 4 × 5   B. 15 × 2 × 2 × 2   C. 2³ × 3 × 5   D. 53 + 67",
-        points: 4,
-        reponse: "Réponse C : 2³ × 3 × 5\n120 = 8 × 15 = 2³ × 3 × 5\nVérification : 8 × 3 × 5 = 120 ✓\nA incorrect : 4 n'est pas premier. B incorrect : 15 n'est pas premier. D incorrect : addition ≠ produit.",
-        options: ["2 × 3 × 4 × 5", "15 × 2 × 2 × 2", "2³ × 3 × 5", "53 + 67"]
-      },
-      {
-        id: "Q2",
-        texte: "Dans un tableur, cellule A1 = 2, B1 = 5. Formule en A2 : = −4 * A1 − 12. On l'étire jusqu'à B2. La valeur obtenue dans B2 est :\nA. −32   B. −20   C. 8   D. 68",
-        points: 4,
-        reponse: "Réponse A : −32\nEn étirant la formule vers la droite, A1 devient B1.\nB2 = −4 × B1 − 12 = −4 × 5 − 12 = −20 − 12 = −32",
-        options: ["−32", "−20", "8", "68"]
-      },
-      {
-        id: "Q3",
-        texte: "Sur une figure avec grille, carré A (côté 20px, coin bas-gauche à 2 cases de O) et carré B (côté 40px, plus loin). Rapport de l'homothétie de centre O transformant le carré A en carré B :\nA. −2   B. −0,5   C. 0,5   D. 2",
-        points: 4,
-        reponse: "Réponse D : 2\nLe côté de B est 40px et le côté de A est 20px. Rapport = 40/20 = 2.\nLes deux carrés sont du même côté de O → rapport positif = 2.",
-        options: ["−2", "−0,5", "0,5", "2"]
-      },
-      {
-        id: "Q4",
-        texte: "Une écriture factorisée de 4x² − 1 est :\nA. (2x − 1)(2x + 1)   B. (4x − 1)(4x + 1)   C. 4(x − 1)(x + 1)   D. (2x − 1)²",
-        points: 4,
-        reponse: "Réponse A : (2x − 1)(2x + 1)\n4x² − 1 = (2x)² − 1² → identité remarquable a² − b² = (a−b)(a+b)\n= (2x − 1)(2x + 1) ✓",
-        options: ["(2x − 1)(2x + 1)", "(4x − 1)(4x + 1)", "4(x − 1)(x + 1)", "(2x − 1)²"]
-      },
-      {
-        id: "Q5",
-        texte: "Triangle TER rectangle en R, angle en E = 39°, TE = 7,4 cm. La longueur RE arrondie au centième est :\nA. 4,66 cm   B. 5,75 cm   C. 9,52 cm   D. 11,76 cm",
-        points: 4,
-        reponse: "Réponse A : 4,66 cm\nDans le triangle TER rectangle en R, l'angle en E = 39°.\nRE est adjacent à l'angle E, TE est l'hypoténuse.\ncos(E) = RE/TE → RE = TE × cos(39°) = 7,4 × cos(39°) ≈ 7,4 × 0,7771 ≈ 5,75 cm\n\nOu : sin(E) = RE/TE → RE = 7,4 × sin(39°) ≈ 7,4 × 0,6293 ≈ 4,66 cm\n(Réponse A selon la configuration du triangle)",
-        options: ["4,66 cm", "5,75 cm", "9,52 cm", "11,76 cm"]
-      }
-    ]
+    figures: [],
+    questions: [{id:"Question 1",texte:"La décomposition en produit de facteurs premiers de **120** est :",points:4,reponse:"",options:null},{id:"Question 2",texte:"Dans la cellule A2, la formule **« = −4 * A1 − 12 »** a été saisie. On l'étire jusqu'à la cellule B2. La valeur obtenue dans la cellule B2 est :",points:4,reponse:"",options:null},{id:"Question 3",texte:"Sur la figure ci-contre, le rapport de l'homothétie de centre O qui transforme le carré A en le carré B est :",points:4,reponse:"",options:null},{id:"Question 4",texte:"Une écriture factorisée de **4x² − 1** est :",points:4,reponse:"",options:null},{id:"Question 5",texte:"Dans le triangle TER ci-contre, la mesure de la longueur **RE** arrondie au centième de cm est :",points:4,reponse:"",options:null}]
   },
   {
-    id: "ce25-ex2",
+    id: "brevet_centres_etrangers_2025_ex2",
+    numero: 2,
     titre: "colis « Transport Rapide » — stats, probabilité & volumes",
+    source: "Brevet Centres Étrangers 2025",
+    annee: 2025,
+    session: "Centres Étrangers",
     notion: "Statistiques",
-    source: "Brevet Centres Étrangers · 2025",
+    notions: ["Statistiques", "Probabilité", "Volume", "Masse volumique"],
     points: 19,
-    enonce: "Cinq colis A, B, C, D et E avec masses (kg) : A=4, B=9, C=2, D=7, E=11.\nDimensions (L × l × h en m) : A(0,4×0,3×0,5), B(0,5×0,4×0,8), C(0,3×0,1×0,5), D(0,4×0,3×0,7), E(0,5×0,4×0,6).",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Calculer la moyenne des masses des colis en kg.",
-        points: 2,
-        reponse: "Moyenne = (4 + 9 + 2 + 7 + 11) / 5 = 33 / 5 = 6,6 kg",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Déterminer la médiane des masses des colis en kg. Interpréter ce résultat.",
-        points: 3,
-        reponse: "Valeurs triées : 2 ; 4 ; 7 ; 9 ; 11\n5 valeurs → médiane = 3e valeur = 7 kg\nInterprétation : la moitié des colis pèse moins de 7 kg, l'autre moitié plus de 7 kg.",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "Le transporteur choisit au hasard un colis parmi les cinq. Calculer la probabilité pour qu'il sélectionne un colis dont la masse est inférieure à 8 kg.",
-        points: 3,
-        reponse: "Colis de masse < 8 kg : A(4 kg), C(2 kg), D(7 kg) → 3 colis\nP(masse < 8 kg) = 3/5",
-        options: null
-      },
-      {
-        id: "4a",
-        texte: "Vérifier que le volume du colis E est de 0,12 m³.",
-        points: 2,
-        reponse: "V(E) = L × l × h = 0,5 × 0,4 × 0,6 = 0,12 m³ ✓",
-        options: null
-      },
-      {
-        id: "4b",
-        texte: "Montrer que la masse volumique du colis E arrondie au dixième est 91,7 kg/m³.\n(Masse volumique = masse / volume)",
-        points: 4,
-        reponse: "Masse volumique E = masse / volume = 11 / 0,12 ≈ 91,666... ≈ 91,7 kg/m³ ✓",
-        options: null
-      },
-      {
-        id: "4c",
-        texte: "Le transporteur affirme : « Le colis E est plus lourd que le colis C, donc la masse volumique du colis E est plus grande que celle du colis C ». A-t-il raison ?",
-        points: 5,
-        reponse: "Masse volumique C :\nVolume C = 0,3 × 0,1 × 0,5 = 0,015 m³\nMasse volumique C = 2 / 0,015 ≈ 133,3 kg/m³\n\nMasse volumique E ≈ 91,7 kg/m³\n133,3 > 91,7 → La masse volumique du colis C est PLUS GRANDE que celle du colis E.\nLe transporteur a TORT. Un colis plus lourd n'a pas nécessairement une masse volumique plus grande.",
-        options: null
-      }
-    ]
+    enonce: "L'entreprise « Transport Rapide » doit livrer cinq colis A, B, C, D et E ayant des masses différentes :",
+    figures: [],
+    questions: [{id:"1.",texte:"Calculer la **moyenne** des masses des colis en kg.",points:2,reponse:"Moyenne = (4 + 9 + 2 + 7 + 11) / 5 = … / 5 = … kg",options:null},{id:"2.",texte:"Déterminer la **médiane** des masses des colis en kg. Interpréter ce résultat.",points:3,reponse:"Valeurs triées : 2, 4, 7, 9, 11\n5 valeurs → médiane = 3e valeur = … kg\nInterprétation : la moitié des colis pèse moins de … kg, l'autre moitié plus.",options:null},{id:"3.",texte:"Le transporteur choisit au hasard un colis parmi les cinq pour une livraison express. Calculer la probabilité pour qu'il sélectionne un colis dont la masse est **inférieure à 8 kg**.",points:3,reponse:"Colis de masse < 8 kg : A(4), C(2), D(7) → 3 colis\nP(masse < 8 kg) = 3/5",options:null},{id:"4.",texte:"Vérifier que le volume du colis E est de **0,12 m³**.",points:2,reponse:"V(E) = L × l × h = 0,5 × 0,4 × 0,6 = … m³ ✓",options:null},{id:"4.a.",texte:"Montrer que la **masse volumique** du colis E arrondie au dixième est **91,7 kg/m³**.Masse volumique = masse (en kg) / volume (en m³)",points:4,reponse:"Masse volumique E = masse / volume = 11 / 0,12 = … kg/m³ ≈ 91,7 kg/m³ ✓",options:null},{id:"4.b.",texte:"Le transporteur affirme : « Le colis E est plus lourd que le colis C, donc la masse volumique du colis E est plus grande que celle du colis C ». A-t-il raison ?",points:5,reponse:"Masse volumique C = masse C / volume C\nVolume C = 0,3 × 0,1 × 0,5 = … m³\nMasse volumique C = 2 / … = … kg/m³\n\nMasse volumique E ≈ 91,7 kg/m³\nMasse volumique C = … kg/m³\n\n→ Le transporteur a-t-il raison ? …",options:null},{id:"4.c.",texte:"",points:0,reponse:"",options:null}]
   },
   {
-    id: "ce25-ex3",
-    titre: "calcul littéral & équations",
-    notion: "Algèbre et Fonctions",
-    source: "Brevet Centres Étrangers · 2025",
+    id: "brevet_centres_etrangers_2025_ex3",
+    numero: 3,
+    titre: "calcul littéral &amp; équations",
+    source: "Brevet Centres Étrangers 2025",
+    annee: 2025,
+    session: "Centres Étrangers",
+    notion: "Développer",
+    notions: ["Développer", "Factoriser", "Équation"],
     points: 25,
-    enonce: "On considère les expressions :\nA = (2x + 3)² − (2x + 3)(x − 1)\nB = (3x − 5)(3x + 5) − 9(x − 2)²",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Développer et réduire l'expression A.",
-        points: 5,
-        reponse: "A = (2x + 3)² − (2x + 3)(x − 1)\n= (2x + 3)[(2x + 3) − (x − 1)]    ← facteur commun (2x + 3)\n= (2x + 3)(2x + 3 − x + 1)\n= (2x + 3)(x + 4)\nDéveloppée : = 2x² + 8x + 3x + 12 = 2x² + 11x + 12",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Factoriser l'expression A.",
-        points: 4,
-        reponse: "A = (2x + 3)(x + 4)  ← forme factorisée",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "Développer et réduire l'expression B.",
-        points: 6,
-        reponse: "B = (3x − 5)(3x + 5) − 9(x − 2)²\n= (9x² − 25) − 9(x² − 4x + 4)    ← identités remarquables\n= 9x² − 25 − 9x² + 36x − 36\n= 36x − 61",
-        options: null
-      },
-      {
-        id: "4",
-        texte: "Résoudre l'équation B = −25.",
-        points: 5,
-        reponse: "B = −25\n36x − 61 = −25\n36x = −25 + 61\n36x = 36\nx = 1",
-        options: null
-      },
-      {
-        id: "5",
-        texte: "En utilisant la forme factorisée de A, calculer la valeur de A pour x = −2.",
-        points: 5,
-        reponse: "A = (2x + 3)(x + 4)\nPour x = −2 :\nA = (2×(−2) + 3)((−2) + 4)\n= (−4 + 3)(2)\n= (−1)(2)\n= −2",
-        options: null
-      }
-    ]
+    enonce: "On considère les expressions suivantes : A = (2x + 3)² − (2x + 3)(x − 1) B = (3x − 5)(3x + 5) − 9(x − 2)²",
+    figures: [],
+    questions: [{id:"1.",texte:"Développer et réduire l'expression **A**.",points:5,reponse:"A = (2x + 3)² − (2x + 3)(x − 1)\n  = (2x + 3)[(2x + 3) − (x − 1)]\n  = (2x + 3)(2x + 3 − x + 1)\n  = (2x + 3)(x + 4)",options:null},{id:"2.",texte:"Factoriser l'expression **A**.",points:4,reponse:"A = (2x + 3)(x + 4)  ← forme factorisée",options:null},{id:"3.",texte:"Développer et réduire l'expression **B**.",points:6,reponse:"B = (3x − 5)(3x + 5) − 9(x − 2)²\n  = 9x² − 25 − 9(x² − 4x + 4)\n  = 9x² − 25 − 9x² + 36x − 36\n  = 36x − 61",options:null},{id:"4.",texte:"Résoudre l'équation **B = −25**.",points:5,reponse:"36x − 61 = −25\n36x = −25 + 61\n36x = 36\nx = 1",options:null},{id:"5.",texte:"En utilisant la forme factorisée de **A**, calculer la valeur de **A** pour **x = −2**.",points:5,reponse:"A = (2x + 3)(x + 4)\nPour x = −2 :\nA = (2×(−2) + 3)((−2) + 4)\n  = (−4 + 3)(2)\n  = (−1)(2)\n  = −2",options:null}]
   },
   {
-    id: "ce25-ex4",
-    titre: "géométrie — triangles & Pythagore",
-    notion: "Géométrie",
-    source: "Brevet Centres Étrangers · 2025",
+    id: "brevet_centres_etrangers_2025_ex4",
+    numero: 4,
+    titre: "géométrie — triangles &amp; Pythagore",
+    source: "Brevet Centres Étrangers 2025",
+    annee: 2025,
+    session: "Centres Étrangers",
+    notion: "Pythagore",
+    notions: ["Pythagore", "Thalès", "Trigonométrie"],
     points: 25,
-    enonce: "Triangle ABC rectangle en A, avec AB = 9 cm et AC = 12 cm.\nLe point D est le pied de la hauteur issue de A dans le triangle ABC.\nLa droite passant par A et parallèle à BC coupe la droite BD en un point E.",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Calculer la longueur BC.",
-        points: 5,
-        reponse: "Triangle ABC rectangle en A → théorème de Pythagore :\nBC² = AB² + AC² = 9² + 12² = 81 + 144 = 225\nBC = √225 = 15 cm",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Montrer que BD = 5,4 cm.",
-        points: 6,
-        reponse: "Dans le triangle ABC rectangle en A, D est le pied de la hauteur issue de A.\nLes triangles ABD et ABC sont semblables (angle B commun, angles droits en A et D).\nDonc : BD/AB = AB/BC\nBD = AB² / BC = 9² / 15 = 81 / 15 = 5,4 cm ✓",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "Calculer la longueur AD.",
-        points: 5,
-        reponse: "Dans le triangle ABD rectangle en D :\nAD² = AB² − BD² = 9² − 5,4² = 81 − 29,16 = 51,84\nAD = √51,84 = 7,2 cm",
-        options: null
-      },
-      {
-        id: "4a",
-        texte: "Justifier que AE = BD = 5,4 cm.",
-        points: 4,
-        reponse: "AE // BC (par construction) et AD ⊥ BC (AD est la hauteur issue de A).\nDonc ADBE est un rectangle (côtés parallèles deux à deux et angle droit en D).\nDans un rectangle, les côtés opposés sont égaux → AE = BD = 5,4 cm. ✓",
-        options: null
-      },
-      {
-        id: "4b",
-        texte: "Calculer l'angle BAE arrondi au degré.",
-        points: 5,
-        reponse: "Dans le triangle BAE rectangle en A (car AE // BC et AB ⊥ AC... à préciser avec la figure) :\nAE = BD = 5,4 cm, AB = 9 cm\ncos(∠BAE) = AE / AB = 5,4 / 9 = 0,6\n∠BAE = arccos(0,6) ≈ 53°",
-        options: null
-      }
-    ]
+    enonce: "On considère le triangle ABC rectangle en A, avec : AB = 9 cm, AC = 12 cm. Le point D est le pied de la hauteur issue de A dans le triangle ABC. La droite passant par A et parallèle à BC coupe la droite BD en un point E.",
+    figures: [],
+    questions: [{id:"1.",texte:"Calculer la longueur **BC**.",points:5,reponse:"Le triangle ABC est rectangle en A, donc d'après le théorème de Pythagore :\nBC² = AB² + AC²\nBC² = 9² + 12² = 81 + 144 = 225\nBC = √225 = 15 cm",options:null},{id:"2.",texte:"Montrer que **BD = 5,4 cm**.",points:6,reponse:"Dans le triangle ABC rectangle en A, D est le pied de la hauteur issue de A.\nLes triangles ABD et ABC sont semblables (même angle en B, angles droits).\nDonc : BD/AB = AB/BC\nBD = AB² / BC = 81 / 15 = 5,4 cm ✓",options:null},{id:"3.",texte:"Calculer la longueur **AD**.",points:5,reponse:"Dans le triangle ABD rectangle en D :\nAD² = AB² − BD²\nAD² = 81 − 5,4² = 81 − 29,16 = 51,84\nAD = √51,84 = 7,2 cm",options:null},{id:"4.",texte:"La droite passant par A et parallèle à BC coupe la droite (BD) en E. Justifier que **AE = BD = 5,4 cm**, puis calculer l'angle **BAE** arrondi au degré.",points:9,reponse:"AE // BC et AD ⊥ BC (AD est la hauteur), donc ADBE est un rectangle.\nDans un rectangle, les côtés opposés sont égaux, donc AE = BD = 5,4 cm.",options:null},{id:"4.a.",texte:"Justifier que AE = BD = 5,4 cm.",points:0,reponse:"Dans le triangle BAE rectangle en A :\ntan(∠BAE) = BE / AE\nBE = BD + DE = BD + AD = 5,4 + 7,2 = 12,6 (non, BE = BD car E est sur la verticale de B)\n\nEn fait : AE = BD = 5,4 cm, AB = 9 cm\ncos(∠BAE) = AE / AB = 5,4 / 9 = 0,6\n∠BAE = arccos(0,6) ≈ 53°",options:null},{id:"4.b.",texte:"Calculer l'angle BAE arrondi au degré.",points:0,reponse:"",options:null}]
   },
   {
-    id: "ce25-ex5",
-    titre: "statistiques & probabilités — cours de natation",
+    id: "brevet_centres_etrangers_2025_ex5",
+    numero: 5,
+    titre: "statistiques &amp; probabilités",
+    source: "Brevet Centres Étrangers 2025",
+    annee: 2025,
+    session: "Centres Étrangers",
+    notion: "Moyenne",
+    notions: ["Moyenne", "Médiane", "Probabilité"],
+    points: 25,
+    enonce: "Une association sportive propose des cours de natation. Le tableau ci-dessous indique le nombre de longueurs effectuées par 30 élèves lors d'une séance d'entraînement.",
+    figures: [],
+    questions: [{id:"1.",texte:"Vérifier que l'effectif total est bien **30 élèves**.",points:2,reponse:"4 + 8 + 10 + 5 + 3 = 30 ✓",options:null},{id:"2.",texte:"Calculer la **moyenne** du nombre de longueurs effectuées. Arrondir au dixième.",points:6,reponse:"Moyenne = (10×4 + 15×8 + 20×10 + 25×5 + 30×3) / 30\n= (40 + 120 + 200 + 125 + 90) / 30\n= 575 / 30\n≈ 19,2 longueurs",options:null},{id:"3.",texte:"Déterminer la **médiane** du nombre de longueurs effectuées.",points:5,reponse:"30 élèves → médiane = moyenne des 15e et 16e valeurs.\nEffectifs cumulés : 10→4 ; 15→12 ; 20→22\nLes 15e et 16e valeurs sont toutes les deux à 20 longueurs.\nMédiane = 20 longueurs.",options:null},{id:"4.",texte:"On choisit au hasard un élève parmi les 30. Calculer la probabilité que cet élève ait effectué **au moins 20 longueurs**.",points:6,reponse:"Élèves ayant effectué au moins 20 longueurs : 10 + 5 + 3 = 18\nP(≥ 20 longueurs) = 18/30 = 3/5 = 0,6",options:null},{id:"5.",texte:"L'entraîneur affirme : « Plus de la moitié des élèves ont effectué strictement plus de 15 longueurs ». A-t-il raison ? Justifier.",points:6,reponse:"Élèves ayant effectué strictement plus de 15 longueurs (donc 20, 25 ou 30) :\n10 + 5 + 3 = 18 élèves.\n18/30 = 0,6 > 0,5 (plus de la moitié).\n→ L'entraîneur a raison.",options:null}]
+  },
+  {
+    id: "brevet_metropole_2025_ex1",
+    numero: 1,
+    titre: "urnes &amp; probabilités",
+    source: "Brevet Métropole Juin 2025",
+    annee: 2025,
+    session: "Métropole Juin",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Multiples", "Nombres premiers"],
+    points: 20,
+    enonce: "On dispose d'une urne A contenant 6 boules numérotées : 7 ; 10 ; 12 ; 15 ; 24 ; 30 et d'une urne B contenant 9 boules numérotées : 2 ; 5 ; 6 ; 8 ; 17 ; 18 ; 21 ; 22 ; 25. Les boules sont indiscernables au toucher.",
+    figures: [],
+    questions: [{id:"1.",texte:"On tire une boule dans l'urne A. Quelle est la probabilité d'obtenir un **nombre pair** ?",points:4,reponse:"Nombres pairs dans l'urne A : 10 ; 12 ; 24 ; 30 → 4 boules paires sur 6\nP(pair) = 4/6 = 2/3",options:null},{id:"2.",texte:"On tire une boule dans l'urne B. Justifier que la probabilité d'obtenir un **nombre premier** est de **1/3**.",points:4,reponse:"Nombres premiers dans l'urne B : 2 ; 5 ; 17 → 3 boules premières sur 9\nP(premier) = 3/9 = 1/3 ✓",options:null},{id:"3.",texte:"Quelle urne contient le plus grand nombre de boules dont le numéro est un **multiple de 6** ?",points:4,reponse:"Multiples de 6 dans l'urne A : 12 ; 24 ; 30 → 3 boules\nMultiples de 6 dans l'urne B : 6 ; 18 → 2 boules\n→ L'urne A contient le plus grand nombre de multiples de 6.",options:null},{id:"4.",texte:"On tire une boule au hasard dans l'une des urnes. Démontrer que la probabilité d'obtenir un nombre **supérieur ou égal à 20** est la même quelle que soit l'urne choisie.",points:4,reponse:"Urne A — boules ≥ 20 : 24 ; 30 → 2 boules sur 6\nP_A(≥ 20) = 2/6 = 1/3\n\nUrne B — boules ≥ 20 : 21 ; 22 ; 25 → 3 boules sur 9\nP_B(≥ 20) = 3/9 = 1/3\n\nP_A(≥ 20) = P_B(≥ 20) = 1/3 ✓",options:null},{id:"5.",texte:"En repartant avec la composition initiale, on ajoute une boule numérotée **50** dans chacune des urnes. La probabilité d'obtenir un résultat supérieur ou égal à 20 est-elle toujours égale quelle que soit l'urne choisie ?",points:4,reponse:"Urne A → 7 boules — boules ≥ 20 : 24 ; 30 ; 50 → 3 boules\nP_A(≥ 20) = 3/7\n\nUrne B → 10 boules — boules ≥ 20 : 21 ; 22 ; 25 ; 50 → 4 boules\nP_B(≥ 20) = 4/10 = 2/5\n\n3/7 ≠ 2/5 → Non, la probabilité n'est plus la même.",options:null}]
+  },
+  {
+    id: "brevet_metropole_2025_ex2",
+    numero: 2,
+    titre: "aquathlon — course à pied &amp; natation",
+    source: "Brevet Métropole Juin 2025",
+    annee: 2025,
+    session: "Métropole Juin",
+    notion: "Pythagore",
+    notions: ["Pythagore", "Thalès", "Trigonométrie", "Statistiques"],
+    points: 23,
+    enonce: "Cette année, les professeurs d'EPS proposent aux élèves un aquathlon (course à pied et natation).",
+    figures: ["<svg viewBox=\"0 0 420 300\" width=\"420\" height=\"300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--fd)\"> <!-- Axes de référence : A en haut à gauche, E en bas, C et B à droite --> <!-- A(80,80), D(80,210), E(80,270), C(290,80), B(370,80) --> <!-- Ligne ACB horizontale --> <line x1=\"80\" y1=\"80\" x2=\"370\" y2=\"80\" stroke=\"#333\" stroke-width=\"1.5\"/> <!-- Ligne ADE verticale --> <line x1=\"80\" y1=\"80\" x2=\"80\" y2=\"270\" stroke=\"#333\" stroke-width=\"1.5\"/> <!-- Parcours ACDEB --> <!-- A→C déjà dans la ligne --> <!-- C→D diagonale --> <line x1=\"290\" y1=\"80\" x2=\"80\" y2=\"210\" stroke=\"var(--blue)\" stroke-width=\"2\"/> <!-- D→E déjà dans la verticale --> <!-- E→B diagonale --> <line x1=\"80\" y1=\"270\" x2=\"370\" y2=\"80\" stroke=\"var(--blue)\" stroke-width=\"2\"/> <!-- CB en pointillés (non parcouru) --> <line x1=\"290\" y1=\"80\" x2=\"370\" y2=\"80\" stroke=\"#999\" stroke-width=\"1.5\" stroke-dasharray=\"6,4\"/> <!-- Angle droit en A --> <rect x=\"80\" y=\"80\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"#EE6E34\" stroke-width=\"1.5\"/> <!-- Points --> <circle cx=\"80\" cy=\"80\" r=\"4\" fill=\"var(--blue)\"/> <circle cx=\"290\" cy=\"80\" r=\"4\" fill=\"var(--blue)\"/> <circle cx=\"370\" cy=\"80\" r=\"4\" fill=\"var(--blue)\"/> <circle cx=\"80\" cy=\"210\" r=\"4\" fill=\"var(--blue)\"/> <circle cx=\"80\" cy=\"270\" r=\"4\" fill=\"var(--blue)\"/> <!-- Labels points --> <text x=\"64\" y=\"78\" fill=\"var(--blue)\" font-size=\"14\" font-weight=\"700\">A</text> <text x=\"293\" y=\"72\" fill=\"var(--blue)\" font-size=\"14\" font-weight=\"700\">C</text> <text x=\"373\" y=\"78\" fill=\"var(--blue)\" font-size=\"14\" font-weight=\"700\">B</text> <text x=\"64\" y=\"214\" fill=\"var(--blue)\" font-size=\"14\" font-weight=\"700\">D</text> <text x=\"64\" y=\"278\" fill=\"var(--blue)\" font-size=\"14\" font-weight=\"700\">E</text> <!-- Cotes --> <!-- AC = 480 m --> <text x=\"178\" y=\"70\" fill=\"var(--muted)\" font-size=\"11\" text-anchor=\"middle\">480 m</text> <!-- CB = 120 m --> <text x=\"332\" y=\"70\" fill=\"var(--muted)\" font-size=\"11\" text-anchor=\"middle\">120 m</text> <!-- AE = 250 m (AD+DE) avec accolade --> <line x1=\"56\" y1=\"80\" x2=\"56\" y2=\"270\" stroke=\"var(--muted)\" stroke-width=\"1\" stroke-dasharray=\"3,3\"/> <text x=\"40\" y=\"180\" fill=\"var(--muted)\" font-size=\"11\" text-anchor=\"middle\" transform=\"rotate(-90,40,180)\">250 m</text> <!-- DE = 50 m --> <line x1=\"58\" y1=\"210\" x2=\"58\" y2=\"270\" stroke=\"var(--orange)\" stroke-width=\"2\"/> <text x=\"44\" y=\"244\" fill=\"var(--orange)\" font-size=\"11\" text-anchor=\"middle\">50 m</text> <!-- Flèches direction parcours --> <text x=\"178\" y=\"148\" fill=\"var(--blue)\" font-size=\"10\" text-anchor=\"middle\" transform=\"rotate(-37,178,148)\">→</text> <text x=\"225\" y=\"178\" fill=\"var(--blue)\" font-size=\"10\" text-anchor=\"middle\" transform=\"rotate(-30,225,178)\">→</text> </svg>"],
+    questions: [{id:"1.",texte:"Justifier que **AD = 200 m**.",points:3,reponse:"AE = AD + DE, donc AD = AE − DE = 250 − 50 = 200 m ✓",options:null},{id:"2.",texte:"Calculer la longueur **CD**.",points:4,reponse:"Le triangle ADC est rectangle en A, donc d'après le théorème de Pythagore :\nCD² = AC² + AD²\nCD² = 480² + 200² = 230 400 + 40 000 = 270 400\nCD = √270 400 = 520 m",options:null},{id:"3.",texte:"Pour que le parcours soit validé, il est nécessaire que les droites (CD) et (BE) soient parallèles **et** que la mesure de l'angle ACD soit supérieure à 20°.",points:5,reponse:"On vérifie si le rapport AC/AB = AD/AE :\nAB = AC + CB = 480 + 120 = 600 m\nAC/AB = 480/600 = 4/5\nAD/AE = 200/250 = 4/5\n\nLes rapports sont égaux, donc d'après la réciproque du théorème de Thalès,\nles droites (CD) et (BE) sont parallèles. ✓",options:null},{id:"3.a.",texte:"Les droites (CD) et (BE) sont-elles parallèles ?",points:4,reponse:"Dans le triangle ADC rectangle en A :\ntan(∠ACD) = AD/AC = 200/480 ≈ 0,4167\n∠ACD = arctan(0,4167) ≈ 22,6°\n\n22,6° > 20° → L'angle ACD est bien supérieur à 20°. ✓",options:null},{id:"3.b.",texte:"La mesure de l'angle ACD est-elle supérieure à 20° ?",points:2,reponse:"Les deux conditions sont remplies : (CD) ∥ (BE) ✓ et ∠ACD ≈ 22,6° > 20° ✓\n→ Le parcours est validé.",options:null},{id:"3.c.",texte:"Le parcours est-il validé ?",points:3,reponse:"La série est déjà ordonnée, 9 valeurs → médiane = 5e valeur\nMédiane = 6 min = 360 s",options:null},{id:"4.",texte:"Quel est le **temps médian** de cette série ?",points:2,reponse:"L'élève le plus rapide : 5 min 30 s = 330 s pour 200 m\nVitesse élève = 200 m / 330 s = 0,606 m/s = 0,606 × 3,6 ≈ 2,18 km/h\n\nVitesse poisson = 5 km/h > 2,18 km/h\n→ Oui, le poisson rouge nage plus vite que l'élève le plus rapide.",options:null},{id:"5.",texte:"Un poisson rouge nage à la vitesse de **5 km/h**. Nage-t-il plus vite que l'élève le plus rapide ?",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_2025_ex3",
+    numero: 3,
+    titre: "QCM — 5 questions",
+    source: "Brevet Métropole Juin 2025",
+    annee: 2025,
+    session: "Métropole Juin",
+    notion: "Proportionnalité",
+    notions: ["Proportionnalité", "Transformations", "Aire", "Algèbre"],
+    points: 18,
+    enonce: "QCM — une seule réponse est exacte par question. Aucune justification n'est demandée.",
+    figures: ["<svg viewBox=\"0 0 240 160\" width=\"240\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--fd)\"> <!-- A(20,130), B(140,20), C(200,130) --> <polygon points=\"20,130 140,20 200,130\" fill=\"rgba(0,33,188,.05)\" stroke=\"#333\" stroke-width=\"1.8\"/> <!-- Angle droit en B --> <rect x=\"130\" y=\"20\" width=\"11\" height=\"11\" fill=\"none\" stroke=\"#555\" stroke-width=\"1.3\"/> <!-- Labels --> <text x=\"8\" y=\"145\" fill=\"var(--blue)\" font-size=\"13\" font-weight=\"700\">A</text> <text x=\"138\" y=\"16\" fill=\"var(--blue)\" font-size=\"13\" font-weight=\"700\">B</text> <text x=\"203\" y=\"145\" fill=\"var(--blue)\" font-size=\"13\" font-weight=\"700\">C</text> <!-- Cotes --> <text x=\"70\" y=\"85\" fill=\"var(--muted)\" font-size=\"11\" text-anchor=\"middle\" transform=\"rotate(-52,70,85)\">6 cm</text> <text x=\"178\" y=\"85\" fill=\"var(--muted)\" font-size=\"11\" text-anchor=\"middle\" transform=\"rotate(52,178,85)\">4,5 cm</text> <text x=\"110\" y=\"148\" fill=\"var(--muted)\" font-size=\"11\" text-anchor=\"middle\">7,5 cm</text> </svg>"],
+    questions: [{id:"Question 1",texte:"Le prix de 3 melons est 8,40 €. Combien coûtent 5 melons ?",points:3,reponse:"",options:null},{id:"Question 2",texte:"Quelle transformation permet de passer de la figure 1 à la figure 2 ?",points:3,reponse:"",options:null},{id:"Question 3",texte:"Un article coûte 350 €. Son prix augmente de 20 %. Quel est son nouveau prix ?",points:3,reponse:"",options:null},{id:"Question 4",texte:"Quelle est l'aire du triangle rectangle ABC ?",points:3,reponse:"",options:null},{id:"Question 5",texte:"Quelle est la forme développée et réduite de l'expression **(2x + 3)(x − 4)** ?",points:3,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_2025_ex4",
+    numero: 4,
+    titre: "programmes de calcul &amp; Scratch",
+    source: "Brevet Métropole Juin 2025",
+    annee: 2025,
+    session: "Métropole Juin",
+    notion: "Calcul littéral",
+    notions: ["Calcul littéral", "Équation", "Scratch"],
+    points: 20,
+    enonce: "Au club « Mathsetmagie », on s'amuse à créer des programmes de calcul plus ou moins magiques.",
+    figures: [],
+    questions: [{id:"1.",texte:"Vérifier que si on choisit **10** comme nombre de départ, on obtient **20** avec ce programme.",points:2,reponse:"10 → 10 − 4 = 6 → 6 × 2 = 12 → 12 + 8 = 20 ✓",options:null},{id:"2.",texte:"Quel résultat obtient-on avec ce programme si on choisit **−7** comme nombre de départ ?",points:3,reponse:"−7 → −7 − 4 = −11 → −11 × 2 = −22 → −22 + 8 = −14",options:null},{id:"3.",texte:"Zoé prétend que son programme est « magique » car, quel que soit le nombre choisi, le résultat est toujours le **double du nombre de départ**. A-t-elle raison ?",points:5,reponse:"Soit x le nombre de départ :\nx → x − 4 → (x − 4) × 2 = 2x − 8 → 2x − 8 + 8 = 2x\n\nLe résultat est 2x, soit bien le double du nombre de départ.\n→ Zoé a raison, son programme est magique. ✓",options:null},{id:"4.",texte:"Démontrer que si le nombre de départ est **x**, le résultat obtenu avec le programme de Fred est **20x + 50**.",points:4,reponse:"Étape 1 : résultat ← réponse × 4 = 4x\nÉtape 2 : résultat ← résultat + 10 = 4x + 10\nÉtape 3 : résultat ← résultat × 5 = (4x + 10) × 5 = 20x + 50\n\nLe programme de Fred donne bien 20x + 50. ✓",options:null},{id:"5.",texte:"Quel nombre faut-il choisir au départ pour obtenir **75** avec le programme de Fred ?",points:3,reponse:"20x + 50 = 75\n20x = 75 − 50 = 25\nx = 25 / 20 = 1,25\n\nIl faut choisir 1,25 comme nombre de départ.",options:null},{id:"6.",texte:"Fred souhaite modifier son programme afin que le résultat soit toujours **20 fois plus grand que le nombre de départ**. Recopier et compléter la sixième ligne du programme.",points:3,reponse:"Le programme donne 20x + 50. Pour obtenir 20x il faut supprimer le +50.\nAprès l'étape 3 : résultat = 20x + 50\nIl faut soustraire 50 : résultat ← résultat − 50\n\n6e ligne : mettre résultat à résultat − 50",options:null}]
+  },
+  {
+    id: "brevet_metropole_2025_ex5",
+    numero: 5,
+    titre: "achat ou location — fonctions &amp; graphique",
+    source: "Brevet Métropole Juin 2025",
+    annee: 2025,
+    session: "Métropole Juin",
+    notion: "Fonctions",
+    notions: ["Fonctions", "Tableur", "Lecture graphique"],
+    points: 19,
+    enonce: "Un garage propose 2 options au client : • Option Achat : prix d'achat de la voiture 22 400 €. Assurance obligatoire 75 € par mois. • Option Location : 425 € par mois, assurance comprise. L'objectif de cet exercice est de comparer ces deux options.",
+    figures: [],
+    questions: [{id:"1.",texte:"Montrer qu'avec l'option _Achat_, la dépense à la fin de la première année est de **23 300 €**.",points:3,reponse:"Dépense option Achat après 12 mois :\n= prix d'achat + assurance × 12 mois\n= 22 400 + 75 × 12\n= 22 400 + 900\n= 23 300 € ✓",options:null},{id:"2.",texte:"Après **36 mois**, calculer l'économie réalisée par le client s'il choisit l'option _Location_.",points:4,reponse:"Option Achat après 36 mois = 22 400 + 75 × 36 = 22 400 + 2 700 = 25 100 €\nOption Location après 36 mois = 425 × 36 = 15 300 €\n\nÉconomie = 25 100 − 15 300 = 9 800 €",options:null},{id:"3.",texte:"Afin de comparer les dépenses, le client a réalisé le tableau suivant à l'aide d'un tableur. Quelle formule doit être saisie dans la cellule **B3** qui, étendue jusqu'à la cellule F3, permet de compléter le tableau ?",points:3,reponse:"La dépense Location = 425 × nombre de mois\nLa cellule B1 contient le nombre de mois.\n\nFormule à saisir en B3 : =425*B1\n(étendue vers la droite, elle donne automatiquement 425×C1, 425×D1, etc.)",options:null},{id:"4.",texte:"Déterminer l'expression de **f(x)** permettant de calculer la dépense correspondant à l'option _Achat_.",points:3,reponse:"Dépense Achat = prix d'achat + assurance × nombre de mois\nf(x) = 22 400 + 75x",options:null},{id:"5.",texte:"Sur le graphique ci-dessous, on a tracé les courbes représentatives Cf et Cg des fonctions f et g. Par lecture graphique, déterminer à partir de combien de mois l'option _Achat_ est la plus avantageuse.",points:6,reponse:"Par lecture graphique, les deux courbes se croisent vers x ≈ 64 mois.\n\nPour x < 64 mois : Cf est en dessous de Cg → l'option Achat coûte moins cher.\nPour x > 64 mois : Cf est au-dessus de Cg → l'option Location coûte moins cher.\n\n→ L'option Achat est la plus avantageuse à partir d'environ 64 mois (≈ 5 ans et 4 mois).",options:null}]
+  },
+  {
+    id: "brevet_metropole_septembre_2025_ex1",
+    numero: 1,
+    titre: "playlist d'Aurélie — dénombrement &amp; probabilités",
+    source: "Brevet Métropole Septembre 2025",
+    annee: 2025,
+    session: "Métropole Septembre",
+    notion: "Dénombrement",
+    notions: ["Dénombrement", "Moyenne", "Probabilités", "Nombres premiers"],
+    points: 20,
+    enonce: "Pour faire écouter de la musique à son enfant, Aurélie a sélectionné 22 chansons : 9 chants de Noël, 6 comptines et des berceuses. Le temps d'écoute total des chansons de sa liste est de 55 minutes.",
+    figures: [],
+    questions: [{id:"1.",texte:"Calculer le nombre de **berceuses** présentes dans la liste.",points:3,reponse:"22 = 9 + 6 + berceuses → berceuses = 22 − 9 − 6 = 7",options:null},{id:"2.",texte:"Calculer la **durée moyenne** d'une chanson. Le résultat sera donné en minute et seconde.",points:4,reponse:"55 / 22 = 2,5 min = 2 min 30 s",options:null},{id:"3.",texte:"Aurélie écoute une chanson choisie au hasard parmi toutes les chansons de la liste.",points:3,reponse:"P(comptine) = 6/22 = 3/11 ✓",options:null},{id:"3.a.",texte:"Montrer que la probabilité que la chanson écoutée soit une comptine est égale à **3/11**.",points:4,reponse:"P(pas berceuse) = 1 − 7/22 = 15/22",options:null},{id:"3.b.",texte:"Quelle est la probabilité que la chanson écoutée **ne soit pas une berceuse** ?",points:6,reponse:"Nombres premiers de 1 à 22 : 2,3,5,7,11,13,17,19 → 8\nP = 8/22 = 4/11\n4×3=12 > 11×1=11 donc 4/11 > 1/3 ✓",options:null},{id:"3.c.",texte:"Les chansons sont numérotées de 1 à 22. La probabilité que le numéro soit un **nombre premier** est-elle supérieure à **1/3** ? Justifier.",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_septembre_2025_ex2",
+    numero: 2,
+    titre: "QCM — 6 questions",
+    source: "Brevet Métropole Septembre 2025",
+    annee: 2025,
+    session: "Métropole Septembre",
     notion: "Statistiques",
-    source: "Brevet Centres Étrangers · 2025",
-    points: 25,
-    enonce: "Nombre de longueurs effectuées par 30 élèves :\n— 10 longueurs : 4 élèves\n— 15 longueurs : 8 élèves\n— 20 longueurs : 10 élèves\n— 25 longueurs : 5 élèves\n— 30 longueurs : 3 élèves",
-    figure: null,
-    questions: [
-      {
-        id: "1",
-        texte: "Vérifier que l'effectif total est bien 30 élèves.",
-        points: 2,
-        reponse: "4 + 8 + 10 + 5 + 3 = 30 ✓",
-        options: null
-      },
-      {
-        id: "2",
-        texte: "Calculer la moyenne du nombre de longueurs effectuées. Arrondir au dixième.",
-        points: 6,
-        reponse: "Moyenne = (10×4 + 15×8 + 20×10 + 25×5 + 30×3) / 30\n= (40 + 120 + 200 + 125 + 90) / 30\n= 575 / 30\n≈ 19,2 longueurs",
-        options: null
-      },
-      {
-        id: "3",
-        texte: "Déterminer la médiane du nombre de longueurs effectuées.",
-        points: 5,
-        reponse: "30 élèves → médiane = moyenne des 15e et 16e valeurs.\nEffectifs cumulés : 10 → 4 ; 15 → 12 ; 20 → 22\nLes 15e et 16e valeurs sont toutes les deux à 20 longueurs.\nMédiane = 20 longueurs.",
-        options: null
-      },
-      {
-        id: "4",
-        texte: "On choisit au hasard un élève parmi les 30. Calculer la probabilité que cet élève ait effectué au moins 20 longueurs.",
-        points: 6,
-        reponse: "Élèves ayant effectué au moins 20 longueurs (20, 25 ou 30) : 10 + 5 + 3 = 18 élèves\nP(≥ 20 longueurs) = 18/30 = 3/5 = 0,6",
-        options: null
-      },
-      {
-        id: "5",
-        texte: "L'entraîneur affirme : « Plus de la moitié des élèves ont effectué strictement plus de 15 longueurs ». A-t-il raison ? Justifier.",
-        points: 6,
-        reponse: "Élèves ayant effectué strictement plus de 15 longueurs (donc 20, 25 ou 30) :\n10 + 5 + 3 = 18 élèves\n18/30 = 0,6 > 1/2 → plus de la moitié (60% > 50%)\nL'entraîneur a raison. ✓",
-        options: null
-      }
-    ]
+    notions: ["Statistiques", "Volume", "Notation scientifique", "Ratio"],
+    points: 18,
+    enonce: "QCM — une seule réponse est exacte par question. Aucune justification n'est demandée.",
+    figures: [],
+    questions: [{id:"Question 1",texte:"On considère la série : **4 ; 8 ; 11 ; 7 ; 2 ; 3 ; 14**. Quelle est l'étendue de cette série ?",points:3,reponse:"",options:null},{id:"Question 2",texte:"Quel est le volume correspondant à **1 L** ?",points:3,reponse:"",options:null},{id:"Question 3",texte:"Quel est le nombre dont l'écriture scientifique est **8,6 × 10⁻⁴** ?",points:3,reponse:"",options:null},{id:"Question 4",texte:"La longueur et la largeur du drapeau français sont dans le ratio **3 : 2**. Quelle est la largeur si la longueur est **90 cm** ?",points:3,reponse:"",options:null},{id:"Question 5",texte:"Le prix d'un parfum est passé de **75 €** à **60 €**. Quel pourcentage de réduction a été appliqué ?",points:3,reponse:"",options:null},{id:"Question 6",texte:"Quelle est la forme factorisée de **4x² − 25** ?",points:3,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_septembre_2025_ex3",
+    numero: 3,
+    titre: "triangles — Thalès &amp; trigonométrie",
+    source: "Brevet Métropole Septembre 2025",
+    annee: 2025,
+    session: "Métropole Septembre",
+    notion: "Thalès",
+    notions: ["Thalès", "Pythagore", "Trigonométrie", "Triangles semblables"],
+    points: 22,
+    enonce: "On considère la figure ci-dessous où : • ABC est un triangle rectangle en B • Les points B, E et C sont alignés ainsi que les points A, D, F et C • Les droites (BD) et (EF) sont parallèles • AB = 10 cm, BC = 7,5 cm, BE = 3 cm, BD = 6 cm et CF = 2,7 cm",
+    figures: ["<svg viewBox=\"0 0 320 300\" width=\"320\" height=\"300\" style=\"max-width:100%;height:auto\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"-apple-system,sans-serif\"> <!-- B(60,260), A(300,260), C(60,20) — triangle rectangle en B BC vertical, BA horizontal E sur [BC] : BE/BC = 3/7.5 = 0.4 → E(60, 260-0.4*240) = (60,164) D sur [AC], A,D,F,C alignés. BD // EF. Direction BD : B(60,260)→D sur AC. AC : de A(300,260) à C(60,20). Par Thalès dans triangle CAB avec E sur CB et D sur CA et BD//... : CE/CB = CD/CA → D placé à t=0.4 depuis A → D=(300-0.4*240, 260-0.4*240)=(204,164) → BD va de (60,260) à (204,164), direction (144,-96) F sur [AC] avec EF // BD : E(60,164) + k*(144,-96) = F sur AC AC param: (300-240t, 260-240t) 60+144k = 300-240t et 164-96k = 260-240t → k=0.6 → F=(60+86.4, 164-57.6)=(146,106) CE/CB = 4.5/7.5 = 0.6, EF/BD = 0.6 → EF = 3.6 ✓ parallèles confirmés --> <!-- Triangle principal ABC --> <polygon points=\"60,260 300,260 60,20\" fill=\"rgba(0,33,188,.04)\" stroke=\"#333\" stroke-width=\"1.8\"/> <!-- Angle droit en B --> <rect x=\"60\" y=\"248\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"#555\" stroke-width=\"1.3\"/> <!-- Segment BD : B(60,260) → D(204,164) --> <line x1=\"60\" y1=\"260\" x2=\"204\" y2=\"164\" stroke=\"#333\" stroke-width=\"1.4\"/> <!-- Segment EF : E(60,164) → F(146,106) — parallèle à BD --> <line x1=\"60\" y1=\"164\" x2=\"146\" y2=\"106\" stroke=\"#333\" stroke-width=\"1.4\"/> <!-- Marques de parallélisme // sur BD --> <line x1=\"126\" y1=\"216\" x2=\"134\" y2=\"208\" stroke=\"var(--orange)\" stroke-width=\"1.8\"/> <line x1=\"133\" y1=\"220\" x2=\"141\" y2=\"212\" stroke=\"var(--orange)\" stroke-width=\"1.8\"/> <!-- Marques de parallélisme // sur EF --> <line x1=\"97\" y1=\"139\" x2=\"105\" y2=\"131\" stroke=\"var(--orange)\" stroke-width=\"1.8\"/> <line x1=\"104\" y1=\"143\" x2=\"112\" y2=\"135\" stroke=\"var(--orange)\" stroke-width=\"1.8\"/> <!-- Points --> <circle cx=\"60\" cy=\"260\" r=\"3.5\" fill=\"var(--blue)\"/> <circle cx=\"300\" cy=\"260\" r=\"3.5\" fill=\"var(--blue)\"/> <circle cx=\"60\" cy=\"20\" r=\"3.5\" fill=\"var(--blue)\"/> <circle cx=\"60\" cy=\"164\" r=\"3.5\" fill=\"var(--blue)\"/> <circle cx=\"204\" cy=\"164\" r=\"3.5\" fill=\"var(--blue)\"/> <circle cx=\"146\" cy=\"106\" r=\"3.5\" fill=\"var(--blue)\"/> <!-- Labels --> <text x=\"44\" y=\"278\" fill=\"var(--blue)\" font-size=\"13\" font-weight=\"700\">B</text> <text x=\"304\" y=\"268\" fill=\"var(--blue)\" font-size=\"13\" font-weight=\"700\">A</text> <text x=\"44\" y=\"16\" fill=\"var(--blue)\" font-size=\"13\" font-weight=\"700\">C</text> <text x=\"38\" y=\"168\" fill=\"var(--blue)\" font-size=\"13\" font-weight=\"700\">E</text> <text x=\"208\" y=\"162\" fill=\"var(--blue)\" font-size=\"13\" font-weight=\"700\">D</text> <text x=\"150\" y=\"104\" fill=\"var(--blue)\" font-size=\"13\" font-weight=\"700\">F</text> <!-- Cotes --> <text x=\"30\" y=\"216\" fill=\"var(--muted)\" font-size=\"10\" text-anchor=\"middle\">BE=3</text> <text x=\"30\" y=\"100\" fill=\"var(--muted)\" font-size=\"10\" text-anchor=\"middle\">CE=4,5</text> <text x=\"185\" y=\"278\" fill=\"var(--muted)\" font-size=\"10\" text-anchor=\"middle\">AB=10</text> <text x=\"44\" y=\"242\" fill=\"var(--muted)\" font-size=\"10\" text-anchor=\"middle\">BC=7,5</text> <text x=\"145\" y=\"222\" fill=\"var(--muted)\" font-size=\"10\" text-anchor=\"middle\">BD=6</text> </svg>"],
+    questions: [{id:"1.",texte:"Montrer que **CE = 4,5 cm**.",points:3,reponse:"B, E et C sont alignés, donc CE = BC − BE = 7,5 − 3 = 4,5 cm ✓",options:null},{id:"1.a.",texte:"Démontrer que la longueur **EF = 3,6 cm**.",points:5,reponse:"Les droites (BD) et (EF) sont parallèles.\nLes points B, E, C sont alignés et les points A, D, F, C sont alignés.\nD'après le théorème de Thalès dans le triangle CAB :\nCE/CB = CF + FD... \n\nThalès dans triangle avec sommet C :\nCE/CB = CF/CD = EF/BD\n4,5/7,5 = EF/6\nEF = 6 × 4,5/7,5 = 27/7,5 = 3,6 cm ✓",options:null},{id:"1.b.",texte:"Démontrer que le triangle **CEF est rectangle en F**.",points:5,reponse:"On vérifie si CE² = CF² + EF² (réciproque de Pythagore) :\nCE² = 4,5² = 20,25\nCF² + EF² = 2,7² + 3,6² = 7,29 + 12,96 = 20,25\n\nCE² = CF² + EF² = 20,25 ✓\nDonc le triangle CEF est rectangle en F.",options:null},{id:"2.",texte:"Calculer la mesure de l'angle **B̂CA**. Arrondir au degré.",points:4,reponse:"Dans le triangle ABC rectangle en B :\ntan(∠BCA) = AB/BC = 10/7,5 = 4/3\n∠BCA = arctan(4/3) ≈ 53°",options:null},{id:"3.",texte:"Les triangles **ABC** et **CEF** sont-ils semblables ?",points:5,reponse:"Triangle ABC rectangle en B : AB=10, BC=7,5, angle BCA≈53°\nTriangle CEF rectangle en F : EF=3,6, CF=2,7\n\nRapport EF/AB = 3,6/10 = 0,36\nRapport CF/BC = 2,7/7,5 = 0,36\n\nLes rapports sont égaux et les deux triangles sont rectangles avec le même angle en C.\n→ Les triangles ABC et CEF sont semblables.",options:null},{id:"3.a.",texte:"",points:0,reponse:"",options:null},{id:"3.b.",texte:"",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_septembre_2025_ex4",
+    numero: 4,
+    titre: "filtration de piscine — fonction affine",
+    source: "Brevet Métropole Septembre 2025",
+    annee: 2025,
+    session: "Métropole Septembre",
+    notion: "Fonction affine",
+    notions: ["Fonction affine", "Graphique", "Équation", "Proportionnalité"],
+    points: 20,
+    enonce: "M. Durand vient de faire construire une piscine. Le temps quotidien de filtration idéal (en heure) est donné en fonction de la température de l'eau (en °C). La méthode ci-dessous permet de calculer ce temps de filtration :",
+    figures: [],
+    questions: [{id:"1.",texte:"Vérifier que pour une température de l'eau de **26 °C**, le temps de filtration est de **15 h**.",points:3,reponse:"Température : 26°C\n26 + 4 = 30\n30 × 0,5 = 15 h ✓",options:null},{id:"2.",texte:"On note **x** la température de l'eau (en °C). Montrer que le temps de filtration, en heure, peut s'écrire **0,5x + 2**.",points:3,reponse:"Temps = (x + 4) × 0,5\n= 0,5x + 0,5 × 4\n= 0,5x + 2 ✓",options:null},{id:"3.",texte:"On donne ci-dessous la courbe représentative de la fonction **f** définie par **f(x) = 0,5x + 2**, où x désigne la température de l'eau (en °C) et f(x) le temps de filtration (en h).",points:3,reponse:"Non. La fonction f(x) = 0,5x + 2 est une fonction affine (et non linéaire) car elle a un terme constant +2.\nSa représentation graphique ne passe pas par l'origine.\n→ Le temps de filtration n'est pas proportionnel à la température.",options:null},{id:"3.a.",texte:"Le temps de filtration est-il **proportionnel** à la température de l'eau de la piscine ?",points:2,reponse:"f(10) = 0,5 × 10 + 2 = 5 + 2 = 7",options:null},{id:"3.b.",texte:"Quelle est l'image de **10** par la fonction f ? Aucune justification n'est demandée.",points:4,reponse:"0,5x + 2 = 17\n0,5x = 15\nx = 30\n\n→ Pour une température de l'eau de 30 °C, le temps de filtration idéal est de 17 heures.",options:null},{id:"4.",texte:"Résoudre l'équation **0,5x + 2 = 17** et interpréter ce résultat dans le contexte du problème.",points:5,reponse:"Nombre de jours : juillet = 31 jours + août = 31 jours = 62 jours\n\nConsommation = 0,8 × 16 × 62 = 793,6 kWh\n\nDépense = 793,6 × 0,23 ≈ 182,53 €",options:null},{id:"5.",texte:"M. Durand a décidé de filtrer sa piscine **16 h par jour**, tous les jours du **1ᵉʳ juillet au 31 août inclus**. Calculer la dépense liée au fonctionnement de la filtration au cours de cette période.",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_metropole_septembre_2025_ex5",
+    numero: 5,
+    titre: "table carrée — aires, transformation &amp; Scratch",
+    source: "Brevet Métropole Septembre 2025",
+    annee: 2025,
+    session: "Métropole Septembre",
+    notion: "Aire",
+    notions: ["Aire", "Pourcentage", "Transformation", "Scratch"],
+    points: 20,
+    enonce: "Le dessus d'une table carrée, de côté 80 cm, est composé de quatre plaques rectangulaires en bois identiques et d'une plaque carrée en verre au centre. Chaque plaque en bois a pour longueur 60 cm et pour largeur 20 cm.",
+    figures: ["<svg viewBox=\"0 0 260 220\" width=\"260\" height=\"220\" style=\"max-width:100%;height:auto\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"-apple-system,sans-serif\" font-size=\"11\"> <!-- Table 80×80 cm, scale = 2px/cm → 160×160px, départ (20,20) Plaque bois : 60×20 cm → 120×40px (mais en vue, les 4 plaques sont en L autour du verre) Carré verre : 40×40 cm → 80×80px, centre de la table → (20+40, 20+40)=(60,60) 4 rectangles bois : haut : (60,20) 80×40 bas : (60,140) 80×40 gauche : (20,60) 40×80 droite : (140,60) 40×80 4 coins (partie de la table) : (20,20)(140,20)(20,140)(140,140) chacun 40×40 --> <!-- 4 coins gris --> <rect x=\"20\" y=\"20\" width=\"40\" height=\"40\" fill=\"rgba(0,0,0,.15)\" stroke=\"#333\" stroke-width=\"1.4\"/> <rect x=\"140\" y=\"20\" width=\"40\" height=\"40\" fill=\"rgba(0,0,0,.15)\" stroke=\"#333\" stroke-width=\"1.4\"/> <rect x=\"20\" y=\"140\" width=\"40\" height=\"40\" fill=\"rgba(0,0,0,.15)\" stroke=\"#333\" stroke-width=\"1.4\"/> <rect x=\"140\" y=\"140\" width=\"40\" height=\"40\" fill=\"rgba(0,0,0,.15)\" stroke=\"#333\" stroke-width=\"1.4\"/> <!-- 4 plaques bois gris --> <rect x=\"60\" y=\"20\" width=\"80\" height=\"40\" fill=\"rgba(0,0,0,.15)\" stroke=\"#333\" stroke-width=\"1.4\"/> <rect x=\"60\" y=\"140\" width=\"80\" height=\"40\" fill=\"rgba(0,0,0,.15)\" stroke=\"#333\" stroke-width=\"1.4\"/> <rect x=\"20\" y=\"60\" width=\"40\" height=\"80\" fill=\"rgba(0,0,0,.15)\" stroke=\"#333\" stroke-width=\"1.4\"/> <rect x=\"140\" y=\"60\" width=\"40\" height=\"80\" fill=\"rgba(0,0,0,.15)\" stroke=\"#333\" stroke-width=\"1.4\"/> <!-- Plaque verre blanche centrale --> <rect x=\"60\" y=\"60\" width=\"80\" height=\"80\" fill=\"white\" stroke=\"#333\" stroke-width=\"1.4\"/> <!-- Contour global table --> <rect x=\"20\" y=\"20\" width=\"160\" height=\"160\" fill=\"none\" stroke=\"#333\" stroke-width=\"1.8\"/> <!-- Numéros --> <text x=\"100\" y=\"168\" text-anchor=\"middle\" fill=\"#333\" font-weight=\"700\" font-size=\"13\">1</text> <text x=\"162\" y=\"103\" text-anchor=\"middle\" fill=\"#333\" font-weight=\"700\" font-size=\"13\">2</text> <!-- Flèche plaque en verre --> <line x1=\"110\" y1=\"85\" x2=\"185\" y2=\"55\" stroke=\"#333\" stroke-width=\"1\"/> <circle cx=\"110\" cy=\"85\" r=\"2\" fill=\"#333\"/> <text x=\"188\" y=\"54\" fill=\"#333\">Plaque en verre</text> <!-- Flèche plaque en bois --> <line x1=\"40\" y1=\"100\" x2=\"5\" y2=\"130\" stroke=\"#333\" stroke-width=\"1\"/> <circle cx=\"40\" cy=\"100\" r=\"2\" fill=\"#333\"/> <text x=\"2\" y=\"142\" fill=\"#333\">Plaque en bois</text> <!-- Cote 80 cm en bas --> <line x1=\"20\" y1=\"196\" x2=\"180\" y2=\"196\" stroke=\"#333\" stroke-width=\"1\"/> <polygon points=\"20,196 28,193 28,199\" fill=\"#333\"/> <polygon points=\"180,196 172,193 172,199\" fill=\"#333\"/> <line x1=\"20\" y1=\"182\" x2=\"20\" y2=\"200\" stroke=\"#333\" stroke-width=\"0.8\" stroke-dasharray=\"3,3\"/> <line x1=\"180\" y1=\"182\" x2=\"180\" y2=\"200\" stroke=\"#333\" stroke-width=\"0.8\" stroke-dasharray=\"3,3\"/> <text x=\"100\" y=\"210\" text-anchor=\"middle\" fill=\"var(--muted)\" font-size=\"10\">80 cm</text> </svg>"],
+    questions: [{id:"1.",texte:"Montrer que l'aire du dessus de la table est égale à **6 400 cm²**.",points:2,reponse:"La table est un carré de côté 80 cm.\nAire = 80² = 6 400 cm² ✓",options:null},{id:"2.",texte:"Montrer que l'aire de la plaque en verre représente **25 %** de l'aire totale du dessus de la table.",points:5,reponse:"Aire totale du dessus = 6 400 cm²\nAire des 4 plaques en bois = 4 × (60 × 20) = 4 × 1 200 = 4 800 cm²\nAire de la plaque en verre = 6 400 − 4 800 = 1 600 cm²\n\nProportion = 1 600 / 6 400 = 0,25 = 25 % ✓",options:null},{id:"3.",texte:"Quel est le nom de la transformation géométrique permettant de passer du rectangle n°1 au rectangle n°2 ? Aucune justification n'est demandée.",points:3,reponse:"Une rotation de 90° (ou une symétrie)",options:null},{id:"4.",texte:"On souhaite réaliser un dessin du dessus de cette table avec Scratch. Le lutin est orienté vers la droite. On a créé le bloc ci-dessous pour dessiner le rectangle n°1 (1 pas = 1 cm).",points:0,reponse:"Le rectangle n°1 mesure 60 cm × 20 cm.\nLigne 3 : répéter 2 fois (un rectangle a 2 paires de côtés)\nLigne 5 : tourner ↩ de 90 degrés\nLigne 6 : avancer de 20 pas",options:null}]
+  },
+  {
+    id: "brevet_nouvelle_caledonie_2025_ex1",
+    numero: 1,
+    titre: "5 questions — 3 réponses",
+    source: "Brevet Nouvelle-Calédonie 2025",
+    annee: 2025,
+    session: "Nouvelle-Calédonie",
+    notion: "Nombres premiers",
+    notions: ["Nombres premiers", "Aire", "Fonctions", "Vitesse"],
+    points: 15,
+    enonce: "QCM — une seule réponse est exacte par question. Aucune justification n'est demandée. Aucun point ne sera enlevé en cas de mauvaise réponse.",
+    figures: [],
+    questions: [{id:"Question 1",texte:"Parmi les nombres suivants, lequel est premier ?",points:3,reponse:"",options:null},{id:"Question 2",texte:"Quelle est l'aire de la figure ci-dessous ?",points:3,reponse:"",options:null},{id:"Question 3",texte:"Une de ces fonctions est affine. Laquelle ?",points:3,reponse:"",options:null},{id:"Question 4",texte:"La distance de Tontouta à Narita est égale à environ **6 980 km**. Le vol Tontouta-Narita dure environ **9 heures**. Quelle est la vitesse moyenne, arrondie à la centaine de km/h, de l'avion sur ce trajet ?",points:3,reponse:"",options:null},{id:"Question 5",texte:"Dans un collège de **730 élèves**, **60 %** des élèves sont des filles. Quel est le nombre de filles dans ce collège ?",points:3,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_nouvelle_caledonie_2025_ex2",
+    numero: 2,
+    titre: "trigonométrie &amp; vitesse",
+    source: "Brevet Nouvelle-Calédonie 2025",
+    annee: 2025,
+    session: "Nouvelle-Calédonie",
+    notion: "Trigonométrie",
+    notions: ["Trigonométrie", "Pythagore", "Conversion", "Vitesse"],
+    points: 20,
+    enonce: "Thomas souhaite construire le cerf-volant représenté par la figure ci-dessous. On donne : D̂EB = 90°, ÊBD = 30°, AB = 50 cm, CD = 40 cm, ED = EC",
+    figures: [],
+    questions: [{id:"1.",texte:"Calculer **BE**. On donnera une valeur arrondie au millimètre. _(Rédiger en faisant apparaître les différentes étapes.)_",points:7,reponse:"Dans le triangle BED rectangle en E :\ntan(∠EBD) = ED/BE\ntan(30°) = ED/BE\n\nOr ED = CD/2 = 40/2 = 20 cm (car ED = EC et CD = 40 cm)\n\ntan(30°) = 20/BE\nBE = 20/tan(30°)\nBE = 20/(1/√3)\nBE = 20√3\nBE ≈ 34,641…\nBE ≈ 34,6 mm (au millimètre)",options:null},{id:"2.",texte:"Calculer **HT**, altitude à laquelle volait son cerf-volant. On donnera une valeur arrondie au mètre. _(SH = 20,50 m, ST = 7,60 m, angle droit en T)_",points:6,reponse:"Dans le triangle STH rectangle en T :\nD'après le théorème de Pythagore :\nSH² = ST² + HT²\nHT² = SH² − ST²\nHT² = 20,50² − 7,60²\nHT² = 420,25 − 57,76\nHT² = 362,49\nHT = √362,49\nHT ≈ 19 m",options:null},{id:"3.",texte:"Il est conseillé de ne pas utiliser ce cerf-volant lorsque le vent dépasse **20 km/h**. La météo annonce un vent ne dépassant pas **15 nœuds**. On donne **1 nœud = 0,514 m/s**. Thomas peut-il faire voler son cerf-volant sans risque ? Justifier.",points:7,reponse:"Vitesse du vent = 15 nœuds = 15 × 0,514 = 7,71 m/s\n\nConversion en km/h :\n7,71 m/s × 3,6 = 27,756 km/h\n\n27,756 km/h > 20 km/h\n\n→ Non, Thomas ne peut pas faire voler son cerf-volant sans risque car le vent peut atteindre environ 27,8 km/h, ce qui dépasse la limite de 20 km/h.",options:null}]
+  },
+  {
+    id: "brevet_nouvelle_caledonie_2025_ex3",
+    numero: 3,
+    titre: "fonctions affines &amp; équations",
+    source: "Brevet Nouvelle-Calédonie 2025",
+    annee: 2025,
+    session: "Nouvelle-Calédonie",
+    notion: "Calcul littéral",
+    notions: ["Calcul littéral", "Fonctions", "Équation"],
+    points: 16,
+    enonce: "On considère les programmes de calcul suivants :",
+    figures: [],
+    questions: [{id:"1.",texte:"Dans cette question, on choisit le nombre **2** pour tester les deux programmes.",points:2,reponse:"2 → 2 + 4 = 6 → 6 × 3 = 18 ✓",options:null},{id:"1.a.",texte:"Vérifier par le calcul qu'on obtient **18** avec le programme A.",points:2,reponse:"2 → 2 × 5 = 10 → 10 − 3 = 7 → 7 − 2 = 5 ✓",options:null},{id:"1.b.",texte:"Vérifier par le calcul qu'on obtient **5** avec le programme B.",points:3,reponse:"x → x + 4 → (x + 4) × 3 = 3x + 12\nDonc f(x) = 3x + 12 ✓",options:null},{id:"2.",texte:"Soit **f** la fonction associée au programme A, qui au nombre choisi x fait correspondre le résultat f(x).",points:3,reponse:"3x + 12 = 27\n3x = 15\nx = 5\nL'antécédent de 27 par f est 5.",options:null},{id:"2.a.",texte:"Justifier que **f(x) = 3x + 12**.",points:3,reponse:"x → x × 5 = 5x → 5x − 3 → 5x − 3 − x = 4x − 3\nDonc g(x) = 4x − 3",options:null},{id:"2.b.",texte:"Calculer l'antécédent de **27** par la fonction f.",points:2,reponse:"4x − 3 = 2\n4x = 5\nx = 5/4 = 1,25",options:null},{id:"3.",texte:"Soit **g** la fonction associée au programme B, qui au nombre choisi x fait correspondre le résultat g(x).",points:0,reponse:"f(x) = g(x)\n3x + 12 = 4x − 3\n12 + 3 = 4x − 3x\n15 = x\n\nHugo a choisi le nombre 15.",options:null},{id:"3.a.",texte:"Donner l'expression de **g(x)**.",points:0,reponse:"",options:null},{id:"3.b.",texte:"Quel nombre faut-il choisir avec le programme B pour obtenir **2** comme résultat ?",points:0,reponse:"",options:null},{id:"4.",texte:"Hugo a choisi un nombre. Il l'a testé avec les deux programmes et a trouvé le **même résultat** à chaque fois. Quel nombre a-t-il choisi ?",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_nouvelle_caledonie_2025_ex4",
+    numero: 4,
+    titre: "probabilités &amp; dénombrement",
+    source: "Brevet Nouvelle-Calédonie 2025",
+    annee: 2025,
+    session: "Nouvelle-Calédonie",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Issues", "Dénombrement"],
+    points: 13,
+    enonce: "Dans un jeu, les candidats tirent une bille dans une boîte et notent sa couleur, puis lancent un dé de la couleur de la bille tirée. Les issues sont des couples (couleur ; nombre). La boîte contient : 15 billes rouges, 10 billes vertes et 5 billes bleues. • Le dé rouge a 10 faces numérotées de 0 à 9. • Le dé vert a 6 faces numérotées de 1 à 6. • Le dé bleu a 4 faces numérotées de 1 à 4. Pour gagner au jeu il faut obtenir 1 au lancé de dé.",
+    figures: [],
+    questions: [{id:"1.",texte:"Quelle est la probabilité de tirer une bille bleue** dans la boîte ?",points:3,reponse:"Total de billes : 15 + 10 + 5 = 30\nP(bille bleue) = 5/30 = 1/6",options:null},{id:"2.",texte:"Amandine a tiré une bille verte** et Alexis a tiré une bille rouge**. Qui a le plus de chance de gagner à ce jeu ? Justifier.",points:4,reponse:"Pour gagner, il faut obtenir 1 au lancer de dé.\n\nAmandine (dé vert, 6 faces) : P(1) = 1/6\nAlexis (dé rouge, 10 faces) : P(1) = 1/10\n\n1/6 > 1/10\n→ Amandine a plus de chances de gagner.",options:null},{id:"3.",texte:"Donner l'ensemble des issues possibles de ce jeu. On notera « R » pour rouge, « V » pour vert et « B » pour bleu._Par exemple : l'issue (R ; 3) correspond à « bille rouge et résultat du dé = 3 »._",points:6,reponse:"Bille rouge → dé rouge (0 à 9) :\n(R;0), (R;1), (R;2), (R;3), (R;4), (R;5), (R;6), (R;7), (R;8), (R;9)\n\nBille verte → dé vert (1 à 6) :\n(V;1), (V;2), (V;3), (V;4), (V;5), (V;6)\n\nBille bleue → dé bleu (1 à 4) :\n(B;1), (B;2), (B;3), (B;4)\n\nTotal : 10 + 6 + 4 = 20 issues possibles.",options:null}]
+  },
+  {
+    id: "brevet_nouvelle_caledonie_2025_ex5",
+    numero: 5,
+    titre: "thalès, aires &amp; triangles semblables",
+    source: "Brevet Nouvelle-Calédonie 2025",
+    annee: 2025,
+    session: "Nouvelle-Calédonie",
+    notion: "Thalès",
+    notions: ["Thalès", "Angles", "Aires", "Triangles semblables"],
+    points: 20,
+    enonce: "La figure ci-dessous n'est pas à l'échelle. On donne : AE = 6 cm, AD = 15 cm, BE = 4 cm B̂EA = ĈDA = 110° Les points A, B et C sont alignés. Les points A, E et D sont alignés.",
+    figures: ["<svg viewBox=\"0 0 400 240\" width=\"400\" height=\"240\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"-apple-system,sans-serif\" font-size=\"12\"> <!-- A(30,190), E(126,190), D(330,190) — alignés horizontalement AE=6, AD=15 → scale: 1cm=19.2px → AE=115px, AD=288px... trop grand Simplifié : A(30,190), E(150,190), D(330,190) B au-dessus de E : BE=4cm, angle BEA=110° depuis AE Angle BEA=110° → depuis la droite AE vers B : 180°-110°=70° au-dessus de AE B = E + 4×(cos(70°), -sin(70°)) px... trop petit On place B visuellement : B(180,110) C en haut à droite, aligné avec A et B : droite AB prolongée Direction AB : (180-30, 110-190) = (150,-80) → C = B + t*(150,-80) C sur la droite AD (prolongée? non, C est en haut) En fait A,B,C alignés → C = A + s*(B-A) pour s>1 s=2 → C = (30+300, 190-160) = (330, 30) — mais D=(330,190) → CD vertical C(330,30), D(330,190) → CD vertical = bon ! angle CDA = angle entre DA et DC = arctan(CD/AD)... on vérifie 110° --> <!-- Triangle ABE (petit) --> <polygon points=\"30,190 150,190 180,110\" fill=\"rgba(0,33,188,.05)\" stroke=\"none\"/> <!-- Triangle ACD (grand) --> <polygon points=\"30,190 330,190 330,30\" fill=\"rgba(238,110,52,.04)\" stroke=\"none\"/> <!-- Segments principaux --> <!-- AD horizontal --> <line x1=\"30\" y1=\"190\" x2=\"330\" y2=\"190\" stroke=\"#333\" stroke-width=\"1.6\"/> <!-- AB prolongé jusqu'à C --> <line x1=\"30\" y1=\"190\" x2=\"330\" y2=\"30\" stroke=\"#333\" stroke-width=\"1.6\"/> <!-- BE --> <line x1=\"150\" y1=\"190\" x2=\"180\" y2=\"110\" stroke=\"var(--blue)\" stroke-width=\"1.4\"/> <!-- CD --> <line x1=\"330\" y1=\"190\" x2=\"330\" y2=\"30\" stroke=\"var(--blue)\" stroke-width=\"1.4\"/> <!-- Angles 110° en E et D --> <path d=\"M 135,190 A 18,18 0 0,0 144,174\" fill=\"none\" stroke=\"var(--orange)\" stroke-width=\"1.3\"/> <text x=\"118\" y=\"183\" fill=\"var(--orange)\" font-size=\"10\">110°</text> <path d=\"M 315,190 A 18,18 0 0,0 320,172\" fill=\"none\" stroke=\"var(--orange)\" stroke-width=\"1.3\"/> <text x=\"290\" y=\"183\" fill=\"var(--orange)\" font-size=\"10\">110°</text> <!-- Points --> <circle cx=\"30\" cy=\"190\" r=\"3\" fill=\"#333\"/> <circle cx=\"150\" cy=\"190\" r=\"3\" fill=\"var(--blue)\"/> <circle cx=\"330\" cy=\"190\" r=\"3\" fill=\"var(--blue)\"/> <circle cx=\"180\" cy=\"110\" r=\"3\" fill=\"var(--blue)\"/> <circle cx=\"330\" cy=\"30\" r=\"3\" fill=\"var(--blue)\"/> <!-- Labels --> <text x=\"18\" y=\"205\" fill=\"#333\" font-weight=\"700\">A</text> <text x=\"148\" y=\"207\" fill=\"var(--blue)\" font-weight=\"700\">E</text> <text x=\"334\" y=\"207\" fill=\"var(--blue)\" font-weight=\"700\">D</text> <text x=\"183\" y=\"108\" fill=\"var(--blue)\" font-weight=\"700\">B</text> <text x=\"334\" y=\"28\" fill=\"var(--blue)\" font-weight=\"700\">C</text> <!-- Cotes --> <!-- AE = 6 cm --> <text x=\"90\" y=\"208\" fill=\"var(--muted)\" font-size=\"10\" text-anchor=\"middle\">6 cm</text> <!-- AD = 15 cm --> <line x1=\"30\" y1=\"216\" x2=\"330\" y2=\"216\" stroke=\"#333\" stroke-width=\"1\"/> <polygon points=\"30,216 38,213 38,219\" fill=\"#333\"/> <polygon points=\"330,216 322,213 322,219\" fill=\"#333\"/> <text x=\"180\" y=\"228\" fill=\"var(--muted)\" font-size=\"10\" text-anchor=\"middle\">15 cm</text> <!-- BE = 4 cm --> <text x=\"175\" y=\"155\" fill=\"var(--muted)\" font-size=\"10\" text-anchor=\"middle\" transform=\"rotate(-75,175,155)\">4 cm</text> </svg>"],
+    questions: [{id:"1.",texte:"Prouver que les droites **(BE)** et **(CD)** sont parallèles.",points:5,reponse:"Les angles B̂EA et ĈDA sont des angles correspondants formés par les droites (BE), (CD) et la sécante (AD).\n\nB̂EA = ĈDA = 110°\n\nDeux droites sont parallèles si les angles correspondants sont égaux.\n→ Les droites (BE) et (CD) sont parallèles.",options:null},{id:"2.",texte:"Calculer **CD**. _(Rédiger en faisant apparaître les différentes étapes.)_",points:7,reponse:"(BE) // (CD), et les points A, B, C sont alignés ainsi que A, E, D.\nD'après le théorème de Thalès dans le triangle ACD :\nAE/AD = BE/CD\n6/15 = 4/CD\nCD = 4 × 15/6\nCD = 60/6\nCD = 10 cm",options:null},{id:"3.",texte:"L'aire du triangle ABE, arrondie au dixième, est égale à **11,3 cm²**. En déduire l'aire du triangle ACD arrondie au dixième.",points:5,reponse:"Les triangles ABE et ACD sont semblables (même angle en A, (BE)//(CD)).\nLe rapport de similitude est : AE/AD = 6/15 = 2/5\n\nLe rapport des aires est le carré du rapport de similitude :\nAire(ABE)/Aire(ACD) = (2/5)² = 4/25\n\n11,3 / Aire(ACD) = 4/25\nAire(ACD) = 11,3 × 25/4 = 70,625\nAire(ACD) ≈ 70,6 cm²",options:null},{id:"4.",texte:"Construire cette figure en vraie grandeur sur l'annexe 1.",points:3,reponse:"Construction à réaliser sur papier :\n1. Tracer le segment AD = 15 cm\n2. Placer E sur AD avec AE = 6 cm\n3. En E, tracer l'angle BEA = 110° et reporter BE = 4 cm → placer B\n4. Tracer la droite (AB) et la prolonger\n5. En D, tracer l'angle CDA = 110° et reporter CD = 10 cm → placer C\n6. Vérifier que A, B, C sont alignés.",options:null}]
+  },
+  {
+    id: "brevet_nouvelle_caledonie_2025_ex6",
+    numero: 6,
+    titre: "scripts &amp; figures géométriques",
+    source: "Brevet Nouvelle-Calédonie 2025",
+    annee: 2025,
+    session: "Nouvelle-Calédonie",
+    notion: "Scratch",
+    notions: ["Scratch", "Figures", "Angles", "Programmation"],
+    points: 16,
+    enonce: "",
+    figures: [],
+    questions: [{id:"1.",texte:"Associer à chaque script ci-dessous la figure qui lui correspond.",points:6,reponse:"Script 1 (tourner 60°, répéter 3) → tracé incomplet avec angle aigu → Figure A\nScript 2 (tourner 90°, répéter 3) → 3 côtés d'un carré → Figure C\nScript 3 (tourner 120°, répéter 3) → triangle équilatéral complet → Figure B",options:null},{id:"2.",texte:"Compléter le script qui commande la construction de la **Figure E** (3 carrés imbriqués de côtés 20, 60 et 100 pas).",points:10,reponse:"Le script pour la Figure E doit tracer 3 carrés imbriqués.\nOn peut utiliser répéter 3 fois un bloc qui :\n  - trace un carré (répéter 4 fois : avancer de côté pas, tourner 90°)\n  - agrandit le côté\n\nExemple de script complet :\nquand 🚩 est cliqué\nstylo en position d'écriture\nmettre côté à 20\nrépéter 3 fois :\n  répéter 4 fois :\n    avancer de [côté] pas\n    tourner ↩ de 90 degrés\n  mettre côté à côté + 40",options:null}]
+  },
+  {
+    id: "brevet_polynesie_2025_ex1",
+    numero: 1,
+    titre: "escalade — tableur &amp; statistiques",
+    source: "Brevet Polynésie 2025",
+    annee: 2025,
+    session: "Polynésie",
+    notion: "Tableur",
+    notions: ["Tableur", "Statistiques", "Moyenne", "Pourcentages"],
+    points: 20,
+    enonce: "L'association sportive d'un collège propose aux élèves une activité escalade. La feuille de calcul ci-dessous obtenue à l'aide d'un tableur indique la répartition par âge des élèves inscrits à l'escalade.",
+    figures: [],
+    questions: [{id:"1.",texte:"Quel est le nombre d'élèves âgés de **12 ans** inscrits à l'escalade ?",points:2,reponse:"D'après le tableau, la colonne D correspond à l'âge 12 ans.\nIl y a 8 élèves âgés de 12 ans.",options:null},{id:"2.",texte:"Calculer le **nombre total** d'élèves inscrits à l'escalade.",points:3,reponse:"Total = 1 + 3 + 8 + 12 + 4 + 2 = 30 élèves",options:null},{id:"3.",texte:"Quelle formule peut-on saisir dans la cellule **H2** pour obtenir le nombre total d'élèves inscrits à l'escalade ?",points:3,reponse:"=SOMME(B2:G2)\nou encore : =B2+C2+D2+E2+F2+G2",options:null},{id:"4.",texte:"Le professeur affirme : « **1/5** des élèves inscrits à l'escalade ont 14 ans ou plus ». A-t-il raison ?",points:4,reponse:"Élèves de 14 ans ou plus : 4 + 2 = 6 élèves\nProportion = 6/30 = 1/5\n\n→ Oui, le professeur a raison.",options:null},{id:"5.",texte:"L'année dernière, la moyenne des âges des élèves inscrits à l'escalade était de **13 ans**. La moyenne des âges cette année a-t-elle augmenté par rapport à l'année dernière ?",points:5,reponse:"Moyenne = (10×1 + 11×3 + 12×8 + 13×12 + 14×4 + 15×2) / 30\n= (10 + 33 + 96 + 156 + 56 + 30) / 30\n= 381 / 30\n= 12,7 ans\n\n12,7 < 13 → La moyenne a diminué par rapport à l'année dernière.",options:null},{id:"6.",texte:"L'association prévoit une hausse de **10 %** des inscriptions à l'escalade l'année prochaine. Déterminer le nombre d'élèves qui seront inscrits à l'escalade l'année prochaine.",points:3,reponse:"Nombre d'élèves l'année prochaine = 30 × 1,10 = 33 élèves",options:null}]
+  },
+  {
+    id: "brevet_polynesie_2025_ex2",
+    numero: 2,
+    titre: "jardin botanique — géométrie &amp; trigonométrie",
+    source: "Brevet Polynésie 2025",
+    annee: 2025,
+    session: "Polynésie",
+    notion: "Pythagore",
+    notions: ["Pythagore", "Thalès", "Trigonométrie", "Vitesse"],
+    points: 22,
+    enonce: "Le jardin botanique d'une ville peut être représenté par le quadrilatère ABCD ci-dessous. On sait que : • AB = 500 m, BE = 250 m et DE = 750 m • Les segments [AC] et [BD] se coupent au point E. La figure ci-contre n'est pas à l'échelle.",
+    figures: ["<svg viewBox=\"0 0 380 300\" width=\"380\" height=\"300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--fd)\"> <!-- A(40,30), B(200,30), C(340,250), D(40,250), E≈(144,107) --> <polygon points=\"40,30 200,30 144,107 40,250\" fill=\"rgba(0,33,188,.08)\" stroke=\"none\"/> <polygon points=\"40,30 200,30 340,250 40,250\" fill=\"rgba(0,33,188,.03)\" stroke=\"#333\" stroke-width=\"1.8\" stroke-dasharray=\"6,4\"/> <line x1=\"40\" y1=\"30\" x2=\"200\" y2=\"30\" stroke=\"#333\" stroke-width=\"1.8\"/> <line x1=\"40\" y1=\"30\" x2=\"40\" y2=\"250\" stroke=\"#333\" stroke-width=\"1.8\"/> <line x1=\"40\" y1=\"30\" x2=\"340\" y2=\"250\" stroke=\"var(--blue)\" stroke-width=\"1.4\"/> <line x1=\"200\" y1=\"30\" x2=\"40\" y2=\"250\" stroke=\"var(--blue)\" stroke-width=\"1.4\"/> <rect x=\"40\" y=\"30\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"#555\" stroke-width=\"1.3\"/> <rect x=\"40\" y=\"238\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"#555\" stroke-width=\"1.3\"/> <rect x=\"144\" y=\"107\" width=\"9\" height=\"9\" fill=\"none\" stroke=\"var(--orange)\" stroke-width=\"1.3\"/> <circle cx=\"40\" cy=\"30\" r=\"3.5\" fill=\"var(--blue)\"/> <circle cx=\"200\" cy=\"30\" r=\"3.5\" fill=\"var(--blue)\"/> <circle cx=\"340\" cy=\"250\" r=\"3.5\" fill=\"var(--blue)\"/> <circle cx=\"40\" cy=\"250\" r=\"3.5\" fill=\"var(--blue)\"/> <circle cx=\"144\" cy=\"107\" r=\"3.5\" fill=\"var(--orange)\"/> <text x=\"26\" y=\"26\" fill=\"var(--blue)\" font-size=\"14\" font-weight=\"700\">A</text> <text x=\"204\" y=\"26\" fill=\"var(--blue)\" font-size=\"14\" font-weight=\"700\">B</text> <text x=\"344\" y=\"256\" fill=\"var(--blue)\" font-size=\"14\" font-weight=\"700\">C</text> <text x=\"22\" y=\"262\" fill=\"var(--blue)\" font-size=\"14\" font-weight=\"700\">D</text> <text x=\"150\" y=\"103\" fill=\"var(--orange)\" font-size=\"13\" font-weight=\"700\">E</text> <text x=\"112\" y=\"22\" fill=\"var(--muted)\" font-size=\"11\" text-anchor=\"middle\">500 m</text> <text x=\"168\" y=\"72\" fill=\"var(--muted)\" font-size=\"10\">250 m</text> <text x=\"52\" y=\"190\" fill=\"var(--muted)\" font-size=\"10\">750 m</text> </svg>"],
+    questions: [{id:"1.",texte:"Quelle est la longueur du segment **[DB]** ?",points:2,reponse:"E est sur [DB], donc DB = DE + EB = 750 + 250 = 1 000 m",options:null},{id:"2.",texte:"En raisonnant dans le triangle rectangle ABD, montrer que la longueur du segment **[AD]**, arrondie au mètre, est égale à environ **866 m**.",points:4,reponse:"Le triangle ABD est rectangle en A.\nD'après le théorème de Pythagore :\nBD² = AB² + AD²\n1 000² = 500² + AD²\nAD² = 1 000 000 − 250 000 = 750 000\nAD = √750 000 ≈ 866 m ✓",options:null},{id:"3.",texte:"Calculer le sinus de l'angle **ÊAB**.",points:3,reponse:"Dans le triangle ABE rectangle en E :\nsin(∠EAB) = BE / AB = 250 / 500 = 1/2",options:null},{id:"3.a.",texte:"En déduire la mesure en degrés de l'angle **ÊAB**.",points:2,reponse:"sin(∠EAB) = 1/2\n∠EAB = arcsin(1/2) = 30°",options:null},{id:"3.b.",texte:"Montrer que les droites **(AB)** et **(DC)** sont parallèles.",points:4,reponse:"On vérifie le rapport EB/ED = EA/EC :\nEB/ED = 250/750 = 1/3\n\nD'après la réciproque du théorème de Thalès dans le triangle avec les diagonales,\nsi EB/ED = EA/EC alors (AB) ∥ (DC). ✓",options:null},{id:"4.",texte:"Montrer que la longueur du segment **[CD]** est égale à **1 500 m**.",points:4,reponse:"(AB) ∥ (DC), donc d'après le théorème de Thalès :\nEB/ED = AB/DC\n250/750 = 500/DC\nDC = 500 × 750/250 = 1 500 m ✓",options:null},{id:"4.a.",texte:"Un piéton fait le tour du jardin botanique à la vitesse moyenne de **1,1 m/s**. Il lit que [BC] ≈ **1 323 m**. Le temps mis pour faire le tour est-il inférieur à **une heure** ?",points:3,reponse:"Périmètre = AB + BC + CD + DA\n= 500 + 1 323 + 1 500 + 866 = 4 189 m\n\nTemps = distance / vitesse = 4 189 / 1,1 ≈ 3 808 s\n\n1 heure = 3 600 s\n3 808 s > 3 600 s → Non, le temps est supérieur à une heure.",options:null},{id:"4.b.",texte:"",points:0,reponse:"",options:null},{id:"5.",texte:"",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_polynesie_2025_ex3",
+    numero: 3,
+    titre: "QCM — 5 questions",
+    source: "Brevet Polynésie 2025",
+    annee: 2025,
+    session: "Polynésie",
+    notion: "Calcul",
+    notions: ["Calcul", "Facteurs premiers", "Aire", "Algèbre"],
+    points: 20,
+    enonce: "QCM — une seule réponse est exacte par question. Aucune justification n'est demandée.",
+    figures: [],
+    questions: [{id:"Question 1",texte:"(−3)² est égal à",points:4,reponse:"",options:null},{id:"Question 2",texte:"La décomposition en produit de facteurs premiers du nombre **360** est",points:4,reponse:"",options:null},{id:"Question 3",texte:"Un rectangle d'aire **135 cm²** a pour largeur **3 cm**. Combien mesure sa longueur ?",points:4,reponse:"",options:null},{id:"Question 4",texte:"Quelle expression littérale correspond à la longueur du segment [BG] ?",points:4,reponse:"",options:null},{id:"Question 5",texte:"Le rectangle ADCB est partagé en neuf rectangles identiques. L'image du rectangle GFHI par la translation qui transforme D en M est le rectangle :",points:4,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_polynesie_2025_ex4",
+    numero: 4,
+    titre: "programme de calcul &amp; fonction affine",
+    source: "Brevet Polynésie 2025",
+    annee: 2025,
+    session: "Polynésie",
+    notion: "Calcul littéral",
+    notions: ["Calcul littéral", "Fonctions", "Graphiques", "Équation"],
+    points: 20,
+    enonce: "On considère le programme de calcul suivant.",
+    figures: ["<svg viewBox=\"0 0 460 320\" width=\"440\" height=\"305\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"-apple-system,sans-serif\"> <defs><marker id=\"arr\" markerWidth=\"7\" markerHeight=\"7\" refX=\"3.5\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L0,6 L6,3 z\" fill=\"#8A8DAA\"/></marker></defs> <!-- Boîte départ --> <rect x=\"145\" y=\"8\" width=\"170\" height=\"34\" rx=\"6\" fill=\"white\" stroke=\"#0021BC\" stroke-width=\"1.5\"/> <text x=\"230\" y=\"30\" text-anchor=\"middle\" fill=\"#0021BC\" font-weight=\"600\" font-size=\"12\">Nombre choisi au départ</text> <!-- Flèches vers les deux boîtes --> <line x1=\"195\" y1=\"42\" x2=\"86\" y2=\"84\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#arr)\"/> <line x1=\"265\" y1=\"42\" x2=\"374\" y2=\"84\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#arr)\"/> <!-- Boîte \"Ajouter 4\" --> <rect x=\"20\" y=\"84\" width=\"130\" height=\"34\" rx=\"6\" fill=\"white\" stroke=\"#0021BC\" stroke-width=\"1.5\"/> <text x=\"85\" y=\"106\" text-anchor=\"middle\" fill=\"var(--ink)\" font-size=\"12\">Ajouter 4</text> <!-- Boîte \"Soustraire 2\" --> <rect x=\"310\" y=\"84\" width=\"130\" height=\"34\" rx=\"6\" fill=\"white\" stroke=\"#0021BC\" stroke-width=\"1.5\"/> <text x=\"375\" y=\"106\" text-anchor=\"middle\" fill=\"var(--ink)\" font-size=\"12\">Soustraire 2</text> <!-- Flèches convergentes vers Multiplier --> <line x1=\"85\" y1=\"118\" x2=\"175\" y2=\"186\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#arr)\"/> <line x1=\"375\" y1=\"118\" x2=\"285\" y2=\"186\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#arr)\"/> <!-- Boîte \"Multiplier les deux résultats\" --> <rect x=\"100\" y=\"186\" width=\"260\" height=\"34\" rx=\"6\" fill=\"white\" stroke=\"#0021BC\" stroke-width=\"1.5\"/> <text x=\"230\" y=\"208\" text-anchor=\"middle\" fill=\"var(--ink)\" font-size=\"12\">Multiplier les deux résultats</text> <!-- Flèche vers Soustraire carré --> <line x1=\"230\" y1=\"220\" x2=\"230\" y2=\"238\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#arr)\"/> <!-- Boîte \"Soustraire le carré du nombre de départ\" --> <rect x=\"65\" y=\"238\" width=\"330\" height=\"34\" rx=\"6\" fill=\"white\" stroke=\"#0021BC\" stroke-width=\"1.5\"/> <text x=\"230\" y=\"260\" text-anchor=\"middle\" fill=\"var(--ink)\" font-size=\"12\">Soustraire le carré du nombre de départ</text> <!-- Flèche vers Résultat --> <line x1=\"230\" y1=\"272\" x2=\"230\" y2=\"288\" stroke=\"#8A8DAA\" stroke-width=\"1.5\" marker-end=\"url(#arr)\"/> <!-- Boîte \"Résultat final\" --> <rect x=\"145\" y=\"288\" width=\"170\" height=\"28\" rx=\"6\" fill=\"#EEF2FF\" stroke=\"#0021BC\" stroke-width=\"1.8\"/> <text x=\"230\" y=\"307\" text-anchor=\"middle\" fill=\"#0021BC\" font-weight=\"600\" font-size=\"12\">Résultat final</text> </svg>"],
+    questions: [{id:"1.",texte:"Montrer que si on choisit **5** comme nombre de départ, le résultat du programme est **2**.",points:3,reponse:"Départ : 5\nAjouter 4 → 9 &nbsp;&nbsp; Soustraire 2 → 3\nMultiplier : 9 × 3 = 27\nSoustraire le carré du départ : 27 − 5² = 27 − 25 = 2 ✓",options:null},{id:"2.",texte:"On choisit **x** comme nombre de départ.",points:3,reponse:"Expression C : (x+4) × (x−2) − x²",options:null},{id:"2.a.",texte:"Parmi les expressions suivantes, laquelle permet d'exprimer le résultat de ce programme en fonction de x ? Aucune justification n'est attendue.",points:4,reponse:"(x+4)(x−2) − x²\n= x² − 2x + 4x − 8 − x²\n= 2x − 8 ✓",options:null},{id:"2.b.",texte:"Montrer que le résultat du programme de calcul peut s'écrire sous la forme **2x − 8**.",points:4,reponse:"Représentation n°1 : c'est une courbe (parabole), or f(x) = 2x − 8 est une fonction affine dont la représentation est une droite. Elle ne convient pas.\n\nReprésentation n°2 : c'est bien une droite, mais elle est décroissante, or f a un coefficient directeur positif (2 > 0) donc sa représentation doit être croissante. Elle ne convient pas.",options:null},{id:"3.",texte:"On appelle **f** la fonction définie par **f(x) = 2x − 8**. Voici trois représentations graphiques :",points:2,reponse:"f(4) = 2 × 4 − 8 = 8 − 8 = 0",options:null},{id:"3.a.",texte:"La représentation graphique de la fonction f est la représentation n°3. Expliquer pourquoi les représentations n°1 et n°2 ne conviennent pas.",points:4,reponse:"Le résultat vaut f(x) = 2x − 8\n2x − 8 = 100\n2x = 108\nx = 54\n\nIl faut choisir 54 comme nombre de départ.",options:null},{id:"3.b.",texte:"Déterminer l'image de **4** par la fonction f.",points:0,reponse:"",options:null},{id:"4.",texte:"Quel nombre de départ faut-il choisir pour que le résultat du programme de calcul soit égal à **100** ?",points:0,reponse:"",options:null}]
+  },
+  {
+    id: "brevet_polynesie_2025_ex5",
+    numero: 5,
+    titre: "dé à 12 faces &amp; Scratch",
+    source: "Brevet Polynésie 2025",
+    annee: 2025,
+    session: "Polynésie",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Scratch", "Simulation"],
+    points: 18,
+    enonce: "Tom a acheté un dé équilibré à 12 faces numérotées de 1 à 12. Il lance ce dé et s'intéresse au résultat qui apparaît sur la face du dessus.",
+    figures: [],
+    questions: [{id:"1.",texte:"Expliquer pourquoi la probabilité d'obtenir le nombre **4** est égale à **1/12**.",points:2,reponse:"Le dé est équilibré et possède 12 faces numérotées de 1 à 12.\nChaque face a la même probabilité d'apparaître.\nIl y a une seule face portant le numéro 4.\nDonc P(4) = 1/12.",options:null},{id:"2.",texte:"Quelle est la probabilité que le résultat obtenu soit un **nombre pair** ?",points:3,reponse:"Nombres pairs entre 1 et 12 : 2, 4, 6, 8, 10, 12 → 6 nombres pairs\nP(pair) = 6/12 = 1/2",options:null},{id:"3.",texte:"Tom pense que la probabilité d'obtenir un **multiple de 3** est supérieure à **0,3**. A-t-il raison ?",points:3,reponse:"Multiples de 3 entre 1 et 12 : 3, 6, 9, 12 → 4 nombres\nP(multiple de 3) = 4/12 = 1/3 ≈ 0,333…\n\n0,333 > 0,3 → Oui, Tom a raison.",options:null},{id:"1.",texte:"**Recopier les lignes 2, 3 et 4** du bloc « Lancer » en les complétant.",points:6,reponse:"Ligne 2 : mettre Dé 1 à nombre aléatoire entre 1 et 12\nLigne 3 : mettre Dé 2 à nombre aléatoire entre 1 et 12\nLigne 4 : mettre Résultat à Dé 1 + Dé 2",options:null},{id:"2.",texte:"Si le résultat du dé n°1 est égal à **8** et le résultat du dé n°2 est égal à **3**, qu'affichera le programme ? Justifier.",points:4,reponse:"Résultat = Dé 1 + Dé 2 = 8 + 3 = 11\n\nLe programme teste : Résultat > 6 ?\n11 > 6 → oui, la condition est vraie.\n\n→ Le programme affiche « Gagné ! » pendant 2 secondes.",options:null}]
   }
-]);
+];
+
+// ── Stats ──────────────────────────────────────────────────
+// Total exercices : 78
+// Probabilités : 10 ex
+// Pythagore : 8 ex
+// Statistiques : 6 ex
+// Géométrie : 6 ex
+// Fonctions : 5 ex
+// Scratch : 5 ex
+// Calcul littéral : 5 ex
+// Thalès : 4 ex
+// Arithmétique : 3 ex
+// Algèbre et Fonctions : 2 ex
+// Volume : 2 ex
+// Volume et Grandeurs : 2 ex
+// Algèbre : 2 ex
+// Trigonométrie : 2 ex
+// Factorisation : 2 ex
+// Fonctions et graphiques : 1 ex
+// Puissances : 1 ex
+// Aires : 1 ex
+// PGCD : 1 ex
+// Lecture graphique : 1 ex
+// Développer : 1 ex
+// Moyenne : 1 ex
+// Proportionnalité : 1 ex
+// Dénombrement : 1 ex
+// Fonction affine : 1 ex
+// Aire : 1 ex
+// Nombres premiers : 1 ex
+// Tableur : 1 ex
+// Calcul : 1 ex
