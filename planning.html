@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planning — Prépa Brevet</title>
+<style>
+:root {
+  --blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;
+  --bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;
+  --fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+
+/* NAV */
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;z-index:10;position:relative}
+.logo{cursor:pointer}.logo a{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover,.nav-links li.on{opacity:1}.nav-links li.on{font-weight:500}
+.nav-links li a{text-decoration:none;color:inherit}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;transition:opacity .15s;text-decoration:none;display:inline-flex;align-items:center}
+.cta:hover{opacity:.85}
+
+/* UTILS */
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.sec{padding:48px;border-top:1px solid rgba(0,0,0,.08)}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px}
+.sec-title{font-family:var(--fd);font-size:clamp(24px,3vw,40px);font-weight:500;text-transform:lowercase;letter-spacing:-.03em;line-height:1}
+
+/* FOOTER */
+.footer-email-wrap{padding:0 48px;border-top:1px solid rgba(0,0,0,.08);display:flex;align-items:center;gap:16px}
+.footer-email{font-family:var(--fd);font-size:clamp(24px,4vw,56px);font-weight:500;color:var(--ink);letter-spacing:-.04em;text-transform:lowercase;padding:28px 0;text-decoration:none;transition:color .15s}
+.footer-email:hover{color:var(--blue)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;cursor:pointer}
+.footer-bar-links a:hover{color:#fff}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+
+/* PLANNING SPECIFIQUE */
+
+/* Toggle vue */
+.view-toggle{display:flex;gap:4px;background:var(--white);border-radius:100px;padding:4px}
+.view-btn{font-family:var(--fd);font-size:12px;font-weight:600;padding:7px 20px;border-radius:100px;border:none;cursor:pointer;background:transparent;color:var(--muted);transition:all .15s}
+.view-btn.active{background:var(--blue);color:#fff}
+
+/* Légende notions */
+.notion-legend{display:flex;flex-wrap:wrap;gap:8px}
+.notion-dot{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:400;color:var(--ink);background:var(--white);padding:6px 14px;border-radius:100px;cursor:pointer;border:1.5px solid transparent;transition:all .15s;user-select:none}
+.notion-dot:hover{border-color:rgba(0,0,0,.1)}
+.notion-dot.active{border-color:currentColor}
+.notion-dot-color{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+
+/* VUE SEMAINE */
+.week-grid{display:grid;grid-template-columns:80px repeat(7,1fr);gap:2px}
+.week-header{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:12px 0;text-align:center}
+.week-header.today{color:var(--blue)}
+.week-time{font-family:'Courier New',monospace;font-size:11px;color:var(--muted);padding:8px 12px 8px 0;text-align:right;line-height:1;height:52px;display:flex;align-items:center;justify-content:flex-end}
+.week-cell{background:var(--white);height:52px;border-radius:0;position:relative;cursor:pointer;transition:background .15s}
+.week-cell:hover{background:#f4f5f8}
+.week-cell.today-col{background:rgba(0,33,188,.03)}
+.week-event{position:absolute;inset:3px;border-radius:8px;padding:4px 8px;font-size:11px;font-weight:600;line-height:1.3;overflow:hidden;cursor:pointer;transition:opacity .15s}
+.week-event:hover{opacity:.85}
+
+/* VUE MOIS */
+.month-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.month-header{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:12px 0;text-align:center}
+.month-cell{background:var(--white);min-height:90px;padding:10px;cursor:pointer;transition:background .15s;position:relative}
+.month-cell:hover{background:#f4f5f8}
+.month-cell.today{background:rgba(0,33,188,.04)}
+.month-cell.other-month{opacity:.35}
+.month-cell:first-child{border-radius:16px 0 0 0}
+.month-cell:nth-child(7){border-radius:0 16px 0 0}
+.month-num{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px;width:24px;height:24px;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.month-num.today-num{background:var(--blue);color:#fff}
+.month-event{font-size:10px;font-weight:600;padding:3px 8px;border-radius:100px;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* MODAL AJOUT */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:100;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--white);border-radius:20px;padding:36px;width:440px;max-width:90vw;transform:translateY(16px);transition:transform .2s}
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal-title{font-family:var(--fd);font-size:22px;font-weight:500;letter-spacing:-.03em;text-transform:lowercase;margin-bottom:24px}
+.modal-label{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;display:block}
+.modal-input{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:11px 14px;outline:none;transition:border-color .15s;margin-bottom:16px}
+.modal-input:focus{border-color:var(--blue);background:var(--white)}
+.notion-picker{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.notion-pick-btn{font-size:11px;font-weight:600;padding:6px 14px;border-radius:100px;border:1.5px solid rgba(0,0,0,.08);background:var(--white);cursor:pointer;transition:all .15s;color:var(--ink)}
+.notion-pick-btn.sel{color:#fff;border-color:transparent}
+.modal-actions{display:flex;gap:10px;margin-top:4px}
+.modal-btn{flex:1;font-family:var(--fd);font-size:13px;font-weight:600;padding:12px;border-radius:100px;border:none;cursor:pointer;text-transform:lowercase;transition:opacity .15s}
+.modal-btn:hover{opacity:.85}
+.modal-btn-blue{background:var(--blue);color:#fff}
+.modal-btn-ghost{background:transparent;color:var(--muted);border:1.5px solid rgba(0,0,0,.12)}
+
+/* NAV CALENDRIER */
+.cal-nav{display:flex;align-items:center;gap:16px}
+.cal-nav-btn{width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(0,0,0,.1);background:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .15s}
+.cal-nav-btn:hover{border-color:var(--blue);color:var(--blue)}
+.cal-period{font-family:var(--fd);font-size:20px;font-weight:500;letter-spacing:-.03em;text-transform:lowercase;min-width:220px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo"><a href="accueil.html"><span class="logo-top">prépa</span><span class="logo-bot">bre<span>.</span>vet</span></a></div>
+  <div class="nav-r">
+    <ul class="nav-links">
+      <li><a href="accueil.html">accueil</a></li>
+      <li><a href="parcours.html">mon parcours</a></li>
+      <li class="on"><a href="planning.html">planning</a></li>
+      <li><a href="ressources.html">ressources</a></li>
+      <li style="color:var(--orange);opacity:1;font-weight:600"><a href="abonnement.html">s'inscrire ✦</a></li>
+    </ul>
+    <a class="cta" href="generer.html">générer un brevet →</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div style="padding:44px 48px 0;display:grid;grid-template-columns:1fr auto;align-items:end;gap:32px">
+  <div>
+    <p class="eyebrow" style="margin-bottom:14px">Révisions · Brevet 2026</p>
+    <h1 style="font-family:var(--fd);font-size:clamp(48px,5.5vw,80px);font-weight:500;line-height:1;letter-spacing:-.04em;text-transform:lowercase">mon<br><span style="color:var(--blue)">planning.</span></h1>
+  </div>
+  <!-- Compte à rebours brevet -->
+  <div style="background:var(--blue);border-radius:18px;padding:24px 32px;text-align:center">
+    <div style="font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px">brevet dans</div>
+    <div id="countdown-days" style="font-family:var(--fd);font-size:52px;font-weight:700;color:#fff;line-height:1;letter-spacing:-.04em">—</div>
+    <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:5px">jours · 27 juin 2026</div>
+  </div>
+</div>
+
+<div class="divider" style="margin-top:36px"></div>
+
+<!-- SECTION CALENDRIER -->
+<div class="sec">
+  <div class="sec-head" style="flex-wrap:wrap;gap:16px">
+    <!-- Nav mois/semaine -->
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;gap:12px">
+      <div class="cal-nav">
+        <button class="cal-nav-btn" onclick="navCal(-1)">←</button>
+        <div class="cal-period" id="cal-period"></div>
+        <button class="cal-nav-btn" onclick="navCal(1)">→</button>
+      </div>
+      <button class="btn btn-ghost" onclick="goToday()" style="font-size:12px;padding:8px 18px">aujourd'hui</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="view-toggle">
+        <button class="view-btn active" id="btn-week" onclick="setView('week')">semaine</button>
+        <button class="view-btn" id="btn-month" onclick="setView('month')">mois</button>
+      </div>
+      <button class="btn btn-blue" onclick="openModal()" style="font-size:12px;padding:9px 20px">+ ajouter</button>
+    </div>
+  </div>
+
+  <!-- Légende notions -->
+  <div class="notion-legend" style="margin-bottom:28px" id="notion-legend"></div>
+
+  <!-- Calendrier -->
+  <div id="calendar-container"></div>
+</div>
+
+<!-- MODAL AJOUT SESSION -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <div class="modal-title">ajouter une session</div>
+    <label class="modal-label">notion à réviser</label>
+    <div class="notion-picker" id="notion-picker"></div>
+    <label class="modal-label">durée</label>
+    <select class="modal-input" id="modal-duree">
+      <option value="30">30 min</option>
+      <option value="60" selected>1h</option>
+      <option value="90">1h30</option>
+      <option value="120">2h</option>
+    </select>
+    <label class="modal-label">date</label>
+    <input class="modal-input" type="date" id="modal-date">
+    <label class="modal-label">heure</label>
+    <input class="modal-input" type="time" id="modal-heure" value="18:00">
+    <label class="modal-label">note (optionnel)</label>
+    <input class="modal-input" type="text" id="modal-note" placeholder="ex : revoir les théorèmes…">
+    <div class="modal-actions">
+      <button class="modal-btn modal-btn-ghost" onclick="closeModal()">annuler</button>
+      <button class="modal-btn modal-btn-blue" onclick="saveSession()">enregistrer →</button>
+    </div>
+  </div>
+</div>
+
+<div class="footer-email-wrap" style="margin-top:40px"><a class="footer-email" href="mailto:hello@prepabrevet.fr">hello@prepabrevet.fr</a></div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+
+<script>
+// ---- CONFIG NOTIONS ----
+const NOTIONS = [
+  { id: 'geo',   label: 'Géométrie',          color: '#0021BC', light: '#EEF2FF' },
+  { id: 'stat',  label: 'Statistiques',        color: '#EE6E34', light: '#FFF0E8' },
+  { id: 'alg',   label: 'Algèbre et Fonctions',color: '#8B5A7A', light: '#F9F0F7' },
+  { id: 'proba', label: 'Probabilités',         color: '#22C55E', light: '#EDFBF0' },
+  { id: 'arith', label: 'Arithmétique',         color: '#F59E0B', light: '#FFFBEB' },
+  { id: 'algo',  label: 'Algorithmique',        color: '#6366F1', light: '#EEF2FF' },
+  { id: 'vol',   label: 'Volume et Grandeurs',  color: '#BDD4E7', light: '#EEF6FF' },
+  { id: 'prop',  label: 'Proportionnalité',     color: '#D0A6C6', light: '#F9F0F7' },
+];
+
+// ---- ÉTAT ----
+var currentView = 'week';
+var currentDate = new Date();
+var sessions = JSON.parse(localStorage.getItem('planning_sessions') || '[]');
+var activeNotions = new Set(NOTIONS.map(n => n.id));
+var selectedNotion = NOTIONS[0].id;
+var modalDate = null;
+
+// ---- COMPTE À REBOURS ----
+(function() {
+  var brevet = new Date('2026-06-27');
+  var today = new Date();
+  today.setHours(0,0,0,0);
+  var diff = Math.ceil((brevet - today) / 86400000);
+  document.getElementById('countdown-days').textContent = diff > 0 ? diff : '0';
+})();
+
+// ---- LÉGENDE ----
+function buildLegend() {
+  var el = document.getElementById('notion-legend');
+  el.innerHTML = NOTIONS.map(n =>
+    `<div class="notion-dot ${activeNotions.has(n.id)?'active':''}" data-id="${n.id}" onclick="toggleNotion('${n.id}')" style="color:${n.color}">
+      <span class="notion-dot-color" style="background:${n.color}"></span>${n.label}
+    </div>`
+  ).join('');
+}
+
+function toggleNotion(id) {
+  if (activeNotions.has(id)) { if (activeNotions.size > 1) activeNotions.delete(id); }
+  else activeNotions.add(id);
+  buildLegend();
+  render();
+}
+
+// ---- NAVIGATION ----
+function navCal(dir) {
+  if (currentView === 'week') {
+    currentDate.setDate(currentDate.getDate() + dir * 7);
+  } else {
+    currentDate.setMonth(currentDate.getMonth() + dir);
+  }
+  render();
+}
+
+function goToday() {
+  currentDate = new Date();
+  render();
+}
+
+function setView(v) {
+  currentView = v;
+  document.getElementById('btn-week').classList.toggle('active', v === 'week');
+  document.getElementById('btn-month').classList.toggle('active', v === 'month');
+  render();
+}
+
+// ---- UTILS DATE ----
+function isSameDay(a, b) {
+  return a.getFullYear()===b.getFullYear() && a.getMonth()===b.getMonth() && a.getDate()===b.getDate();
+}
+function toDateStr(d) {
+  return d.toISOString().slice(0,10);
+}
+function startOfWeek(d) {
+  var day = d.getDay(); // 0=dim
+  var diff = (day === 0 ? -6 : 1 - day);
+  var s = new Date(d);
+  s.setDate(d.getDate() + diff);
+  s.setHours(0,0,0,0);
+  return s;
+}
+function getNotion(id) { return NOTIONS.find(n => n.id === id) || NOTIONS[0]; }
+function fmtMonth(d) {
+  return d.toLocaleDateString('fr-FR',{month:'long',year:'numeric'});
+}
+function fmtWeek(start) {
+  var end = new Date(start); end.setDate(start.getDate()+6);
+  var ds = start.toLocaleDateString('fr-FR',{day:'numeric',month:'short'});
+  var de = end.toLocaleDateString('fr-FR',{day:'numeric',month:'short',year:'numeric'});
+  return ds + ' — ' + de;
+}
+
+// ---- SESSIONS DU JOUR ----
+function sessionsForDay(dateStr) {
+  return sessions.filter(s => s.date === dateStr && activeNotions.has(s.notion));
+}
+
+// ---- RENDU SEMAINE ----
+function renderWeek() {
+  var monday = startOfWeek(currentDate);
+  document.getElementById('cal-period').textContent = fmtWeek(monday);
+
+  var days = [];
+  for (var i = 0; i < 7; i++) {
+    var d = new Date(monday);
+    d.setDate(monday.getDate() + i);
+    days.push(d);
+  }
+
+  var today = new Date(); today.setHours(0,0,0,0);
+  var jours = ['lun','mar','mer','jeu','ven','sam','dim'];
+  var hours = [8,9,10,11,12,13,14,15,16,17,18,19,20];
+
+  var html = '<div class="week-grid">';
+  // Header
+  html += '<div></div>';
+  days.forEach(function(d, i) {
+    var isToday = isSameDay(d, today);
+    html += `<div class="week-header ${isToday?'today':''}" style="${isToday?'color:var(--blue)':''}">
+      ${jours[i]}<br><span style="font-family:var(--fd);font-size:22px;font-weight:500;letter-spacing:-.03em;color:${isToday?'var(--blue)':'var(--ink)'};text-transform:none;display:block;margin-top:2px">${d.getDate()}</span>
+    </div>`;
+  });
+
+  // Lignes horaires
+  hours.forEach(function(h) {
+    html += `<div class="week-time">${h}h</div>`;
+    days.forEach(function(d) {
+      var isToday = isSameDay(d, today);
+      var dateStr = toDateStr(d);
+      var daySessions = sessions.filter(s => s.date === dateStr && s.heure && parseInt(s.heure) === h && activeNotions.has(s.notion));
+      html += `<div class="week-cell ${isToday?'today-col':''}" onclick="openModalAt('${dateStr}','${h<10?'0'+h:h}:00')">`;
+      daySessions.forEach(function(s) {
+        var n = getNotion(s.notion);
+        var dur = s.duree || 60;
+        html += `<div class="week-event" style="background:${n.color};color:#fff" title="${n.label} · ${dur} min${s.note?' · '+s.note:''}" onclick="event.stopPropagation();deleteSession('${s.id}')">
+          ${n.label}<br><span style="font-weight:400;opacity:.8">${dur} min</span>
+        </div>`;
+      });
+      html += '</div>';
+    });
+  });
+  html += '</div>';
+  html += '<p style="font-size:12px;color:var(--muted);margin-top:12px">Clique sur une cellule pour ajouter · clique sur une session pour la supprimer</p>';
+  document.getElementById('calendar-container').innerHTML = html;
+}
+
+// ---- RENDU MOIS ----
+function renderMonth() {
+  var year = currentDate.getFullYear();
+  var month = currentDate.getMonth();
+  document.getElementById('cal-period').textContent = fmtMonth(currentDate);
+
+  var today = new Date(); today.setHours(0,0,0,0);
+  var firstDay = new Date(year, month, 1);
+  var lastDay = new Date(year, month+1, 0);
+
+  // Premier lundi de la grille
+  var startGrid = new Date(firstDay);
+  var dow = firstDay.getDay();
+  startGrid.setDate(firstDay.getDate() - (dow === 0 ? 6 : dow - 1));
+
+  var jours = ['lun','mar','mer','jeu','ven','sam','dim'];
+  var html = '<div class="month-grid">';
+  jours.forEach(function(j) { html += `<div class="month-header">${j}</div>`; });
+
+  var cursor = new Date(startGrid);
+  var totalCells = 0;
+  while (cursor <= lastDay || totalCells % 7 !== 0) {
+    var isToday = isSameDay(cursor, today);
+    var isOther = cursor.getMonth() !== month;
+    var dateStr = toDateStr(cursor);
+    var daySessions = sessionsForDay(dateStr);
+    html += `<div class="month-cell ${isToday?'today':''} ${isOther?'other-month':''}" onclick="openModalAt('${dateStr}','18:00')">
+      <div class="month-num ${isToday?'today-num':''}">${cursor.getDate()}</div>
+      ${daySessions.slice(0,3).map(s => {
+        var n = getNotion(s.notion);
+        return `<div class="month-event" style="background:${n.light};color:${n.color}" onclick="event.stopPropagation();deleteSession('${s.id}')" title="Supprimer">${n.label}</div>`;
+      }).join('')}
+      ${daySessions.length > 3 ? `<div style="font-size:10px;color:var(--muted);margin-top:2px">+${daySessions.length-3} autres</div>` : ''}
+    </div>`;
+    cursor.setDate(cursor.getDate() + 1);
+    totalCells++;
+    if (totalCells > 42) break;
+  }
+  html += '</div>';
+  html += '<p style="font-size:12px;color:var(--muted);margin-top:12px">Clique sur un jour pour ajouter · clique sur une session pour la supprimer</p>';
+  document.getElementById('calendar-container').innerHTML = html;
+}
+
+// ---- RENDU PRINCIPAL ----
+function render() {
+  buildLegend();
+  if (currentView === 'week') renderWeek();
+  else renderMonth();
+}
+
+// ---- MODAL ----
+function buildNotionPicker() {
+  document.getElementById('notion-picker').innerHTML = NOTIONS.map(n =>
+    `<button class="notion-pick-btn ${n.id===selectedNotion?'sel':''}" data-id="${n.id}"
+      style="${n.id===selectedNotion?'background:'+n.color+';color:#fff':''}"
+      onclick="selectNotionPick('${n.id}')">${n.label}</button>`
+  ).join('');
+}
+
+function selectNotionPick(id) {
+  selectedNotion = id;
+  buildNotionPicker();
+}
+
+function openModal() {
+  var d = new Date();
+  document.getElementById('modal-date').value = toDateStr(d);
+  buildNotionPicker();
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function openModalAt(dateStr, heure) {
+  document.getElementById('modal-date').value = dateStr;
+  document.getElementById('modal-heure').value = heure;
+  buildNotionPicker();
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.getElementById('modal-note').value = '';
+}
+
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+
+function saveSession() {
+  var date  = document.getElementById('modal-date').value;
+  var heure = document.getElementById('modal-heure').value;
+  var duree = parseInt(document.getElementById('modal-duree').value);
+  var note  = document.getElementById('modal-note').value.trim();
+  if (!date) return;
+  var session = {
+    id: Date.now().toString(),
+    notion: selectedNotion,
+    date: date,
+    heure: heure ? heure.slice(0,2) : '18',
+    duree: duree,
+    note: note
+  };
+  sessions.push(session);
+  localStorage.setItem('planning_sessions', JSON.stringify(sessions));
+  closeModal();
+  render();
+}
+
+function deleteSession(id) {
+  if (!confirm('Supprimer cette session ?')) return;
+  sessions = sessions.filter(s => s.id !== id);
+  localStorage.setItem('planning_sessions', JSON.stringify(sessions));
+  render();
+}
+
+// ---- INIT ----
+render();
+</script>
+</body>
+</html>
