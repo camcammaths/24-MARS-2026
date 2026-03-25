@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 3 — Brevet Amérique Sud 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;text-align:left;font-style:italic}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+
+<div style="padding:36px 48px 72px;max-width:880px">
+
+<!-- ══════════ EXERCICE 3 ══════════ -->
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 3</span>
+      <span class="brevet-ex-titre">félins — probabilités, vitesse & géographie</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Amérique du Sud · 2 décembre 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Probabilités · Vitesse · Pourcentages · Coordonnées</span>
+      <span class="ctag">22 pts</span>
+    </div>
+  </div>
+
+  <!-- Q1 : probabilités félins -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Le tableau ci-dessous présente les probabilités d'attraper leur proie pour quatre félins.</span><span class="brevet-q-pts">6 pts</span></div>
+
+    <div style="overflow-x:auto;margin-bottom:14px">
+      <table class="brevet-table" style="max-width:500px">
+        <thead>
+          <tr>
+            <th>Félin étudié</th>
+            <th>Probabilité d'attraper la proie</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align:center;font-style:normal">Le lion</td>
+            <td style="text-align:center;font-weight:700">25 %</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;font-style:normal">Le guépard</td>
+            <td style="text-align:center;font-weight:700">1/2</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;font-style:normal">Le tigre</td>
+            <td style="text-align:center;font-weight:700">0,1</td>
+          </tr>
+          <tr>
+            <td style="text-align:center;font-style:normal">Le chat à pieds noirs</td>
+            <td style="text-align:center;font-weight:700">6/10</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="font-size:14px;color:var(--ink);margin-bottom:10px">Vérifier que, parmi les quatre félins étudiés, le <strong>chat à pieds noirs</strong> a la probabilité la plus élevée d'attraper sa proie.</div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Convertir toutes les probabilités dans la même forme :&#10;Lion : 25% = 0,25&#10;Guépard : 1/2 = 0,5&#10;Tigre : 0,1&#10;Chat à pieds noirs : 6/10 = 0,6&#10;Comparer : … > … > … > …&#10;Conclusion : …" rows="5"></textarea>
+  </div>
+
+  <!-- Q2 : guépard vitesse + pourcentage -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Le guépard peut atteindre <strong>115 km/h</strong>. À cette vitesse, en combien de secondes parcourt-il <strong>100 mètres</strong> ? (valeur approchée au centième de seconde près)</span><span class="brevet-q-pts">5 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="115 km/h = 115 000 m / 3 600 s = … m/s&#10;Temps = distance / vitesse = 100 / … ≈ … s" rows="3"></textarea>
+  </div>
+
+  <div class="brevet-q">
+    <div style="font-size:14px;color:var(--ink);margin-bottom:10px;line-height:1.6">
+      Dans un pays d'Afrique, on estimait à <strong>1 200 guépards en 1999</strong> et <strong>170 guépards en 2016</strong>.<br>
+      Est-il vrai que le nombre de guépards a baissé d'environ <strong>86 %</strong> entre 1999 et 2016 ?
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Baisse = 1200 − 170 = … guépards&#10;Pourcentage de baisse = (… / 1200) × 100 = … %&#10;L'affirmation est-elle vraie ? …" rows="4"></textarea>
+  </div>
+
+  <!-- Q3 : carte coordonnées -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">Dans le parc national d'Etosha en Namibie, on peut observer des lions et des guépards. À l'aide de la carte ci-dessous, donner approximativement la <strong>latitude</strong> et la <strong>longitude</strong> du parc national d'Etosha.</span><span class="brevet-q-pts">4 pts</span></div>
+
+    <!-- Carte SVG simplifiée -->
+    <div style="background:#EEF2FF;border:1.5px solid var(--blue-lt);border-radius:12px;padding:16px;margin-bottom:12px">
+      <svg viewBox="0 0 400 220" width="100%" style="max-height:200px" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="10">
+        <!-- Fond ellipse monde -->
+        <ellipse cx="200" cy="110" rx="195" ry="105" fill="#d4e8f0" stroke="#888" stroke-width="1"/>
+
+        <!-- Lignes de latitude (horizontales) -->
+        <g stroke="#aac4d4" stroke-width="0.5" fill="none">
+          <!-- 70° N -->
+          <path d="M 60,18 Q 200,10 340,18"/>
+          <!-- 60° N -->
+          <path d="M 30,35 Q 200,25 370,35"/>
+          <!-- 50° N -->
+          <path d="M 18,52 Q 200,42 382,52"/>
+          <!-- 40° N -->
+          <path d="M 10,68 Q 200,58 390,68"/>
+          <!-- 30° N -->
+          <path d="M 6,84 Q 200,75 394,84"/>
+          <!-- 20° N -->
+          <path d="M 4,100 Q 200,91 396,100"/>
+          <!-- 10° N -->
+          <path d="M 3,108 Q 200,102 397,108"/>
+          <!-- 0° Equateur -->
+          <path d="M 5,115 Q 200,110 395,115" stroke="#888" stroke-width="1"/>
+          <!-- 10° S -->
+          <path d="M 6,122 Q 200,118 394,122"/>
+          <!-- 20° S -->
+          <path d="M 10,130 Q 200,127 390,130"/>
+          <!-- 30° S -->
+          <path d="M 18,140 Q 200,138 382,140"/>
+          <!-- 40° S -->
+          <path d="M 30,152 Q 200,150 370,152"/>
+          <!-- 50° S -->
+          <path d="M 50,164 Q 200,162 350,164"/>
+        </g>
+
+        <!-- Méridiens (verticaux courbes) -->
+        <g stroke="#aac4d4" stroke-width="0.5" fill="none">
+          <path d="M 200,5 Q 200,110 200,215"/>
+          <path d="M 173,6 Q 170,110 173,214"/>
+          <path d="M 146,9 Q 140,110 146,211"/>
+          <path d="M 120,13 Q 110,110 120,207"/>
+          <path d="M 96,20 Q 82,110 96,200"/>
+          <path d="M 73,30 Q 56,110 73,190"/>
+          <path d="M 53,42 Q 34,110 53,178"/>
+          <path d="M 36,58 Q 18,110 36,162"/>
+          <path d="M 227,6 Q 230,110 227,214"/>
+          <path d="M 254,9 Q 260,110 254,211"/>
+          <path d="M 280,13 Q 290,110 280,207"/>
+          <path d="M 304,20 Q 318,110 304,200"/>
+          <path d="M 327,30 Q 344,110 327,190"/>
+          <path d="M 347,42 Q 366,110 347,178"/>
+          <path d="M 364,58 Q 382,110 364,162"/>
+        </g>
+
+        <!-- Labels latitude -->
+        <text x="8" y="39" fill="#555">60°</text>
+        <text x="5" y="55" fill="#555">50°</text>
+        <text x="3" y="70" fill="#555">40°</text>
+        <text x="2" y="86" fill="#555">30°</text>
+        <text x="2" y="102" fill="#555">20°</text>
+        <text x="2" y="112" fill="#555">10°</text>
+        <text x="2" y="117" fill="#555" font-weight="600">0° Équateur</text>
+        <text x="2" y="125" fill="#555">10°</text>
+        <text x="2" y="133" fill="#555">20°</text>
+        <text x="2" y="143" fill="#555">30°</text>
+        <text x="2" y="155" fill="#555">40°</text>
+        <text x="2" y="167" fill="#555">50°</text>
+
+        <!-- Labels longitude bas -->
+        <text x="53" y="212" fill="#555" text-anchor="middle">150°</text>
+        <text x="80" y="210" fill="#555" text-anchor="middle">120°</text>
+        <text x="108" y="208" fill="#555" text-anchor="middle">90°</text>
+        <text x="136" y="207" fill="#555" text-anchor="middle">60°</text>
+        <text x="164" y="206" fill="#555" text-anchor="middle">30°</text>
+        <text x="200" y="210" fill="#555" text-anchor="middle">0°</text>
+        <text x="176" y="218" fill="#555" text-anchor="middle">Ouest</text>
+        <text x="222" y="218" fill="#555" text-anchor="middle">Est</text>
+        <text x="236" y="207" fill="#555" text-anchor="middle">30°</text>
+        <text x="264" y="207" fill="#555" text-anchor="middle">60°</text>
+        <text x="292" y="208" fill="#555" text-anchor="middle">90°</text>
+        <text x="320" y="210" fill="#555" text-anchor="middle">120°</text>
+        <text x="347" y="212" fill="#555" text-anchor="middle">150°</text>
+        <text x="382" y="212" fill="#555" text-anchor="middle">180°</text>
+
+        <!-- Marqueur parc Etosha (~19°S, 17°E) -->
+        <!-- 17°E : entre méridien 0° (x=200) et 30°E (x=236) → x ≈ 200+17/30×36 = 220 -->
+        <!-- 19°S : entre équateur (y=115) et 20°S (y=130) → y ≈ 115+19/20×15 = 129 -->
+        <circle cx="250" cy="131" r="5" fill="#EE6E34" stroke="#c0392b" stroke-width="1.5"/>
+        <text x="258" y="127" fill="#EE6E34" font-weight="700" font-size="9">Parc national</text>
+        <text x="258" y="137" fill="#EE6E34" font-weight="700" font-size="9">d'Etosha</text>
+      </svg>
+    </div>
+
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Latitude : environ …° Sud (hémisphère Sud)&#10;Longitude : environ …° Est (hémisphère Est)" rows="2"></textarea>
+  </div>
+
+</div><!-- fin exercice 3 -->
+
+<div style="margin-top:24px">
+  <a href="index.html" class="btn btn-blue">← Retour au site</a>
+</div>
+
+</div><!-- fin padding -->
+
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
