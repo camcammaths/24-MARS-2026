@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 2 — Brevet Métropole Septembre 2025</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12);font-size:12px}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;color:var(--muted)}
+.partie-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:14px}
+.partie-label.b{background:#EEF2FF;color:var(--blue)}
+.partie-label.o{background:#FFF0E8;color:var(--orange)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 2</span>
+      <span class="brevet-ex-titre">QCM — 6 questions</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Métropole · Septembre 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Statistiques · Volume · Notation scientifique · Ratio · % · Factorisation</span>
+      <span class="ctag">18 pts</span>
+    </div>
+  </div>
+  <div class="brevet-enonce">QCM — <strong>une seule réponse est exacte</strong> par question. Aucune justification n'est demandée.</div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">Question 1</span><span class="brevet-q-text">On considère la série : <strong>4 ; 8 ; 11 ; 7 ; 2 ; 3 ; 14</strong>. Quelle est l'étendue de cette série ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:18px">
+      <div id="q1a" onclick="selQCM4('q1','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">10</div>
+      <div id="q1b" onclick="selQCM4('q1','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">7</div>
+      <div id="q1c" onclick="selQCM4('q1','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">12</div>
+      <div id="q1d" onclick="selQCM4('q1','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">14</div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">Question 2</span><span class="brevet-q-text">Quel est le volume correspondant à <strong>1 L</strong> ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:18px">
+      <div id="q2a" onclick="selQCM4('q2','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">1 m³</div>
+      <div id="q2b" onclick="selQCM4('q2','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">1 cm³</div>
+      <div id="q2c" onclick="selQCM4('q2','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">1 dm³</div>
+      <div id="q2d" onclick="selQCM4('q2','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">1 mm³</div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">Question 3</span><span class="brevet-q-text">Quel est le nombre dont l'écriture scientifique est <strong>8,6 × 10⁻⁴</strong> ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:18px">
+      <div id="q3a" onclick="selQCM4('q3','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">86 000</div>
+      <div id="q3b" onclick="selQCM4('q3','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">0,000 86</div>
+      <div id="q3c" onclick="selQCM4('q3','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">−0,000 86</div>
+      <div id="q3d" onclick="selQCM4('q3','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">0,000 086</div>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">Question 4</span><span class="brevet-q-text">La longueur et la largeur du drapeau français sont dans le ratio <strong>3 : 2</strong>. Quelle est la largeur si la longueur est <strong>90 cm</strong> ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:18px">
+      <div id="q4a" onclick="selQCM4('q4','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">54 cm</div>
+      <div id="q4b" onclick="selQCM4('q4','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">135 cm</div>
+      <div id="q4c" onclick="selQCM4('q4','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">45 cm</div>
+      <div id="q4d" onclick="selQCM4('q4','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">60 cm</div>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">Question 5</span><span class="brevet-q-text">Le prix d'un parfum est passé de <strong>75 €</strong> à <strong>60 €</strong>. Quel pourcentage de réduction a été appliqué ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:18px">
+      <div id="q5a" onclick="selQCM4('q5','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">80 %</div>
+      <div id="q5b" onclick="selQCM4('q5','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">25 %</div>
+      <div id="q5c" onclick="selQCM4('q5','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">15 %</div>
+      <div id="q5d" onclick="selQCM4('q5','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">20 %</div>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="brevet-q" style="margin-bottom:0">
+    <div class="brevet-q-row"><span class="brevet-q-id">Question 6</span><span class="brevet-q-text">Quelle est la forme factorisée de <strong>4x² − 25</strong> ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px">
+      <div id="q6a" onclick="selQCM4('q6','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">(2x − 5)²</div>
+      <div id="q6b" onclick="selQCM4('q6','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">(2x − 5)(2x + 5)</div>
+      <div id="q6c" onclick="selQCM4('q6','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">(4x − 5)(4x + 5)</div>
+      <div id="q6d" onclick="selQCM4('q6','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">(4x − 5)²</div>
+    </div>
+  </div>
+
+</div><!-- fin exercice 2 -->
+
+<!-- ══════════ EXERCICE 3 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 4 — Brevet Métropole Septembre 2025</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12);font-size:12px}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;color:var(--muted)}
+.partie-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:14px}
+.partie-label.b{background:#EEF2FF;color:var(--blue)}
+.partie-label.o{background:#FFF0E8;color:var(--orange)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 4</span>
+      <span class="brevet-ex-titre">filtration de piscine — fonction affine</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Métropole · Septembre 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Fonction affine · Graphique · Équation · Proportionnalité</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    M. Durand vient de faire construire une piscine. Le temps quotidien de filtration idéal (en heure) est donné en fonction de la température de l'eau (en °C). La méthode ci-dessous permet de calculer ce temps de filtration :
+  </div>
+
+  <!-- Programme de calcul -->
+  <div style="background:#f8f9ff;border:1.5px solid rgba(0,33,188,.15);border-radius:12px;padding:16px 20px;margin-bottom:22px;font-size:14px;line-height:2">
+    <span style="display:block">• Prendre la température de l'eau (en degré Celsius)</span>
+    <span style="display:block">• Lui ajouter 4</span>
+    <span style="display:block">• Multiplier le résultat par 0,5</span>
+    <span style="display:block;color:#3A3D6B;font-style:italic">Le résultat obtenu correspond au temps de filtration (en heure).</span>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">1.</span>
+      <span class="brevet-q-text">Vérifier que pour une température de l'eau de <strong>26 °C</strong>, le temps de filtration est de <strong>15 h</strong>.</span>
+      <span class="brevet-q-pts">3 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Température : 26°C&#10;26 + 4 = 30&#10;30 × 0,5 = 15 h ✓" rows="3"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">2.</span>
+      <span class="brevet-q-text">On note <strong>x</strong> la température de l'eau (en °C). Montrer que le temps de filtration, en heure, peut s'écrire <strong>0,5x + 2</strong>.</span>
+      <span class="brevet-q-pts">3 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Temps = (x + 4) × 0,5&#10;= 0,5x + 0,5 × 4&#10;= 0,5x + 2 ✓" rows="3"></textarea>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">3.</span>
+      <span class="brevet-q-text">On donne ci-dessous la courbe représentative de la fonction <strong>f</strong> définie par <strong>f(x) = 0,5x + 2</strong>, où x désigne la température de l'eau (en °C) et f(x) le temps de filtration (en h).</span>
+    </div>
+
+    <!-- Graphique SVG -->
+    <div class="brevet-figure" style="overflow-x:auto">
+      <svg viewBox="0 0 440 280" width="440" height="280" style="max-width:100%;height:auto" xmlns="http://www.w3.org/2000/svg" style="font-family:var(--fd);font-size:10px">
+        <!-- Marges : left=40, bottom=30, top=15, right=20 -->
+        <!-- x : 0 à 17 → 380px → 1 unité = 380/17 ≈ 22.35px -->
+        <!-- y : 0 à 12 → 235px → 1 unité = 235/12 ≈ 19.58px -->
+
+        <!-- Grille fine -->
+        <g stroke="rgba(0,0,0,.06)" stroke-width="0.5">
+          <line x1="40" y1="15" x2="420" y2="15"/><line x1="40" y1="35" x2="420" y2="35"/>
+          <line x1="40" y1="54" x2="420" y2="54"/><line x1="40" y1="74" x2="420" y2="74"/>
+          <line x1="40" y1="93" x2="420" y2="93"/><line x1="40" y1="113" x2="420" y2="113"/>
+          <line x1="40" y1="132" x2="420" y2="132"/><line x1="40" y1="152" x2="420" y2="152"/>
+          <line x1="40" y1="171" x2="420" y2="171"/><line x1="40" y1="191" x2="420" y2="191"/>
+          <line x1="40" y1="210" x2="420" y2="210"/><line x1="40" y1="230" x2="420" y2="230"/>
+          <line x1="62" y1="15" x2="62" y2="250"/><line x1="84" y1="15" x2="84" y2="250"/>
+          <line x1="107" y1="15" x2="107" y2="250"/><line x1="129" y1="15" x2="129" y2="250"/>
+          <line x1="151" y1="15" x2="151" y2="250"/><line x1="174" y1="15" x2="174" y2="250"/>
+          <line x1="196" y1="15" x2="196" y2="250"/><line x1="218" y1="15" x2="218" y2="250"/>
+          <line x1="241" y1="15" x2="241" y2="250"/><line x1="263" y1="15" x2="263" y2="250"/>
+          <line x1="285" y1="15" x2="285" y2="250"/><line x1="308" y1="15" x2="308" y2="250"/>
+          <line x1="330" y1="15" x2="330" y2="250"/><line x1="352" y1="15" x2="352" y2="250"/>
+          <line x1="375" y1="15" x2="375" y2="250"/><line x1="397" y1="15" x2="397" y2="250"/>
+          <line x1="420" y1="15" x2="420" y2="250"/>
+        </g>
+
+        <!-- Axes -->
+        <line x1="40" y1="250" x2="425" y2="250" stroke="#333" stroke-width="1.5"/>
+        <line x1="40" y1="15" x2="40" y2="255" stroke="#333" stroke-width="1.5"/>
+        <polygon points="425,250 417,246 417,254" fill="#333"/>
+        <polygon points="40,12 36,20 44,20" fill="#333"/>
+
+        <!-- Labels axe X -->
+        <g fill="#555" text-anchor="middle">
+          <text x="40" y="263">0</text>
+          <text x="62" y="263">1</text><text x="84" y="263">2</text>
+          <text x="107" y="263">3</text><text x="129" y="263">4</text>
+          <text x="151" y="263">5</text><text x="174" y="263">6</text>
+          <text x="196" y="263">7</text><text x="218" y="263">8</text>
+          <text x="241" y="263">9</text><text x="263" y="263">10</text>
+          <text x="285" y="263">11</text><text x="308" y="263">12</text>
+          <text x="330" y="263">13</text><text x="352" y="263">14</text>
+          <text x="375" y="263">15</text><text x="397" y="263">16</text>
+          <text x="420" y="263">17</text>
+        </g>
+        <text x="428" y="253" fill="#333" font-size="11" font-style="italic">x</text>
+
+        <!-- Labels axe Y -->
+        <g fill="#555" text-anchor="end">
+          <text x="36" y="254">0</text>
+          <text x="36" y="231">2</text><text x="36" y="211">4</text>
+          <text x="36" y="191">6</text><text x="36" y="172">8</text>
+          <text x="36" y="152">10</text><text x="36" y="132">12</text>
+        </g>
+        <text x="38" y="10" fill="#333" font-size="11" font-style="italic">f(x)</text>
+
+        <!-- Droite f(x) = 0.5x + 2 -->
+        <!-- x=0 : f=2 → y=250-2*19.58=250-39.17=211 → (40,211) -->
+        <!-- x=17 : f=10.5 → y=250-10.5*19.58=250-205.6=44 → (420,44) -->
+        <line x1="40" y1="211" x2="420" y2="44" stroke="var(--blue)" stroke-width="2.2"/>
+
+      </svg>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">3.a.</span>
+        <span class="brevet-q-text">Le temps de filtration est-il <strong>proportionnel</strong> à la température de l'eau de la piscine ?</span>
+        <span class="brevet-q-pts">3 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Non. La fonction f(x) = 0,5x + 2 est une fonction affine (et non linéaire) car elle a un terme constant +2.&#10;Sa représentation graphique ne passe pas par l'origine.&#10;→ Le temps de filtration n'est pas proportionnel à la température." rows="4"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">3.b.</span>
+        <span class="brevet-q-text">Quelle est l'image de <strong>10</strong> par la fonction f ? Aucune justification n'est demandée.</span>
+        <span class="brevet-q-pts">2 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="f(10) = 0,5 × 10 + 2 = 5 + 2 = 7" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">4.</span>
+      <span class="brevet-q-text">Résoudre l'équation <strong>0,5x + 2 = 17</strong> et interpréter ce résultat dans le contexte du problème.</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="0,5x + 2 = 17&#10;0,5x = 15&#10;x = 30&#10;&#10;→ Pour une température de l'eau de 30 °C, le temps de filtration idéal est de 17 heures." rows="5"></textarea>
+  </div>
+
+  <!-- Q5 -->
+  <div class="brevet-q" style="margin-bottom:0">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">5.</span>
+      <span class="brevet-q-text">M. Durand a décidé de filtrer sa piscine <strong>16 h par jour</strong>, tous les jours du <strong>1ᵉʳ juillet au 31 août inclus</strong>. Calculer la dépense liée au fonctionnement de la filtration au cours de cette période.</span>
+      <span class="brevet-q-pts">5 pts</span>
+    </div>
+
+    <!-- Documents -->
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px">
+      <div style="background:#f8f9ff;border:1.5px solid rgba(0,33,188,.15);border-radius:10px;padding:12px 16px;font-size:13px;line-height:1.8;flex:1;min-width:160px">
+        <strong style="color:var(--blue)">Document 1 : Puissance</strong><br>
+        Puissance de la pompe : <strong>0,8 kW</strong><br>
+        <span style="color:var(--muted);font-size:11px">kW signifie kiloWatt</span>
+      </div>
+      <div style="background:#f8f9ff;border:1.5px solid rgba(0,33,188,.15);border-radius:10px;padding:12px 16px;font-size:13px;line-height:1.8;flex:1;min-width:160px">
+        <strong style="color:var(--blue)">Document 2 : Prix</strong><br>
+        Prix d'un kWh : <strong>0,23 €</strong><br>
+        <span style="color:var(--muted);font-size:11px">kWh signifie kiloWatt-heure</span>
+      </div>
+    </div>
+    <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:10px;padding:12px 16px;font-size:13px;line-height:1.8;margin-bottom:14px">
+      <strong style="color:var(--blue)">Document 3 : Calcul de la consommation électrique (en kWh)</strong><br>
+      Puissance (en kW) × nombre d'heures d'utilisation par jour × nombre de jours
+    </div>
+
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Nombre de jours : juillet = 31 jours + août = 31 jours = 62 jours&#10;&#10;Consommation = 0,8 × 16 × 62 = 793,6 kWh&#10;&#10;Dépense = 793,6 × 0,23 ≈ 182,53 €" rows="5"></textarea>
+  </div>
+
+</div><!-- fin exercice 4 -->
+
+<!-- ══════════ EXERCICE 5 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
