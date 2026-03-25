@@ -1,5 +1,5 @@
 // PRÉPA BREVET — Base de données des exercices
-// 20 exercices
+// 35 exercices
 
 var data = [
   {
@@ -220,6 +220,171 @@ var data = [
     session: "Centres Étrangers",
     notion: "Volume et Grandeurs",
     notions: ["Volume et Grandeurs", "Géométrie"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-septembre-2025-exo-01",
+    fichier: "data/brevet-metropole-septembre-2025-exo-01.html",
+    titre: "playlist d'Aurélie — dénombrement &amp; probabilités",
+    source: "Brevet Métropole Septembre 2025",
+    annee: 2025,
+    session: "Métropole Septembre",
+    notion: "Dénombrement",
+    notions: ["Dénombrement", "Moyenne", "Probabilités"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-septembre-2025-exo-02",
+    fichier: "data/brevet-metropole-septembre-2025-exo-02.html",
+    titre: "QCM — 6 questions",
+    source: "Brevet Métropole Septembre 2025",
+    annee: 2025,
+    session: "Métropole Septembre",
+    notion: "Statistiques",
+    notions: ["Statistiques", "Volume", "Notation scientifique"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-septembre-2025-exo-03",
+    fichier: "data/brevet-metropole-septembre-2025-exo-03.html",
+    titre: "triangles — Thalès &amp; trigonométrie",
+    source: "Brevet Métropole Septembre 2025",
+    annee: 2025,
+    session: "Métropole Septembre",
+    notion: "Thalès",
+    notions: ["Thalès", "Pythagore", "Trigonométrie"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-septembre-2025-exo-04",
+    fichier: "data/brevet-metropole-septembre-2025-exo-04.html",
+    titre: "filtration de piscine — fonction affine",
+    source: "Brevet Métropole Septembre 2025",
+    annee: 2025,
+    session: "Métropole Septembre",
+    notion: "Fonction affine",
+    notions: ["Fonction affine", "Graphique", "Équation"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-septembre-2025-exo-05",
+    fichier: "data/brevet-metropole-septembre-2025-exo-05.html",
+    titre: "table carrée — aires, transformation &amp; Scratch",
+    source: "Brevet Métropole Septembre 2025",
+    annee: 2025,
+    session: "Métropole Septembre",
+    notion: "Aire",
+    notions: ["Aire", "Pourcentage", "Transformation"],
+    points: 20
+  },
+  {
+    id: "brevet-nouvelle-caledonie-2025-exo-01",
+    fichier: "data/brevet-nouvelle-caledonie-2025-exo-01.html",
+    titre: "5 questions — 3 réponses",
+    source: "Brevet Nouvelle-Calédonie 2025",
+    annee: 2025,
+    session: "Nouvelle-Calédonie",
+    notion: "Nombres premiers",
+    notions: ["Nombres premiers", "Aire", "Fonctions"],
+    points: 20
+  },
+  {
+    id: "brevet-nouvelle-caledonie-2025-exo-02",
+    fichier: "data/brevet-nouvelle-caledonie-2025-exo-02.html",
+    titre: "trigonométrie &amp; vitesse",
+    source: "Brevet Nouvelle-Calédonie 2025",
+    annee: 2025,
+    session: "Nouvelle-Calédonie",
+    notion: "Trigonométrie",
+    notions: ["Trigonométrie", "Pythagore", "Conversion"],
+    points: 20
+  },
+  {
+    id: "brevet-nouvelle-caledonie-2025-exo-03",
+    fichier: "data/brevet-nouvelle-caledonie-2025-exo-03.html",
+    titre: "fonctions affines &amp; équations",
+    source: "Brevet Nouvelle-Calédonie 2025",
+    annee: 2025,
+    session: "Nouvelle-Calédonie",
+    notion: "Calcul littéral",
+    notions: ["Calcul littéral", "Fonctions", "Équation"],
+    points: 20
+  },
+  {
+    id: "brevet-nouvelle-caledonie-2025-exo-04",
+    fichier: "data/brevet-nouvelle-caledonie-2025-exo-04.html",
+    titre: "probabilités &amp; dénombrement",
+    source: "Brevet Nouvelle-Calédonie 2025",
+    annee: 2025,
+    session: "Nouvelle-Calédonie",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Issues", "Dénombrement"],
+    points: 20
+  },
+  {
+    id: "brevet-nouvelle-caledonie-2025-exo-05",
+    fichier: "data/brevet-nouvelle-caledonie-2025-exo-05.html",
+    titre: "thalès, aires &amp; triangles semblables",
+    source: "Brevet Nouvelle-Calédonie 2025",
+    annee: 2025,
+    session: "Nouvelle-Calédonie",
+    notion: "Thalès",
+    notions: ["Thalès", "Angles", "Aires"],
+    points: 20
+  },
+  {
+    id: "brevet-polynesie-2025-exo-01",
+    fichier: "data/brevet-polynesie-2025-exo-01.html",
+    titre: "escalade — tableur &amp; statistiques",
+    source: "Brevet Polynésie 2025",
+    annee: 2025,
+    session: "Polynésie",
+    notion: "Tableur",
+    notions: ["Tableur", "Statistiques", "Moyenne"],
+    points: 20
+  },
+  {
+    id: "brevet-polynesie-2025-exo-02",
+    fichier: "data/brevet-polynesie-2025-exo-02.html",
+    titre: "jardin botanique — géométrie &amp; trigonométrie",
+    source: "Brevet Polynésie 2025",
+    annee: 2025,
+    session: "Polynésie",
+    notion: "Pythagore",
+    notions: ["Pythagore", "Thalès", "Trigonométrie"],
+    points: 20
+  },
+  {
+    id: "brevet-polynesie-2025-exo-03",
+    fichier: "data/brevet-polynesie-2025-exo-03.html",
+    titre: "QCM — 5 questions",
+    source: "Brevet Polynésie 2025",
+    annee: 2025,
+    session: "Polynésie",
+    notion: "Calcul",
+    notions: ["Calcul", "Facteurs premiers", "Aire"],
+    points: 20
+  },
+  {
+    id: "brevet-polynesie-2025-exo-04",
+    fichier: "data/brevet-polynesie-2025-exo-04.html",
+    titre: "programme de calcul &amp; fonction affine",
+    source: "Brevet Polynésie 2025",
+    annee: 2025,
+    session: "Polynésie",
+    notion: "Calcul littéral",
+    notions: ["Calcul littéral", "Fonctions", "Graphiques"],
+    points: 20
+  },
+  {
+    id: "brevet-polynesie-2025-exo-05",
+    fichier: "data/brevet-polynesie-2025-exo-05.html",
+    titre: "dé à 12 faces &amp; Scratch",
+    source: "Brevet Polynésie 2025",
+    annee: 2025,
+    session: "Polynésie",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Scratch", "Simulation"],
     points: 20
   }
 ];
