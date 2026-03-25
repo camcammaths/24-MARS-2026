@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 4 — Brevet Amérique Sud 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;text-align:left;font-style:italic}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+
+<div style="padding:36px 48px 72px;max-width:880px">
+
+<!-- ══════════ EXERCICE 4 ══════════ -->
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 4</span>
+      <span class="brevet-ex-titre">terrain en pente — pythagore, trigonométrie & volume</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Amérique du Sud · 2 décembre 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Pythagore · Trigonométrie · Volume prisme</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    On dispose d'un terrain en pente sur lequel on souhaite construire une maison. Il faut enlever de la terre pour obtenir un terrain horizontal [BC].<br><br>
+    Le triangle ABC est <strong>rectangle en C</strong> avec <strong>AC = 2,6 m</strong> et <strong>AB = 17 m</strong>.
+  </div>
+
+  <!-- Vue en coupe + figure prisme côte à côte -->
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px">
+
+    <!-- Vue en coupe SVG -->
+    <div style="flex:1;min-width:220px">
+      <div style="font-size:11px;font-weight:700;text-align:center;color:var(--ink);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">Vue en coupe du terrain</div>
+      <div style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.06);border-radius:12px;padding:14px;display:flex;justify-content:center">
+        <svg viewBox="0 -20 310 180" width="290" height="156" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="11">
+          <!-- Sol horizontal : seulement de C vers la droite -->
+          <line x1="100" y1="120" x2="270" y2="120" stroke="#333" stroke-width="1.5"/>
+
+          <!-- Zone hachurée (terre à enlever) : triangle ACB -->
+          <defs>
+            <pattern id="hatch3" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+              <line x1="0" y1="0" x2="0" y2="6" stroke="#888" stroke-width="1.2"/>
+            </pattern>
+            <pattern id="dots" patternUnits="userSpaceOnUse" width="6" height="6">
+              <circle cx="3" cy="3" r="1.2" fill="#888"/>
+            </pattern>
+          </defs>
+          <!-- Terrain (points) sous le sol central -->
+          <rect x="100" y="120" width="170" height="30" fill="url(#dots)"/>
+          <!-- Terrain sous la maison gauche (de x=40 à x=100, de y=50 à y=150) -->
+          <rect x="40" y="50" width="60" height="100" fill="url(#dots)"/>
+          <!-- Terrain sous la maison droite (de x=230 à x=290, de y=120 à y=150) -->
+          <rect x="230" y="120" width="60" height="30" fill="url(#dots)"/>
+          <polygon points="100,50 100,120 230,120" fill="url(#hatch3)" stroke="#555" stroke-width="1.2"/>
+
+          <!-- Pente AB -->
+          <line x1="100" y1="50" x2="230" y2="120" stroke="#333" stroke-width="2"/>
+
+          <!-- AC vertical -->
+          <line x1="100" y1="50" x2="100" y2="120" stroke="#333" stroke-width="1.8"/>
+
+          <!-- Angle droit en C -->
+          <rect x="100" y="110" width="10" height="10" fill="none" stroke="#555" stroke-width="1.2"/>
+
+          <!-- Maison gauche : coin bas-droit en A=(100,50) -->
+          <rect x="40" y="10" width="60" height="40" fill="#ccc" stroke="#555" stroke-width="1.2"/>
+          <polygon points="40,10 70,-15 100,10" fill="#bbb" stroke="#555" stroke-width="1.2"/>
+
+          <!-- Maison droite : coin bas-gauche en B=(230,120) -->
+          <rect x="230" y="80" width="60" height="40" fill="#ccc" stroke="#555" stroke-width="1.2"/>
+          <polygon points="230,80 260,55 290,80" fill="#bbb" stroke="#555" stroke-width="1.2"/>
+
+          <!-- Points -->
+          <circle cx="100" cy="50"  r="3" fill="#0021BC"/>
+          <circle cx="100" cy="120" r="3" fill="#333"/>
+          <circle cx="230" cy="120" r="3" fill="#333"/>
+
+          <!-- Labels -->
+          <text x="104" y="48"  fill="#0021BC" font-weight="700">A</text>
+          <text x="86"  y="132" fill="#333"    font-weight="700">C</text>
+          <text x="228" y="132" fill="#333"    font-weight="700">B</text>
+
+          <!-- Cotes -->
+          <text x="84" y="87" fill="var(--muted)" font-size="10" transform="rotate(-90,84,87)">AC=2,6</text>
+          <text x="165" y="80" fill="var(--muted)" font-size="10" transform="rotate(-24,165,80)">AB=17</text>
+
+          <!-- Label "Terre à enlever" -->
+          <text x="152" y="100" fill="#555" font-size="10" font-style="italic">Terre à enlever</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Prisme CBAFED SVG -->
+    <div style="flex:1;min-width:220px">
+      <div style="font-size:11px;font-weight:700;text-align:center;color:var(--ink);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">Prisme CBAFED</div>
+      <div style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.06);border-radius:12px;padding:14px;display:flex;justify-content:center">
+        <svg viewBox="0 0 260 200" width="240" height="184" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="11">
+          <!--
+            Prisme droit CBAFED :
+            Base triangle ACB et triangle DFE à l'arrière
+            Hauteur CF = 30m (profondeur du prisme)
+            
+            Face avant (triangle ACB) :
+            C=(40,160), B=(160,160), A=(40,80)
+            
+            Face arrière (triangle DFE, décalée en perspective) :
+            D=C+(100,-30)=(140,130), F=A+(100,-30)=(140,50), E=B+(100,-30)=(260,130)
+            Angle droit en F
+          -->
+
+          <!-- Face avant triangle ACB -->
+          <polygon points="40,160 160,160 40,80" fill="rgba(0,33,188,.05)" stroke="#333" stroke-width="1.5"/>
+          <!-- Angle droit en C -->
+          <rect x="40" y="150" width="10" height="10" fill="none" stroke="#555" stroke-width="1.2"/>
+
+          <!-- Face arrière triangle DFE -->
+          <!-- DE : ligne noire continue -->
+          <line x1="140" y1="130" x2="240" y2="130" stroke="#333" stroke-width="1.8"/>
+          <!-- FD et FE : pointillés -->
+          <line x1="140" y1="130" x2="140" y2="50"  stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+          <line x1="140" y1="50"  x2="240" y2="130" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+          <!-- Angle droit en F -->
+          <polyline points="140,60 150,60 150,50" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3,2"/>
+
+          <!-- Arêtes latérales (profondeur) -->
+          <line x1="40"  y1="160" x2="140" y2="130" stroke="#333" stroke-width="1.5"/>
+          <line x1="160" y1="160" x2="240" y2="130" stroke="#333" stroke-width="1.5"/>
+          <line x1="40"  y1="80"  x2="140" y2="50"  stroke="#333" stroke-width="1.5"/>
+
+          <!-- Points visibles -->
+          <circle cx="40"  cy="160" r="3" fill="#333"/>
+          <circle cx="160" cy="160" r="3" fill="#333"/>
+          <circle cx="40"  cy="80"  r="3" fill="#0021BC"/>
+          <circle cx="140" cy="50"  r="3" fill="#333"/>
+          <circle cx="140" cy="130" r="3" fill="#333"/>
+          <circle cx="240" cy="130" r="3" fill="#333"/>
+
+          <!-- Labels -->
+          <text x="25"  y="174" fill="#333"    font-weight="700">C</text>
+          <text x="160" y="174" fill="#333"    font-weight="700">B</text>
+          <text x="24"  y="78"  fill="#0021BC" font-weight="700">A</text>
+          <text x="142" y="44"  fill="#333"    font-weight="700">D</text>
+          <text x="126" y="132" fill="#333"    font-weight="700">F</text>
+          <text x="244" y="132" fill="#333"    font-weight="700">E</text>
+
+          <!-- Cotes -->
+          <text x="24" y="122" fill="var(--muted)" font-size="10" transform="rotate(-90,24,122)">2,6 m</text>
+          <text x="88" y="174" fill="var(--muted)" font-size="10" text-anchor="middle">16,8 m</text>
+          <text x="80" y="110" fill="var(--muted)" font-size="10" transform="rotate(26,80,110)">17 m</text>
+          <text x="86" y="112" fill="var(--muted)" font-size="10" transform="rotate(26,86,112)"></text>
+          <text x="84" y="118" fill="#EE6E34" font-size="10" transform="rotate(-22,84,118)">30 m</text>
+          <text x="196" y="118" fill="var(--muted)" font-size="10" transform="rotate(-22,196,118)">17 m</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Justifier que la longueur <strong>CB = 16,8 m</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Triangle ABC rectangle en C → CB² = AB² − AC²&#10;CB² = 17² − 2,6² = 289 − 6,76 = …&#10;CB = √… = … m" rows="3"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Si l'angle <strong>ABC</strong> est supérieur à <strong>8,5°</strong>, les travaux coûteront plus cher. Est-ce le cas pour ce terrain ?</span><span class="brevet-q-pts">6 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Triangle ABC rectangle en C :&#10;sin(ABC) = AC/AB = 2,6/17 = …&#10;Angle ABC = arcsin(…) ≈ …°&#10;Cet angle est-il > 8,5° ? Conclusion : …" rows="4"></textarea>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">Déterminer le volume de terre à enlever en m³.<br>On admet que CF = AD = 30 m.<br><em style="color:var(--muted);font-size:12px">Rappel : Volume prisme droit = aire de la base × hauteur</em></span><span class="brevet-q-pts">10 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Aire du triangle ACB (rectangle en C) :&#10;Aire = (AC × CB) / 2 = (2,6 × 16,8) / 2 = … m²&#10;&#10;Hauteur du prisme = CF = 30 m&#10;&#10;Volume = Aire × hauteur = … × 30 = … m³" rows="5"></textarea>
+  </div>
+
+</div><!-- fin exercice 4 -->
+
+<div style="margin-top:24px">
+  <a href="index.html" class="btn btn-blue">← Retour au site</a>
+</div>
+
+</div><!-- fin padding -->
+
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
