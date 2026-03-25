@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 4 — Brevet Asie 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+
+<div style="padding:36px 48px 72px;max-width:880px">
+
+<!-- ══════════ EXERCICE 4 ══════════ -->
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 4</span>
+      <span class="brevet-ex-titre">terrasse en béton — volume, périmètre, peinture</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Asie · 18 juin 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Volume et Grandeurs · Proportionnalité</span>
+      <span class="ctag">21 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    M. et M<sup>me</sup> Martin veulent construire une terrasse en béton dans leur jardin. Ils souhaitent que leur terrasse ait une <strong>hauteur de 15 cm</strong>. Les représentations ci-dessous ne sont pas à l'échelle.
+  </div>
+
+  <!-- Vue en perspective -->
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px">
+    <div style="flex:1;min-width:260px;border:1.5px solid rgba(0,0,0,.15);border-radius:10px;padding:14px">
+      <div style="font-size:11px;font-weight:700;color:var(--ink);margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em">Vue en perspective de la terrasse</div>
+      <svg viewBox="0 0 420 220" width="100%" style="max-height:220px" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+        <!--
+          Terrasse = pavé droit ABCDEFGH + prisme triangulaire CDFGIJ
+          Perspective cavalière, profondeur vecteur (+25, -55)
+
+          PAVÉ DROIT ABCDEFGH :
+            A=(50,178) B=(50,158) C=(230,128) D=(230,148)  — face avant
+            E=(75,123) F=(255,93) G=(75,143) H=(255,113)   — face arrière
+            (G et H cachés)
+
+          PRISME TRIANGULAIRE CDFGIJ :
+            C=(230,128) D=(230,148) — partagés avec pavé
+            F=(255,93)  G=(255,113) — partagés avec pavé (G caché)
+            I=(345,128) J=(345,108) — pointe droite (IJ = hauteur 15cm)
+        -->
+
+        <!-- ══ PAVÉ DROIT ══ -->
+        <!-- Face dessus BCFE -->
+        <polygon points="50,158 75,103 255,73 230,128" fill="#d8d8d8" stroke="#111" stroke-width="1.5"/>
+        <!-- Face avant ABCD -->
+        <polygon points="50,178 50,158 230,128 230,148" fill="white" stroke="#111" stroke-width="1.5"/>
+        <!-- Face gauche ABGE -->
+        <polygon points="50,178 75,123 75,103 50,158" fill="#c0c0c0" stroke="#111" stroke-width="1.5"/>
+        <!-- Arêtes cachées pavé -->
+        <line x1="75" y1="143" x2="255" y2="113" stroke="#777" stroke-width="1" stroke-dasharray="5,3"/>
+        <line x1="255" y1="113" x2="255" y2="93" stroke="#777" stroke-width="1" stroke-dasharray="5,3"/>
+        <line x1="255" y1="113" x2="230" y2="148" stroke="#777" stroke-width="1" stroke-dasharray="5,3"/>
+        <line x1="75" y1="143" x2="50" y2="178" stroke="#777" stroke-width="1" stroke-dasharray="5,3"/>
+        <line x1="75" y1="143" x2="75" y2="103" stroke="#777" stroke-width="1" stroke-dasharray="5,3"/>
+
+        <!-- ══ PRISME TRIANGULAIRE ══ -->
+        <!-- Face dessus triangle CFJ -->
+        <polygon points="230,128 255,73 345,108" fill="#d8d8d8" stroke="#111" stroke-width="1.5"/>
+        <!-- Face avant CDIJ -->
+        <polygon points="230,128 230,148 345,128 345,108" fill="white" stroke="#111" stroke-width="1.5"/>
+        <!-- Arête IJ droite visible -->
+        <line x1="345" y1="108" x2="345" y2="128" stroke="#111" stroke-width="1.5"/>
+        <!-- Arêtes cachées prisme : F→J et G→I et G→D -->
+        <line x1="255" y1="73" x2="345" y2="108" stroke="#777" stroke-width="1" stroke-dasharray="5,3"/>
+        <line x1="255" y1="113" x2="345" y2="128" stroke="#777" stroke-width="1" stroke-dasharray="5,3"/>
+
+        <!-- ══ LABELS ══ -->
+        <text x="33"  y="183" fill="#111" font-weight="700">A</text>
+        <text x="33"  y="157" fill="#111" font-weight="700">B</text>
+        <text x="233" y="125" fill="#111" font-weight="700">C</text>
+        <text x="233" y="152" fill="#111" font-weight="700">D</text>
+        <text x="60"  y="100" fill="#111" font-weight="700">E</text>
+        <text x="258" y="70"  fill="#111" font-weight="700">F</text>
+        <text x="60"  y="155" fill="#777" font-weight="700">G</text>
+        <text x="258" y="120" fill="#777" font-weight="700">H</text>
+        <text x="349" y="132" fill="#111" font-weight="700">I</text>
+        <text x="349" y="108" fill="#111" font-weight="700">J</text>
+
+        <!-- Texte intérieur -->
+        <text x="138" y="148" text-anchor="middle" fill="#555" font-size="11" font-style="italic">Terrasse en béton</text>
+
+        <!-- Cote IJ = 15cm -->
+        <line x1="362" y1="108" x2="362" y2="128" stroke="#111" stroke-width="1.2"/>
+        <line x1="357" y1="108" x2="367" y2="108" stroke="#111" stroke-width="1.2"/>
+        <line x1="357" y1="128" x2="367" y2="128" stroke="#111" stroke-width="1.2"/>
+        <text x="370" y="122" fill="#111" font-size="10">↕ 15cm</text>
+        <text x="260" y="200" text-anchor="middle" fill="#111" font-size="11">IJ = 15 cm</text>
+      </svg>
+    </div>
+
+    <!-- Rappel formule -->
+    <div style="flex-shrink:0;border:1.5px solid rgba(0,0,0,.15);border-radius:10px;padding:14px;align-self:flex-start;min-width:160px">
+      <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:8px">Rappel :</div>
+      <div style="font-size:13px;color:var(--ink);line-height:1.7">
+        Le volume d'un prisme est donné par la formule :<br>
+        <strong>V = Aire<sub>base</sub> × Hauteur</strong>
+      </div>
+    </div>
+  </div>
+  <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">Vue de dessus de la terrasse</div>
+  <div class="brevet-figure" style="flex-direction:column;align-items:flex-start;gap:8px">
+    <svg viewBox="0 0 380 220" width="360" height="208" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+      <!-- Forme HEFGJ : H en haut-gauche, G en haut (décalé droite), J en bas-droite, E en bas-gauche, F au milieu bas -->
+      <!-- H=(30,30), G=(210,30), J=(340,180), E=(30,180), F=(210,180) -->
+      <!-- EFGH rectangle : H=(30,30), G=(210,30), F=(210,180), E=(30,180) -->
+      <!-- Triangle FGJ : F=(210,180), G=(210,30), J=(340,180) -->
+
+      <!-- Rectangle EFGH (fond) -->
+      <rect x="30" y="30" width="180" height="150" fill="rgba(0,33,188,.04)" stroke="#0021BC" stroke-width="1.8"/>
+      <!-- Triangle FGJ -->
+      <polygon points="210,30 340,180 210,180" fill="rgba(238,110,52,.06)" stroke="#EE6E34" stroke-width="1.8"/>
+      <!-- Ligne pointillée GF (hauteur du triangle) -->
+      <line x1="210" y1="30" x2="210" y2="180" stroke="#8A8DAA" stroke-width="1.2" stroke-dasharray="5,3"/>
+      <!-- Angle droit en F -->
+      <rect x="210" y="170" width="10" height="10" fill="none" stroke="#555" stroke-width="1.2"/>
+
+      <!-- Points -->
+      <circle cx="30" cy="30" r="3" fill="#333"/>
+      <circle cx="210" cy="30" r="3" fill="#333"/>
+      <circle cx="30" cy="180" r="3" fill="#333"/>
+      <circle cx="210" cy="180" r="3" fill="#333"/>
+      <circle cx="340" cy="180" r="3" fill="#333"/>
+
+      <!-- Labels points -->
+      <text x="18" y="26" fill="#333" font-weight="700">H</text>
+      <text x="214" y="26" fill="#333" font-weight="700">G</text>
+      <text x="18" y="192" fill="#333" font-weight="700">E</text>
+      <text x="204" y="192" fill="#333" font-weight="700">F</text>
+      <text x="344" y="192" fill="#333" font-weight="700">J</text>
+
+      <!-- Cotes -->
+      <text x="118" y="22" text-anchor="middle" fill="var(--muted)">6 m</text>
+      <text x="18" y="110" text-anchor="end" fill="var(--muted)">3 m</text>
+      <text x="185" y="200" text-anchor="middle" fill="var(--muted)">10 m</text>
+
+      <!-- Flèche cote HG -->
+      <line x1="30" y1="16" x2="210" y2="16" stroke="var(--muted)" stroke-width="1"/>
+      <line x1="30" y1="12" x2="30" y2="20" stroke="var(--muted)" stroke-width="1"/>
+      <line x1="210" y1="12" x2="210" y2="20" stroke="var(--muted)" stroke-width="1"/>
+      <!-- Flèche cote HE -->
+      <line x1="14" y1="30" x2="14" y2="180" stroke="var(--muted)" stroke-width="1"/>
+      <line x1="10" y1="30" x2="18" y2="30" stroke="var(--muted)" stroke-width="1"/>
+      <line x1="10" y1="180" x2="18" y2="180" stroke="var(--muted)" stroke-width="1"/>
+      <!-- Flèche cote EJ -->
+      <line x1="30" y1="196" x2="340" y2="196" stroke="var(--muted)" stroke-width="1"/>
+      <line x1="30" y1="192" x2="30" y2="200" stroke="var(--muted)" stroke-width="1"/>
+      <line x1="340" y1="192" x2="340" y2="200" stroke="var(--muted)" stroke-width="1"/>
+
+      <!-- Label EFGH rectangle -->
+      <text x="310" y="80" fill="var(--muted)" font-size="11" font-style="italic">EFGH est</text>
+      <text x="310" y="94" fill="var(--muted)" font-size="11" font-style="italic">un rectangle</text>
+    </svg>
+
+    <!-- Rappel formule -->
+    <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--blue);align-self:flex-end">
+      <strong>Rappel :</strong> Le volume d'un prisme est donné par :<br>
+      <strong style="font-size:14px">V = Aire<sub>base</sub> × Hauteur</strong>
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Montrer que <strong>FJ = 4 m</strong>.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="EJ = 10 m, EF = HG = 6 m → FJ = EJ − EF = 10 − 6 = … m" rows="2"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Afin de pouvoir couler le béton, M. et M<sup>me</sup> Martin doivent délimiter la terrasse en installant des <strong>planches tout autour</strong>. Quelle longueur de planches doivent-ils acheter au minimum ?</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Périmètre = HE + EJ + JG + GH&#10;Calculer JG avec Pythagore : JG² = GF² + FJ² = 3² + 4² = … → JG = … m&#10;Périmètre = … + … + … + … = … m" rows="4"></textarea>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">M. et M<sup>me</sup> Martin souhaitent réaliser <strong>4 m³</strong> de béton.</span></div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">3.a.</span><span class="brevet-q-text">Montrer que le volume de la terrasse est bien <strong>inférieur à 4 m³</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Aire base = Aire rectangle EFGH + Aire triangle FGJ&#10;= (HG × HE) + (GF × FJ)/2 = (6×3) + (3×4)/2 = … + … = … m²&#10;Volume = Aire × hauteur = … × 0,15 = … m³ < 4 m³" rows="4"></textarea>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">3.b.</span><span class="brevet-q-text">Sachant que pour faire <strong>1 m³</strong> de béton il faut <strong>250 kg de ciment</strong>, quelle masse de ciment doivent-ils acheter pour réaliser <strong>4 m³</strong> de béton ?</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="4 × 250 = … kg" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">3.c.</span><span class="brevet-q-text">Dans le mélange béton, les masses de <strong>ciment : gravier : sable</strong> sont dans le ratio <strong>2 : 7 : 5</strong>. Déterminer (en kg) la masse de gravier et la masse de sable nécessaires pour réaliser les 4 m³ de béton.</span><span class="brevet-q-pts">3 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Total ratio = 2+7+5 = 14 parts. Masse totale = 250 × 4 × (14/2) = … kg&#10;Gravier = (7/14) × … = … kg&#10;Sable = (5/14) × … = … kg" rows="4"></textarea>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">M. et M<sup>me</sup> Martin souhaitent <strong>peindre la surface supérieure</strong> de leur terrasse. À l'aide des documents 1, 2 et 3, déterminer le type et le nombre de pots nécessaires pour effectuer ces travaux avec un <strong>coût minimum</strong>.</span><span class="brevet-q-pts">5 pts</span></div>
+
+    <!-- Documents -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0">
+      <!-- Doc 1 -->
+      <div style="border:1.5px solid rgba(0,0,0,.15);border-radius:8px;padding:14px">
+        <div style="font-size:11px;font-weight:700;color:var(--ink);margin-bottom:8px">Document 1 : Pots de peinture proposés</div>
+        <table style="width:100%;border-collapse:collapse;font-size:12px">
+          <thead><tr>
+            <th style="border:1px solid rgba(0,0,0,.15);padding:6px 10px;background:#f5f5f5"></th>
+            <th style="border:1px solid rgba(0,0,0,.15);padding:6px 10px;background:#f5f5f5;text-align:center">Pot A</th>
+            <th style="border:1px solid rgba(0,0,0,.15);padding:6px 10px;background:#f5f5f5;text-align:center">Pot B</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="border:1px solid rgba(0,0,0,.15);padding:6px 10px">Contenance (en litres)</td><td style="border:1px solid rgba(0,0,0,.15);padding:6px 10px;text-align:center;font-weight:600">5</td><td style="border:1px solid rgba(0,0,0,.15);padding:6px 10px;text-align:center;font-weight:600">10</td></tr>
+            <tr><td style="border:1px solid rgba(0,0,0,.15);padding:6px 10px">Prix (en euros)</td><td style="border:1px solid rgba(0,0,0,.15);padding:6px 10px;text-align:center;font-weight:600">79,90</td><td style="border:1px solid rgba(0,0,0,.15);padding:6px 10px;text-align:center;font-weight:600">129,90</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Doc 2 -->
+      <div style="border:1.5px solid rgba(0,0,0,.15);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:11px;font-weight:700;color:var(--ink)">Document 2 : L'offre du mois</div>
+        <div style="border:1.5px solid #555;border-radius:50%;padding:12px;text-align:center;font-size:12px;line-height:1.5">
+          Moins <strong>50 %</strong><br>sur le deuxième article<br>identique
+        </div>
+      </div>
+    </div>
+    <!-- Doc 3 -->
+    <div style="border:1.5px solid rgba(0,0,0,.15);border-radius:8px;padding:14px;margin-bottom:12px;font-size:13px">
+      <div style="font-size:11px;font-weight:700;color:var(--ink);margin-bottom:6px">Document 3 :</div>
+      Deux couches de peinture sont nécessaires.<br>
+      1 litre de peinture permet de réaliser une couche de <strong>5 m²</strong>.
+    </div>
+
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Surface à peindre = Aire base = … m²&#10;Volume peinture nécessaire = (surface × 2 couches) ÷ 5 = … litres&#10;Comparer le coût selon les pots (avec offre 50% sur 2e article identique)…" rows="6"></textarea>
+  </div>
+
+</div><!-- fin exercice 4 -->
+
+<div style="margin-top:24px">
+  <a href="index.html" class="btn btn-blue">← Retour au site</a>
+</div>
+
+</div><!-- fin padding -->
+
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
