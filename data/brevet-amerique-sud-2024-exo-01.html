@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 1 — Brevet Amérique Sud 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;text-align:left;font-style:italic}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+
+<div style="padding:36px 48px 72px;max-width:880px">
+
+<!-- ══════════ EXERCICE 1 ══════════ -->
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 1</span>
+      <span class="brevet-ex-titre">QCM — 5 questions</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Amérique du Sud · 2 décembre 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Probabilités · Géométrie · Thalès · Engrenage · Homothétie</span>
+    </div>
+  </div>
+  <div class="brevet-enonce">QCM — <strong>une seule réponse est exacte</strong> par question. Aucune justification n'est attendue.</div>
+
+  <!-- Q1 : probabilité jeton blanc -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Une urne contient <strong>3 jetons verts</strong> et <strong>2 jetons blancs</strong>. On tire un jeton au hasard. Quelle est la probabilité d'obtenir un jeton blanc ?</span></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:18px">
+      <div id="q1a" onclick="selMQ('q1','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:14px;text-align:center;cursor:pointer;transition:all .15s;font-size:18px;font-weight:700">2/3</div>
+      <div id="q1b" onclick="selMQ('q1','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:14px;text-align:center;cursor:pointer;transition:all .15s;font-size:18px;font-weight:700">3/5</div>
+      <div id="q1c" onclick="selMQ('q1','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:14px;text-align:center;cursor:pointer;transition:all .15s;font-size:18px;font-weight:700">2/5</div>
+    </div>
+  </div>
+
+  <!-- Q2 : vue de droite du solide -->
+  <div class="brevet-q">
+    <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:10px">
+      <!-- Solide 3D -->
+      <div style="flex-shrink:0;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:10px;padding:12px">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:6px;text-align:center">Solide (flèche = vue de droite)</div>
+        <svg viewBox="0 0 120 100" width="120" height="100" xmlns="http://www.w3.org/2000/svg" font-size="10">
+          <!-- Solide en cubes : colonne gauche 3 cubes en hauteur + rangée droite 3 cubes -->
+          <!-- Dessin en perspective isométrique simplifiée -->
+          <g fill="white" stroke="#333" stroke-width="1.2">
+            <!-- Cube bas-gauche -->
+            <rect x="10" y="60" width="22" height="22"/>
+            <!-- Cube milieu-gauche -->
+            <rect x="10" y="38" width="22" height="22"/>
+            <!-- Cube haut-gauche -->
+            <rect x="10" y="16" width="22" height="22"/>
+            <!-- Cube bas-milieu -->
+            <rect x="32" y="60" width="22" height="22"/>
+            <!-- Cube bas-milieu-droite -->
+            <rect x="54" y="60" width="22" height="22"/>
+            <!-- Cube bas-droite -->
+            <rect x="76" y="60" width="22" height="22"/>
+          </g>
+          <!-- Faces perspectives (haut) -->
+          <g fill="#e8e8e8" stroke="#333" stroke-width="1">
+            <polygon points="10,16 22,8 44,8 32,16"/>
+            <polygon points="32,60 44,52 66,52 54,60"/>
+          </g>
+          <!-- Faces perspectives (droite) -->
+          <g fill="#d0d0d0" stroke="#333" stroke-width="1">
+            <polygon points="32,16 44,8 44,30 32,38"/>
+            <polygon points="98,60 110,52 110,74 98,82"/>
+          </g>
+          <!-- Flèche vue de droite -->
+          <line x1="112" y1="67" x2="100" y2="67" stroke="#0021BC" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+          <defs><marker id="arrowBlue" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0021BC"/></marker></defs>
+        </svg>
+      </div>
+      <div style="flex:1;min-width:180px">
+        <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Quelle est la <strong>vue de droite</strong> de ce solide ?</span></div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:18px">
+      <!-- Vue A : colonne 3 + L en bas droite -->
+      <div id="q2a" onclick="selMQ('q2','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:10px;cursor:pointer;transition:all .15s;display:flex;justify-content:center">
+        <svg viewBox="0 0 50 70" width="45" height="63" xmlns="http://www.w3.org/2000/svg">
+          <g fill="white" stroke="#333" stroke-width="1.5">
+            <rect x="5" y="5" width="18" height="18"/><rect x="5" y="23" width="18" height="18"/>
+            <rect x="5" y="41" width="18" height="18"/><rect x="23" y="41" width="18" height="18"/>
+            <rect x="23" y="59" width="18" height="9"/><rect x="5" y="59" width="18" height="9"/>
+          </g>
+        </svg>
+      </div>
+      <!-- Vue B : colonne 2 + base 2 -->
+      <div id="q2b" onclick="selMQ('q2','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:10px;cursor:pointer;transition:all .15s;display:flex;justify-content:center">
+        <svg viewBox="0 0 50 60" width="45" height="54" xmlns="http://www.w3.org/2000/svg">
+          <g fill="white" stroke="#333" stroke-width="1.5">
+            <rect x="5" y="5" width="18" height="18"/><rect x="5" y="23" width="18" height="18"/>
+            <rect x="5" y="41" width="18" height="18"/><rect x="23" y="41" width="18" height="18"/>
+          </g>
+        </svg>
+      </div>
+      <!-- Vue C : colonne 1 + base 2 -->
+      <div id="q2c" onclick="selMQ('q2','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:10px;cursor:pointer;transition:all .15s;display:flex;justify-content:center">
+        <svg viewBox="0 0 50 60" width="45" height="54" xmlns="http://www.w3.org/2000/svg">
+          <g fill="white" stroke="#333" stroke-width="1.5">
+            <rect x="5" y="5" width="18" height="18"/>
+            <rect x="5" y="23" width="18" height="18"/><rect x="23" y="23" width="18" height="18"/>
+            <rect x="5" y="41" width="18" height="18"/><rect x="23" y="41" width="18" height="18"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q3 : triangle Thalès DH -->
+  <div class="brevet-q">
+    <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:10px">
+      <div style="flex-shrink:0;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:10px;padding:12px">
+        <svg viewBox="0 0 130 110" width="130" height="110" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="11">
+          <!-- Triangle ABC : A en haut-gauche, B en bas-gauche, C en bas-droite -->
+          <polygon points="15,10 15,90 115,90" fill="rgba(0,33,188,.04)" stroke="#333" stroke-width="1.5"/>
+          <!-- H sur AB, D sur BC -->
+          <circle cx="15" cy="58" r="2.5" fill="#EE6E34"/>
+          <circle cx="43" cy="90" r="2.5" fill="#EE6E34"/>
+          <!-- DH parallèle à AC -->
+          <line x1="15" y1="58" x2="43" y2="90" stroke="#EE6E34" stroke-width="1.5"/>
+          <!-- Labels -->
+          <text x="5"   y="10"  fill="#333" font-weight="700">A</text>
+          <text x="3"   y="94"  fill="#333" font-weight="700">B</text>
+          <text x="118" y="94"  fill="#333" font-weight="700">C</text>
+          <text x="3"   y="61"  fill="#EE6E34" font-weight="700">H</text>
+          <text x="45"  y="86"  fill="#EE6E34" font-weight="700">D</text>
+          <!-- Cotes -->
+          <text x="28" y="88" fill="var(--muted)" font-size="9">BD=2</text>
+          <text x="65" y="88" fill="var(--muted)" font-size="9">BC=10</text>
+          <text x="72" y="48" fill="var(--muted)" font-size="9" transform="rotate(-42,72,48)">AC=16</text>
+          <text x="2"  y="76" fill="#0021BC" font-size="9" font-style="italic">(DH)//(AC)</text>
+        </svg>
+      </div>
+      <div style="flex:1;min-width:180px">
+        <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">B, H et A sont alignés. B, D et C sont alignés.<br><strong>BD = 2 cm ; BC = 10 cm ; AC = 16 cm ; (DH) // (AC).</strong><br>Quelle est la longueur du segment [DH] ?</span></div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:18px">
+      <div id="q3a" onclick="selMQ('q3','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:16px;font-weight:700">3,2 cm</div>
+      <div id="q3b" onclick="selMQ('q3','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:16px;font-weight:700">4 cm</div>
+      <div id="q3c" onclick="selMQ('q3','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:16px;font-weight:700">4,8 cm</div>
+    </div>
+  </div>
+
+  <!-- Q4 : engrenage -->
+  <div class="brevet-q">
+    <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:10px">
+      <div style="flex-shrink:0;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:10px;padding:12px">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:4px;text-align:center">12 dents &nbsp;&nbsp; 9 dents</div>
+        <svg viewBox="0 0 110 70" width="110" height="70" xmlns="http://www.w3.org/2000/svg">
+          <!-- Grande roue 12 dents -->
+          <circle cx="38" cy="38" r="24" fill="white" stroke="#333" stroke-width="1.2"/>
+          <g stroke="#333" stroke-width="1.2" fill="white">
+            <circle cx="38" cy="38" r="16" fill="#f0f0f0" stroke="none"/>
+            <!-- Dents grande roue (12) -->
+            <path d="M38,14 L41,10 L35,10 Z"/>
+            <path d="M55,21 L60,19 L57,14 Z" transform="rotate(30,38,38)"/>
+            <path d="M55,21 L60,19 L57,14 Z" transform="rotate(60,38,38)"/>
+            <path d="M55,21 L60,19 L57,14 Z" transform="rotate(90,38,38)"/>
+            <path d="M55,21 L60,19 L57,14 Z" transform="rotate(120,38,38)"/>
+            <path d="M55,21 L60,19 L57,14 Z" transform="rotate(150,38,38)"/>
+            <path d="M55,21 L60,19 L57,14 Z" transform="rotate(180,38,38)"/>
+            <path d="M55,21 L60,19 L57,14 Z" transform="rotate(210,38,38)"/>
+            <path d="M55,21 L60,19 L57,14 Z" transform="rotate(240,38,38)"/>
+            <path d="M55,21 L60,19 L57,14 Z" transform="rotate(270,38,38)"/>
+            <path d="M55,21 L60,19 L57,14 Z" transform="rotate(300,38,38)"/>
+            <path d="M55,21 L60,19 L57,14 Z" transform="rotate(330,38,38)"/>
+          </g>
+          <!-- Petite roue 9 dents -->
+          <circle cx="80" cy="38" r="16" fill="white" stroke="#333" stroke-width="1.2"/>
+          <circle cx="80" cy="38" r="10" fill="#f0f0f0" stroke="none"/>
+          <g stroke="#333" stroke-width="1.2" fill="white">
+            <path d="M80,22 L82,18 L78,18 Z"/>
+            <path d="M80,22 L82,18 L78,18 Z" transform="rotate(40,80,38)"/>
+            <path d="M80,22 L82,18 L78,18 Z" transform="rotate(80,80,38)"/>
+            <path d="M80,22 L82,18 L78,18 Z" transform="rotate(120,80,38)"/>
+            <path d="M80,22 L82,18 L78,18 Z" transform="rotate(160,80,38)"/>
+            <path d="M80,22 L82,18 L78,18 Z" transform="rotate(200,80,38)"/>
+            <path d="M80,22 L82,18 L78,18 Z" transform="rotate(240,80,38)"/>
+            <path d="M80,22 L82,18 L78,18 Z" transform="rotate(280,80,38)"/>
+            <path d="M80,22 L82,18 L78,18 Z" transform="rotate(320,80,38)"/>
+          </g>
+        </svg>
+      </div>
+      <div style="flex:1;min-width:180px">
+        <div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">Un engrenage : grande roue <strong>12 dents</strong>, petite roue <strong>9 dents</strong>. Si la petite roue effectue exactement <strong>4 tours complets</strong>, combien de tours complets effectue la grande roue ?</span></div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:18px">
+      <div id="q4a" onclick="selMQ('q4','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:14px;font-weight:700">3 tours complets</div>
+      <div id="q4b" onclick="selMQ('q4','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:14px;font-weight:700">4 tours complets</div>
+      <div id="q4c" onclick="selMQ('q4','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:14px;font-weight:700">6 tours complets</div>
+    </div>
+  </div>
+
+  <!-- Q5 : homothétie carrés AGFE/ADCB -->
+  <div class="brevet-q">
+    <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:10px">
+      <div style="flex-shrink:0;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:10px;padding:12px">
+        <svg viewBox="0 0 110 110" width="110" height="110" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="11">
+          <!-- Grand carré AGFE : A=(55,5), G=(5,55), F=(55,105), E=(105,55) — losange -->
+          <!-- En fait d'après le PDF : AGFE est un grand carré, ADCB est un petit carré en haut-droite -->
+          <!-- Grand carré AGFE : G=(5,55), A=(55,5), F=(55,105) E=(105,55) -->
+          <!-- Petit carré ADCB : A=(55,5), D=(105,5), C=(105,55)=E, B=(55,55) -->
+          <!-- Diagonales du grand carré passent par A -->
+          
+          <!-- Grand carré AGFE (rotated 45°) -->
+          <polygon points="55,5 105,55 55,105 5,55" fill="rgba(0,33,188,.04)" stroke="#333" stroke-width="1.5"/>
+          <!-- Petit carré ADCB -->
+          <polygon points="55,5 105,5 105,55 55,55" fill="rgba(238,110,52,.06)" stroke="#333" stroke-width="1.5"/>
+          <!-- Diagonale BD du petit carré -->
+          <line x1="55" y1="55" x2="105" y2="5" stroke="#333" stroke-width="1.2"/>
+          <!-- Points -->
+          <circle cx="55"  cy="5"   r="2.5" fill="#333"/>
+          <circle cx="105" cy="5"   r="2.5" fill="#333"/>
+          <circle cx="105" cy="55"  r="2.5" fill="#333"/>
+          <circle cx="55"  cy="55"  r="2.5" fill="#333"/>
+          <circle cx="5"   cy="55"  r="2.5" fill="#333"/>
+          <circle cx="55"  cy="105" r="2.5" fill="#333"/>
+          <!-- Labels -->
+          <text x="57"  y="5"   fill="#333" font-weight="700">A</text>
+          <text x="107" y="5"   fill="#333" font-weight="700">D? </text>
+          <text x="107" y="57"  fill="#333" font-weight="700">C</text>
+          <text x="44"  y="57"  fill="#333" font-weight="700">B</text>
+          <text x="2"   y="57"  fill="#333" font-weight="700">G</text>
+          <text x="44"  y="108" fill="#333" font-weight="700">F</text>
+          <!-- Reformatage selon PDF -->
+          <!-- B en haut : B=(55,5)=A? -->
+        </svg>
+      </div>
+      <div style="flex:1;min-width:180px">
+        <div class="brevet-q-row"><span class="brevet-q-id">5.</span><span class="brevet-q-text">Le carré AGFE est l'image du carré ADCB par une <strong>homothétie de centre A</strong>. Le triangle EGF est l'image d'un triangle par cette même homothétie. Quel est ce triangle ?</span></div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">
+      <div id="q5a" onclick="selMQ('q5','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:16px;font-weight:700">GEA</div>
+      <div id="q5b" onclick="selMQ('q5','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:16px;font-weight:700">ABD</div>
+      <div id="q5c" onclick="selMQ('q5','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:16px;font-weight:700">BDC</div>
+    </div>
+  </div>
+
+</div><!-- fin exercice 1 -->
+
+<div style="margin-top:24px">
+  <a href="index.html" class="btn btn-blue">← Retour au site</a>
+</div>
+
+</div><!-- fin padding -->
+
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
