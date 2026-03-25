@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 4 — Brevet Centres Étrangers 2024</title>
+<style>
+:root {
+  --blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;
+  --bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;
+  --fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;z-index:10;position:relative}
+.logo{cursor:pointer;text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;transition:opacity .15s;text-decoration:none;display:inline-block}
+.cta:hover{opacity:.85}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted);background:transparent}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.ctag.o{background:#FFF0E8;border-color:var(--orange);color:var(--orange)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.partie-label{display:block;margin:18px 0 10px;padding:8px 14px;background:rgba(0,33,188,.06);border-radius:8px;border-left:3px solid var(--blue);font-weight:700;font-size:13px;color:var(--blue);letter-spacing:.03em;text-transform:uppercase}
+.partie-label.orange{background:rgba(238,110,52,.06);border-color:var(--orange);color:var(--orange)}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border-radius:10px;overflow:hidden;border:1.5px solid rgba(0,0,0,.08);margin:12px 0}
+.brevet-table th{background:#EEF2FF;padding:10px 14px;text-align:center;font-weight:700;color:var(--blue);border-right:1px solid rgba(0,33,188,.1);font-size:12px}
+.brevet-table th:last-child{border-right:none}
+.brevet-table td{padding:11px 14px;text-align:center;border-right:1px solid rgba(0,0,0,.06);font-family:'Courier New',monospace;font-size:12px}
+.brevet-table td:last-child{border-right:none}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.script-block{background:#1a1a2e;border-radius:12px;padding:18px 22px;font-family:'Courier New',monospace;font-size:13px;line-height:2.1;margin:12px 0}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center;margin-top:0}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;cursor:pointer}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 4</span>
+      <span class="brevet-ex-titre">géométrie — triangle, angles, homothétie</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Centres étrangers · 10 juin 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Géométrie · Trigonométrie · Homothétie</span>
+      <span class="ctag">16 pts</span>
+    </div>
+  </div>
+
+  <!-- Énoncé + figure côte à côte -->
+  <div style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;margin-bottom:22px">
+    <div style="flex:1;min-width:260px">
+      <div class="brevet-enonce" style="margin-top:0">
+        Sur la figure ci-contre :<br>
+        • les points E, A et F sont alignés ;<br>
+        • les points E, B et D sont alignés ;<br>
+        • les droites (FD) et (AB) sont parallèles ;<br>
+        • <strong>AE = 4,4 cm ; EB = 3,3 cm ; AB = 5,5 cm</strong> et <strong>BD = 6,6 cm</strong>.
+      </div>
+    </div>
+
+    <!-- Figure SVG -->
+    <div style="flex-shrink:0">
+      <svg viewBox="0 0 220 240" width="200" height="220" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="13">
+        <!--
+          Repère : E en bas-gauche, B sur la base, D en bas-droite, A en haut de EA, F en haut de AF
+          E=(30,200), B=(100,200), D=(190,200)
+          A=(30,110)  — AE vertical = 90px ~ 4.4cm
+          F=(30,10)   — AF vertical, F en haut
+          AB=5.5, AE=4.4, EB=3.3 → triangle rectangle en A (Pythagore : 3²+4²=5² ×(1.1)²)
+          FD parallèle à AB → homothétie de centre E
+          rapport = ED/EB = (EB+BD)/EB = (3.3+6.6)/3.3 = 3
+          EF/EA = 3 → F=(30,200-3×90)=... mais F doit rester visible → on adapte l'échelle
+          On place : E=(30,200), B=(100,200), D=(190,200)
+          A=(30,112) (EA=88px), F=(30,22) (EF=178px ≈ 3×EA non exact, on approx)
+          FD : F=(30,22), D=(190,200)
+        -->
+        <!-- triangle EFD grand (fond) -->
+        <polygon points="30,200 190,200 30,22" fill="rgba(0,33,188,.04)" stroke="#0021BC" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- triangle EAB petit (intérieur) -->
+        <polygon points="30,200 100,200 30,112" fill="rgba(238,110,52,.08)" stroke="#EE6E34" stroke-width="1.5" stroke-linejoin="round"/>
+
+        <!-- angle droit en A -->
+        <rect x="30" y="112" width="8" height="8" fill="none" stroke="#EE6E34" stroke-width="1.2"/>
+
+        <!-- points -->
+        <circle cx="30" cy="200" r="3" fill="#333"/>
+        <circle cx="100" cy="200" r="3" fill="#EE6E34"/>
+        <circle cx="190" cy="200" r="3" fill="#0021BC"/>
+        <circle cx="30" cy="112" r="3" fill="#EE6E34"/>
+        <circle cx="30" cy="22" r="3" fill="#0021BC"/>
+
+        <!-- labels -->
+        <text x="18" y="204" text-anchor="middle" fill="#333" font-weight="700">E</text>
+        <text x="100" y="218" text-anchor="middle" fill="#EE6E34" font-weight="700">B</text>
+        <text x="196" y="204" text-anchor="middle" fill="#0021BC" font-weight="700">D</text>
+        <text x="18" y="116" text-anchor="middle" fill="#EE6E34" font-weight="700">A</text>
+        <text x="18" y="24" text-anchor="middle" fill="#0021BC" font-weight="700">F</text>
+
+        <!-- cotes -->
+        <text x="14" y="160" text-anchor="middle" fill="var(--muted)" font-size="10">4,4</text>
+        <text x="65" y="215" text-anchor="middle" fill="var(--muted)" font-size="10">3,3</text>
+        <text x="148" y="215" text-anchor="middle" fill="var(--muted)" font-size="10">6,6</text>
+        <text x="52" y="162" text-anchor="middle" fill="#EE6E34" font-size="10">5,5</text>
+
+        <!-- mention figure non à l'échelle -->
+        <text x="110" y="232" text-anchor="middle" fill="var(--muted)" font-size="9" font-style="italic">figure non à l'échelle</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">1.</span>
+      <span class="brevet-q-text">Démontrer que le triangle ABE est <strong>rectangle</strong>.</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Vérifie si AE² + EB² = AB² (réciproque du théorème de Pythagore)…&#10;4,4² + 3,3² = … et AB² = 5,5² = … donc…" rows="4"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">2.</span>
+      <span class="brevet-q-text">Calculer la mesure de l'angle <strong>ABE</strong>, arrondie au degré.</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Le triangle ABE est rectangle en A, donc…&#10;sin(ABE) = AE/AB = … → ABE ≈ …°&#10;ou cos(ABE) = EB/AB = …" rows="4"></textarea>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">3.</span>
+      <span class="brevet-q-text">Calculer la longueur <strong>FD</strong>.</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="(FD) ∥ (AB) et E est le centre → utilise le théorème de Thalès…&#10;EF/EA = ED/EB = FD/AB&#10;ED = EB + BD = … + … = …&#10;FD = AB × (ED/EB) = …" rows="5"></textarea>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">4.</span>
+      <span class="brevet-q-text">Une homothétie de centre E transforme le triangle EAB en le triangle EFD. Quel est le rapport de cette homothétie ? <em style="color:var(--muted)">(Aucune justification n'est attendue.)</em></span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Rapport = ED/EB = …" rows="2"></textarea>
+  </div>
+</div>
+
+<!-- ══════════ EXERCICE 5 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
