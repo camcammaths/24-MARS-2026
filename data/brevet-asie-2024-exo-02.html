@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 2 — Brevet Asie 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+
+<div style="padding:36px 48px 72px;max-width:880px">
+
+<!-- ══════════ EXERCICE 2 ══════════ -->
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 2</span>
+      <span class="brevet-ex-titre">affirmations — vrai ou faux justifié</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Asie · 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Géométrie · Probabilités</span>
+      <span class="ctag">18 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    Voici trois affirmations. Pour chacune d'entre elles, <strong>justifier si elle est vraie ou fausse</strong>.
+  </div>
+
+  <!-- ── Affirmation 1 : cubes ── -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">1.</span>
+      <span class="brevet-q-text">Voici un assemblage de quatre cubes identiques représenté en perspective cavalière.</span>
+    </div>
+
+    <!-- Figure SVG : assemblage de 4 cubes en perspective cavalière -->
+    <div class="brevet-figure">
+      <svg viewBox="0 0 320 180" width="300" height="168" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="11">
+        <!-- Cube helper: draw a cube in cavalière perspective
+             Front face is a square, depth lines go up-right at 45°, shortened -->
+
+        <!-- ===== CUBE 1 : bas-gauche ===== -->
+        <!-- Front face: x=20,y=100 → 60×60 -->
+        <rect x="20" y="100" width="60" height="60" fill="white" stroke="#333" stroke-width="1.5"/>
+        <!-- Top face (parallélogramme) -->
+        <polygon points="20,100 50,70 110,70 80,100" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>
+        <!-- Right face -->
+        <polygon points="80,100 110,70 110,130 80,160" fill="#d0d0d0" stroke="#333" stroke-width="1.5"/>
+        <!-- hidden lines -->
+        <line x1="20" y1="160" x2="50" y2="130" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="50" y1="130" x2="110" y2="130" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="50" y1="130" x2="50" y2="70" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+
+        <!-- ===== CUBE 2 : bas-droite (à droite du cube 1) ===== -->
+        <rect x="80" y="100" width="60" height="60" fill="white" stroke="#333" stroke-width="1.5"/>
+        <polygon points="80,100 110,70 170,70 140,100" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>
+        <polygon points="140,100 170,70 170,130 140,160" fill="#d0d0d0" stroke="#333" stroke-width="1.5"/>
+        <line x1="80" y1="160" x2="110" y2="130" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="110" y1="130" x2="170" y2="130" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="110" y1="130" x2="110" y2="70" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+
+        <!-- ===== CUBE 3 : haut-gauche (au-dessus du cube 1) ===== -->
+        <rect x="20" y="40" width="60" height="60" fill="white" stroke="#333" stroke-width="1.5"/>
+        <polygon points="20,40 50,10 110,10 80,40" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>
+        <polygon points="80,40 110,10 110,70 80,100" fill="#d0d0d0" stroke="#333" stroke-width="1.5"/>
+        <line x1="20" y1="100" x2="50" y2="70" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="50" y1="70" x2="110" y2="70" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="50" y1="70" x2="50" y2="10" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+
+        <!-- ===== CUBE 4 : haut-droite (au-dessus du cube 2, décalé) ===== -->
+        <rect x="140" y="40" width="60" height="60" fill="white" stroke="#333" stroke-width="1.5"/>
+        <polygon points="140,40 170,10 230,10 200,40" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>
+        <polygon points="200,40 230,10 230,70 200,100" fill="#d0d0d0" stroke="#333" stroke-width="1.5"/>
+        <line x1="140" y1="100" x2="170" y2="70" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="170" y1="70" x2="230" y2="70" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="170" y1="70" x2="170" y2="10" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+
+        <!-- Label "Face avant" -->
+        <text x="35" y="174" fill="var(--muted)" font-size="10" font-style="italic">Face avant</text>
+        <!-- flèche vers face avant -->
+        <line x1="72" y1="168" x2="55" y2="155" stroke="var(--muted)" stroke-width="1"/>
+        <polygon points="55,155 60,162 65,154" fill="var(--muted)"/>
+      </svg>
+    </div>
+
+    <!-- Vue de droite -->
+    <div style="font-size:13px;color:var(--ink);margin-bottom:12px;line-height:1.6">
+      <strong>Affirmation n° 1</strong> : « La vue de droite est représentée par le dessin ci-dessous. »<br>
+      <em style="color:var(--muted);font-size:12px">Le dessin n'est pas à l'échelle.</em>
+    </div>
+    <!-- Vue de droite : 2 carrés côte à côte -->
+    <div style="display:flex;justify-content:center;margin-bottom:14px">
+      <svg viewBox="0 0 120 60" width="120" height="60" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="5" width="50" height="50" fill="white" stroke="#333" stroke-width="1.5"/>
+        <rect x="60" y="5" width="50" height="50" fill="white" stroke="#333" stroke-width="1.5"/>
+      </svg>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">Affirmation 1</span>
+        <span class="brevet-q-text">La vue de droite est représentée par le dessin ci-dessus.</span>
+        <span class="brevet-q-pts">6 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Vraie ou fausse ? Décris ce qu'on voit depuis la droite de l'assemblage…" rows="4"></textarea>
+    </div>
+  </div>
+
+  <!-- ── Affirmation 2 : droites parallèles ── -->
+  <div class="brevet-q" style="margin-top:24px">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">2.</span>
+      <span class="brevet-q-text">On considère le schéma ci-dessous (qui n'est pas à l'échelle) avec <strong>ON = 6 cm, SU = 5 cm, UD = 6 cm</strong>.</span>
+    </div>
+
+    <!-- Figure géométrique SVG -->
+    <div class="brevet-figure">
+      <svg viewBox="0 0 340 260" width="320" height="244" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="13">
+        <!-- Points :
+             O=(20,220), N=(130,110), S=(200,20), U=(240,120), E=(185,180), D=(300,240) -->
+
+        <!-- Traits de la figure -->
+        <!-- O-N-S -->
+        <line x1="20" y1="220" x2="130" y2="110" stroke="#333" stroke-width="1.5"/>
+        <line x1="130" y1="110" x2="200" y2="20" stroke="#333" stroke-width="1.5"/>
+        <!-- O-E-D -->
+        <line x1="20" y1="220" x2="185" y2="180" stroke="#333" stroke-width="1.5"/>
+        <line x1="185" y1="180" x2="300" y2="240" stroke="#333" stroke-width="1.5"/>
+        <!-- N-U -->
+        <line x1="130" y1="110" x2="240" y2="120" stroke="#333" stroke-width="1.5"/>
+        <!-- S-D -->
+        <line x1="200" y1="20" x2="300" y2="240" stroke="#333" stroke-width="1.5"/>
+        <!-- N-D et U-O (diagonales) -->
+        <line x1="130" y1="110" x2="300" y2="240" stroke="#333" stroke-width="1.2"/>
+        <line x1="240" y1="120" x2="20" y2="220" stroke="#333" stroke-width="1.2"/>
+
+        <!-- Marques égalité (croix rouges sur ON et SU) -->
+        <!-- Milieu ON ≈ (75,165) -->
+        <line x1="71" y1="169" x2="79" y2="161" stroke="#EF4444" stroke-width="2"/>
+        <line x1="71" y1="161" x2="79" y2="169" stroke="#EF4444" stroke-width="2"/>
+        <!-- Milieu SU ≈ (220,70) -->
+        <line x1="166" y1="66" x2="174" y2="58" stroke="#EF4444" stroke-width="2"/>
+        <line x1="166" y1="58" x2="174" y2="66" stroke="#EF4444" stroke-width="2"/>
+
+        <!-- Points -->
+        <circle cx="20" cy="220" r="3" fill="#333"/>
+        <circle cx="130" cy="110" r="3" fill="#333"/>
+        <circle cx="200" cy="20" r="3" fill="#333"/>
+        <circle cx="240" cy="120" r="3" fill="#333"/>
+        <circle cx="185" cy="180" r="3" fill="#333"/>
+        <circle cx="300" cy="240" r="3" fill="#333"/>
+
+        <!-- Labels -->
+        <text x="6" y="224" fill="#333" font-weight="600">O</text>
+        <text x="120" y="105" fill="#333" font-weight="600">N</text>
+        <text x="198" y="14" fill="#333" font-weight="600">S</text>
+        <text x="246" y="118" fill="#333" font-weight="600">U</text>
+        <text x="188" y="196" fill="#333" font-weight="600">E</text>
+        <text x="306" y="244" fill="#333" font-weight="600">D</text>
+
+        <!-- Cotes à droite -->
+        <text x="256" y="60" fill="var(--muted)" font-size="12">ON = 6 cm</text>
+        <text x="256" y="80" fill="var(--muted)" font-size="12">SU = 5 cm</text>
+        <text x="256" y="100" fill="var(--muted)" font-size="12">UD = 6 cm</text>
+      </svg>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">Affirmation 2</span>
+        <span class="brevet-q-text">« Les droites (NU) et (OD) sont parallèles. »</span>
+        <span class="brevet-q-pts">6 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Vraie ou fausse ? Utilise le théorème de Thalès ou sa réciproque…&#10;Calcule ON/OS et NU/OD ou vérifie un rapport de proportionnalité…" rows="5"></textarea>
+    </div>
+  </div>
+
+  <!-- ── Affirmation 3 : probabilités ── -->
+  <div class="brevet-q" style="margin-top:24px">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">3.</span>
+      <span class="brevet-q-text">On considère deux expériences aléatoires :<br><br>
+        • <strong>Expérience 1</strong> : on tire une boule dans une urne opaque et on annonce sa couleur. L'urne contient <strong>4 boules rouges</strong> et <strong>6 boules bleues</strong> indiscernables au toucher.<br><br>
+        • <strong>Expérience 2</strong> : on lance un dé non truqué avec des faces numérotées de 1 à 6 et on annonce le nombre qui apparaît sur la face du dessus.
+      </span>
+    </div>
+
+    <!-- Illustration urne + dé -->
+    <div class="brevet-figure">
+      <svg viewBox="0 0 300 120" width="280" height="112" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+        <!-- Urne -->
+        <ellipse cx="70" cy="38" rx="36" ry="10" fill="#e8e8e8" stroke="#555" stroke-width="1.2"/>
+        <path d="M34,38 Q20,90 34,100 Q70,112 106,100 Q120,90 106,38" fill="#f5f5f5" stroke="#555" stroke-width="1.2"/>
+        <ellipse cx="70" cy="100" rx="36" ry="10" fill="#e8e8e8" stroke="#555" stroke-width="1.2"/>
+        <!-- boules rouges (4) -->
+        <circle cx="52" cy="72" r="9" fill="#EF4444" stroke="#c0392b" stroke-width="1"/>
+        <circle cx="70" cy="80" r="9" fill="#EF4444" stroke="#c0392b" stroke-width="1"/>
+        <circle cx="55" cy="56" r="8" fill="#EF4444" stroke="#c0392b" stroke-width="1"/>
+        <circle cx="78" cy="62" r="8" fill="#EF4444" stroke="#c0392b" stroke-width="1"/>
+        <!-- boules bleues (6) -->
+        <circle cx="88" cy="76" r="9" fill="#3B82F6" stroke="#1d4ed8" stroke-width="1"/>
+        <circle cx="60" cy="90" r="8" fill="#3B82F6" stroke="#1d4ed8" stroke-width="1"/>
+        <circle cx="82" cy="50" r="8" fill="#3B82F6" stroke="#1d4ed8" stroke-width="1"/>
+        <circle cx="94" cy="60" r="7" fill="#3B82F6" stroke="#1d4ed8" stroke-width="1"/>
+        <circle cx="44" cy="85" r="7" fill="#3B82F6" stroke="#1d4ed8" stroke-width="1"/>
+        <circle cx="96" cy="88" r="7" fill="#3B82F6" stroke="#1d4ed8" stroke-width="1"/>
+        <text x="70" y="118" text-anchor="middle" fill="var(--muted)" font-size="10">4 rouges + 6 bleues</text>
+
+        <!-- Séparateur -->
+        <line x1="150" y1="10" x2="150" y2="110" stroke="rgba(0,0,0,.1)" stroke-width="1" stroke-dasharray="4,3"/>
+
+        <!-- Dé (cube simplifié) -->
+        <rect x="185" y="30" width="60" height="60" rx="8" fill="white" stroke="#555" stroke-width="1.5"/>
+        <!-- points du dé face 4 -->
+        <circle cx="200" cy="48" r="5" fill="#333"/>
+        <circle cx="230" cy="48" r="5" fill="#333"/>
+        <circle cx="200" cy="72" r="5" fill="#333"/>
+        <circle cx="230" cy="72" r="5" fill="#333"/>
+        <text x="215" y="108" text-anchor="middle" fill="var(--muted)" font-size="10">faces 1 à 6</text>
+      </svg>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">Affirmation 3</span>
+        <span class="brevet-q-text">« La probabilité d'obtenir une boule bleue dans l'urne est supérieure à la probabilité d'obtenir un nombre pair avec le dé. »</span>
+        <span class="brevet-q-pts">6 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Vraie ou fausse ?&#10;P(boule bleue) = 6/10 = …&#10;P(nombre pair) = 3/6 = …&#10;Comparer les deux probabilités…" rows="4"></textarea>
+    </div>
+  </div>
+
+</div><!-- fin brevet-ex -->
+
+<div style="margin-top:24px">
+  <a href="index.html" class="btn btn-blue">← Retour au site</a>
+</div>
+
+</div><!-- fin padding -->
+
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
