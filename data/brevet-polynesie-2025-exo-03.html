@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 3 — Brevet Polynésie 2025</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12);font-size:12px}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;color:var(--muted)}
+.partie-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:14px}
+.partie-label.b{background:#EEF2FF;color:var(--blue)}
+.partie-label.o{background:#FFF0E8;color:var(--orange)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 3</span>
+      <span class="brevet-ex-titre">QCM — 5 questions</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Polynésie · 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Calcul · Facteurs premiers · Aire · Algèbre · Translation</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+  <div class="brevet-enonce">QCM — <strong>une seule réponse est exacte</strong> par question. Aucune justification n'est demandée.</div>
+
+  <!-- Q1 : (−3)² -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">Question 1</span><span class="brevet-q-text">(−3)² est égal à</span><span class="brevet-q-pts">4 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:18px">
+      <div id="q1a" onclick="selQCM4('q1','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">−9</div>
+      <div id="q1b" onclick="selQCM4('q1','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">−6</div>
+      <div id="q1c" onclick="selQCM4('q1','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">6</div>
+      <div id="q1d" onclick="selQCM4('q1','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">9</div>
+    </div>
+  </div>
+
+  <!-- Q2 : facteurs premiers 360 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">Question 2</span><span class="brevet-q-text">La décomposition en produit de facteurs premiers du nombre <strong>360</strong> est</span><span class="brevet-q-pts">4 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:18px">
+      <div id="q2a" onclick="selQCM4('q2','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">2³ × 9 × 5</div>
+      <div id="q2b" onclick="selQCM4('q2','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">8 × 3² × 5</div>
+      <div id="q2c" onclick="selQCM4('q2','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">2³ × 3² × 7</div>
+      <div id="q2d" onclick="selQCM4('q2','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">2³ × 3² × 5</div>
+    </div>
+  </div>
+
+  <!-- Q3 : aire rectangle -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">Question 3</span><span class="brevet-q-text">Un rectangle d'aire <strong>135 cm²</strong> a pour largeur <strong>3 cm</strong>. Combien mesure sa longueur ?</span><span class="brevet-q-pts">4 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:18px">
+      <div id="q3a" onclick="selQCM4('q3','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">15 cm</div>
+      <div id="q3b" onclick="selQCM4('q3','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">45 cm</div>
+      <div id="q3c" onclick="selQCM4('q3','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">132 cm</div>
+      <div id="q3d" onclick="selQCM4('q3','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">405 cm</div>
+    </div>
+  </div>
+
+  <!-- Q4 : expression littérale segment BG -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">Question 4</span><span class="brevet-q-text">Quelle expression littérale correspond à la longueur du segment [BG] ?</span><span class="brevet-q-pts">4 pts</span></div>
+
+    <!-- Figure droite graduée -->
+    <div class="brevet-figure" style="padding:14px 24px">
+      <svg viewBox="0 0 320 50" width="320" height="50" xmlns="http://www.w3.org/2000/svg" style="font-family:var(--fd)">
+        <!-- Droite -->
+        <line x1="20" y1="25" x2="300" y2="25" stroke="#333" stroke-width="1.5"/>
+        <polygon points="300,25 292,21 292,29" fill="#333"/>
+        <polygon points="20,25 28,21 28,29" fill="#333"/>
+        <!-- Points B, D, E, G -->
+        <line x1="40" y1="18" x2="40" y2="32" stroke="#333" stroke-width="1.5"/>
+        <line x1="110" y1="18" x2="110" y2="32" stroke="#333" stroke-width="1.5"/>
+        <line x1="160" y1="18" x2="160" y2="32" stroke="#333" stroke-width="1.5"/>
+        <line x1="270" y1="18" x2="270" y2="32" stroke="#333" stroke-width="1.5"/>
+        <!-- Labels -->
+        <text x="40" y="14" fill="var(--blue)" font-size="12" font-weight="700" text-anchor="middle">B</text>
+        <text x="110" y="14" fill="var(--blue)" font-size="12" font-weight="700" text-anchor="middle">D</text>
+        <text x="160" y="14" fill="var(--blue)" font-size="12" font-weight="700" text-anchor="middle">E</text>
+        <text x="270" y="14" fill="var(--blue)" font-size="12" font-weight="700" text-anchor="middle">G</text>
+        <!-- Cote x sous BD -->
+        <line x1="40" y1="38" x2="110" y2="38" stroke="#333" stroke-width="1"/>
+        <polygon points="40,38 48,35 48,41" fill="#333"/>
+        <polygon points="110,38 102,35 102,41" fill="#333"/>
+        <text x="75" y="48" fill="var(--ink)" font-size="11" text-anchor="middle" font-style="italic">x</text>
+        <!-- Cote 3 sous EG (flèche gauche) -->
+        <line x1="160" y1="38" x2="270" y2="38" stroke="#333" stroke-width="1"/>
+        <polygon points="270,38 262,35 262,41" fill="#333"/>
+        <polygon points="160,38 168,35 168,41" fill="#333"/>
+        <text x="215" y="48" fill="var(--ink)" font-size="11" text-anchor="middle">3</text>
+      </svg>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:18px">
+      <div id="q4a" onclick="selQCM4('q4','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">3x²</div>
+      <div id="q4b" onclick="selQCM4('q4','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">2x² + 3</div>
+      <div id="q4c" onclick="selQCM4('q4','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">5x</div>
+      <div id="q4d" onclick="selQCM4('q4','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">2x + 3</div>
+    </div>
+  </div>
+
+  <!-- Q5 : translation rectangle -->
+  <div class="brevet-q" style="margin-bottom:0">
+    <div class="brevet-q-row"><span class="brevet-q-id">Question 5</span><span class="brevet-q-text">Le rectangle ADCB est partagé en neuf rectangles identiques. L'image du rectangle GFHI par la translation qui transforme D en M est le rectangle :</span><span class="brevet-q-pts">4 pts</span></div>
+
+    <!-- Figure grille 3×3 -->
+    <div class="brevet-figure" style="padding:16px 24px">
+      <svg viewBox="0 0 200 180" width="200" height="180" xmlns="http://www.w3.org/2000/svg" style="font-family:var(--fd);font-size:11px">
+        <!-- Grille 3×3 : cellule 54×48 px, départ (20,20) -->
+        <!-- Lignes horizontales -->
+        <line x1="20" y1="20" x2="182" y2="20" stroke="#333" stroke-width="1.5"/>
+        <line x1="20" y1="68" x2="182" y2="68" stroke="#333" stroke-width="1"/>
+        <line x1="20" y1="116" x2="182" y2="116" stroke="#333" stroke-width="1"/>
+        <line x1="20" y1="164" x2="182" y2="164" stroke="#333" stroke-width="1.5"/>
+        <!-- Lignes verticales -->
+        <line x1="20" y1="20" x2="20" y2="164" stroke="#333" stroke-width="1.5"/>
+        <line x1="74" y1="20" x2="74" y2="164" stroke="#333" stroke-width="1"/>
+        <line x1="128" y1="20" x2="128" y2="164" stroke="#333" stroke-width="1"/>
+        <line x1="182" y1="20" x2="182" y2="164" stroke="#333" stroke-width="1.5"/>
+
+        <!-- Mise en évidence GFHI (col 1-2, row 0-1) en bleu -->
+        <rect x="74" y="20" width="54" height="48" fill="rgba(0,33,188,.12)" stroke="var(--blue)" stroke-width="1.5"/>
+
+        <!-- Labels coins principaux -->
+        <text x="14" y="18" fill="var(--blue)" font-weight="700">A</text>
+        <text x="130" y="18" fill="var(--blue)" font-weight="700">I</text>
+        <text x="184" y="18" fill="var(--blue)" font-weight="700">D</text>
+        <text x="14" y="70" fill="var(--blue)" font-weight="700">E</text>
+        <text x="184" y="70" fill="var(--blue)" font-weight="700">J</text>
+        <text x="14" y="118" fill="var(--blue)" font-weight="700">K</text>
+        <text x="184" y="118" fill="var(--blue)" font-weight="700">N</text>
+        <text x="14" y="168" fill="var(--blue)" font-weight="700">B</text>
+        <text x="72" y="168" fill="var(--blue)" font-weight="700">O</text>
+        <text x="126" y="168" fill="var(--blue)" font-weight="700">P</text>
+        <text x="184" y="168" fill="var(--blue)" font-weight="700">C</text>
+        <!-- Points intérieurs -->
+        <text x="72" y="18" fill="var(--blue)" font-weight="700">G</text>
+        <text x="72" y="70" fill="var(--orange)" font-weight="700">F</text>
+        <text x="126" y="70" fill="var(--orange)" font-weight="700">H</text>
+        <text x="72" y="118" fill="var(--blue)" font-weight="700">L</text>
+        <text x="126" y="118" fill="var(--orange)" font-weight="700">M</text>
+
+        <!-- Flèche translation D→M -->
+        <line x1="182" y1="20" x2="128" y2="116" stroke="var(--orange)" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+        <defs>
+          <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="var(--orange)"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px">
+      <div id="q5a" onclick="selQCM4('q5','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">EKLF</div>
+      <div id="q5b" onclick="selQCM4('q5','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">HMNJ</div>
+      <div id="q5c" onclick="selQCM4('q5','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">KBOL</div>
+      <div id="q5d" onclick="selQCM4('q5','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">MPCN</div>
+    </div>
+  </div>
+
+</div><!-- fin exercice 3 -->
+
+
+<!-- ══════════ EXERCICE 4 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

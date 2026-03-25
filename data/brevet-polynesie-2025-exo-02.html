@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 2 — Brevet Polynésie 2025</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12);font-size:12px}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;color:var(--muted)}
+.partie-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:14px}
+.partie-label.b{background:#EEF2FF;color:var(--blue)}
+.partie-label.o{background:#FFF0E8;color:var(--orange)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 2</span>
+      <span class="brevet-ex-titre">jardin botanique — géométrie &amp; trigonométrie</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Polynésie · 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Pythagore · Thalès · Trigonométrie · Vitesse</span>
+      <span class="ctag">22 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    Le jardin botanique d'une ville peut être représenté par le quadrilatère <strong>ABCD</strong> ci-dessous.<br><br>
+    On sait que :<br>
+    • <strong>AB = 500 m</strong>, <strong>BE = 250 m</strong> et <strong>DE = 750 m</strong><br>
+    • Les segments [AC] et [BD] se coupent au point <strong>E</strong>.<br>
+    <em style="font-size:12px;color:var(--muted)">La figure ci-contre n'est pas à l'échelle.</em>
+  </div>
+
+  <!-- Figure SVG -->
+  <div class="brevet-figure">
+    <svg viewBox="0 0 380 300" width="380" height="300" xmlns="http://www.w3.org/2000/svg" style="font-family:var(--fd)">
+      <!-- A(40,30), B(200,30), C(340,250), D(40,250), E≈(144,107) -->
+      <polygon points="40,30 200,30 144,107 40,250" fill="rgba(0,33,188,.08)" stroke="none"/>
+      <polygon points="40,30 200,30 340,250 40,250" fill="rgba(0,33,188,.03)" stroke="#333" stroke-width="1.8" stroke-dasharray="6,4"/>
+      <line x1="40" y1="30" x2="200" y2="30" stroke="#333" stroke-width="1.8"/>
+      <line x1="40" y1="30" x2="40" y2="250" stroke="#333" stroke-width="1.8"/>
+      <line x1="40" y1="30" x2="340" y2="250" stroke="var(--blue)" stroke-width="1.4"/>
+      <line x1="200" y1="30" x2="40" y2="250" stroke="var(--blue)" stroke-width="1.4"/>
+      <rect x="40" y="30" width="12" height="12" fill="none" stroke="#555" stroke-width="1.3"/>
+      <rect x="40" y="238" width="12" height="12" fill="none" stroke="#555" stroke-width="1.3"/>
+      <rect x="144" y="107" width="9" height="9" fill="none" stroke="var(--orange)" stroke-width="1.3"/>
+      <circle cx="40" cy="30" r="3.5" fill="var(--blue)"/>
+      <circle cx="200" cy="30" r="3.5" fill="var(--blue)"/>
+      <circle cx="340" cy="250" r="3.5" fill="var(--blue)"/>
+      <circle cx="40" cy="250" r="3.5" fill="var(--blue)"/>
+      <circle cx="144" cy="107" r="3.5" fill="var(--orange)"/>
+      <text x="26" y="26" fill="var(--blue)" font-size="14" font-weight="700">A</text>
+      <text x="204" y="26" fill="var(--blue)" font-size="14" font-weight="700">B</text>
+      <text x="344" y="256" fill="var(--blue)" font-size="14" font-weight="700">C</text>
+      <text x="22" y="262" fill="var(--blue)" font-size="14" font-weight="700">D</text>
+      <text x="150" y="103" fill="var(--orange)" font-size="13" font-weight="700">E</text>
+      <text x="112" y="22" fill="var(--muted)" font-size="11" text-anchor="middle">500 m</text>
+      <text x="168" y="72" fill="var(--muted)" font-size="10">250 m</text>
+      <text x="52" y="190" fill="var(--muted)" font-size="10">750 m</text>
+    </svg>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">1.</span>
+      <span class="brevet-q-text">Quelle est la longueur du segment <strong>[DB]</strong> ?</span>
+      <span class="brevet-q-pts">2 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="E est sur [DB], donc DB = DE + EB = 750 + 250 = 1 000 m" rows="2"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">2.</span>
+      <span class="brevet-q-text">En raisonnant dans le triangle rectangle ABD, montrer que la longueur du segment <strong>[AD]</strong>, arrondie au mètre, est égale à environ <strong>866 m</strong>.</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Le triangle ABD est rectangle en A.&#10;D'après le théorème de Pythagore :&#10;BD² = AB² + AD²&#10;1 000² = 500² + AD²&#10;AD² = 1 000 000 − 250 000 = 750 000&#10;AD = √750 000 ≈ 866 m ✓" rows="6"></textarea>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span></div>
+    <div class="aff-block">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">3.a.</span>
+        <span class="brevet-q-text">Calculer le sinus de l'angle <strong>ÊAB</strong>.</span>
+        <span class="brevet-q-pts">3 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Dans le triangle ABE rectangle en E :&#10;sin(∠EAB) = BE / AB = 250 / 500 = 1/2" rows="3"></textarea>
+    </div>
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">3.b.</span>
+        <span class="brevet-q-text">En déduire la mesure en degrés de l'angle <strong>ÊAB</strong>.</span>
+        <span class="brevet-q-pts">2 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="sin(∠EAB) = 1/2&#10;∠EAB = arcsin(1/2) = 30°" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">4.</span></div>
+    <div class="aff-block">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">4.a.</span>
+        <span class="brevet-q-text">Montrer que les droites <strong>(AB)</strong> et <strong>(DC)</strong> sont parallèles.</span>
+        <span class="brevet-q-pts">4 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="On vérifie le rapport EB/ED = EA/EC :&#10;EB/ED = 250/750 = 1/3&#10;&#10;D'après la réciproque du théorème de Thalès dans le triangle avec les diagonales,&#10;si EB/ED = EA/EC alors (AB) ∥ (DC). ✓" rows="5"></textarea>
+    </div>
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">4.b.</span>
+        <span class="brevet-q-text">Montrer que la longueur du segment <strong>[CD]</strong> est égale à <strong>1 500 m</strong>.</span>
+        <span class="brevet-q-pts">4 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="(AB) ∥ (DC), donc d'après le théorème de Thalès :&#10;EB/ED = AB/DC&#10;250/750 = 500/DC&#10;DC = 500 × 750/250 = 1 500 m ✓" rows="4"></textarea>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="brevet-q" style="margin-bottom:0">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">5.</span>
+      <span class="brevet-q-text">Un piéton fait le tour du jardin botanique à la vitesse moyenne de <strong>1,1 m/s</strong>. Il lit que [BC] ≈ <strong>1 323 m</strong>. Le temps mis pour faire le tour est-il inférieur à <strong>une heure</strong> ?</span>
+      <span class="brevet-q-pts">3 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Périmètre = AB + BC + CD + DA&#10;= 500 + 1 323 + 1 500 + 866 = 4 189 m&#10;&#10;Temps = distance / vitesse = 4 189 / 1,1 ≈ 3 808 s&#10;&#10;1 heure = 3 600 s&#10;3 808 s > 3 600 s → Non, le temps est supérieur à une heure." rows="6"></textarea>
+  </div>
+
+</div><!-- fin exercice 2 -->
+
+
+<!-- ══════════ EXERCICE 3 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

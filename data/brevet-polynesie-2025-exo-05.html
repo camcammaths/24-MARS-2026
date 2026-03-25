@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 5 — Brevet Polynésie 2025</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12);font-size:12px}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;color:var(--muted)}
+.partie-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:14px}
+.partie-label.b{background:#EEF2FF;color:var(--blue)}
+.partie-label.o{background:#FFF0E8;color:var(--orange)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 5</span>
+      <span class="brevet-ex-titre">dé à 12 faces &amp; Scratch</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Polynésie · 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Probabilités · Scratch · Simulation</span>
+      <span class="ctag">18 pts</span>
+    </div>
+  </div>
+
+  <!-- PARTIE A -->
+  <div class="partie-label b">Partie A — Probabilités</div>
+
+  <div class="brevet-enonce">
+    Tom a acheté un dé équilibré à <strong>12 faces</strong> numérotées de 1 à 12.<br>
+    Il lance ce dé et s'intéresse au résultat qui apparaît sur la face du dessus.
+  </div>
+
+  <!-- Q A1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">1.</span>
+      <span class="brevet-q-text">Expliquer pourquoi la probabilité d'obtenir le nombre <strong>4</strong> est égale à <strong>1/12</strong>.</span>
+      <span class="brevet-q-pts">2 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Le dé est équilibré et possède 12 faces numérotées de 1 à 12.&#10;Chaque face a la même probabilité d'apparaître.&#10;Il y a une seule face portant le numéro 4.&#10;Donc P(4) = 1/12." rows="4"></textarea>
+  </div>
+
+  <!-- Q A2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">2.</span>
+      <span class="brevet-q-text">Quelle est la probabilité que le résultat obtenu soit un <strong>nombre pair</strong> ?</span>
+      <span class="brevet-q-pts">3 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Nombres pairs entre 1 et 12 : 2, 4, 6, 8, 10, 12 → 6 nombres pairs&#10;P(pair) = 6/12 = 1/2" rows="3"></textarea>
+  </div>
+
+  <!-- Q A3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">3.</span>
+      <span class="brevet-q-text">Tom pense que la probabilité d'obtenir un <strong>multiple de 3</strong> est supérieure à <strong>0,3</strong>. A-t-il raison ?</span>
+      <span class="brevet-q-pts">3 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Multiples de 3 entre 1 et 12 : 3, 6, 9, 12 → 4 nombres&#10;P(multiple de 3) = 4/12 = 1/3 ≈ 0,333…&#10;&#10;0,333 > 0,3 → Oui, Tom a raison." rows="4"></textarea>
+  </div>
+
+  <!-- PARTIE B -->
+  <div class="partie-label o">Partie B — Simulation Scratch</div>
+
+  <p style="font-size:14px;line-height:1.75;margin-bottom:16px">
+    Tom souhaite simuler le lancer de <strong>deux dés équilibrés à 12 faces</strong> numérotées de 1 à 12.<br>
+    Le bloc « Lancer » simule le lancer des deux dés et calcule la somme obtenue.<br>
+    <em style="color:var(--muted);font-size:13px">Par exemple, si dé n°1 = 3 et dé n°2 = 5, alors la somme = 8.</em>
+  </p>
+
+  <!-- Deux programmes côte à côte -->
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:22px;align-items:flex-start">
+
+    <!-- Programme principal -->
+    <div style="flex:1;min-width:200px">
+      <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:.03em">Programme</div>
+      <div style="display:flex;flex-direction:column;gap:3px;font-family:'Helvetica Neue',Arial,sans-serif">
+        <!-- Ligne 1 : quand cliqué -->
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">1</span>
+          <div style="position:relative;display:inline-flex;flex-direction:column">
+            <div style="margin-left:8px;width:24px;height:9px;background:#FFAB19;border-radius:4px 4px 0 0"></div>
+            <div style="background:#FFAB19;border-radius:0 5px 5px 5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px">
+              <span style="font-size:11px;font-weight:700;color:#fff">Quand</span>
+              <svg width="12" height="12" viewBox="0 0 14 14"><rect width="14" height="14" rx="3" fill="#3a993a"/><polygon points="3,2 12,7 3,12" fill="#fff"/></svg>
+              <span style="font-size:11px;font-weight:700;color:#fff">est cliqué</span>
+            </div>
+          </div>
+        </div>
+        <!-- Ligne 2 : Lancer -->
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">2</span>
+          <div style="background:#FF6680;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:3px">
+            <span style="font-size:11px;font-weight:700;color:#fff">Lancer</span>
+          </div>
+        </div>
+        <!-- Ligne 3 : si Résultat > 6 alors -->
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">3</span>
+          <div style="display:flex;flex-direction:column">
+            <div style="background:#FFAB19;border-radius:5px 5px 0 0;padding:5px 10px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:11px;font-weight:700;color:#fff">si</span>
+              <span style="background:rgba(0,0,0,.2);border-radius:3px;padding:1px 6px;font-size:10px;color:#fff;font-weight:600">Résultat</span>
+              <span style="font-size:11px;font-weight:700;color:#fff">&gt; 6</span>
+              <span style="font-size:11px;font-weight:700;color:#fff">alors</span>
+            </div>
+            <!-- Bloc alors -->
+            <div style="border-left:5px solid #FFAB19;padding:3px 0 3px 8px">
+              <div style="background:#9966FF;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:3px">
+                <span style="font-size:11px;font-weight:700;color:#fff">dire</span>
+                <span style="background:#fff;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:600;color:#333">Gagné !</span>
+                <span style="font-size:11px;font-weight:700;color:#fff">pendant</span>
+                <span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">2</span>
+                <span style="font-size:11px;font-weight:700;color:#fff">secondes</span>
+              </div>
+            </div>
+            <!-- sinon -->
+            <div style="background:#FFAB19;padding:3px 10px;font-size:11px;font-weight:700;color:#fff">sinon</div>
+            <div style="border-left:5px solid #FFAB19;padding:3px 0 3px 8px">
+              <div style="background:#9966FF;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:3px">
+                <span style="font-size:11px;font-weight:700;color:#fff">dire</span>
+                <span style="background:#fff;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:600;color:#333">Perdu !</span>
+                <span style="font-size:11px;font-weight:700;color:#fff">pendant</span>
+                <span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">2</span>
+                <span style="font-size:11px;font-weight:700;color:#fff">secondes</span>
+              </div>
+            </div>
+            <div style="background:#FFAB19;border-radius:0 0 5px 5px;padding:3px 10px;display:flex;justify-content:flex-end;width:220px">
+              <span style="color:#fff;font-size:13px">↵</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloc Lancer -->
+    <div style="flex:1;min-width:240px">
+      <div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:.03em">Bloc « Lancer »</div>
+      <div style="display:flex;flex-direction:column;gap:3px;font-family:'Helvetica Neue',Arial,sans-serif">
+        <!-- Ligne 1 : définir Lancer -->
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">1</span>
+          <div style="position:relative;display:inline-flex;flex-direction:column">
+            <div style="margin-left:8px;width:24px;height:9px;background:#FF6680;border-radius:4px 4px 0 0"></div>
+            <div style="background:#FF6680;border-radius:0 5px 5px 5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px">
+              <span style="font-size:11px;font-weight:700;color:#fff">définir</span>
+              <span style="background:rgba(0,0,0,.2);border-radius:3px;padding:1px 6px;font-size:10px;color:#fff;font-weight:600">Lancer</span>
+            </div>
+          </div>
+        </div>
+        <!-- Ligne 2 : mettre Dé 1 à ... (à compléter) -->
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">2</span>
+          <div style="background:#FF8C1A;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:3px;outline:3px dashed rgba(0,33,188,.5);outline-offset:2px">
+            <span style="font-size:11px;font-weight:700;color:#fff">mettre</span>
+            <span style="background:rgba(0,0,0,.2);border-radius:3px;padding:1px 6px;font-size:10px;color:#fff;font-weight:600">Dé 1 ▾</span>
+            <span style="font-size:11px;font-weight:700;color:#fff">à</span>
+            <span style="background:rgba(255,255,255,.3);border-radius:100px;padding:0 10px;font-size:11px;font-weight:700;color:#fff;border:1.5px dashed #fff">nombre aléatoire entre</span>
+            <span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">1</span>
+            <span style="font-size:11px;font-weight:700;color:#fff">et</span>
+            <span style="background:rgba(255,255,255,.3);border-radius:100px;padding:0 10px;font-size:11px;font-weight:700;color:#fff;border:1.5px dashed #fff">…</span>
+          </div>
+          <span style="font-size:10px;color:var(--blue);font-weight:700;font-style:italic">← à compléter</span>
+        </div>
+        <!-- Ligne 3 : mettre Dé 2 à ... (à compléter) -->
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">3</span>
+          <div style="background:#FF8C1A;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:3px;outline:3px dashed rgba(0,33,188,.5);outline-offset:2px">
+            <span style="font-size:11px;font-weight:700;color:#fff">mettre</span>
+            <span style="background:rgba(0,0,0,.2);border-radius:3px;padding:1px 6px;font-size:10px;color:#fff;font-weight:600">Dé 2 ▾</span>
+            <span style="font-size:11px;font-weight:700;color:#fff">à</span>
+            <span style="background:rgba(255,255,255,.3);border-radius:100px;padding:0 10px;font-size:11px;font-weight:700;color:#fff;border:1.5px dashed #fff">…</span>
+            <span style="font-size:11px;font-weight:700;color:#fff">et</span>
+            <span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">12</span>
+          </div>
+          <span style="font-size:10px;color:var(--blue);font-weight:700;font-style:italic">← à compléter</span>
+        </div>
+        <!-- Ligne 4 : mettre Résultat à ... + ... (à compléter) -->
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">4</span>
+          <div style="background:#FF8C1A;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:3px;outline:3px dashed rgba(0,33,188,.5);outline-offset:2px">
+            <span style="font-size:11px;font-weight:700;color:#fff">mettre</span>
+            <span style="background:rgba(0,0,0,.2);border-radius:3px;padding:1px 6px;font-size:10px;color:#fff;font-weight:600">Résultat ▾</span>
+            <span style="font-size:11px;font-weight:700;color:#fff">à</span>
+            <span style="background:rgba(255,255,255,.3);border-radius:100px;padding:0 10px;font-size:11px;font-weight:700;color:#fff;border:1.5px dashed #fff">…</span>
+            <span style="font-size:11px;font-weight:700;color:#fff">+</span>
+            <span style="background:rgba(255,255,255,.3);border-radius:100px;padding:0 10px;font-size:11px;font-weight:700;color:#fff;border:1.5px dashed #fff">…</span>
+          </div>
+          <span style="font-size:10px;color:var(--blue);font-weight:700;font-style:italic">← à compléter</span>
+        </div>
+      </div>
+
+      <!-- Rappel instruction -->
+      <div style="margin-top:14px;background:#f8f9ff;border:1.5px solid rgba(0,33,188,.1);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.7">
+        <em>On rappelle que l'instruction</em><br>
+        <div style="margin:8px 0">
+          <div style="background:#4CAF50;border-radius:5px;padding:4px 10px;display:inline-flex;align-items:center;gap:4px">
+            <span style="font-size:11px;font-weight:700;color:#fff">nombre aléatoire entre</span>
+            <span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">1</span>
+            <span style="font-size:11px;font-weight:700;color:#fff">et</span>
+            <span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">4</span>
+          </div>
+        </div>
+        <em>renvoie au hasard un nombre parmi 1, 2, 3 ou 4.</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q B1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">1.</span>
+      <span class="brevet-q-text"><strong>Recopier les lignes 2, 3 et 4</strong> du bloc « Lancer » en les complétant.</span>
+      <span class="brevet-q-pts">6 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Ligne 2 : mettre Dé 1 à nombre aléatoire entre 1 et 12&#10;Ligne 3 : mettre Dé 2 à nombre aléatoire entre 1 et 12&#10;Ligne 4 : mettre Résultat à Dé 1 + Dé 2" rows="4"></textarea>
+  </div>
+
+  <!-- Q B2 -->
+  <div class="brevet-q" style="margin-bottom:0">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">2.</span>
+      <span class="brevet-q-text">Si le résultat du dé n°1 est égal à <strong>8</strong> et le résultat du dé n°2 est égal à <strong>3</strong>, qu'affichera le programme ? Justifier.</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Résultat = Dé 1 + Dé 2 = 8 + 3 = 11&#10;&#10;Le programme teste : Résultat > 6 ?&#10;11 > 6 → oui, la condition est vraie.&#10;&#10;→ Le programme affiche « Gagné ! » pendant 2 secondes." rows="5"></textarea>
+  </div>
+
+</div><!-- fin exercice 5 --></div>
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

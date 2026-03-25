@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 4 — Brevet Polynésie 2025</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12);font-size:12px}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;color:var(--muted)}
+.partie-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:14px}
+.partie-label.b{background:#EEF2FF;color:var(--blue)}
+.partie-label.o{background:#FFF0E8;color:var(--orange)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 4</span>
+      <span class="brevet-ex-titre">programme de calcul &amp; fonction affine</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Polynésie · 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Calcul littéral · Fonctions · Graphiques · Équation</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">On considère le programme de calcul suivant.</div>
+
+  <!-- Diagramme programme de calcul -->
+  <div class="brevet-figure">
+    <svg viewBox="0 0 460 320" width="440" height="305" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif">
+      <defs><marker id="arr" markerWidth="7" markerHeight="7" refX="3.5" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#8A8DAA"/></marker></defs>
+
+      <!-- Boîte départ -->
+      <rect x="145" y="8" width="170" height="34" rx="6" fill="white" stroke="#0021BC" stroke-width="1.5"/>
+      <text x="230" y="30" text-anchor="middle" fill="#0021BC" font-weight="600" font-size="12">Nombre choisi au départ</text>
+
+      <!-- Flèches vers les deux boîtes -->
+      <line x1="195" y1="42" x2="86" y2="84" stroke="#8A8DAA" stroke-width="1.5" marker-end="url(#arr)"/>
+      <line x1="265" y1="42" x2="374" y2="84" stroke="#8A8DAA" stroke-width="1.5" marker-end="url(#arr)"/>
+
+      <!-- Boîte "Ajouter 4" -->
+      <rect x="20" y="84" width="130" height="34" rx="6" fill="white" stroke="#0021BC" stroke-width="1.5"/>
+      <text x="85" y="106" text-anchor="middle" fill="var(--ink)" font-size="12">Ajouter 4</text>
+
+      <!-- Boîte "Soustraire 2" -->
+      <rect x="310" y="84" width="130" height="34" rx="6" fill="white" stroke="#0021BC" stroke-width="1.5"/>
+      <text x="375" y="106" text-anchor="middle" fill="var(--ink)" font-size="12">Soustraire 2</text>
+
+      <!-- Flèches convergentes vers Multiplier -->
+      <line x1="85" y1="118" x2="175" y2="186" stroke="#8A8DAA" stroke-width="1.5" marker-end="url(#arr)"/>
+      <line x1="375" y1="118" x2="285" y2="186" stroke="#8A8DAA" stroke-width="1.5" marker-end="url(#arr)"/>
+
+      <!-- Boîte "Multiplier les deux résultats" -->
+      <rect x="100" y="186" width="260" height="34" rx="6" fill="white" stroke="#0021BC" stroke-width="1.5"/>
+      <text x="230" y="208" text-anchor="middle" fill="var(--ink)" font-size="12">Multiplier les deux résultats</text>
+
+      <!-- Flèche vers Soustraire carré -->
+      <line x1="230" y1="220" x2="230" y2="238" stroke="#8A8DAA" stroke-width="1.5" marker-end="url(#arr)"/>
+
+      <!-- Boîte "Soustraire le carré du nombre de départ" -->
+      <rect x="65" y="238" width="330" height="34" rx="6" fill="white" stroke="#0021BC" stroke-width="1.5"/>
+      <text x="230" y="260" text-anchor="middle" fill="var(--ink)" font-size="12">Soustraire le carré du nombre de départ</text>
+
+      <!-- Flèche vers Résultat -->
+      <line x1="230" y1="272" x2="230" y2="288" stroke="#8A8DAA" stroke-width="1.5" marker-end="url(#arr)"/>
+
+      <!-- Boîte "Résultat final" -->
+      <rect x="145" y="288" width="170" height="28" rx="6" fill="#EEF2FF" stroke="#0021BC" stroke-width="1.8"/>
+      <text x="230" y="307" text-anchor="middle" fill="#0021BC" font-weight="600" font-size="12">Résultat final</text>
+
+    </svg>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">1.</span>
+      <span class="brevet-q-text">Montrer que si on choisit <strong>5</strong> comme nombre de départ, le résultat du programme est <strong>2</strong>.</span>
+      <span class="brevet-q-pts">3 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Départ : 5&#10;Ajouter 4 → 9 &nbsp;&nbsp; Soustraire 2 → 3&#10;Multiplier : 9 × 3 = 27&#10;Soustraire le carré du départ : 27 − 5² = 27 − 25 = 2 ✓" rows="4"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">On choisit <strong>x</strong> comme nombre de départ.</span></div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">2.a.</span>
+        <span class="brevet-q-text">Parmi les expressions suivantes, laquelle permet d'exprimer le résultat de ce programme en fonction de x ? Aucune justification n'est attendue.</span>
+        <span class="brevet-q-pts">3 pts</span>
+      </div>
+      <!-- Tableau des expressions -->
+      <div style="overflow-x:auto;margin-bottom:10px">
+        <table class="brevet-table">
+          <thead>
+            <tr><th>Expression A</th><th>Expression B</th><th>Expression C</th><th>Expression D</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="ex_a" onclick="selExpr('a')" style="cursor:pointer;transition:all .15s">x + 4 × x − 2 − x²</td>
+              <td id="ex_b" onclick="selExpr('b')" style="cursor:pointer;transition:all .15s">x + 4 × x − 2 − 2x</td>
+              <td id="ex_c" onclick="selExpr('c')" style="cursor:pointer;transition:all .15s">(x+4) × (x−2) − x²</td>
+              <td id="ex_d" onclick="selExpr('d')" style="cursor:pointer;transition:all .15s">(x+4) × (x−2) − 2x</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Expression C : (x+4) × (x−2) − x²" rows="1"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">2.b.</span>
+        <span class="brevet-q-text">Montrer que le résultat du programme de calcul peut s'écrire sous la forme <strong>2x − 8</strong>.</span>
+        <span class="brevet-q-pts">4 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="(x+4)(x−2) − x²&#10;= x² − 2x + 4x − 8 − x²&#10;= 2x − 8 ✓" rows="3"></textarea>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">3.</span>
+      <span class="brevet-q-text">On appelle <strong>f</strong> la fonction définie par <strong>f(x) = 2x − 8</strong>. Voici trois représentations graphiques :</span>
+    </div>
+
+    <!-- 3 graphiques SVG côte à côte -->
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;justify-content:center">
+
+      <!-- Graphique 1 : parabole (pas f) -->
+      <div style="text-align:center">
+        <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:6px;letter-spacing:.05em">Représentation n° 1</div>
+        <svg viewBox="0 0 130 130" width="130" height="130" xmlns="http://www.w3.org/2000/svg" style="font-family:var(--fd);font-size:9px;background:#fafafa;border:1.5px solid rgba(0,0,0,.08);border-radius:8px">
+          <line x1="10" y1="65" x2="120" y2="65" stroke="#ccc" stroke-width="0.8"/>
+          <line x1="65" y1="10" x2="65" y2="120" stroke="#ccc" stroke-width="0.8"/>
+          <g stroke="rgba(0,0,0,.06)" stroke-width="0.5">
+            <line x1="38" y1="10" x2="38" y2="120"/><line x1="92" y1="10" x2="92" y2="120"/>
+            <line x1="10" y1="38" x2="120" y2="38"/><line x1="10" y1="92" x2="120" y2="92"/>
+          </g>
+          <text x="122" y="68" fill="#666">x</text>
+          <text x="68" y="10" fill="#666">y</text>
+          <!-- Parabole : y = x² (en pixels : centre 65,65, échelle 13px/unité) -->
+          <polyline points="10,120 20,107 30,91 40,74 50,56 60,40 65,35 70,30 80,23 90,18 100,14 110,12" fill="none" stroke="var(--blue)" stroke-width="1.8"/>
+          <text x="5" y="14" fill="var(--muted)">6</text>
+          <text x="5" y="41" fill="var(--muted)">4</text>
+          <text x="5" y="68" fill="var(--muted)">0</text>
+          <text x="5" y="95" fill="var(--muted)">-2</text>
+        </svg>
+      </div>
+
+      <!-- Graphique 2 : droite avec mauvaise pente (pas f) -->
+      <div style="text-align:center">
+        <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:6px;letter-spacing:.05em">Représentation n° 2</div>
+        <svg viewBox="0 0 130 130" width="130" height="130" xmlns="http://www.w3.org/2000/svg" style="font-family:var(--fd);font-size:9px;background:#fafafa;border:1.5px solid rgba(0,0,0,.08);border-radius:8px">
+          <line x1="10" y1="65" x2="120" y2="65" stroke="#ccc" stroke-width="0.8"/>
+          <line x1="65" y1="10" x2="65" y2="120" stroke="#ccc" stroke-width="0.8"/>
+          <g stroke="rgba(0,0,0,.06)" stroke-width="0.5">
+            <line x1="38" y1="10" x2="38" y2="120"/><line x1="92" y1="10" x2="92" y2="120"/>
+            <line x1="10" y1="38" x2="120" y2="38"/><line x1="10" y1="92" x2="120" y2="92"/>
+          </g>
+          <text x="122" y="68" fill="#666">x</text>
+          <text x="68" y="10" fill="#666">y</text>
+          <!-- Droite très pentue descendante (pente≠2) -->
+          <line x1="20" y1="10" x2="110" y2="120" stroke="var(--blue)" stroke-width="1.8"/>
+          <text x="5" y="41" fill="var(--muted)">2</text>
+          <text x="5" y="68" fill="var(--muted)">0</text>
+          <text x="5" y="95" fill="var(--muted)">-2</text>
+          <text x="20" y="76" fill="var(--muted)">-4</text>
+          <text x="88" y="76" fill="var(--muted)">-4</text>
+        </svg>
+      </div>
+
+      <!-- Graphique 3 : droite f(x)=2x-8 ✓ -->
+      <div style="text-align:center">
+        <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:6px;letter-spacing:.05em">Représentation n° 3 ✓</div>
+        <svg viewBox="0 0 130 130" width="130" height="130" xmlns="http://www.w3.org/2000/svg" style="font-family:var(--fd);font-size:9px;background:#EEF2FF;border:1.5px solid var(--blue);border-radius:8px">
+          <line x1="10" y1="65" x2="120" y2="65" stroke="#aaa" stroke-width="0.8"/>
+          <line x1="65" y1="10" x2="65" y2="120" stroke="#aaa" stroke-width="0.8"/>
+          <g stroke="rgba(0,33,188,.1)" stroke-width="0.5">
+            <line x1="38" y1="10" x2="38" y2="120"/><line x1="92" y1="10" x2="92" y2="120"/>
+            <line x1="10" y1="38" x2="120" y2="38"/><line x1="10" y1="92" x2="120" y2="92"/>
+          </g>
+          <text x="122" y="68" fill="#666">x</text>
+          <text x="68" y="10" fill="#666">y</text>
+          <!-- f(x)=2x−8 : x=0→y=−8, x=4→y=0, x=6→y=4 -->
+          <!-- échelle : 1 unité = 13px, centre (65,65) -->
+          <!-- x=−2 → y=−12 → py=65+12*13=221 (hors) ; x=0 → py=65+8*13=169 (hors) -->
+          <!-- on clip : x=1 → y=−6 → py=65+6*13=143 ; x=6 → y=4 → py=65−4*13=13 -->
+          <line x1="25" y1="120" x2="105" y2="15" stroke="var(--blue)" stroke-width="2"/>
+          <text x="5" y="41" fill="var(--blue)" font-weight="600">2</text>
+          <text x="5" y="68" fill="var(--muted)">0</text>
+          <text x="5" y="95" fill="var(--muted)">-2</text>
+          <text x="20" y="76" fill="var(--muted)">-2</text>
+          <text x="88" y="76" fill="var(--muted)">4</text>
+          <text x="5" y="119" fill="var(--muted)">-8</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">3.a.</span>
+        <span class="brevet-q-text">La représentation graphique de la fonction f est la représentation n°3. Expliquer pourquoi les représentations n°1 et n°2 ne conviennent pas.</span>
+        <span class="brevet-q-pts">4 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Représentation n°1 : c'est une courbe (parabole), or f(x) = 2x − 8 est une fonction affine dont la représentation est une droite. Elle ne convient pas.&#10;&#10;Représentation n°2 : c'est bien une droite, mais elle est décroissante, or f a un coefficient directeur positif (2 > 0) donc sa représentation doit être croissante. Elle ne convient pas." rows="5"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">3.b.</span>
+        <span class="brevet-q-text">Déterminer l'image de <strong>4</strong> par la fonction f.</span>
+        <span class="brevet-q-pts">2 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="f(4) = 2 × 4 − 8 = 8 − 8 = 0" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q" style="margin-bottom:0">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">4.</span>
+      <span class="brevet-q-text">Quel nombre de départ faut-il choisir pour que le résultat du programme de calcul soit égal à <strong>100</strong> ?</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Le résultat vaut f(x) = 2x − 8&#10;2x − 8 = 100&#10;2x = 108&#10;x = 54&#10;&#10;Il faut choisir 54 comme nombre de départ." rows="5"></textarea>
+  </div>
+
+</div><!-- fin exercice 4 -->
+
+
+<!-- ══════════ EXERCICE 5 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
