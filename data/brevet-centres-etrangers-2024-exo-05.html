@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 5 — Brevet Centres Étrangers 2024</title>
+<style>
+:root {
+  --blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;
+  --bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;
+  --fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;z-index:10;position:relative}
+.logo{cursor:pointer;text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;transition:opacity .15s;text-decoration:none;display:inline-block}
+.cta:hover{opacity:.85}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted);background:transparent}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.ctag.o{background:#FFF0E8;border-color:var(--orange);color:var(--orange)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.partie-label{display:block;margin:18px 0 10px;padding:8px 14px;background:rgba(0,33,188,.06);border-radius:8px;border-left:3px solid var(--blue);font-weight:700;font-size:13px;color:var(--blue);letter-spacing:.03em;text-transform:uppercase}
+.partie-label.orange{background:rgba(238,110,52,.06);border-color:var(--orange);color:var(--orange)}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border-radius:10px;overflow:hidden;border:1.5px solid rgba(0,0,0,.08);margin:12px 0}
+.brevet-table th{background:#EEF2FF;padding:10px 14px;text-align:center;font-weight:700;color:var(--blue);border-right:1px solid rgba(0,33,188,.1);font-size:12px}
+.brevet-table th:last-child{border-right:none}
+.brevet-table td{padding:11px 14px;text-align:center;border-right:1px solid rgba(0,0,0,.06);font-family:'Courier New',monospace;font-size:12px}
+.brevet-table td:last-child{border-right:none}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.script-block{background:#1a1a2e;border-radius:12px;padding:18px 22px;font-family:'Courier New',monospace;font-size:13px;line-height:2.1;margin:12px 0}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center;margin-top:0}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;cursor:pointer}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 5</span>
+      <span class="brevet-ex-titre">chapeau de sorcier — cône & patron</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Centres étrangers · 10 juin 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Volume et Grandeurs · Géométrie</span>
+      <span class="ctag">24 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    Léo veut fabriquer un chapeau en forme de cône pour se déguiser en sorcier lors de la fête d'Halloween.<br>
+    Le rayon OM de la base mesure <strong>9 cm</strong> et la hauteur OS mesure <strong>30 cm</strong>.<br><br>
+    <em style="color:var(--muted);font-size:13px">Les deux parties sont indépendantes.</em>
+  </div>
+
+  <!-- ── PARTIE A ── -->
+  <span class="partie-label">Partie A</span>
+
+  <!-- Figure cône Partie A -->
+  <div class="brevet-figure">
+    <svg viewBox="0 0 240 260" width="200" height="216" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+      <!-- ellipse base -->
+      <ellipse cx="120" cy="210" rx="80" ry="20" fill="rgba(0,33,188,.04)" stroke="#0021BC" stroke-width="1.5" stroke-dasharray="6,3"/>
+      <!-- côtés du cône -->
+      <line x1="120" y1="20" x2="40" y2="210" stroke="#0021BC" stroke-width="1.5"/>
+      <line x1="120" y1="20" x2="200" y2="210" stroke="#0021BC" stroke-width="1.5"/>
+      <!-- hauteur pointillée -->
+      <line x1="120" y1="20" x2="120" y2="210" stroke="#8A8DAA" stroke-width="1.2" stroke-dasharray="5,3"/>
+      <!-- angle droit en O -->
+      <rect x="120" y="200" width="9" height="9" fill="none" stroke="#8A8DAA" stroke-width="1"/>
+      <!-- points -->
+      <circle cx="120" cy="20" r="3" fill="#0021BC"/>
+      <circle cx="120" cy="210" r="3" fill="#0021BC"/>
+      <circle cx="200" cy="210" r="3" fill="#0021BC"/>
+      <!-- labels -->
+      <text x="120" y="12" text-anchor="middle" fill="#0021BC" font-weight="700">S</text>
+      <text x="108" y="224" fill="#0021BC" font-weight="700">O</text>
+      <text x="206" y="224" fill="#0021BC" font-weight="700">M</text>
+      <!-- cotes -->
+      <text x="132" y="118" fill="var(--muted)" font-size="11">30 cm</text>
+      <text x="155" y="206" fill="var(--muted)" font-size="11">9 cm</text>
+    </svg>
+  </div>
+
+  <!-- A.1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">A.1.</span>
+      <span class="brevet-q-text">Démontrer que la longueur MS, arrondie au dixième de centimètre, est <strong>31,3 cm</strong>.</span>
+      <span class="brevet-q-pts">3 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Triangle OSM rectangle en O → MS² = OS² + OM² = 30² + 9² = … → MS = √… ≈ … cm" rows="3"></textarea>
+  </div>
+
+  <!-- A.2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">A.2.</span>
+      <span class="brevet-q-text">Léo souhaite vérifier que le chapeau sera adapté à son tour de tête qui mesure <strong>56 cm</strong>. Les dimensions choisies sont-elles adaptées au tour de tête de Léo ?</span>
+      <span class="brevet-q-pts">3 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Tour de tête = circonférence de la base = 2 × π × OM = 2 × π × 9 ≈ … cm&#10;Comparer avec 56 cm…" rows="3"></textarea>
+  </div>
+
+  <!-- A.3 : patron -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">A.3.</span>
+      <span class="brevet-q-text">Léo a représenté le patron de son chapeau avec l'arc M'M de longueur <strong>56,5 cm</strong> et le rayon SM = <strong>31,3 cm</strong>.</span>
+    </div>
+
+    <!-- Figure patron (secteur angulaire) -->
+    <div class="brevet-figure" style="margin-bottom:16px">
+      <svg viewBox="0 0 280 220" width="260" height="200" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+        <!-- secteur angulaire : centre S en bas, rayon R=140, angle ~103° -->
+        <!-- S=(140,190), M=(220,90) environ, M'=(60,90) environ -->
+        <path d="M140,190 L62,72 A140,140 0 0,1 218,72 Z" fill="rgba(0,33,188,.05)" stroke="#0021BC" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- arc M'M en pointillés au sommet -->
+        <path d="M62,72 A140,140 0 0,1 218,72" fill="none" stroke="#EE6E34" stroke-width="2"/>
+        <!-- points -->
+        <circle cx="62" cy="72" r="3" fill="#0021BC"/>
+        <circle cx="218" cy="72" r="3" fill="#0021BC"/>
+        <circle cx="140" cy="190" r="3" fill="#0021BC"/>
+        <!-- labels -->
+        <text x="44" y="74" fill="#0021BC" font-weight="700">M'</text>
+        <text x="222" y="74" fill="#0021BC" font-weight="700">M</text>
+        <text x="140" y="208" text-anchor="middle" fill="#0021BC" font-weight="700">S</text>
+        <!-- cotes -->
+        <text x="140" y="50" text-anchor="middle" fill="#EE6E34" font-size="11" font-weight="600">arc M'M = 56,5 cm</text>
+        <text x="86" y="142" fill="var(--muted)" font-size="11" transform="rotate(-54,86,142)">31,3 cm</text>
+        <text x="194" y="142" fill="var(--muted)" font-size="11" transform="rotate(54,194,142)">31,3 cm</text>
+      </svg>
+    </div>
+
+    <div style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">A.3.a.</span>
+        <span class="brevet-q-text">Démontrer que la longueur du cercle de centre S et de rayon SM, arrondie au dixième de centimètre, est égale à <strong>196,7 cm</strong>.</span>
+        <span class="brevet-q-pts">3 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Circonférence = 2 × π × SM = 2 × π × 31,3 ≈ … cm" rows="3"></textarea>
+    </div>
+
+    <div style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">A.3.b.</span>
+        <span class="brevet-q-text">Placer la valeur <strong>196,7</strong> obtenue à la question précédente dans le tableau de proportionnalité donné en ANNEXE.</span>
+        <span class="brevet-q-pts">2 pts</span>
+      </div>
+      <!-- Tableau proportionnalité fidèle à l'original -->
+      <div style="overflow-x:auto;margin-bottom:10px">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.2)">
+          <tbody>
+            <tr>
+              <td style="padding:12px 16px;border:1.5px solid rgba(0,0,0,.2);color:var(--ink);font-size:13px;line-height:1.5;max-width:220px">Mesure de l'angle M'SM (en degré)</td>
+              <td style="padding:12px 24px;border:1.5px solid rgba(0,0,0,.2);text-align:center;font-weight:600;color:var(--ink);font-size:14px">360</td>
+              <td style="padding:12px 24px;border:1.5px solid rgba(0,0,0,.2);text-align:center;font-size:16px;color:var(--muted);background:#EEF2FF;border-color:var(--blue)">…</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 16px;border:1.5px solid rgba(0,0,0,.2);color:var(--ink);font-size:13px;line-height:1.5">Longueur de l'arc M'M (en centimètre)<br><span style="font-size:11px;color:var(--muted)">(Valeur arrondie au dixième de centimètre)</span></td>
+              <td style="padding:12px 24px;border:1.5px solid rgba(0,0,0,.2);text-align:center;font-size:16px;color:var(--muted);background:#EEF2FF;border-color:var(--blue)">…</td>
+              <td style="padding:12px 24px;border:1.5px solid rgba(0,0,0,.2);text-align:center;font-weight:600;color:var(--ink);font-size:14px">56,5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="La valeur 196,7 correspond à un angle de 360°&#10;Complète le tableau : longueur 196,7 ↔ 360°" rows="2"></textarea>
+    </div>
+
+    <div style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">A.3.c.</span>
+        <span class="brevet-q-text">Calculer la mesure de l'angle M'SM correspondant à une longueur d'arc de <strong>56,5 cm</strong>. Donner le résultat arrondi au degré.</span>
+        <span class="brevet-q-pts">3 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Par proportionnalité : angle = (56,5 × 360) ÷ 196,7 ≈ …°" rows="3"></textarea>
+    </div>
+  </div>
+
+  <!-- ── PARTIE B ── -->
+  <span class="partie-label orange" style="margin-top:24px">Partie B</span>
+  <div style="font-size:14px;color:var(--ink);line-height:1.6;margin:14px 0 20px;padding:12px 16px;background:#FAFAFA;border-radius:10px;border:1.5px solid rgba(0,0,0,.07)">
+    On rappelle que la hauteur du chapeau mesure <strong>30 cm</strong>.<br>
+    <span style="display:inline-block;margin-top:8px;padding:10px 14px;background:#EEF2FF;border-radius:8px;font-size:13px;color:var(--blue)">
+      Formule du volume d'un cône de rayon R et de hauteur h :<br>
+      <strong>V = (1/3) × (π × R²) × h</strong>
+    </span>
+  </div>
+
+  <!-- Figure Partie B : cône avec petit cône en bas -->
+  <div class="brevet-figure">
+    <svg viewBox="0 0 260 280" width="220" height="240" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+      <!-- grand cône (pointe en bas) -->
+      <ellipse cx="130" cy="50" rx="80" ry="18" fill="rgba(0,33,188,.04)" stroke="#0021BC" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <line x1="50" y1="50" x2="130" y2="240" stroke="#0021BC" stroke-width="1.5"/>
+      <line x1="210" y1="50" x2="130" y2="240" stroke="#0021BC" stroke-width="1.5"/>
+      <!-- ellipse mi-hauteur (bonbons) -->
+      <ellipse cx="130" cy="145" rx="40" ry="9" fill="rgba(238,110,52,.15)" stroke="#EE6E34" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <!-- petit cône bonbons (partie basse) -->
+      <path d="M90,145 L130,240 L170,145" fill="rgba(238,110,52,.1)" stroke="none"/>
+      <!-- hauteur totale -->
+      <line x1="218" y1="50" x2="218" y2="240" stroke="#8A8DAA" stroke-width="1" stroke-dasharray="3,2"/>
+      <line x1="214" y1="50" x2="222" y2="50" stroke="#8A8DAA" stroke-width="1"/>
+      <line x1="214" y1="240" x2="222" y2="240" stroke="#8A8DAA" stroke-width="1"/>
+      <text x="228" y="152" fill="var(--muted)" font-size="11">30 cm</text>
+      <!-- hauteur petit cône -->
+      <line x1="174" y1="145" x2="174" y2="240" stroke="#EE6E34" stroke-width="1" stroke-dasharray="3,2"/>
+      <line x1="170" y1="145" x2="178" y2="145" stroke="#EE6E34" stroke-width="1"/>
+      <line x1="170" y1="240" x2="178" y2="240" stroke="#EE6E34" stroke-width="1"/>
+      <text x="180" y="196" fill="#EE6E34" font-size="11">15 cm</text>
+      <!-- rayon en haut -->
+      <line x1="130" y1="50" x2="210" y2="50" stroke="#0021BC" stroke-width="1.5"/>
+      <text x="168" y="44" text-anchor="middle" fill="#0021BC" font-size="11">9 cm</text>
+      <!-- angle droit sommet -->
+      <rect x="130" y="50" width="8" height="8" fill="none" stroke="#8A8DAA" stroke-width="1"/>
+      <!-- pointe -->
+      <circle cx="130" cy="240" r="3" fill="#0021BC"/>
+    </svg>
+  </div>
+
+  <!-- B.1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">B.1.</span>
+      <span class="brevet-q-text">Montrer que le volume total du chapeau, arrondi au cm³, est de <strong>2 545 cm³</strong>.</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="V = (1/3) × π × 9² × 30 = (1/3) × π × 81 × 30 = … cm³ ≈ … cm³" rows="3"></textarea>
+  </div>
+
+  <!-- B.2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">B.2.</span>
+      <span class="brevet-q-text">Les bonbons atteignent le <strong>milieu de la hauteur</strong> du chapeau (15 cm). Léo pense que le volume occupé par les bonbons représente <strong>moins de 15 %</strong> du volume total. Son estimation est-elle correcte ?</span>
+      <span class="brevet-q-pts">6 pts</span>
+    </div>
+    <div style="font-size:13px;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:10px;line-height:1.7">
+      Le petit cône (bonbons) est semblable au grand cône avec un rapport de <strong>1/2</strong> (hauteur 15 cm sur 30 cm).
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Rayon du petit cône : r = 9 × (15/30) = … cm&#10;Volume petit cône = (1/3) × π × r² × 15 = … cm³&#10;Pourcentage = (V_bonbons / V_total) × 100 = … %&#10;Conclusion : l'estimation est-elle correcte ?" rows="6"></textarea>
+  </div>
+</div>
+</div>
+<div style="padding:0 48px 48px;display:flex;gap:12px;align-items:center">
+  <a href="index.html" class="btn btn-blue" style="text-decoration:none">← Retour au site</a>
+  <a href="brevet-amerique-nord.html" class="btn btn-ghost" style="text-decoration:none">Brevet Amérique du Nord →</a>
+</div>
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
