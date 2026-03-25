@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 3 — Brevet Amérique Nord 2024</title>
+<style>
+:root {
+  --blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;
+  --bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;
+  --fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;z-index:10;position:relative}
+.logo{cursor:pointer;text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;transition:opacity .15s;text-decoration:none;display:inline-block}
+.cta:hover{opacity:.85}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted);background:transparent}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.ctag.o{background:#FFF0E8;border-color:var(--orange);color:var(--orange)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.partie-label{display:block;margin:18px 0 10px;padding:8px 14px;background:rgba(0,33,188,.06);border-radius:8px;border-left:3px solid var(--blue);font-weight:700;font-size:13px;color:var(--blue);letter-spacing:.03em;text-transform:uppercase}
+.partie-label.orange{background:rgba(238,110,52,.06);border-color:var(--orange);color:var(--orange)}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border-radius:10px;overflow:hidden;border:1.5px solid rgba(0,0,0,.08);margin:12px 0}
+.brevet-table th{background:#EEF2FF;padding:10px 14px;text-align:center;font-weight:700;color:var(--blue);border-right:1px solid rgba(0,33,188,.1);font-size:12px}
+.brevet-table th:last-child{border-right:none}
+.brevet-table td{padding:11px 14px;text-align:center;border-right:1px solid rgba(0,0,0,.06);font-family:'Courier New',monospace;font-size:12px}
+.brevet-table td:last-child{border-right:none}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.script-block{background:#1a1a2e;border-radius:12px;padding:18px 22px;font-family:'Courier New',monospace;font-size:13px;line-height:2.1;margin:12px 0}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center;margin-top:0}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;cursor:pointer}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+
+<div style="padding:36px 48px 72px;max-width:880px">
+
+<!-- ══════════ EXERCICE 3 ══════════ -->
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 3</span>
+      <span class="brevet-ex-titre">tarifs cinéma — fonctions & graphique</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Amérique du Nord · 29 mai 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Fonctions et graphiques</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    Un cinéma propose trois tarifs :<br>
+    <strong>Tarif « Classique »</strong> : chaque entrée coûte <strong>11 €</strong>.<br>
+    <strong>Tarif « Essentiel »</strong> : abonnement annuel de <strong>50 €</strong> puis chaque entrée coûte <strong>5 €</strong>.<br>
+    <strong>Tarif « Liberté »</strong> : abonnement annuel de <strong>240 €</strong> avec un nombre d'entrées illimité.
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Avec le tarif <strong>« Classique »</strong>, une personne souhaite acheter <strong>3 entrées</strong>. Combien va-t-elle payer ?</span><span class="brevet-q-pts">2 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="3 × 11 = … €" rows="2"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Avec le tarif <strong>« Essentiel »</strong>, une personne souhaite aller <strong>8 fois</strong> au cinéma. Montrer qu'elle va payer <strong>90 €</strong>.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="50 + 5 × 8 = 50 + … = … €" rows="2"></textarea>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">Dans la suite, <em>x</em> désigne le nombre d'entrées. Associer, <strong>sans justifier</strong>, chacune de ces fonctions au tarif correspondant.</span><span class="brevet-q-pts">3 pts</span></div>
+    <div style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:10px;padding:14px 18px;margin-bottom:10px;font-size:14px;line-height:2.2;text-align:center">
+      <strong>f : x ↦ 50 + 5x</strong> &nbsp;&nbsp;&nbsp; <strong>g : x ↦ 240</strong> &nbsp;&nbsp;&nbsp; <strong>h : x ↦ 11x</strong>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="f correspond au tarif …&#10;g correspond au tarif …&#10;h correspond au tarif …" rows="3"></textarea>
+  </div>
+
+  <!-- Graphique SVG -->
+  <div style="font-size:14px;color:var(--ink);line-height:1.6;margin-bottom:14px">
+    Le graphique ci-dessous représente le prix à payer en fonction du nombre d'entrées pour chacun des trois tarifs.
+  </div>
+  <div class="brevet-figure" style="overflow-x:auto">
+    <svg viewBox="0 0 420 310" width="400" height="295" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="11">
+      <!-- Axes -->
+      <!-- x: 0 à 45 entrées, chaque unité = 8px → 360px, origin x=48 -->
+      <!-- y: 0 à 280€, chaque 50€ = 50px → 280px, origin y=270 -->
+      <defs>
+        <marker id="axarr" markerWidth="7" markerHeight="7" refX="4" refY="3.5" orient="auto">
+          <path d="M0,0 L7,3.5 L0,7 Z" fill="#333"/>
+        </marker>
+      </defs>
+      <!-- grille verticale (tous les 5 entrées = 40px) -->
+      <g stroke="#e0e0e0" stroke-width="0.5">
+        <line x1="88" y1="10" x2="88" y2="270"/>
+        <line x1="128" y1="10" x2="128" y2="270"/>
+        <line x1="168" y1="10" x2="168" y2="270"/>
+        <line x1="208" y1="10" x2="208" y2="270"/>
+        <line x1="248" y1="10" x2="248" y2="270"/>
+        <line x1="288" y1="10" x2="288" y2="270"/>
+        <line x1="328" y1="10" x2="328" y2="270"/>
+        <line x1="368" y1="10" x2="368" y2="270"/>
+        <line x1="408" y1="10" x2="408" y2="270"/>
+        <!-- grille horizontale (tous les 50€ = 50px) -->
+        <line x1="48" y1="220" x2="415" y2="220"/>
+        <line x1="48" y1="170" x2="415" y2="170"/>
+        <line x1="48" y1="120" x2="415" y2="120"/>
+        <line x1="48" y1="70" x2="415" y2="70"/>
+        <line x1="48" y1="20" x2="415" y2="20"/>
+      </g>
+      <!-- Axes -->
+      <line x1="48" y1="270" x2="418" y2="270" stroke="#333" stroke-width="1.5" marker-end="url(#axarr)"/>
+      <line x1="48" y1="270" x2="48" y2="8" stroke="#333" stroke-width="1.5" marker-end="url(#axarr)"/>
+      <!-- Labels x -->
+      <text x="88" y="284" text-anchor="middle" fill="#555">5</text>
+      <text x="128" y="284" text-anchor="middle" fill="#555">10</text>
+      <text x="168" y="284" text-anchor="middle" fill="#555">15</text>
+      <text x="208" y="284" text-anchor="middle" fill="#555">20</text>
+      <text x="248" y="284" text-anchor="middle" fill="#555">25</text>
+      <text x="288" y="284" text-anchor="middle" fill="#555">30</text>
+      <text x="328" y="284" text-anchor="middle" fill="#555">35</text>
+      <text x="368" y="284" text-anchor="middle" fill="#555">40</text>
+      <text x="408" y="284" text-anchor="middle" fill="#555">45</text>
+      <text x="38" y="284" text-anchor="middle" fill="#555">0</text>
+      <!-- Labels y -->
+      <text x="38" y="224" text-anchor="end" fill="#555">50</text>
+      <text x="38" y="174" text-anchor="end" fill="#555">100</text>
+      <text x="38" y="124" text-anchor="end" fill="#555">150</text>
+      <text x="38" y="74" text-anchor="end" fill="#555">200</text>
+      <text x="38" y="24" text-anchor="end" fill="#555">250</text>
+      <!-- Axes labels -->
+      <text x="420" y="284" fill="#333" font-size="10">Nombre d'entrées</text>
+      <text x="8" y="16" fill="#333" font-size="10" transform="rotate(-90,8,140)" text-anchor="middle">Pris à payer (en €)</text>
+
+      <!-- d1 : h(x)=11x (rouge) — passe par (0,0), pente forte -->
+      <!-- x=0 → y=270, x=25 → 11×25=275€ → y=270-275=hors cadre, x=23 → 253€ → y=270-253=17 -->
+      <line x1="48" y1="270" x2="232" y2="17" stroke="#EF4444" stroke-width="2"/>
+      <text x="240" y="14" fill="#EF4444" font-weight="700" font-size="11">(d₁)</text>
+
+      <!-- d2 : f(x)=50+5x (vert/teal) — passe par (0,50), pente faible -->
+      <!-- x=0 → y=270-50=220, x=45 → 50+225=275 → y=270-275=-5 ≈ 12 -->
+      <line x1="48" y1="220" x2="408" y2="25" stroke="#0D9488" stroke-width="2"/>
+      <text x="412" y="22" fill="#0D9488" font-weight="700" font-size="11">(d₂)</text>
+
+      <!-- d3 : g(x)=240 (bleu horizontal) — y=270-240=30 -->
+      <line x1="48" y1="30" x2="415" y2="30" stroke="#0021BC" stroke-width="2"/>
+      <text x="412" y="28" fill="#0021BC" font-weight="700" font-size="11">(d₃)</text>
+
+      <!-- Légende -->
+      <rect x="52" y="14" width="130" height="50" rx="6" fill="white" stroke="rgba(0,0,0,.1)" stroke-width="1"/>
+      <line x1="60" y1="28" x2="78" y2="28" stroke="#EF4444" stroke-width="2"/>
+      <text x="83" y="32" fill="#555" font-size="10">Tarif Classique (d₁)</text>
+      <line x1="60" y1="43" x2="78" y2="43" stroke="#0D9488" stroke-width="2"/>
+      <text x="83" y="47" fill="#555" font-size="10">Tarif Essentiel (d₂)</text>
+      <line x1="60" y1="58" x2="78" y2="58" stroke="#0021BC" stroke-width="2"/>
+      <text x="83" y="62" fill="#555" font-size="10">Tarif Liberté (d₃)</text>
+    </svg>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">Quel tarif propose un prix <strong>proportionnel</strong> au nombre d'entrées ?</span><span class="brevet-q-pts">2 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Le tarif … car sa fonction est de la forme y = kx (passe par l'origine)." rows="2"></textarea>
+  </div>
+
+  <!-- Q5 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">5.</span><span class="brevet-q-text">Pour les questions suivantes, <strong>aucune justification n'est attendue</strong>.</span></div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">5.a.</span><span class="brevet-q-text">Avec <strong>150 €</strong>, combien peut-on acheter d'entrées au maximum avec le tarif <strong>« Essentiel »</strong> ?</span><span class="brevet-q-pts">3 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Lire graphiquement sur (d₂) pour y = 150…" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">5.b.</span><span class="brevet-q-text">À partir de combien d'entrées, le tarif <strong>« Liberté »</strong> devient-il le tarif le plus intéressant ?</span><span class="brevet-q-pts">3 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Trouver l'intersection de (d₃) avec (d₂) sur le graphique…" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">5.c.</span><span class="brevet-q-text">Si on décide de ne pas dépasser un budget de <strong>200 €</strong>, quel est le tarif qui permet d'acheter le plus grand nombre d'entrées ?</span><span class="brevet-q-pts">4 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Pour y = 200, lire le nombre d'entrées sur chaque droite et comparer…" rows="3"></textarea>
+    </div>
+  </div>
+
+</div><!-- fin exercice 3 -->
+
+<div style="margin-top:24px">
+  <a href="index.html" class="btn btn-blue">← Retour au site</a>
+</div>
+
+</div><!-- fin padding -->
+
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
