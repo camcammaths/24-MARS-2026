@@ -1,5 +1,5 @@
 // PRÉPA BREVET — Base de données des exercices
-// Ajouter vos fichiers HTML ici pour enrichir la base
+// 20 exercices
 
 var data = [
   {
@@ -31,8 +31,8 @@ var data = [
     source: "Brevet Amérique Nord 2024",
     annee: 2024,
     session: "Amérique Nord",
-    notion: "Algèbre et Fonctions",
-    notions: ["Algèbre et Fonctions", "Proportionnalité"],
+    notion: "Fonctions et graphiques",
+    notions: ["Fonctions et graphiques"],
     points: 20
   },
   {
@@ -42,8 +42,8 @@ var data = [
     source: "Brevet Amérique Nord 2024",
     annee: 2024,
     session: "Amérique Nord",
-    notion: "Volume et Grandeurs",
-    notions: ["Volume et Grandeurs", "Géométrie"],
+    notion: "Volume",
+    notions: ["Volume", "Périmètre", "Pythagore"],
     points: 20
   },
   {
@@ -54,7 +54,7 @@ var data = [
     annee: 2024,
     session: "Amérique Nord",
     notion: "Géométrie",
-    notions: ["Géométrie", "Algorithmique"],
+    notions: ["Géométrie", "Thalès", "Scratch"],
     points: 20
   },
   {
@@ -75,8 +75,8 @@ var data = [
     source: "Brevet Amérique Sud 2024",
     annee: 2024,
     session: "Amérique Sud",
-    notion: "Algèbre et Fonctions",
-    notions: ["Algèbre et Fonctions", "Arithmétique"],
+    notion: "Fonctions",
+    notions: ["Fonctions", "Tableur", "Factorisation"],
     points: 20
   },
   {
@@ -87,7 +87,7 @@ var data = [
     annee: 2024,
     session: "Amérique Sud",
     notion: "Probabilités",
-    notions: ["Probabilités", "Proportionnalité"],
+    notions: ["Probabilités", "Vitesse", "Pourcentages"],
     points: 20
   },
   {
@@ -97,8 +97,8 @@ var data = [
     source: "Brevet Amérique Sud 2024",
     annee: 2024,
     session: "Amérique Sud",
-    notion: "Géométrie",
-    notions: ["Géométrie", "Volume et Grandeurs"],
+    notion: "Pythagore",
+    notions: ["Pythagore", "Trigonométrie", "Volume prisme"],
     points: 20
   },
   {
@@ -108,8 +108,118 @@ var data = [
     source: "Brevet Amérique Sud 2024",
     annee: 2024,
     session: "Amérique Sud",
-    notion: "Algorithmique",
-    notions: ["Algorithmique", "Géométrie"],
+    notion: "Scratch",
+    notions: ["Scratch", "Géométrie", "Losange"],
+    points: 20
+  },
+  {
+    id: "brevet-asie-2024-exo-01",
+    fichier: "data/brevet-asie-2024-exo-01.html",
+    titre: "QCM — questionnaire à choix multiples",
+    source: "Brevet Asie 2024",
+    annee: 2024,
+    session: "Asie",
+    notion: "Arithmétique",
+    notions: ["Arithmétique", "Géométrie", "Algèbre"],
+    points: 20
+  },
+  {
+    id: "brevet-asie-2024-exo-02",
+    fichier: "data/brevet-asie-2024-exo-02.html",
+    titre: "affirmations — vrai ou faux justifié",
+    source: "Brevet Asie 2024",
+    annee: 2024,
+    session: "Asie",
+    notion: "Géométrie",
+    notions: ["Géométrie", "Probabilités"],
+    points: 20
+  },
+  {
+    id: "brevet-asie-2024-exo-03",
+    fichier: "data/brevet-asie-2024-exo-03.html",
+    titre: "pièce géométrique — arc, triangle, disque",
+    source: "Brevet Asie 2024",
+    annee: 2024,
+    session: "Asie",
+    notion: "Géométrie",
+    notions: ["Géométrie", "Aires", "Trigonométrie"],
+    points: 20
+  },
+  {
+    id: "brevet-asie-2024-exo-04",
+    fichier: "data/brevet-asie-2024-exo-04.html",
+    titre: "terrasse en béton — volume, périmètre, peinture",
+    source: "Brevet Asie 2024",
+    annee: 2024,
+    session: "Asie",
+    notion: "Volume et Grandeurs",
+    notions: ["Volume et Grandeurs", "Proportionnalité"],
+    points: 20
+  },
+  {
+    id: "brevet-asie-2024-exo-05",
+    fichier: "data/brevet-asie-2024-exo-05.html",
+    titre: "programme scratch — motif & figures",
+    source: "Brevet Asie 2024",
+    annee: 2024,
+    session: "Asie",
+    notion: "Scratch",
+    notions: ["Scratch", "Géométrie", "Variables"],
+    points: 20
+  },
+  {
+    id: "brevet-centres-etrangers-2024-exo-01",
+    fichier: "data/brevet-centres-etrangers-2024-exo-01.html",
+    titre: "QCM — questionnaire à choix multiples",
+    source: "Brevet Centres Étrangers 2024",
+    annee: 2024,
+    session: "Centres Étrangers",
+    notion: "Puissances",
+    notions: ["Puissances", "Vitesse", "Probabilités"],
+    points: 20
+  },
+  {
+    id: "brevet-centres-etrangers-2024-exo-02",
+    fichier: "data/brevet-centres-etrangers-2024-exo-02.html",
+    titre: "circuits d'entraînement",
+    source: "Brevet Centres Étrangers 2024",
+    annee: 2024,
+    session: "Centres Étrangers",
+    notion: "Arithmétique",
+    notions: ["Arithmétique", "PGCD", "Multiples"],
+    points: 20
+  },
+  {
+    id: "brevet-centres-etrangers-2024-exo-03",
+    fichier: "data/brevet-centres-etrangers-2024-exo-03.html",
+    titre: "programme de calcul & fonction g",
+    source: "Brevet Centres Étrangers 2024",
+    annee: 2024,
+    session: "Centres Étrangers",
+    notion: "Algèbre et Fonctions",
+    notions: ["Algèbre et Fonctions"],
+    points: 20
+  },
+  {
+    id: "brevet-centres-etrangers-2024-exo-04",
+    fichier: "data/brevet-centres-etrangers-2024-exo-04.html",
+    titre: "géométrie — triangle, angles, homothétie",
+    source: "Brevet Centres Étrangers 2024",
+    annee: 2024,
+    session: "Centres Étrangers",
+    notion: "Géométrie",
+    notions: ["Géométrie", "Trigonométrie", "Homothétie"],
+    points: 20
+  },
+  {
+    id: "brevet-centres-etrangers-2024-exo-05",
+    fichier: "data/brevet-centres-etrangers-2024-exo-05.html",
+    titre: "chapeau de sorcier — cône & patron",
+    source: "Brevet Centres Étrangers 2024",
+    annee: 2024,
+    session: "Centres Étrangers",
+    notion: "Volume et Grandeurs",
+    notions: ["Volume et Grandeurs", "Géométrie"],
     points: 20
   }
 ];
