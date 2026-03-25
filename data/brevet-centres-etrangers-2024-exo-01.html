@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 1 — Brevet Centres Étrangers 2024</title>
+<style>
+:root {
+  --blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;
+  --bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;
+  --fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;z-index:10;position:relative}
+.logo{cursor:pointer;text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;transition:opacity .15s;text-decoration:none;display:inline-block}
+.cta:hover{opacity:.85}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted);background:transparent}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.ctag.o{background:#FFF0E8;border-color:var(--orange);color:var(--orange)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.partie-label{display:block;margin:18px 0 10px;padding:8px 14px;background:rgba(0,33,188,.06);border-radius:8px;border-left:3px solid var(--blue);font-weight:700;font-size:13px;color:var(--blue);letter-spacing:.03em;text-transform:uppercase}
+.partie-label.orange{background:rgba(238,110,52,.06);border-color:var(--orange);color:var(--orange)}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border-radius:10px;overflow:hidden;border:1.5px solid rgba(0,0,0,.08);margin:12px 0}
+.brevet-table th{background:#EEF2FF;padding:10px 14px;text-align:center;font-weight:700;color:var(--blue);border-right:1px solid rgba(0,33,188,.1);font-size:12px}
+.brevet-table th:last-child{border-right:none}
+.brevet-table td{padding:11px 14px;text-align:center;border-right:1px solid rgba(0,0,0,.06);font-family:'Courier New',monospace;font-size:12px}
+.brevet-table td:last-child{border-right:none}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.script-block{background:#1a1a2e;border-radius:12px;padding:18px 22px;font-family:'Courier New',monospace;font-size:13px;line-height:2.1;margin:12px 0}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center;margin-top:0}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;cursor:pointer}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 1</span>
+      <span class="brevet-ex-titre">QCM — questionnaire à choix multiples</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Centres étrangers · 10 juin 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Puissances · Vitesse · Probabilités · Statistiques · Fractions</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+  <div class="brevet-enonce">
+    Questionnaire à choix multiples. <strong>Aucune justification n'est demandée.</strong><br>
+    Pour chaque question, quatre réponses sont proposées, <strong>une seule réponse est exacte</strong>.<br>
+    Recopier le numéro de la question <strong>et</strong> la réponse choisie.
+  </div>
+
+  <!-- Q1 : écriture scientifique -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">1.</span>
+      <span class="brevet-q-text">Donner l'écriture scientifique de <strong>0,193 × 10<sup>−100</sup></strong>.</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:10px">
+      <div id="q1a" onclick="selectQCM('q1','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:8px 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">1,93 × 10<sup>−99</sup></div>
+      <div id="q1b" onclick="selectQCM('q1','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">1,93 × 10<sup>−101</sup></div>
+      <div id="q1c" onclick="selectQCM('q1','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">193 × 10<sup>−103</sup></div>
+      <div id="q1d" onclick="selectQCM('q1','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 8px 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">193 × 10<sup>−97</sup></div>
+    </div>
+  </div>
+
+  <!-- Q2 : vitesse -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">2.</span>
+      <span class="brevet-q-text">Lili part en vacances, elle parcourt <strong>480 km en 5 h 42 min</strong>. Quelle est sa vitesse moyenne en km/h, arrondie au dixième ?</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:10px">
+      <div id="q2a" onclick="selectQCM('q2','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:8px 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:14px;font-weight:500">88,6</div>
+      <div id="q2b" onclick="selectQCM('q2','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:14px;font-weight:500">84,2</div>
+      <div id="q2c" onclick="selectQCM('q2','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:14px;font-weight:500">1,4</div>
+      <div id="q2d" onclick="selectQCM('q2','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 8px 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:14px;font-weight:500">23,4</div>
+    </div>
+  </div>
+
+  <!-- Q3 : roue probabilité -->
+  <div class="brevet-q">
+    <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;margin-bottom:14px">
+      <div style="flex:1;min-width:240px">
+        <div class="brevet-q-row">
+          <span class="brevet-q-id">3.</span>
+          <span class="brevet-q-text">Sam fait tourner la roue ci-contre et regarde le nombre désigné par la flèche, qui peut être 1 ou 2. On admet que chaque secteur a autant de chance d'être désigné.<br><br>
+          Le nombre écrit dans un des secteurs a été effacé. Est-il possible d'écrire un nombre dans ce secteur de sorte que la probabilité que la flèche désigne le nombre 2 soit égale à <strong>3/5</strong> ?</span>
+          <span class="brevet-q-pts">4 pts</span>
+        </div>
+      </div>
+      <!-- Roue SVG -->
+      <div style="flex-shrink:0">
+        <svg viewBox="0 0 200 210" width="180" height="190" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif">
+          <!-- flèche en haut -->
+          <polygon points="100,8 94,22 106,22" fill="#333"/>
+          <line x1="100" y1="22" x2="100" y2="38" stroke="#333" stroke-width="2"/>
+          <!-- roue : 12 secteurs, rayon 80, centre (100,118) -->
+          <!-- secteurs à 30° chacun, angles : 0=haut=-90° -->
+          <!-- Secteurs numérotés dans le sens horaire depuis le haut -->
+          <!-- On colorie alternativement blanc/gris clair -->
+          <g transform="translate(100,118)">
+            <!-- 12 secteurs de 30° chacun -->
+            <!-- Secteur 0 : -90° à -60° -->
+            <path d="M0,0 L0,-80 A80,80 0 0,1 69.28,-40 Z" fill="#fff" stroke="#555" stroke-width="1.2"/>
+            <text x="28" y="-55" text-anchor="middle" font-size="13" font-weight="700" fill="#333">2</text>
+            <!-- Secteur 1 : -60° à -30° -->
+            <path d="M0,0 L69.28,-40 A80,80 0 0,1 80,0 Z" fill="#f0f0f0" stroke="#555" stroke-width="1.2"/>
+            <text x="64" y="-18" text-anchor="middle" font-size="13" font-weight="700" fill="#333">2</text>
+            <!-- Secteur 2 : -30° à 0° -->
+            <path d="M0,0 L80,0 A80,80 0 0,1 69.28,40 Z" fill="#fff" stroke="#555" stroke-width="1.2"/>
+            <text x="64" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#333">2</text>
+            <!-- Secteur 3 : 0° à 30° -->
+            <path d="M0,0 L69.28,40 A80,80 0 0,1 40,69.28 Z" fill="#f0f0f0" stroke="#555" stroke-width="1.2"/>
+            <text x="46" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="#333">1</text>
+            <!-- Secteur 4 : 30° à 60° -->
+            <path d="M0,0 L40,69.28 A80,80 0 0,1 0,80 Z" fill="#fff" stroke="#555" stroke-width="1.2"/>
+            <text x="16" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#333">2</text>
+            <!-- Secteur 5 : 60° à 90° -->
+            <path d="M0,0 L0,80 A80,80 0 0,1 -40,69.28 Z" fill="#f0f0f0" stroke="#555" stroke-width="1.2"/>
+            <text x="-16" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#333">1</text>
+            <!-- Secteur 6 : 90° à 120° -->
+            <path d="M0,0 L-40,69.28 A80,80 0 0,1 -69.28,40 Z" fill="#fff" stroke="#555" stroke-width="1.2"/>
+            <text x="-46" y="58" text-anchor="middle" font-size="13" font-weight="700" fill="#333">1</text>
+            <!-- Secteur 7 : 120° à 150° -->
+            <path d="M0,0 L-69.28,40 A80,80 0 0,1 -80,0 Z" fill="#f0f0f0" stroke="#555" stroke-width="1.2"/>
+            <text x="-64" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="#333">2</text>
+            <!-- Secteur 8 : 150° à 180° -->
+            <path d="M0,0 L-80,0 A80,80 0 0,1 -69.28,-40 Z" fill="#fff" stroke="#555" stroke-width="1.2"/>
+            <text x="-64" y="-18" text-anchor="middle" font-size="13" font-weight="700" fill="#333">1</text>
+            <!-- Secteur 9 : 180° à 210° -->
+            <path d="M0,0 L-69.28,-40 A80,80 0 0,1 -40,-69.28 Z" fill="#f0f0f0" stroke="#555" stroke-width="1.2"/>
+            <text x="-46" y="-55" text-anchor="middle" font-size="13" font-weight="700" fill="#333">1</text>
+            <!-- Secteur 10 : 210° à 240° — case EFFACÉE -->
+            <path d="M0,0 L-40,-69.28 A80,80 0 0,1 0,-80 Z" fill="#EEF2FF" stroke="#0021BC" stroke-width="1.8" stroke-dasharray="3,2"/>
+            <text x="-16" y="-66" text-anchor="middle" font-size="13" font-weight="700" fill="#0021BC">?</text>
+            <!-- Secteur 11 : 240° à 270° -->
+            <path d="M0,0 L0,-80 A80,80 0 0,0 -40,-69.28 Z" fill="#f0f0f0" stroke="#555" stroke-width="1.2"/>
+            <!-- correction arc : secteur 11 = de 270° en sens anti-horaire vers 240° soit de -90° à -120° -->
+          </g>
+          <!-- centre -->
+          <circle cx="100" cy="118" r="5" fill="#333"/>
+        </svg>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:10px">
+      <div id="q3a" onclick="selectQCM('q3','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:8px 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">Oui, en écrivant le nombre 1</div>
+      <div id="q3b" onclick="selectQCM('q3','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">Oui, en écrivant le nombre 2</div>
+      <div id="q3c" onclick="selectQCM('q3','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">Ce n'est pas possible</div>
+      <div id="q3d" onclick="selectQCM('q3','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 8px 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">Oui, en laissant le secteur vide</div>
+    </div>
+  </div>
+
+  <!-- Q4 : statistiques -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">4.</span>
+      <span class="brevet-q-text">On considère la liste de nombres suivante : <strong style="font-family:'Courier New',monospace">5 ; 1 ; 3 ; 10 ; 17 ; 11 ; 10</strong>.<br>Pour cette liste de nombres, que représente le nombre <strong>5</strong> ?</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:10px">
+      <div id="q4a" onclick="selectQCM('q4','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:8px 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">La médiane</div>
+      <div id="q4b" onclick="selectQCM('q4','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">L'étendue</div>
+      <div id="q4c" onclick="selectQCM('q4','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">La moyenne</div>
+      <div id="q4d" onclick="selectQCM('q4','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 8px 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">Rien de particulier</div>
+    </div>
+  </div>
+
+  <!-- Q5 : fractions -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">5.</span>
+      <span class="brevet-q-text">Léa achète un vélo électrique. Pour le réserver, elle paye <strong>1/5</strong> du prix au magasin. Le magasin lui propose de payer le reste en trois paiements d'un même montant.<br>Quelle fraction du prix du vélo représente l'un de ces trois paiements ?</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:10px">
+      <div id="q5a" onclick="selectQCM('q5','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:8px 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:14px">12/5</div>
+      <div id="q5b" onclick="selectQCM('q5','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:14px">1/15</div>
+      <div id="q5c" onclick="selectQCM('q5','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:14px">4/15</div>
+      <div id="q5d" onclick="selectQCM('q5','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 8px 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:14px">3/5</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════ EXERCICE 2 — Centres étrangers ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
