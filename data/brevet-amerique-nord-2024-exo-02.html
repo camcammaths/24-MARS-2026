@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 2 — Brevet Amérique Nord 2024</title>
+<style>
+:root {
+  --blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;
+  --bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;
+  --fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;z-index:10;position:relative}
+.logo{cursor:pointer;text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;transition:opacity .15s;text-decoration:none;display:inline-block}
+.cta:hover{opacity:.85}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted);background:transparent}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.ctag.o{background:#FFF0E8;border-color:var(--orange);color:var(--orange)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.partie-label{display:block;margin:18px 0 10px;padding:8px 14px;background:rgba(0,33,188,.06);border-radius:8px;border-left:3px solid var(--blue);font-weight:700;font-size:13px;color:var(--blue);letter-spacing:.03em;text-transform:uppercase}
+.partie-label.orange{background:rgba(238,110,52,.06);border-color:var(--orange);color:var(--orange)}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border-radius:10px;overflow:hidden;border:1.5px solid rgba(0,0,0,.08);margin:12px 0}
+.brevet-table th{background:#EEF2FF;padding:10px 14px;text-align:center;font-weight:700;color:var(--blue);border-right:1px solid rgba(0,33,188,.1);font-size:12px}
+.brevet-table th:last-child{border-right:none}
+.brevet-table td{padding:11px 14px;text-align:center;border-right:1px solid rgba(0,0,0,.06);font-family:'Courier New',monospace;font-size:12px}
+.brevet-table td:last-child{border-right:none}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.script-block{background:#1a1a2e;border-radius:12px;padding:18px 22px;font-family:'Courier New',monospace;font-size:13px;line-height:2.1;margin:12px 0}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center;margin-top:0}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;cursor:pointer}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+
+<div style="padding:36px 48px 72px;max-width:880px">
+
+<!-- ══════════ EXERCICE 2 ══════════ -->
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 2</span>
+      <span class="brevet-ex-titre">programme de calcul</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Amérique du Nord · 29 mai 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center"><span class="ctag b">Algèbre et Fonctions</span><span class="ctag">20 pts</span></div>
+  </div>
+
+  <div class="brevet-figure">
+    <svg viewBox="0 0 400 288" width="380" height="268" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif">
+      <defs><marker id="a2" markerWidth="7" markerHeight="7" refX="3.5" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#8A8DAA"/></marker></defs>
+      <rect x="125" y="6" width="150" height="34" rx="6" fill="white" stroke="#0021BC" stroke-width="1.5"/>
+      <text x="200" y="27" text-anchor="middle" fill="#0021BC" font-weight="600" font-size="12">Nombre choisi au départ</text>
+      <line x1="175" y1="40" x2="96" y2="82" stroke="#8A8DAA" stroke-width="1.5" marker-end="url(#a2)"/>
+      <line x1="225" y1="40" x2="304" y2="82" stroke="#8A8DAA" stroke-width="1.5" marker-end="url(#a2)"/>
+      <rect x="26" y="82" width="120" height="34" rx="6" fill="white" stroke="#0021BC" stroke-width="1.5"/><text x="86" y="103" text-anchor="middle" fill="var(--ink)" font-size="12">Ajouter 2</text>
+      <rect x="254" y="82" width="120" height="34" rx="6" fill="white" stroke="#0021BC" stroke-width="1.5"/><text x="314" y="103" text-anchor="middle" fill="var(--ink)" font-size="12">Multiplier par 5</text>
+      <line x1="86" y1="116" x2="86" y2="154" stroke="#8A8DAA" stroke-width="1.5" marker-end="url(#a2)"/>
+      <rect x="26" y="154" width="120" height="34" rx="6" fill="white" stroke="#0021BC" stroke-width="1.5"/><text x="86" y="175" text-anchor="middle" fill="var(--ink)" font-size="12">Multiplier par 4</text>
+      <line x1="314" y1="116" x2="314" y2="154" stroke="#8A8DAA" stroke-width="1.5" marker-end="url(#a2)"/>
+      <rect x="254" y="154" width="120" height="34" rx="6" fill="white" stroke="#0021BC" stroke-width="1.5"/><text x="314" y="175" text-anchor="middle" fill="var(--ink)" font-size="12">Soustraire 3</text>
+      <line x1="86" y1="188" x2="168" y2="222" stroke="#8A8DAA" stroke-width="1.5" marker-end="url(#a2)"/>
+      <line x1="314" y1="188" x2="232" y2="222" stroke="#8A8DAA" stroke-width="1.5" marker-end="url(#a2)"/>
+      <rect x="100" y="222" width="200" height="34" rx="6" fill="#EEF2FF" stroke="#0021BC" stroke-width="1.8"/><text x="200" y="243" text-anchor="middle" fill="#0021BC" font-weight="600" font-size="12">Multiplier les deux nombres</text>
+      <line x1="200" y1="256" x2="200" y2="272" stroke="#8A8DAA" stroke-width="1.5" marker-end="url(#a2)"/>
+      <text x="200" y="284" text-anchor="middle" fill="var(--muted)" font-size="11" font-style="italic">Résultat obtenu à l'arrivée</text>
+    </svg>
+  </div>
+
+  <div class="brevet-q"><div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Montrer que si on choisit <strong>2</strong> comme nombre de départ, le résultat est <strong>112</strong>.</span><span class="brevet-q-pts">3 pts</span></div><span class="lbl">Ta réponse</span><textarea class="brevet-answer" placeholder="Détaille le calcul étape par étape…" rows="3"></textarea></div>
+  <div class="brevet-q"><div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Quel résultat obtient-on avec <strong>−3</strong> comme nombre de départ ?</span><span class="brevet-q-pts">3 pts</span></div><span class="lbl">Ta réponse</span><textarea class="brevet-answer" placeholder="Détaille le calcul…" rows="3"></textarea></div>
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">On choisit <em>x</em> comme nombre de départ. Lesquelles de ces expressions donnent le résultat ? <em style="color:var(--muted)">(Aucune justification.)</em></span><span class="brevet-q-pts">4 pts</span></div>
+    <table class="brevet-table"><thead><tr><th>Expression A</th><th>Expression B</th><th>Expression C</th><th>Expression D</th></tr></thead><tbody><tr><td>(x+2×4)(x×5−3)</td><td>(4x+2)(5x−3)</td><td>(4x+8)(5x−3)</td><td>(x+2)×4×(5x−3)</td></tr></tbody></table>
+    <span class="lbl">Ta réponse</span><textarea class="brevet-answer" placeholder="Les expressions correctes sont…" rows="2"></textarea>
+  </div>
+  <div class="brevet-q"><div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">Trouver les <strong>deux nombres de départ</strong> qui donnent 0 à l'arrivée. Expliquer la démarche.</span><span class="brevet-q-pts">5 pts</span></div><span class="lbl">Ta réponse</span><textarea class="brevet-answer" placeholder="Pour obtenir 0, un produit est nul si… donc…" rows="4"></textarea></div>
+  <div class="brevet-q"><div class="brevet-q-row"><span class="brevet-q-id">5.</span><span class="brevet-q-text">Développer et réduire l'expression B : <span style="font-family:'Courier New',monospace;background:#EEF2FF;padding:2px 8px;border-radius:4px;color:var(--blue)">(4x+2)(5x−3)</span></span><span class="brevet-q-pts">5 pts</span></div><span class="lbl">Ta réponse</span><textarea class="brevet-answer" placeholder="Développe étape par étape…" rows="4"></textarea></div>
+</div>
+
+<div style="margin-top:24px">
+  <a href="index.html" class="btn btn-blue">← Retour au site</a>
+</div>
+
+</div><!-- fin padding -->
+
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
