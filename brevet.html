@@ -25,9 +25,6 @@ body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-sm
 .btn-blue{background:var(--blue);color:#fff}
 .btn-orange{background:var(--orange);color:#fff}
 .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
-.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
-.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
-.ctag.o{background:#FFF0E8;border-color:var(--orange);color:var(--orange)}
 .brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
 .brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
 .brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
@@ -45,7 +42,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-sm
 .partie-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:14px}
 .partie-label.b{background:#EEF2FF;color:var(--blue)}
 .partie-label.o{background:#FFF0E8;color:var(--orange)}
-.partie-label.orange{background:rgba(238,110,52,.06);border-color:var(--orange);color:var(--orange)}
+.partie-label.orange{background:rgba(238,110,52,.06);color:var(--orange)}
 .brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
 .brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12);font-size:12px}
 .brevet-table th:last-child{border-right:none}
@@ -54,6 +51,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-sm
 .brevet-table td:first-child{background:#f8f8f8;font-weight:600;color:var(--muted)}
 .brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
 .script-block{background:#1a1a2e;border-radius:12px;padding:18px 22px;font-family:'Courier New',monospace;font-size:13px;line-height:2.1;margin:12px 0}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.ctag.o{background:#FFF0E8;border-color:var(--orange);color:var(--orange)}
 .score-panel{background:var(--blue);border-radius:18px;padding:32px;margin-top:24px;display:none}
 .score-panel-inner{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
 .score-note{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:8px}
@@ -65,38 +65,15 @@ body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-sm
 .score-ex-bar{flex:1;height:6px;background:rgba(255,255,255,.15);border-radius:100px;overflow:hidden}
 .score-ex-fill{height:100%;background:rgba(255,255,255,.7);border-radius:100px}
 .score-ex-pts{font-size:11px;font-weight:700;color:rgba(255,255,255,.7);width:40px;text-align:right}
-.ex-score-bar{margin-top:16px;padding:12px 16px;background:#FAFAFA;border-radius:10px;border:1.5px solid rgba(0,0,0,.07)}
-.ex-score-row{display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px}
-.ex-score-label{color:var(--muted);font-weight:500}
-.ex-score-val{font-weight:700;color:var(--blue)}
-.ex-bar{height:6px;background:rgba(0,0,0,.08);border-radius:100px;overflow:hidden}
-.ex-bar-fill{height:100%;background:var(--blue);border-radius:100px;transition:width .4s}
-.qcm-options{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:10px 0}
-.qcm-btn{padding:12px;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;background:#FAFAFA;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;transition:all .15s;font-family:var(--fb)}
-.qcm-btn:hover{border-color:var(--blue)}
-.qcm-btn.selected{background:#EEF2FF;border-color:var(--blue)}
-.qcm-btn.correct{background:#F0FDF4;border-color:#22C55E}
-.qcm-btn.wrong{background:#FEF2F2;border-color:#EF4444}
-.qcm-btn.missed{background:#F0FDF4;border-color:#22C55E;opacity:.6}
-.qcm-btn-letter{font-size:10px;font-weight:700;color:var(--blue)}
-.qcm-btn-label{font-size:13px;font-weight:600;text-align:center}
-.qcm-btn-icon{font-size:12px;font-weight:700}
-.corr-btn{font-family:var(--fd);font-size:12px;font-weight:600;padding:8px 20px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);background:transparent;color:var(--blue);cursor:pointer;margin-top:8px;transition:all .15s}
-.corr-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
-.corr-btn:disabled{opacity:.35;cursor:not-allowed}
-.q-feedback{margin-top:10px;padding:12px 16px;border-radius:10px;font-size:13px;line-height:1.6;display:none}
-.q-feedback.ok{display:block;background:#EDFBF0;border:1.5px solid #86EFAC;color:#166534}
-.q-feedback.bof{display:block;background:#FFFBEB;border:1.5px solid #FCD34D;color:#92400E}
-.q-feedback.ko{display:block;background:#FEF2F2;border:1.5px solid #FCA5A5;color:#991B1B}
-.q-pts-earned{font-weight:700;margin-right:8px}
 .footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
 .footer-bar-links{display:flex;gap:40px}
 .footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
 .footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+#loading{text-align:center;padding:60px 0;color:var(--muted);font-size:14px}
+.ex-loading{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px;color:var(--muted);font-size:13px;text-align:center}
 @media(max-width:600px){
   .nav{padding:20px 20px 0}.divider{margin:0 20px}
   .score-panel-inner{grid-template-columns:1fr}
-  .qcm-options{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
@@ -140,9 +117,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-sm
 <div class="divider"></div>
 
 <div style="padding:36px 48px 72px;max-width:880px" id="brevet-exercises">
-  <div style="text-align:center;padding:80px 0;color:var(--muted)">
-    <div style="font-size:14px">Chargement des exercices…</div>
-  </div>
+  <div id="loading">Chargement des exercices…</div>
 </div>
 
 <div class="footer-bar">
@@ -154,9 +129,32 @@ body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-sm
 <script src="shared.js"></script>
 <script>
 
-// QCM helpers
 function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
 function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+
+// Charger le HTML d'un exercice via fetch
+function chargerExercice(ex, numero) {
+  return fetch(ex.fichier)
+    .then(function(r){ return r.text(); })
+    .then(function(html) {
+      // Extraire uniquement le contenu entre les marqueurs exercice et fin padding
+      var start = html.indexOf('<!-- ══════════ EXERCICE');
+      var end = html.indexOf('</div><!-- fin padding -->');
+      if (start !== -1 && end !== -1) {
+        return html.substring(start, end).trim();
+      }
+      // Fallback : extraire le contenu du body
+      var bodyStart = html.indexOf('<body>') + 6;
+      var bodyEnd = html.indexOf('</body>');
+      var body = html.substring(bodyStart, bodyEnd);
+      // Retirer nav, divider, padding wrapper, footer, script
+      body = body.replace(/<nav[\s\S]*?<\/nav>/g, '');
+      body = body.replace(/<div class="footer[\s\S]*?<\/div>/g, '');
+      body = body.replace(/<div class="divider[\s\S]*?<\/div>/g, '');
+      body = body.replace(/<script[\s\S]*?<\/script>/g, '');
+      return body.trim();
+    });
+}
 
 document.addEventListener('DOMContentLoaded', function() {
   var raw = sessionStorage.getItem('brevet_config');
@@ -166,10 +164,8 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('brevet-duree').textContent = config.duree || '2h';
   document.getElementById('brevet-notions').textContent = config.notions==='all' ? 'Toutes les notions' : (config.notions||[]).join(' · ');
 
-  // Démarrer timer
   startTimer(config.duree || '2h');
 
-  // Récupérer exercices depuis data.js via leur id
   var db = (typeof _EXERCICES_DB1 !== 'undefined') ? _EXERCICES_DB1 : [];
   var exercices = (config.exercices || []).map(function(ex) {
     var full = db.find(function(e){ return e.id === ex.id; });
@@ -178,27 +174,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (!exercices.length) { window.location.href='generer.html'; return; }
 
-  // Stocker dans window._brevetData pour shared.js
   window._brevetData = exercices;
   window._scores = {};
 
-  // Afficher les exercices via HTML complet de data.js
-  var html = '';
-  exercices.forEach(function(ex, ei) {
-    html += ex.html || '';
-    html += '<div class="ex-score-bar" id="ex-bar-'+ei+'" style="display:none">';
-    html += '<div class="ex-score-row"><span class="ex-score-label">Score exercice '+ex.numero+'</span><span class="ex-score-val" id="ex-score-val-'+ei+'">0 / '+ex.points+' pts</span></div>';
-    html += '<div class="ex-bar"><div class="ex-bar-fill" id="ex-bar-fill-'+ei+'" style="width:0%"></div></div>';
+  var container = document.getElementById('brevet-exercises');
+
+  // Charger tous les exercices via fetch en parallèle
+  Promise.all(exercices.map(function(ex, i) {
+    return chargerExercice(ex, ex.numero);
+  })).then(function(htmls) {
+    var html = '';
+    htmls.forEach(function(exHtml, i) {
+      html += exHtml;
+    });
+    html += '<div style="margin-top:24px;display:flex;gap:12px;align-items:center" id="submit-row">';
+    html += '<button class="btn btn-orange" onclick="afficherScoreFinal()" style="font-size:14px;padding:14px 32px">Voir ma note finale →</button>';
+    html += '<a class="btn btn-ghost" href="generer.html" style="font-size:13px;padding:12px 24px">← Nouveau brevet</a>';
     html += '</div>';
+    html += '<div class="score-panel" id="score-panel"></div>';
+    container.innerHTML = html;
+  }).catch(function(err) {
+    container.innerHTML = '<p style="color:#EF4444;padding:20px">Erreur de chargement : ' + err.message + '</p>';
   });
-
-  html += '<div style="margin-top:24px;display:flex;gap:12px;align-items:center" id="submit-row">';
-  html += '<button class="btn btn-orange" onclick="afficherScoreFinal()" style="font-size:14px;padding:14px 32px">Voir ma note finale →</button>';
-  html += '<a class="btn btn-ghost" href="generer.html" style="font-size:13px;padding:12px 24px">← Nouveau brevet</a>';
-  html += '</div>';
-  html += '<div class="score-panel" id="score-panel"></div>';
-
-  document.getElementById('brevet-exercises').innerHTML = html;
 });
 
 </script>
