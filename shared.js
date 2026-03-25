@@ -129,13 +129,13 @@ function genererBrevet() {
   var r, s, l = document.querySelector(".duree-chip.sel"),
     a = l ? parseInt(l.dataset.mins) : 120;
   a >= 120 ? (r = 5, s = false) : a >= 90 ? (r = 4, s = false) : a >= 60 ? (r = 3, s = false) : a >= 30 ? (r = 1, s = false) : (r = 1, s = true);
-  var x = EXERCICES_DB.filter(function (e) {
+  var x = data.filter(function (e) {
     var t = n || -1 !== i.indexOf(e.notion),
       o = !s || 0 === e.id.indexOf("qcm");
     return t && o;
   });
-  0 === x.length && (x = EXERCICES_DB.filter(function (e) { return !s || 0 === e.id.indexOf("qcm"); }));
-  0 === x.length && (x = EXERCICES_DB.slice());
+  0 === x.length && (x = data.filter(function (e) { return !s || 0 === e.id.indexOf("qcm"); }));
+  0 === x.length && (x = data.slice());
   var d = (x = x.slice().sort(function () { return Math.random() - .5; })).slice(0, r).map(function (e, t) {
     return Object.assign({}, e, { numero: t + 1 });
   });
