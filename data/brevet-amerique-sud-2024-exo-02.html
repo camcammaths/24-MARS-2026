@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 2 — Brevet Amérique Sud 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;text-align:left;font-style:italic}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+
+<div style="padding:36px 48px 72px;max-width:880px">
+
+<!-- ══════════ EXERCICE 2 ══════════ -->
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 2</span>
+      <span class="brevet-ex-titre">fonctions f et g — tableur & factorisation</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Amérique du Sud · 2 décembre 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Fonctions · Tableur · Factorisation · Équations</span>
+      <span class="ctag">24 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    On considère deux fonctions <em>f</em> et <em>g</em> définies par :<br>
+    <div style="text-align:center;font-size:17px;font-weight:600;margin:12px 0;color:var(--blue)">
+      f(x) = x² − x − 6 &nbsp;&nbsp;&nbsp; et &nbsp;&nbsp;&nbsp; g(x) = −2x
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span></div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.a.</span><span class="brevet-q-text">Montrer que l'image de <strong>5</strong> par la fonction <em>f</em> est <strong>14</strong>.</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="f(5) = 5² − 5 − 6 = 25 − 5 − 6 = …" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.b.</span><span class="brevet-q-text">Déterminer l'antécédent de <strong>4</strong> par la fonction <em>g</em>.</span><span class="brevet-q-pts">3 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="g(x) = 4 → −2x = 4 → x = …" rows="2"></textarea>
+    </div>
+
+    <!-- Tableau -->
+    <div style="font-size:14px;color:var(--ink);margin:14px 0 10px;line-height:1.6">
+      Pour calculer des images par <em>f</em> et <em>g</em>, on utilise un tableur et on obtient :
+    </div>
+    <div style="overflow-x:auto;margin-bottom:14px">
+      <table class="brevet-table">
+        <thead>
+          <tr>
+            <th style="min-width:130px"></th>
+            <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-style:normal;font-weight:700;color:var(--muted)">1 &nbsp; x</td>
+            <td></td><td style="font-weight:700">−4</td><td style="font-weight:700">−3</td>
+            <td style="font-weight:700">−2</td><td style="font-weight:700">−1</td>
+            <td style="font-weight:700">0</td><td style="font-weight:700">1</td>
+            <td style="font-weight:700">2</td>
+          </tr>
+          <tr>
+            <td>2 &nbsp; f(x) = x² − x − 6</td>
+            <td></td>
+            <td style="color:var(--blue);font-weight:700">14</td>
+            <td style="color:var(--blue);font-weight:700">6</td>
+            <td style="color:var(--blue);font-weight:700">0</td>
+            <td style="color:var(--blue);font-weight:700">−4</td>
+            <td style="color:var(--blue);font-weight:700">−6</td>
+            <td style="color:var(--blue);font-weight:700">−6</td>
+            <td style="color:var(--blue);font-weight:700">−4</td>
+          </tr>
+          <tr>
+            <td>3 &nbsp; g(x) = −2x</td>
+            <td></td>
+            <td style="color:#EE6E34;font-weight:700">8</td>
+            <td style="color:#EE6E34;font-weight:700">6</td>
+            <td style="color:#EE6E34;font-weight:700">4</td>
+            <td style="color:#EE6E34;font-weight:700">2</td>
+            <td style="color:#EE6E34;font-weight:700">0</td>
+            <td style="color:#EE6E34;font-weight:700">−2</td>
+            <td style="color:#EE6E34;font-weight:700">−4</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.c.</span><span class="brevet-q-text">À l'aide du tableau, citer <strong>deux antécédents de 14</strong> par la fonction <em>f</em>.</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Dans la ligne 2, f(x) = 14 quand x = …&#10;On lit aussi dans le tableau que f(5) = 14 (question 1.a.)&#10;Deux antécédents de 14 : … et …" rows="3"></textarea>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.d.</span><span class="brevet-q-text">Quelle formule a-t-on pu saisir dans la cellule <strong>B2</strong> avant de l'étirer vers la droite jusqu'à H2 ?</span><span class="brevet-q-pts">2 pts</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+        <div style="background:#f5f5f5;border:1.5px solid rgba(0,0,0,.1);border-radius:8px;padding:10px;font-family:'Courier New',monospace;font-size:13px;text-align:center">=B1*B1-B1-6</div>
+        <div style="background:#f5f5f5;border:1.5px solid rgba(0,0,0,.1);border-radius:8px;padding:10px;font-family:'Courier New',monospace;font-size:13px;text-align:center">=A1*A1-A1-6</div>
+        <div style="background:#f5f5f5;border:1.5px solid rgba(0,0,0,.1);border-radius:8px;padding:10px;font-family:'Courier New',monospace;font-size:13px;text-align:center">=x*x-x-6</div>
+        <div style="background:#f5f5f5;border:1.5px solid rgba(0,0,0,.1);border-radius:8px;padding:10px;font-family:'Courier New',monospace;font-size:13px;text-align:center">=(-4)*(-4)-(-4)-6</div>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="La formule est : =…&#10;(Elle doit référencer la ligne 1 de la même colonne et s'adapter à l'étirement)" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.e.</span><span class="brevet-q-text">Existe-t-il un nombre qui a la <strong>même image</strong> par la fonction <em>f</em> et par la fonction <em>g</em> ?</span><span class="brevet-q-pts">3 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Chercher dans le tableau une colonne où f(x) = g(x)…&#10;Réponse : …" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span></div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">2.a.</span><span class="brevet-q-text">Montrer que, pour tout nombre <em>x</em>, <strong>f(x) = (x + 2)(x − 3)</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Développer (x+2)(x−3) :&#10;= x² − 3x + 2x − 6&#10;= x² − x − 6&#10;= f(x) ✓" rows="4"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">2.b.</span><span class="brevet-q-text">Résoudre l'équation <strong>f(x) = 0</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="f(x) = 0 ↔ (x+2)(x−3) = 0&#10;x + 2 = 0 → x = … ou x − 3 = 0 → x = …&#10;Solutions : x = … et x = …" rows="4"></textarea>
+    </div>
+  </div>
+
+</div><!-- fin exercice 2 -->
+
+<div style="margin-top:24px">
+  <a href="index.html" class="btn btn-blue">← Retour au site</a>
+</div>
+
+</div><!-- fin padding -->
+
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
