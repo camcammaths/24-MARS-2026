@@ -56,5 +56,60 @@ var data = [
     notion: "Géométrie",
     notions: ["Géométrie", "Algorithmique"],
     points: 20
+  },
+  {
+    id: "brevet-amerique-sud-2024-exo-01",
+    fichier: "data/brevet-amerique-sud-2024-exo-01.html",
+    titre: "QCM — 5 questions",
+    source: "Brevet Amérique Sud 2024",
+    annee: 2024,
+    session: "Amérique Sud",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Géométrie", "Thalès"],
+    points: 20
+  },
+  {
+    id: "brevet-amerique-sud-2024-exo-02",
+    fichier: "data/brevet-amerique-sud-2024-exo-02.html",
+    titre: "fonctions f et g — tableur & factorisation",
+    source: "Brevet Amérique Sud 2024",
+    annee: 2024,
+    session: "Amérique Sud",
+    notion: "Algèbre et Fonctions",
+    notions: ["Algèbre et Fonctions", "Arithmétique"],
+    points: 20
+  },
+  {
+    id: "brevet-amerique-sud-2024-exo-03",
+    fichier: "data/brevet-amerique-sud-2024-exo-03.html",
+    titre: "félins — probabilités, vitesse & géographie",
+    source: "Brevet Amérique Sud 2024",
+    annee: 2024,
+    session: "Amérique Sud",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Proportionnalité"],
+    points: 20
+  },
+  {
+    id: "brevet-amerique-sud-2024-exo-04",
+    fichier: "data/brevet-amerique-sud-2024-exo-04.html",
+    titre: "terrain en pente — pythagore, trigonométrie & volume",
+    source: "Brevet Amérique Sud 2024",
+    annee: 2024,
+    session: "Amérique Sud",
+    notion: "Géométrie",
+    notions: ["Géométrie", "Volume et Grandeurs"],
+    points: 20
+  },
+  {
+    id: "brevet-amerique-sud-2024-exo-05",
+    fichier: "data/brevet-amerique-sud-2024-exo-05.html",
+    titre: "bloc losange — scratch & figures géométriques",
+    source: "Brevet Amérique Sud 2024",
+    annee: 2024,
+    session: "Amérique Sud",
+    notion: "Algorithmique",
+    notions: ["Algorithmique", "Géométrie"],
+    points: 20
   }
 ];
