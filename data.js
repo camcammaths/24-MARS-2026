@@ -1,7 +1,7 @@
 // PRÉPA BREVET — Base de données des exercices
 // Ajouter vos fichiers HTML ici pour enrichir la base
 
-var _EXERCICES_DB1 = [
+var data = [
   {
     id: "brevet-amerique-nord-2024-exo-01",
     fichier: "data/brevet-amerique-nord-2024-exo-01.html",
