@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 6 — Brevet Nouvelle-Calédonie 2025</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12);font-size:12px}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;color:var(--muted)}
+.partie-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:14px}
+.partie-label.b{background:#EEF2FF;color:var(--blue)}
+.partie-label.o{background:#FFF0E8;color:var(--orange)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 6 — Scratch</span>
+      <span class="brevet-ex-titre">scripts &amp; figures géométriques</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Nouvelle-Calédonie · 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Scratch · Figures · Angles · Programmation</span>
+      <span class="ctag">16 pts</span>
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">1.</span>
+      <span class="brevet-q-text">Associer à chaque script ci-dessous la figure qui lui correspond.</span>
+      <span class="brevet-q-pts">6 pts</span>
+    </div>
+
+    <!-- 3 scripts + 3 figures -->
+    <!-- Scripts 1, 2, 3 -->
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+
+      <!-- Script 1 : tourner 60° -->
+      <div style="flex:1;min-width:180px;background:#f8f9ff;border:1.5px solid rgba(0,33,188,.1);border-radius:12px;padding:14px">
+        <div style="font-size:12px;font-weight:700;text-align:center;color:var(--blue);margin-bottom:10px">Script 1</div>
+        <div style="display:flex;flex-direction:column;gap:3px;font-family:'Helvetica Neue',Arial,sans-serif">
+          <div style="position:relative;display:inline-flex;flex-direction:column">
+            <div style="margin-left:8px;width:20px;height:8px;background:#FFAB19;border-radius:3px 3px 0 0"></div>
+            <div style="background:#FFAB19;border-radius:0 4px 4px 4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:10px;font-weight:700;color:#fff">quand</span>
+              <svg width="10" height="10" viewBox="0 0 14 14"><rect width="14" height="14" rx="3" fill="#3a993a"/><polygon points="3,2 12,7 3,12" fill="#fff"/></svg>
+              <span style="font-size:10px;font-weight:700;color:#fff">est cliqué</span>
+            </div>
+          </div>
+          <div style="background:#4CAF50;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+            <span style="font-size:10px">✏️</span><span style="font-size:10px;font-weight:700;color:#fff">stylo en position d'écriture</span>
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <div style="background:#FFAB19;border-radius:4px 4px 0 0;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:10px;font-weight:700;color:#fff">répéter</span>
+              <span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">3</span>
+              <span style="font-size:10px;font-weight:700;color:#fff">fois</span>
+            </div>
+            <div style="border-left:4px solid #FFAB19;padding:2px 0 2px 6px;display:flex;flex-direction:column;gap:2px">
+              <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+                <span style="font-size:10px;font-weight:700;color:#fff">avancer de</span>
+                <span style="background:#FF8C1A;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#fff">100</span>
+                <span style="font-size:10px;font-weight:700;color:#fff">pas</span>
+              </div>
+              <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+                <span style="font-size:10px;font-weight:700;color:#fff">tourner ↩ de</span>
+                <span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">60</span>
+                <span style="font-size:10px;font-weight:700;color:#fff">degrés</span>
+              </div>
+            </div>
+            <div style="background:#FFAB19;border-radius:0 0 4px 4px;padding:2px 8px;display:flex;justify-content:flex-end;max-width:100%"><span style="color:#fff;font-size:11px">↵</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Script 2 : tourner 90° -->
+      <div style="flex:1;min-width:180px;background:#f8f9ff;border:1.5px solid rgba(0,33,188,.1);border-radius:12px;padding:14px">
+        <div style="font-size:12px;font-weight:700;text-align:center;color:var(--blue);margin-bottom:10px">Script 2</div>
+        <div style="display:flex;flex-direction:column;gap:3px;font-family:'Helvetica Neue',Arial,sans-serif">
+          <div style="position:relative;display:inline-flex;flex-direction:column">
+            <div style="margin-left:8px;width:20px;height:8px;background:#FFAB19;border-radius:3px 3px 0 0"></div>
+            <div style="background:#FFAB19;border-radius:0 4px 4px 4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:10px;font-weight:700;color:#fff">quand</span>
+              <svg width="10" height="10" viewBox="0 0 14 14"><rect width="14" height="14" rx="3" fill="#3a993a"/><polygon points="3,2 12,7 3,12" fill="#fff"/></svg>
+              <span style="font-size:10px;font-weight:700;color:#fff">est cliqué</span>
+            </div>
+          </div>
+          <div style="background:#4CAF50;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+            <span style="font-size:10px">✏️</span><span style="font-size:10px;font-weight:700;color:#fff">stylo en position d'écriture</span>
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <div style="background:#FFAB19;border-radius:4px 4px 0 0;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:10px;font-weight:700;color:#fff">répéter</span>
+              <span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">3</span>
+              <span style="font-size:10px;font-weight:700;color:#fff">fois</span>
+            </div>
+            <div style="border-left:4px solid #FFAB19;padding:2px 0 2px 6px;display:flex;flex-direction:column;gap:2px">
+              <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+                <span style="font-size:10px;font-weight:700;color:#fff">avancer de</span>
+                <span style="background:#FF8C1A;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#fff">100</span>
+                <span style="font-size:10px;font-weight:700;color:#fff">pas</span>
+              </div>
+              <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+                <span style="font-size:10px;font-weight:700;color:#fff">tourner ↩ de</span>
+                <span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">90</span>
+                <span style="font-size:10px;font-weight:700;color:#fff">degrés</span>
+              </div>
+            </div>
+            <div style="background:#FFAB19;border-radius:0 0 4px 4px;padding:2px 8px;display:flex;justify-content:flex-end;max-width:100%"><span style="color:#fff;font-size:11px">↵</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Script 3 : tourner 120° -->
+      <div style="flex:1;min-width:180px;background:#f8f9ff;border:1.5px solid rgba(0,33,188,.1);border-radius:12px;padding:14px">
+        <div style="font-size:12px;font-weight:700;text-align:center;color:var(--blue);margin-bottom:10px">Script 3</div>
+        <div style="display:flex;flex-direction:column;gap:3px;font-family:'Helvetica Neue',Arial,sans-serif">
+          <div style="position:relative;display:inline-flex;flex-direction:column">
+            <div style="margin-left:8px;width:20px;height:8px;background:#FFAB19;border-radius:3px 3px 0 0"></div>
+            <div style="background:#FFAB19;border-radius:0 4px 4px 4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:10px;font-weight:700;color:#fff">quand</span>
+              <svg width="10" height="10" viewBox="0 0 14 14"><rect width="14" height="14" rx="3" fill="#3a993a"/><polygon points="3,2 12,7 3,12" fill="#fff"/></svg>
+              <span style="font-size:10px;font-weight:700;color:#fff">est cliqué</span>
+            </div>
+          </div>
+          <div style="background:#4CAF50;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+            <span style="font-size:10px">✏️</span><span style="font-size:10px;font-weight:700;color:#fff">stylo en position d'écriture</span>
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <div style="background:#FFAB19;border-radius:4px 4px 0 0;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:10px;font-weight:700;color:#fff">répéter</span>
+              <span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">3</span>
+              <span style="font-size:10px;font-weight:700;color:#fff">fois</span>
+            </div>
+            <div style="border-left:4px solid #FFAB19;padding:2px 0 2px 6px;display:flex;flex-direction:column;gap:2px">
+              <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+                <span style="font-size:10px;font-weight:700;color:#fff">avancer de</span>
+                <span style="background:#FF8C1A;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#fff">100</span>
+                <span style="font-size:10px;font-weight:700;color:#fff">pas</span>
+              </div>
+              <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+                <span style="font-size:10px;font-weight:700;color:#fff">tourner ↩ de</span>
+                <span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">120</span>
+                <span style="font-size:10px;font-weight:700;color:#fff">degrés</span>
+              </div>
+            </div>
+            <div style="background:#FFAB19;border-radius:0 0 4px 4px;padding:2px 8px;display:flex;justify-content:flex-end;max-width:100%"><span style="color:#fff;font-size:11px">↵</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Figures A, B, C -->
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+      <div style="flex:1;min-max-width:100%;background:#f8f9ff;border:1.5px solid rgba(0,0,0,.08);border-radius:12px;padding:14px;text-align:center">
+        <div style="font-weight:700;font-size:12px;margin-bottom:12px;color:var(--ink)">FIGURE A</div>
+        <svg viewBox="0 0 80 80" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="20,60 20,20 60,20" fill="none" stroke="#333" stroke-width="2" stroke-linejoin="round"/>
+          <rect x="20" y="50" width="10" height="10" fill="none" stroke="#333" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div style="flex:1;min-max-width:100%;background:#f8f9ff;border:1.5px solid rgba(0,0,0,.08);border-radius:12px;padding:14px;text-align:center">
+        <div style="font-weight:700;font-size:12px;margin-bottom:12px;color:var(--ink)">FIGURE B</div>
+        <svg viewBox="0 0 80 80" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="40,15 70,65 10,65" fill="none" stroke="#333" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div style="flex:1;min-max-width:100%;background:#f8f9ff;border:1.5px solid rgba(0,0,0,.08);border-radius:12px;padding:14px;text-align:center">
+        <div style="font-weight:700;font-size:12px;margin-bottom:12px;color:var(--ink)">FIGURE C</div>
+        <svg viewBox="0 0 80 80" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="20,20 60,20 60,60" fill="none" stroke="#333" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Script 1 (tourner 60°, répéter 3) → tracé incomplet avec angle aigu → Figure A&#10;Script 2 (tourner 90°, répéter 3) → 3 côtés d'un carré → Figure C&#10;Script 3 (tourner 120°, répéter 3) → triangle équilatéral complet → Figure B" rows="4"></textarea>
+  </div>
+
+  <!-- Script Figure D -->
+  <div class="brevet-q">
+    <div style="font-size:13px;font-weight:600;margin-bottom:14px;color:var(--ink)">Le script ci-dessous commande la construction de la <strong>Figure D</strong> :</div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;margin-bottom:16px;overflow-x:auto">
+      <!-- Script D -->
+      <div style="flex:0 0 auto">
+        <div style="display:flex;flex-direction:column;gap:3px;font-family:'Helvetica Neue',Arial,sans-serif">
+          <div style="display:flex;align-items:center;gap:6px">
+            <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">1</span>
+            <div style="position:relative;display:inline-flex;flex-direction:column">
+              <div style="margin-left:8px;width:20px;height:8px;background:#FFAB19;border-radius:3px 3px 0 0"></div>
+              <div style="background:#FFAB19;border-radius:0 4px 4px 4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+                <span style="font-size:10px;font-weight:700;color:#fff">quand</span>
+                <svg width="10" height="10" viewBox="0 0 14 14"><rect width="14" height="14" rx="3" fill="#3a993a"/><polygon points="3,2 12,7 3,12" fill="#fff"/></svg>
+                <span style="font-size:10px;font-weight:700;color:#fff">est cliqué</span>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">2</span>
+            <div style="background:#4CAF50;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:10px">✏️</span><span style="font-size:10px;font-weight:700;color:#fff">stylo en position d'écriture</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">3</span>
+            <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:10px;font-weight:700;color:#fff">avancer de</span>
+              <span style="background:#FF8C1A;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#fff">20</span>
+              <span style="font-size:10px;font-weight:700;color:#fff">pas</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">4</span>
+            <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:10px;font-weight:700;color:#fff">tourner ↩ de</span>
+              <span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">90</span>
+              <span style="font-size:10px;font-weight:700;color:#fff">degrés</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">5</span>
+            <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:10px;font-weight:700;color:#fff">avancer de</span>
+              <span style="background:#FF8C1A;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#fff">40</span>
+              <span style="font-size:10px;font-weight:700;color:#fff">pas</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">6</span>
+            <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:10px;font-weight:700;color:#fff">tourner ↩ de</span>
+              <span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">90</span>
+              <span style="font-size:10px;font-weight:700;color:#fff">degrés</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">7</span>
+            <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:10px;font-weight:700;color:#fff">avancer de</span>
+              <span style="background:#FF8C1A;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#fff">60</span>
+              <span style="font-size:10px;font-weight:700;color:#fff">pas</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">8</span>
+            <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:10px;font-weight:700;color:#fff">tourner ↩ de</span>
+              <span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">90</span>
+              <span style="font-size:10px;font-weight:700;color:#fff">degrés</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">9</span>
+            <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:10px;font-weight:700;color:#fff">avancer de</span>
+              <span style="background:#FF8C1A;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#fff">80</span>
+              <span style="font-size:10px;font-weight:700;color:#fff">pas</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span style="font-size:11px;font-weight:700;color:#666;width:14px;text-align:right">10</span>
+            <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px">
+              <span style="font-size:10px;font-weight:700;color:#fff">tourner ↩ de</span>
+              <span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">90</span>
+              <span style="font-size:10px;font-weight:700;color:#fff">degrés</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Figures D et E -->
+      <div style="display:flex;gap:24px;flex-wrap:wrap">
+        <div style="text-align:center">
+          <div style="font-weight:700;font-size:12px;margin-bottom:10px;color:var(--ink)">FIGURE D</div>
+          <svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+            <!-- Spirale 3 côtés : avancer 20, tourner 90°, avancer 40, tourner 90°, avancer 60, tourner 90°, avancer 80 -->
+            <!-- Départ (20,90), orientation droite -->
+            <!-- (20,90)→(40,90) [20 pas] → tourner 90° gauche → (40,90)→(40,50) [40 pas] → tourner → (40,50)→(100,50) [60 pas] → tourner → (100,50)→(100,130) hors cadre... -->
+            <!-- On centre : départ (15,95) -->
+            <polyline points="15,95 35,95 35,55 95,55 95,135" fill="none" stroke="#333" stroke-width="2" stroke-linejoin="round"/>
+            <!-- Angle droit en D visible -->
+            <rect x="27" y="87" width="8" height="8" fill="none" stroke="#555" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <div style="text-align:center">
+          <div style="font-weight:700;font-size:12px;margin-bottom:10px;color:var(--ink)">FIGURE E</div>
+          <svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+            <!-- 3 carrés imbriqués -->
+            <rect x="5" y="5" width="110" height="110" fill="none" stroke="#333" stroke-width="1.5"/>
+            <rect x="25" y="25" width="70" height="70" fill="none" stroke="#333" stroke-width="1.5"/>
+            <rect x="45" y="45" width="30" height="30" fill="none" stroke="#333" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q" style="margin-bottom:0">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">2.</span>
+      <span class="brevet-q-text">Compléter le script qui commande la construction de la <strong>Figure E</strong> (3 carrés imbriqués de côtés 20, 60 et 100 pas).</span>
+      <span class="brevet-q-pts">10 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Le script pour la Figure E doit tracer 3 carrés imbriqués.&#10;On peut utiliser répéter 3 fois un bloc qui :&#10;  - trace un carré (répéter 4 fois : avancer de côté pas, tourner 90°)&#10;  - agrandit le côté&#10;&#10;Exemple de script complet :&#10;quand 🚩 est cliqué&#10;stylo en position d'écriture&#10;mettre côté à 20&#10;répéter 3 fois :&#10;  répéter 4 fois :&#10;    avancer de [côté] pas&#10;    tourner ↩ de 90 degrés&#10;  mettre côté à côté + 40" rows="12"></textarea>
+  </div>
+
+</div><!-- fin exercice 6 --></div><!-- fin padding -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
