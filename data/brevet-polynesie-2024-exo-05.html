@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 5 — Brevet Polynésie 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:10px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:14px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 5</span>
+      <span class="brevet-ex-titre">fonctions f et g — tableur, programme, factorisation</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Polynésie · 27 juin 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Fonctions · Algèbre · Tableur</span>
+      <span class="ctag">23 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    Les deux parties sont indépendantes. On considère les fonctions <em>f</em> et <em>g</em> définies par :<br>
+    <div style="text-align:center;font-size:17px;font-weight:600;margin:12px 0;color:var(--blue)">
+      f(x) = (x + 2)² − x &nbsp;&nbsp;&nbsp; et &nbsp;&nbsp;&nbsp; g(x) = 7x + 4
+    </div>
+  </div>
+
+  <!-- PARTIE A -->
+  <div style="font-weight:700;font-size:13px;letter-spacing:.05em;margin:4px 0 14px;padding:8px 14px;background:#EEF2FF;border-radius:8px;border-left:3px solid var(--blue)">PARTIE A</div>
+
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">A.1.</span><span class="brevet-q-text">Calculer <strong>f(−4)</strong>.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="f(−4) = (−4 + 2)² − (−4) = (−2)² + 4 = … + 4 = …" rows="2"></textarea>
+  </div>
+
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">A.2.</span><span class="brevet-q-text">Déterminer un antécédent de <strong>3</strong> par la fonction <em>g</em>.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="g(x) = 3 → 7x + 4 = 3 → 7x = … → x = …" rows="2"></textarea>
+  </div>
+
+  <!-- PARTIE B -->
+  <div style="font-weight:700;font-size:13px;letter-spacing:.05em;margin:20px 0 14px;padding:8px 14px;background:#FFF0E8;border-radius:8px;border-left:3px solid var(--orange)">PARTIE B — Résoudre f(x) = g(x) par trois méthodes</div>
+
+  <div style="font-size:14px;color:var(--ink);line-height:1.6;margin-bottom:18px">
+    Trois élèves, <strong>Paul</strong>, <strong>Jane</strong> et <strong>Morgane</strong>, cherchent à résoudre l'équation <strong>f(x) = g(x)</strong> par trois méthodes différentes.
+  </div>
+
+  <!-- B.1 : Paul (tableur) -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">B.1.</span><span class="brevet-q-text"><strong>Paul</strong> utilise un tableur. Il calcule les images des entiers compris entre −3 et 3 par les fonctions <em>f</em> et <em>g</em>.</span></div>
+
+    <!-- Tableau -->
+    <div style="overflow-x:auto;margin-bottom:14px">
+      <table class="brevet-table">
+        <thead>
+          <tr>
+            <th style="background:#f0f0f0;color:var(--muted);min-width:30px"></th>
+            <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="background:#f0f0f0;font-weight:700;color:var(--muted)">1</td>
+            <td style="font-weight:700;font-style:italic;color:var(--muted)">x</td>
+            <td style="font-weight:700">−3</td><td style="font-weight:700">−2</td>
+            <td style="font-weight:700">−1</td><td style="font-weight:700">0</td>
+            <td style="font-weight:700">1</td><td style="font-weight:700">2</td>
+            <td style="font-weight:700">3</td>
+          </tr>
+          <tr>
+            <td style="background:#f0f0f0;font-weight:700;color:var(--muted)">2</td>
+            <td style="font-style:italic;color:var(--muted)">f(x)</td>
+            <td style="color:var(--blue);font-weight:700">4</td>
+            <td style="color:var(--blue);font-weight:700">2</td>
+            <td style="color:var(--blue);font-weight:700">2</td>
+            <td style="color:var(--blue);font-weight:700">4</td>
+            <td style="color:var(--blue);font-weight:700">8</td>
+            <td style="color:var(--blue);font-weight:700">14</td>
+            <td style="color:var(--blue);font-weight:700">22</td>
+          </tr>
+          <tr>
+            <td style="background:#f0f0f0;font-weight:700;color:var(--muted)">3</td>
+            <td style="font-style:italic;color:var(--muted)">g(x)</td>
+            <td style="color:#EE6E34;font-weight:700">−17</td>
+            <td style="color:#EE6E34;font-weight:700">−10</td>
+            <td style="color:#EE6E34;font-weight:700">−3</td>
+            <td style="color:#EE6E34;font-weight:700">4</td>
+            <td style="color:#EE6E34;font-weight:700">11</td>
+            <td style="color:#EE6E34;font-weight:700">18</td>
+            <td style="color:#EE6E34;font-weight:700">25</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">B.1.a.</span><span class="brevet-q-text">Quelle formule a-t-il saisie en cellule <strong>B3</strong> puis étirée vers la droite pour compléter la ligne 3 ?</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="La formule en B3 est : =…&#10;(Elle doit référencer B1 pour s'adapter lors de l'étirement)" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">B.1.b.</span><span class="brevet-q-text">Avec cette méthode, quelle(s) solution(s) trouve-t-il à l'équation <strong>f(x) = g(x)</strong> ?</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Dans le tableau, f(x) = g(x) quand x = …&#10;(chercher les colonnes où la ligne 2 et la ligne 3 ont la même valeur)" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- B.2 : Jane (programme) -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">B.2.</span><span class="brevet-q-text"><strong>Jane</strong> utilise un logiciel de programmation. Son programme teste l'égalité f(x) = g(x) pour une valeur de x choisie par l'utilisateur, pour toutes les valeurs entières entre −5 et 3.</span></div>
+
+    <!-- Programme Scratch simplifié -->
+    <div style="background:#e8e8e8;border-radius:12px;padding:18px 22px;margin:12px 0;display:inline-flex;flex-direction:column;gap:4px;font-family:'Helvetica Neue',Arial,sans-serif;min-width:360px">
+
+      <!-- Ligne 1 -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">1</span>
+        <div style="background:#FFAB19;border-radius:6px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px">
+          <span style="font-size:12px;font-weight:700;color:#fff">Quand</span>
+          <svg width="14" height="14" viewBox="0 0 14 14"><rect width="14" height="14" rx="3" fill="#3a993a"/><polygon points="3,2 12,7 3,12" fill="#fff"/></svg>
+          <span style="font-size:12px;font-weight:700;color:#fff">est cliqué</span>
+        </div>
+      </div>
+
+      <!-- Ligne 2 : demander x -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">2</span>
+        <div style="background:#5CB1D6;border-radius:5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px">
+          <span style="font-size:12px;font-weight:700;color:#fff">demander</span>
+          <span style="background:#fff;border-radius:100px;padding:2px 10px;font-size:11px;color:#222;font-weight:500;border:1px solid #ccc">Choisir un nombre</span>
+          <span style="font-size:12px;font-weight:700;color:#fff">et attendre</span>
+        </div>
+      </div>
+
+      <!-- Ligne 3 : mettre x à réponse -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">3</span>
+        <div style="background:#FF8C1A;border-radius:5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px">
+          <span style="font-size:12px;font-weight:700;color:#fff">mettre</span>
+          <span style="background:rgba(0,0,0,.2);border-radius:3px;padding:2px 7px;font-size:11px;color:#fff;font-weight:600">f_x ▾</span>
+          <span style="font-size:12px;font-weight:700;color:#fff">à</span>
+          <div style="background:#5CB1D6;border-radius:100px;padding:2px 8px;display:inline-flex;align-items:center;gap:4px">
+            <span style="background:rgba(255,255,255,.3);border-radius:100px;padding:1px 7px;font-size:11px;color:#fff;font-weight:700">(réponse + 2)² − réponse</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ligne 4 : à compléter (g_x) -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">4</span>
+        <div style="background:#FF8C1A;border-radius:5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;outline:3px dashed rgba(0,33,188,.5);outline-offset:2px">
+          <span style="font-size:12px;font-weight:700;color:#fff">mettre</span>
+          <span style="background:rgba(0,0,0,.2);border-radius:3px;padding:2px 7px;font-size:11px;color:#fff;font-weight:600">g_x ▾</span>
+          <span style="font-size:12px;font-weight:700;color:#fff">à</span>
+          <span style="background:rgba(255,255,255,.3);border-radius:100px;padding:2px 20px;font-size:11px;color:#fff;font-weight:700">…</span>
+        </div>
+        <span style="font-size:11px;color:#0021BC;font-weight:700;font-style:italic">← à compléter</span>
+      </div>
+
+      <!-- Ligne 5 : si f_x = g_x -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">5</span>
+        <div style="background:#FFAB19;border-radius:5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px">
+          <span style="font-size:12px;font-weight:700;color:#fff">si</span>
+          <div style="background:#5CB1D6;border-radius:100px;padding:2px 8px;display:inline-flex;align-items:center;gap:4px">
+            <span style="background:#FF8C1A;border-radius:100px;padding:1px 7px;font-size:11px;color:#fff;font-weight:700">f_x</span>
+            <span style="font-size:12px;color:#fff;font-weight:700">=</span>
+            <span style="background:#FF8C1A;border-radius:100px;padding:1px 7px;font-size:11px;color:#fff;font-weight:700">g_x</span>
+          </div>
+          <span style="font-size:12px;font-weight:700;color:#fff">alors</span>
+        </div>
+      </div>
+
+      <!-- Ligne 6 : dire -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">6</span>
+        <div style="background:#9966FF;border-radius:5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;margin-left:16px">
+          <span style="font-size:12px;font-weight:700;color:#fff">dire</span>
+          <span style="background:#fff;border-radius:100px;padding:2px 10px;font-size:11px;color:#333;font-weight:600">Solution !</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">B.2.a.</span><span class="brevet-q-text">Compléter la <strong>ligne 4</strong> du programme afin d'obtenir l'image par la fonction <em>g</em> du nombre choisi.</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="mettre g_x à : …&#10;(formule de g(x) avec 'réponse' comme variable)" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">B.2.b.</span><span class="brevet-q-text">Quelle réponse donne le programme si le nombre choisi est <strong>0</strong> ?</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="f(0) = … et g(0) = …&#10;Le programme affiche : …" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">B.2.c.</span><span class="brevet-q-text">En déduire une solution de l'équation <strong>f(x) = g(x)</strong>.</span><span class="brevet-q-pts">1 pt</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="x = … est solution car f(…) = g(…) = …" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- B.3 : Morgane (calcul) -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">B.3.</span><span class="brevet-q-text"><strong>Morgane</strong> décide de résoudre cette équation par le calcul.</span></div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">B.3.a.</span><span class="brevet-q-text">Démontrer que l'équation f(x) = g(x) peut se ramener à l'équation <strong>x² − 4x = 0</strong>.</span><span class="brevet-q-pts">3 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="f(x) = g(x)&#10;(x+2)² − x = 7x + 4&#10;x² + 4x + 4 − x = 7x + 4&#10;x² + 3x + 4 = 7x + 4&#10;x² + 3x − 7x + 4 − 4 = 0&#10;x² − 4x = 0 ✓" rows="6"></textarea>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">B.3.b.</span><span class="brevet-q-text">Factoriser l'expression <strong>x² − 4x</strong>.</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="x² − 4x = x × (… − …)" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">B.3.c.</span><span class="brevet-q-text">En déduire les solutions de l'équation <strong>f(x) = g(x)</strong>.</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="x(x − 4) = 0&#10;x = 0 ou x − 4 = 0 → x = …&#10;Les solutions sont x = … et x = …" rows="3"></textarea>
+    </div>
+  </div>
+
+  <!-- B.4 : bilan -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">B.4.</span>
+      <span class="brevet-q-text">Dire pour chaque élève s'il a résolu l'équation f(x) = g(x). Expliquer pourquoi.</span>
+      <span class="brevet-q-pts">3 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Paul : a-t-il trouvé toutes les solutions ? Son tableau couvre x de −3 à 3…&#10;Jane : a-t-elle trouvé toutes les solutions ? Son programme couvre x de −5 à 3…&#10;Morgane : a-t-elle trouvé toutes les solutions ? Elle a résolu par le calcul…&#10;Conclusion : …" rows="6"></textarea>
+  </div>
+
+</div><!-- fin exercice 5 -->
+
+<!-- ══════════ EXERCICE 2 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
