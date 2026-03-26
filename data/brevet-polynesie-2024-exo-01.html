@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 1 — Brevet Polynésie 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:10px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:14px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 1</span>
+      <span class="brevet-ex-titre">QCM — 5 questions</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Polynésie · 27 juin 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Pythagore · Fonctions · Homothétie · Ratio · PGCD</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+  <div class="brevet-enonce">
+    QCM — <strong>une seule affirmation est exacte</strong> par question. Aucune justification n'est attendue.
+  </div>
+
+  <!-- Q1 : triangle rectangle -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">ABC est un triangle tel que <strong>AB = 20 cm, BC = 21 cm</strong> et <strong>AC = 29 cm</strong>. On peut affirmer que :</span><span class="brevet-q-pts">4 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:16px">
+      <div id="p1q1a" onclick="selQCM4('p1q1','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">Rectangle en A</div>
+      <div id="p1q1b" onclick="selQCM4('p1q1','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">Rectangle en B</div>
+      <div id="p1q1c" onclick="selQCM4('p1q1','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">Rectangle en C</div>
+      <div id="p1q1d" onclick="selQCM4('p1q1','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">Pas rectangle</div>
+    </div>
+  </div>
+
+  <!-- Q2 : fonction graphique -->
+  <div class="brevet-q">
+    <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:10px">
+      <div style="flex:1;min-width:200px">
+        <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Voici la représentation graphique d'une fonction <em>f</em>. La fonction <em>f</em> est définie par :</span><span class="brevet-q-pts">4 pts</span></div>
+      </div>
+      <!-- Graphique SVG droite rouge -->
+      <div style="flex-shrink:0;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:10px;padding:10px">
+        <svg viewBox="-4.5 -1.5 8 6" width="160" height="120" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size=".35">
+          <!-- Grille -->
+          <g stroke="#e8e8e8" stroke-width=".04">
+            <line x1="-4" y1="-1" x2="-4" y2="3.5"/><line x1="-3" y1="-1" x2="-3" y2="3.5"/>
+            <line x1="-2" y1="-1" x2="-2" y2="3.5"/><line x1="-1" y1="-1" x2="-1" y2="3.5"/>
+            <line x1="1" y1="-1" x2="1" y2="3.5"/><line x1="2" y1="-1" x2="2" y2="3.5"/>
+            <line x1="3" y1="-1" x2="3" y2="3.5"/>
+            <line x1="-4" y1="-1" x2="3.5" y2="-1"/><line x1="-4" y1="1" x2="3.5" y2="1"/>
+            <line x1="-4" y1="2" x2="3.5" y2="2"/><line x1="-4" y1="3" x2="3.5" y2="3"/>
+          </g>
+          <!-- Axes -->
+          <line x1="-4.5" y1="0" x2="3.8" y2="0" stroke="#333" stroke-width=".07"/>
+          <line x1="0" y1="-1.3" x2="0" y2="3.8" stroke="#333" stroke-width=".07"/>
+          <!-- Labels -->
+          <text x="-4" y=".45" text-anchor="middle" fill="#666" font-size=".3">-4</text>
+          <text x="-3" y=".45" text-anchor="middle" fill="#666" font-size=".3">-3</text>
+          <text x="-2" y=".45" text-anchor="middle" fill="#666" font-size=".3">-2</text>
+          <text x="-1" y=".45" text-anchor="middle" fill="#666" font-size=".3">-1</text>
+          <text x="1" y=".45" text-anchor="middle" fill="#666" font-size=".3">1</text>
+          <text x="2" y=".45" text-anchor="middle" fill="#666" font-size=".3">2</text>
+          <text x="3" y=".45" text-anchor="middle" fill="#666" font-size=".3">3</text>
+          <text x=".15" y="-1" font-size=".3" fill="#666">3</text>
+          <text x=".15" y="1" font-size=".3" fill="#666">-1</text>
+          <text x=".15" y="-0.05" font-size=".3" fill="#666">0</text>
+          <!-- Droite rouge f(x) = x/2 + 1 : passe par (-2,0) et (2,2) -->
+          <line x1="-4" y1="-1" x2="3" y2="2.5" stroke="#EF4444" stroke-width=".12"/>
+        </svg>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:16px">
+      <div id="p1q2a" onclick="selQCM4('p1q2','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">f(x) = 2x − 2</div>
+      <div id="p1q2b" onclick="selQCM4('p1q2','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">f(x) = 2x + 1</div>
+      <div id="p1q2c" onclick="selQCM4('p1q2','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">f(x) = x/2 − 2</div>
+      <div id="p1q2d" onclick="selQCM4('p1q2','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">f(x) = x/2 + 1</div>
+    </div>
+  </div>
+
+  <!-- Q3 : homothétie / translation -->
+  <div class="brevet-q">
+    <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:10px">
+      <div style="flex:1;min-width:200px">
+        <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">Sur la figure ci-contre, le carré n° 2 est l'image du carré n° 1 par :</span><span class="brevet-q-pts">4 pts</span></div>
+      </div>
+      <!-- Figure SVG carré 1 et carré 2 -->
+      <div style="flex-shrink:0;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:10px;padding:10px">
+        <svg viewBox="0 0 160 100" width="160" height="100" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="11">
+          <!-- Carré 1 : petit, en haut-gauche -->
+          <rect x="10" y="10" width="30" height="30" fill="white" stroke="#333" stroke-width="1.5"/>
+          <text x="22" y="30" fill="#333" font-weight="700">1</text>
+          <!-- O et E et C -->
+          <circle cx="70" cy="55" r="2.5" fill="#333"/>
+          <text x="72" y="52" fill="#333" font-size="10" font-weight="700">O</text>
+          <circle cx="100" cy="55" r="2.5" fill="#333"/>
+          <text x="102" y="52" fill="#333" font-size="10" font-weight="700">E</text>
+          <!-- marques milieu -->
+          <line x1="82" y1="52" x2="82" y2="58" stroke="#333" stroke-width="1.2"/>
+          <line x1="86" y1="52" x2="86" y2="58" stroke="#333" stroke-width="1.2"/>
+          <text x="10" y="58" fill="#333" font-size="10" font-weight="700">C</text>
+          <!-- Carré 2 : grand, en bas-droite -->
+          <rect x="70" y="45" width="80" height="50" fill="white" stroke="#333" stroke-width="1.5"/>
+          <text x="120" y="80" fill="#333" font-weight="700">2</text>
+        </svg>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:16px">
+      <div id="p1q3a" onclick="selQCM4('p1q3','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:10px;text-align:center;cursor:pointer;transition:all .15s;font-size:12px">Symétrie centrale de centre O</div>
+      <div id="p1q3b" onclick="selQCM4('p1q3','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:10px;text-align:center;cursor:pointer;transition:all .15s;font-size:12px">Translation qui transforme C en E</div>
+      <div id="p1q3c" onclick="selQCM4('p1q3','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:10px;text-align:center;cursor:pointer;transition:all .15s;font-size:12px">Homothétie de centre O et rapport 2</div>
+      <div id="p1q3d" onclick="selQCM4('p1q3','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:10px;text-align:center;cursor:pointer;transition:all .15s;font-size:12px">Homothétie de centre O et rapport −2</div>
+    </div>
+  </div>
+
+  <!-- Q4 : cocktail Bora-Bora ratio -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">Le cocktail Bora-Bora est composé de jus d'ananas, de jus de fruit de la passion et de jus de citron dans le ratio <strong>10 : 6 : 2</strong>. Pour réaliser <strong>90 cL</strong> de ce cocktail, il faut prévoir exactement :</span><span class="brevet-q-pts">4 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:16px">
+      <div id="p1q4a" onclick="selQCM4('p1q4','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:12px">6 cL de jus de fruit de la passion</div>
+      <div id="p1q4b" onclick="selQCM4('p1q4','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:12px">30 cL de jus de fruit de la passion</div>
+      <div id="p1q4c" onclick="selQCM4('p1q4','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:12px">54 cL de jus de fruit de la passion</div>
+      <div id="p1q4d" onclick="selQCM4('p1q4','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:12px">45 cL de jus de fruit de la passion</div>
+    </div>
+  </div>
+
+  <!-- Q5 : PGCD pommes et poires -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">5.</span><span class="brevet-q-text">Un maraîcher a cueilli <strong>408 pommes</strong> et <strong>168 poires</strong>. Il remplit des sacs comportant chacun le même nombre de pommes et le même nombre de poires, en utilisant tous les fruits. Le plus grand nombre de sacs qu'il peut ainsi remplir est :</span><span class="brevet-q-pts">4 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px">
+      <div id="p1q5a" onclick="selQCM4('p1q5','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">48 sacs</div>
+      <div id="p1q5b" onclick="selQCM4('p1q5','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">24 sacs</div>
+      <div id="p1q5c" onclick="selQCM4('p1q5','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">8 sacs</div>
+      <div id="p1q5d" onclick="selQCM4('p1q5','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">6 sacs</div>
+    </div>
+  </div>
+
+</div><!-- fin exercice 1 --></div><!-- fin padding -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
