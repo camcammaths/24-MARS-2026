@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 3 — Brevet Métropole Septembre 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12);font-size:12px}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;color:var(--muted)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 3</span>
+      <span class="brevet-ex-titre">panneaux solaires — statistiques & trigonométrie</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Métropole · 19 septembre 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Statistiques · Pourcentages · Trigonométrie</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    Une entreprise décide de faire poser sur le toit de son hangar des <strong>panneaux solaires</strong>.<br>
+    Pendant une semaine d'utilisation, les productions d'électricité journalières (en kWh) ont été relevées :
+  </div>
+
+  <!-- Tableau des productions -->
+  <div style="overflow-x:auto;margin-bottom:22px">
+    <table class="brevet-table">
+      <thead>
+        <tr>
+          <th style="text-align:left;min-width:120px">Jour de la semaine</th>
+          <th>Lundi</th><th>Mardi</th><th>Mercredi</th><th>Jeudi</th>
+          <th>Vendredi</th><th>Samedi</th><th>Dimanche</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align:left;font-family:var(--fb);font-size:12px;font-weight:600;color:var(--muted)">Production (kWh)</td>
+          <td style="font-weight:700">381</td>
+          <td style="font-weight:700">363</td>
+          <td style="font-weight:700">322</td>
+          <td style="font-weight:700">329</td>
+          <td style="font-weight:700">393</td>
+          <td style="font-weight:700">405</td>
+          <td style="font-weight:700">376</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span></div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.a.</span><span class="brevet-q-text">Quel jour la production d'électricité a-t-elle été la <strong>plus grande</strong> ?</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="La production la plus grande est … kWh, le …" rows="1"></textarea>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.b.</span><span class="brevet-q-text">Calculer l'<strong>étendue</strong> de ces productions d'électricité.</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Étendue = valeur max − valeur min = … − … = … kWh" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.c.</span><span class="brevet-q-text">Quelle est la production <strong>moyenne</strong> d'électricité par jour sur cette période ?</span><span class="brevet-q-pts">3 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Moyenne = (381 + 363 + 322 + 329 + 393 + 405 + 376) ÷ 7 = … ÷ 7 = … kWh" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">2.</span>
+      <span class="brevet-q-text">L'entreprise revend <strong>15 %</strong> de sa production d'électricité au tarif de <strong>8 centimes le kWh</strong>. Combien a-t-elle gagné en euros pendant ces 7 jours ?</span>
+      <span class="brevet-q-pts">5 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Production totale = 381 + 363 + … = … kWh&#10;15 % de la production = 0,15 × … = … kWh&#10;Gain = … × 0,08 = … €" rows="4"></textarea>
+  </div>
+
+  <!-- Q3 : schéma toit + trigonométrie -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">3.</span>
+      <span class="brevet-q-text">Afin que les panneaux solaires aient une production maximale, le toit doit avoir une pente avec l'horizontale comprise entre <strong>30° et 35°</strong>. La pente du toit correspond à l'angle <strong>OLV</strong>. Sur ce toit, les panneaux solaires ont-ils une production maximale ?</span>
+      <span class="brevet-q-pts">8 pts</span>
+    </div>
+
+    <!-- Schéma du hangar SVG -->
+    <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:14px">
+      <div style="flex:1;min-width:240px;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.06);border-radius:14px;padding:20px;display:flex;justify-content:center">
+        <svg viewBox="0 0 300 260" width="280" height="242" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+          <!--
+            Schéma en coupe du hangar :
+            Rectangle des murs : T(20,155) K(280,155) K(280,195) T(20,195)
+            Toit triangulaire au-dessus : T(20,155) O(155,30) K(280,155)
+            V = pied de la hauteur = (155,155)
+            OV = hauteur = 7m
+            OT = 13,5m (pente gauche, panneaux)
+          -->
+
+          <!-- Rectangle du hangar (murs) -->
+          <rect x="20" y="155" width="260" height="65" fill="rgba(0,0,0,.04)" stroke="#333" stroke-width="1.8"/>
+
+          <!-- Toit gauche T→O (panneaux solaires) -->
+          <line x1="20" y1="155" x2="155" y2="30" stroke="#333" stroke-width="2"/>
+          <!-- Toit droit O→K -->
+          <line x1="155" y1="30" x2="280" y2="155" stroke="#333" stroke-width="1.8"/>
+
+          <!-- Hauteur OV (verticale, pointillée) -->
+          <line x1="155" y1="30" x2="155" y2="155" stroke="#555" stroke-width="1.2" stroke-dasharray="5,3"/>
+          <!-- Angle droit en V -->
+          <rect x="155" y="145" width="10" height="10" fill="none" stroke="#555" stroke-width="1.2"/>
+
+          <!-- Panneaux solaires (ligne épaisse bleue sur le côté gauche du toit) -->
+          <line x1="20" y1="155" x2="140" y2="42" stroke="#0021BC" stroke-width="4" stroke-opacity=".5"/>
+
+          <!-- Angle OTV (angle de pente) en orange -->
+          <path d="M42,155 A28,28 0 0,0 29,131" fill="none" stroke="#EE6E34" stroke-width="1.5"/>
+
+          <!-- Points -->
+          <circle cx="20"  cy="155" r="3" fill="#333"/>
+          <circle cx="280" cy="155" r="3" fill="#333"/>
+          <circle cx="155" cy="155" r="3" fill="#333"/>
+          <circle cx="155" cy="30"  r="3" fill="#333"/>
+
+          <!-- Labels -->
+          <text x="8"   y="152" fill="#333" font-weight="700">T</text>
+          <text x="276" y="152" fill="#333" font-weight="700">K</text>
+          <text x="148" y="172" fill="#333" font-weight="700">V</text>
+          <text x="152" y="22"  fill="#333" font-weight="700">O</text>
+
+          <!-- Cotes -->
+          <!-- OT = 13,5m -->
+          <text x="70" y="85" fill="#0021BC" font-size="11" font-weight="600" transform="rotate(-42,70,85)">13,5 m</text>
+          <text x="28" y="72" fill="#0021BC" font-size="10" font-style="italic">panneaux</text>
+          <text x="28" y="84" fill="#0021BC" font-size="10" font-style="italic">solaires</text>
+          <!-- OV = 7m -->
+          <text x="162" y="95" fill="var(--muted)" font-size="11">7 m</text>
+          <!-- Angle -->
+          <text x="46" y="144" fill="#EE6E34" font-size="11" font-style="italic">OLV</text>
+        </svg>
+      </div>
+
+      <!-- Données -->
+      <div style="flex-shrink:0;font-size:13px;line-height:2;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.06);border-radius:10px;padding:14px 18px">
+        <strong>Données :</strong><br>
+        OT = <strong>13,5 m</strong> (longueur du toit)<br>
+        OV = <strong>7 m</strong> (hauteur du hangar)<br>
+        Angle OLV = pente du toit<br><br>
+        <em style="color:var(--muted);font-size:12px">Pente optimale : entre 30° et 35°</em>
+      </div>
+    </div>
+
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Dans le triangle OTV rectangle en V :&#10;sin(OTV) = OV / OT = 7 / 13,5 = …&#10;Angle OTV = arcsin(…) ≈ …°&#10;Cet angle est-il compris entre 30° et 35° ?&#10;Conclusion : les panneaux ont-ils une production maximale ?" rows="6"></textarea>
+  </div>
+
+</div><!-- fin exercice 3 -->
+
+<!-- ══════════ EXERCICE 2 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 4 — Brevet Métropole Septembre 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12);font-size:12px}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;color:var(--muted)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 4</span>
+      <span class="brevet-ex-titre">fonction f — tableur, antécédents, factorisation</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Métropole · Septembre 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Fonctions · Algèbre · Tableur</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    On considère la fonction <em>f</em> définie par :<br>
+    <div style="text-align:center;font-size:18px;font-weight:600;margin:12px 0;color:var(--blue)">f(x) = x² + 10x + 16</div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">1.</span>
+      <span class="brevet-q-text">Vérifier par le calcul que l'image de <strong>6</strong> par la fonction <em>f</em> est <strong>112</strong>.</span>
+      <span class="brevet-q-pts">3 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="f(6) = 6² + 10×6 + 16 = … + … + 16 = …" rows="2"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">2.</span>
+      <span class="brevet-q-text">On utilise un tableur afin de calculer les images des entiers compris entre −4 et 4 par la fonction <em>f</em>.</span>
+    </div>
+
+    <!-- Tableau tableur -->
+    <div style="overflow-x:auto;margin-bottom:16px">
+      <table class="brevet-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
+            <th>F</th><th>G</th><th>H</th><th>I</th><th>J</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td style="font-style:italic;color:var(--muted)">x</td>
+            <td style="font-weight:700">−4</td><td style="font-weight:700">−3</td>
+            <td style="font-weight:700">−2</td><td style="font-weight:700">−1</td>
+            <td style="font-weight:700">0</td><td style="font-weight:700">1</td>
+            <td style="font-weight:700">2</td><td style="font-weight:700">3</td>
+            <td style="font-weight:700">4</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td style="font-style:italic;color:var(--muted)">f(x)</td>
+            <td style="color:#0021BC;font-weight:700">−8</td>
+            <td style="color:#0021BC;font-weight:700">−5</td>
+            <td style="color:#0021BC;font-weight:700">0</td>
+            <td style="color:#0021BC;font-weight:700">7</td>
+            <td style="color:#0021BC;font-weight:700">16</td>
+            <td style="color:#0021BC;font-weight:700">27</td>
+            <td style="color:#0021BC;font-weight:700">40</td>
+            <td style="color:#0021BC;font-weight:700">55</td>
+            <td style="color:#0021BC;font-weight:700">72</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">2.a.</span>
+        <span class="brevet-q-text">Parmi les 4 formules ci-dessous, recopier celle qui a été saisie dans la cellule <strong>B2</strong>, puis étirée vers la droite afin de calculer les images des nombres donnés par la fonction <em>f</em>.</span>
+        <span class="brevet-q-pts">4 pts</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+        <div style="background:#f5f5f5;border:1.5px solid rgba(0,0,0,.1);border-radius:8px;padding:10px;font-family:'Courier New',monospace;font-size:13px;text-align:center">=B1*B1+10*B1+16</div>
+        <div style="background:#f5f5f5;border:1.5px solid rgba(0,0,0,.1);border-radius:8px;padding:10px;font-family:'Courier New',monospace;font-size:13px;text-align:center">=A1*A1+10*A1+16</div>
+        <div style="background:#f5f5f5;border:1.5px solid rgba(0,0,0,.1);border-radius:8px;padding:10px;font-family:'Courier New',monospace;font-size:13px;text-align:center">=(-4)*(-4)+10*(-4)+16</div>
+        <div style="background:#f5f5f5;border:1.5px solid rgba(0,0,0,.1);border-radius:8px;padding:10px;font-family:'Courier New',monospace;font-size:13px;text-align:center">=x*x+10*x+16</div>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="La formule à saisir en B2 est : …&#10;(Elle doit référencer la cellule de la ligne 1 de la même colonne et s'adapter quand on l'étire vers la droite)" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">2.b.</span>
+        <span class="brevet-q-text">En utilisant le tableau, déterminer un <strong>antécédent de 0</strong>.</span>
+        <span class="brevet-q-pts">3 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Dans le tableau, f(x) = 0 quand x = …&#10;Donc … est un antécédent de 0 par f." rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span></div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">3.a.</span>
+        <span class="brevet-q-text">Démontrer que <em>f(x)</em> peut s'écrire <strong>(x + 2)(x + 8)</strong>.</span>
+        <span class="brevet-q-pts">5 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Développer (x+2)(x+8) :&#10;= x² + 8x + 2x + 16&#10;= x² + 10x + 16&#10;= f(x) ✓" rows="4"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">3.b.</span>
+        <span class="brevet-q-text">En déduire un <strong>autre antécédent de 0</strong> par la fonction <em>f</em>.</span>
+        <span class="brevet-q-pts">5 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="f(x) = (x+2)(x+8) = 0&#10;Un produit est nul si l'un des facteurs est nul :&#10;x + 2 = 0 → x = … ou x + 8 = 0 → x = …&#10;L'autre antécédent de 0 est donc x = …" rows="4"></textarea>
+    </div>
+  </div>
+
+</div><!-- fin exercice 4 -->
+
+<!-- ══════════ EXERCICE 5 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 5 — Brevet Métropole Septembre 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12);font-size:12px}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;color:var(--muted)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 5</span>
+      <span class="brevet-ex-titre">quadrilatère ABCD & programme Scratch</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Métropole · 19 septembre 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Géométrie · Scratch · Angles</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    Le quadrilatère ABCD ci-dessous est constitué de <strong>deux triangles équilatéraux</strong> de côté <strong>5 cm</strong>.
+  </div>
+
+  <!-- Figure SVG quadrilatère ABCD (losange formé de 2 triangles équilatéraux) -->
+  <div style="display:flex;justify-content:center;margin:16px 0 24px;background:#FAFAFA;border-radius:14px;padding:24px;border:1.5px solid rgba(0,0,0,.06)">
+    <svg viewBox="0 0 280 220" width="260" height="204" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="13">
+      <!--
+        Quadrilatère ABCD = 2 triangles équilatéraux de côté 5cm accolés sur BC (base)
+        Triangle ABC équilatéral : B en bas-gauche, C en bas-droite, A en haut-milieu
+        Triangle BCD équilatéral : B en bas-gauche, C en bas-droite, D en haut-droite
+
+        Avec côté = 140px (5cm) :
+        B=(40,170), C=(180,170)  → BC horizontal = 140px
+        A = milieu BC + hauteur vers le haut = (110, 170 - 140×sin60°) = (110, 170-121) = (110,49)
+        D = milieu BC + décalage vers la droite + hauteur
+          Pour triangle BCD équilatéral, D est le 3e sommet opposé à BC vers le haut
+          mais décalé → D doit former un losange
+          D=(180+140×cos60°, 170-140×sin60°) ... non
+          
+          En fait ABCD losange de 2 triangles équilatéraux :
+          Triangle 1 : ABC avec A en haut
+          Triangle 2 : ACD avec D en haut-droite, partagent AC
+          
+          B=(40,170), C=(180,170), A=(110,49)
+          AC=(180-110,49-170)=(70,-121) → D=A+AC=(110+70,49-121)=(180,-72)... hors cadre
+          
+          Mieux : regarder l'image — losange avec A haut-gauche, D haut-droite, B bas-gauche, C bas-droite
+          Diagonale verticale AC, diagonale horizontale BD
+          
+          Placement : A=(110,30), D=(220,110), C=(110,190), B=(0... non
+          
+          D'après l'image : A haut-centre, D haut-droite, B bas-gauche, C bas-centre
+          Le quadrilatère ressemble à un parallélogramme penché
+          
+          Simplifions : 2 triangles équilatéraux collés sur un côté commun
+          Triangle ABC (côté commun BC) : A en haut
+          Triangle BCD (côté commun BC) : D en bas-droite
+          
+          B=(60,155), C=(200,155), A=(130,34), 
+          hauteur équilatéral = 5cm × sin60° = 5×0.866 = 4.33cm → en px: 140×0.866=121px
+          A = ((60+200)/2, 155-121) = (130, 34)
+          D = ((60+200)/2 + (200-60)/2, 155+121) = (130+70, 276)... hors cadre
+          
+          D'après l'image réelle : les 2 triangles sont ABC (pointe vers le haut) et ACD (pointe vers la droite)
+          → losange ABCD où AB=BC=CD=DA=5cm avec angles 60° et 120°
+          
+          A=(130,30), B=(30,160), C=(200,160), D=(300,30)... 
+          
+          Regardons l'image : A en haut-gauche, D en haut-droite, B en bas-gauche, C en bas (milieu-droite)
+          ABCD dans cet ordre forme le quadrilatère avec BC=5cm en bas
+          
+          Placement final d'après l'image :
+          B=(50,170), C=(170,170), A=(110,50), D=(230,50)
+          Triangle ABC: côtés AB=AC=BC=140px ✓ (équilatéral)
+          Triangle ACD: AC=CD=AD? → AC=√((170-110)²+(170-50)²)=√(3600+14400)=√18000=134px ≠ 140px
+          
+          Correction : les 2 triangles partagent le côté AC
+          A=(110,50), C=(170,170), B=(50,170), D=(230,50)
+          AB=√(60²+120²)=√(3600+14400)=134, BC=√(120²+0²)=120... pas équilatéral
+          
+          Mettons juste un beau dessin cohérent avec l'image :
+        -->
+
+      <!-- Quadrilatère ABCD : losange de 2 triangles équilatéraux -->
+      <!-- A=(120,35), B=(40,175), C=(200,175), D=(280,35) -->
+      <!-- Triangle ABC (bas) + Triangle ACD (haut) -->
+      <!-- Diagonale commune AC -->
+
+      <polygon points="120,35 40,175 200,175" fill="rgba(0,33,188,.04)" stroke="#333" stroke-width="1.8"/>
+      <polygon points="120,35 200,175 280,35" fill="rgba(238,110,52,.04)" stroke="#333" stroke-width="1.8"/>
+
+      <!-- Diagonale AC -->
+      <line x1="120" y1="35" x2="200" y2="175" stroke="#333" stroke-width="1.2" stroke-dasharray="5,3"/>
+
+      <!-- Marques égalité des côtés -->
+      <!-- AB milieu (80,105) -->
+      <line x1="76" y1="102" x2="84" y2="108" stroke="#555" stroke-width="1.8"/>
+      <!-- BC milieu (120,175) -->
+      <line x1="118" y1="172" x2="122" y2="178" stroke="#555" stroke-width="1.8"/>
+      <line x1="115" y1="175" x2="125" y2="175" stroke="#555" stroke-width="1.8"/>
+      <!-- AC milieu (160,105) -->
+      <line x1="156" y1="102" x2="164" y2="108" stroke="#555" stroke-width="1.8"/>
+      <!-- CD milieu (240,105) -->
+      <line x1="236" y1="102" x2="244" y2="108" stroke="#555" stroke-width="1.8"/>
+      <!-- AD milieu (200,35) -->
+      <line x1="197" y1="32" x2="203" y2="38" stroke="#555" stroke-width="1.8"/>
+
+      <!-- Points -->
+      <circle cx="120" cy="35"  r="3" fill="#333"/>
+      <circle cx="40"  cy="175" r="3" fill="#333"/>
+      <circle cx="200" cy="175" r="3" fill="#333"/>
+      <circle cx="280" cy="35"  r="3" fill="#333"/>
+
+      <!-- Labels -->
+      <text x="112" y="25"  fill="#333" font-weight="700">A</text>
+      <text x="26"  y="183" fill="#333" font-weight="700">B</text>
+      <text x="198" y="193" fill="#333" font-weight="700">C</text>
+      <text x="278" y="25"  fill="#333" font-weight="700">D</text>
+
+      <!-- Cote BC -->
+      <text x="120" y="200" text-anchor="middle" fill="var(--muted)" font-size="12">5 cm</text>
+    </svg>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span></div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.a.</span><span class="brevet-q-text">Reproduire le quadrilatère ABCD en vraie grandeur.</span><span class="brevet-q-pts">3 pts</span></div>
+      <span class="lbl">Construction à faire sur feuille</span>
+      <textarea class="brevet-answer" placeholder="Tracer BC = 5 cm. Construire le triangle équilatéral ABC (compas ouvert à 5 cm). Construire le triangle équilatéral BCD en portant D de l'autre côté. Relier ABCD." rows="3"></textarea>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.b.</span><span class="brevet-q-text">Quelle est sa <strong>nature</strong> ?</span><span class="brevet-q-pts">3 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="ABCD est un … car tous ses côtés sont égaux à 5 cm." rows="2"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.c.</span><span class="brevet-q-text">Démontrer que l'angle <strong>BCD</strong> mesure <strong>120°</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Triangle ABC équilatéral → angle BCA = 60°&#10;Triangle BCD équilatéral → angle BCD' = 60°... (où D' est le 3e sommet)&#10;Angle BCD = angle BCA + angle ACD = 60° + 60° = 120°" rows="4"></textarea>
+    </div>
+  </div>
+
+  <!-- Q2 : programme Scratch -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Le programme ci-dessous permet de créer le bloc <strong>Motif</strong> qui trace le quadrilatère ABCD. Recopier et compléter les <strong>lignes 5 et 6</strong>. On utilise l'échelle : <strong>10 pas = 1 cm</strong>.</span><span class="brevet-q-pts">5 pts</span></div>
+
+    <!-- Blocs Scratch -->
+    <div style="background:#e8e8e8;border-radius:12px;padding:18px 22px;margin:12px 0;display:inline-flex;flex-direction:column;gap:3px;font-family:'Helvetica Neue',Arial,sans-serif;min-width:320px">
+
+      <!-- Ligne 1 : définir Motif -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">1</span>
+        <div style="position:relative;display:inline-flex;flex-direction:column">
+          <div style="margin-left:12px;width:32px;height:12px;background:#FF6680;border-radius:6px 6px 0 0"></div>
+          <div style="background:#FF6680;border-radius:0 6px 6px 6px;padding:8px 14px">
+            <span style="font-size:13px;font-weight:700;color:#fff">définir</span>
+            <span style="background:rgba(0,0,0,.2);border-radius:4px;padding:2px 8px;font-size:13px;color:#fff;font-weight:600;margin-left:6px">Motif</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ligne 2 : répéter 2 fois -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">2</span>
+        <div style="background:#FFAB19;border-radius:6px;padding:8px 14px;display:inline-flex;align-items:center;gap:6px">
+          <span style="font-size:13px;font-weight:700;color:#fff">répéter</span>
+          <span style="background:#fff;border-radius:100px;padding:2px 10px;font-size:13px;font-weight:700;color:#333">2</span>
+          <span style="font-size:13px;font-weight:700;color:#fff">lois</span>
+        </div>
+      </div>
+
+      <!-- Ligne 3 : avancer de 50 pas -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">3</span>
+        <div style="background:#5CB1D6;border-radius:6px;padding:8px 14px;display:inline-flex;align-items:center;gap:6px;margin-left:16px">
+          <span style="font-size:13px;font-weight:700;color:#fff">avancer de</span>
+          <span style="background:#fff;border-radius:100px;padding:2px 10px;font-size:13px;font-weight:700;color:#333">50</span>
+          <span style="font-size:13px;font-weight:700;color:#fff">pas</span>
+        </div>
+      </div>
+
+      <!-- Ligne 4 : tourner de 60 degrés -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">4</span>
+        <div style="background:#5CB1D6;border-radius:6px;padding:8px 14px;display:inline-flex;align-items:center;gap:6px;margin-left:16px">
+          <span style="font-size:13px;font-weight:700;color:#fff">tourner ↺ de</span>
+          <span style="background:#fff;border-radius:100px;padding:2px 10px;font-size:13px;font-weight:700;color:#333">60</span>
+          <span style="font-size:13px;font-weight:700;color:#fff">degrés</span>
+        </div>
+      </div>
+
+      <!-- Ligne 5 : avancer de ... pas — À COMPLÉTER -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">5</span>
+        <div style="background:#5CB1D6;border-radius:6px;padding:8px 14px;display:inline-flex;align-items:center;gap:6px;margin-left:16px;outline:3px dashed rgba(0,33,188,.5);outline-offset:2px">
+          <span style="font-size:13px;font-weight:700;color:#fff">avancer de</span>
+          <span style="background:rgba(255,255,255,.3);border-radius:100px;padding:2px 14px;font-size:13px;font-weight:700;color:#fff">…</span>
+          <span style="font-size:13px;font-weight:700;color:#fff">pas</span>
+        </div>
+        <span style="font-size:11px;color:#0021BC;font-weight:700;font-style:italic">← à compléter</span>
+      </div>
+
+      <!-- Ligne 6 : tourner de ... degrés — À COMPLÉTER -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">6</span>
+        <div style="background:#5CB1D6;border-radius:6px;padding:8px 14px;display:inline-flex;align-items:center;gap:6px;margin-left:16px;outline:3px dashed rgba(0,33,188,.5);outline-offset:2px">
+          <span style="font-size:13px;font-weight:700;color:#fff">tourner ↺ de</span>
+          <span style="background:rgba(255,255,255,.3);border-radius:100px;padding:2px 14px;font-size:13px;font-weight:700;color:#fff">…</span>
+          <span style="font-size:13px;font-weight:700;color:#fff">degrés</span>
+        </div>
+        <span style="font-size:11px;color:#0021BC;font-weight:700;font-style:italic">← à compléter</span>
+      </div>
+
+      <!-- Fin répéter (crochet) -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px"></span>
+        <div style="background:#FFAB19;border-radius:0 0 6px 6px;padding:6px 14px;margin-left:0;width:120px;display:flex;justify-content:flex-end">
+          <span style="font-size:16px;color:#fff">↵</span>
+        </div>
+      </div>
+    </div>
+
+    <span class="lbl">Lignes 5 et 6 complétées</span>
+    <textarea class="brevet-answer" placeholder="Ligne 5 : avancer de … pas&#10;(5cm × 10 = 50 pas ? ou autre longueur du côté du 2e triangle ?)&#10;Ligne 6 : tourner de … degrés&#10;(angle extérieur du quadrilatère = 360° - 120° = … )" rows="4"></textarea>
+  </div>
+
+  <!-- Q3 : associer programmes et figures -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">Recopier et compléter les trois phrases suivantes afin d'associer chaque figure au programme qui permet de la tracer.</span><span class="brevet-q-pts">5 pts</span></div>
+    <div style="font-size:14px;color:var(--ink);line-height:2.2;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:10px;padding:14px 18px;margin-bottom:10px">
+      Le programme A permet de tracer la figure …<br>
+      Le programme B permet de tracer la figure …<br>
+      Le programme C permet de tracer la figure …
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Le programme A permet de tracer la figure …&#10;Le programme B permet de tracer la figure …&#10;Le programme C permet de tracer la figure …" rows="3"></textarea>
+  </div>
+
+</div><!-- fin exercice 5 -->
+
+<!-- ══════════ EXERCICE 3 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

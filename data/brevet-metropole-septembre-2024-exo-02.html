@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 2 — Brevet Métropole Septembre 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12);font-size:12px}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;color:var(--muted)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 2</span>
+      <span class="brevet-ex-titre">champ de blé — thalès, aires & périmètre</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Métropole · 19 septembre 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Thalès · Aires · Proportionnalité · Pythagore</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+
+  <!-- Énoncé + figure côte à côte -->
+  <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;margin-bottom:22px">
+    <div style="flex:1;min-width:240px">
+      <div class="brevet-enonce" style="margin-top:0">
+        Un agriculteur possède un champ de blé ayant la forme d'un <strong>triangle ABC rectangle en B</strong>.<br><br>
+        <strong>AB = 200 m</strong> et <strong>BC = 150 m</strong>.<br><br>
+        La moissonneuse coupe des bandes de <strong>12 m de large</strong> parallèles à (AB), donc <strong>BE = 12 m</strong>.<br><br>
+        Le segment [DE] (pointillés) représente la limite du 1er passage.<br><br>
+        Après <strong>5 passages</strong>, il a moissonné le quadrilatère <strong>ABGF</strong>.
+      </div>
+    </div>
+
+    <!-- Figure SVG -->
+    <div style="flex-shrink:0">
+      <svg viewBox="0 0 200 320" width="170" height="272" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+        <!--
+          Triangle ABC rectangle en B :
+          B=(20,290), C=(180,290), A=(20,10)
+          AB vertical = 280px (200m), BC horizontal = 160px (150m)
+          Échelle : 1m ≈ 1.4px
+
+          BE=12m → 12×1.4=17px → E=(37,290)
+          BG=60m → 60×1.4=84px → G=(104,290)
+
+          D sur AC au-dessus de E : par Thalès BE/BC = BD/BA
+          12/150 = BD/200 → BD=16m → D=(20, 290-22)=(20,268)
+          Mais D est sur AC, pas AB...
+
+          En fait DE parallèle à AB :
+          BE/BC = (hauteur depuis A) ... 
+          Par Thalès dans triangle ABC, DE//AB :
+          CE/CB = CD/CA = DE/AB
+          CE = BC - BE = 150-12=138 → CE/CB=138/150=0.92
+          DE = 0.92 × 200 = 184m, D à hauteur correspondante
+
+          Échelle 1m=1.35px :
+          A=(20,10), B=(20,290), C=(180,290)
+          AB=280px=200m ✓ (1.4px/m), BC=160px=150m (1.07px/m)
+          On simplifie : A=(20,10), B=(20,290), C=(180,290)
+
+          E : BE=12m, sur BC → E=(20+12×(160/150), 290)=(20+12.8,290)=(33,290)
+          G : BG=60m, sur BC → G=(20+60×(160/150), 290)=(20+64,290)=(84,290)
+
+          D : par Thalès (DE//AB, D sur AC) :
+          Position D sur AC : CE/CB = 138/150 → D divides AC at ratio from C = 138/150
+          D = C + (138/150)×(A-C) = (180,290) + 0.92×(20-180, 10-290)
+          = (180,290) + 0.92×(-160,-280) = (180-147,290-258) = (33,32)
+
+          F : BG=60m, GF parallel to AB :
+          CF/CB = CG/CB where CG=BC-BG=150-60=90m
+          CF/CB = 90/150 = 0.6 → F at 60% from C toward A on CA
+          F = C + 0.6×(A-C) = (180,290) + 0.6×(-160,-280) = (180-96,290-168) = (84,122)
+        -->
+
+        <!-- Triangle ABC (fond) -->
+        <polygon points="20,10 20,290 180,290" fill="rgba(0,33,188,.04)" stroke="#333" stroke-width="1.8"/>
+
+        <!-- Zone moissonnée ABGF (en vert clair) -->
+        <polygon points="20,10 20,290 84,290 84,122" fill="rgba(0,200,100,.08)" stroke="none"/>
+
+        <!-- Triangle restant CGF -->
+        <polygon points="180,290 84,290 84,122" fill="rgba(238,110,52,.06)" stroke="none"/>
+
+        <!-- Lignes DE (pointillés - premier passage) -->
+        <line x1="33" y1="32" x2="33" y2="290" stroke="#555" stroke-width="1" stroke-dasharray="5,3"/>
+
+        <!-- Lignes des autres passages (pointillés) -->
+        <line x1="49" y1="54" x2="49" y2="290" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="65" y1="76" x2="65" y2="290" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+
+        <!-- GF vertical (limite après 5 passages) -->
+        <line x1="84" y1="122" x2="84" y2="290" stroke="#333" stroke-width="1.5"/>
+
+        <!-- Angles droits -->
+        <rect x="20" y="280" width="10" height="10" fill="none" stroke="#555" stroke-width="1.2"/>
+        <rect x="84" y="280" width="10" height="10" fill="none" stroke="#555" stroke-width="1.2"/>
+
+        <!-- Marques de passages (petits tirets sur BC) -->
+        <line x1="20" y1="285" x2="20" y2="295" stroke="#333" stroke-width="1"/>
+        <line x1="33" y1="285" x2="33" y2="295" stroke="#333" stroke-width="1"/>
+        <line x1="49" y1="285" x2="49" y2="295" stroke="#333" stroke-width="1"/>
+        <line x1="65" y1="285" x2="65" y2="295" stroke="#333" stroke-width="1"/>
+        <line x1="84" y1="285" x2="84" y2="295" stroke="#333" stroke-width="1"/>
+
+        <!-- Points -->
+        <circle cx="20"  cy="10"  r="3" fill="#333"/>
+        <circle cx="20"  cy="290" r="3" fill="#333"/>
+        <circle cx="180" cy="290" r="3" fill="#333"/>
+        <circle cx="33"  cy="32"  r="3" fill="#555"/>
+        <circle cx="33"  cy="290" r="3" fill="#555"/>
+        <circle cx="84"  cy="122" r="3" fill="#EE6E34"/>
+        <circle cx="84"  cy="290" r="3" fill="#EE6E34"/>
+
+        <!-- Labels -->
+        <text x="8"   y="10"  fill="#333" font-weight="700">A</text>
+        <text x="6"   y="304" fill="#333" font-weight="700">B</text>
+        <text x="176" y="304" fill="#333" font-weight="700">C</text>
+        <text x="34"  y="22"  fill="#555" font-weight="700">D</text>
+        <text x="32"  y="304" fill="#555" font-weight="700">E</text>
+        <text x="88"  y="114" fill="#EE6E34" font-weight="700">F</text>
+        <text x="83"  y="304" fill="#EE6E34" font-weight="700">G</text>
+
+        <!-- Cotes -->
+        <text x="2" y="155" fill="var(--muted)" font-size="10" transform="rotate(-90,2,155)" text-anchor="middle">200 m</text>
+        <text x="100" y="308" fill="var(--muted)" font-size="10" text-anchor="middle">150 m</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span></div>
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.a.</span><span class="brevet-q-text">Montrer que <strong>BG = 60 m</strong>.</span><span class="brevet-q-pts">3 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="5 passages de 12 m chacun → BG = 5 × 12 = … m" rows="2"></textarea>
+    </div>
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.b.</span><span class="brevet-q-text">En déduire que <strong>CG = 90 m</strong>.</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="CG = BC − BG = 150 − 60 = … m" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Démontrer que la longueur <strong>GF = 120 m</strong>.</span><span class="brevet-q-pts">5 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="(GF) ∥ (AB) car GF est une bande parallèle à AB.&#10;Par le théorème de Thalès dans le triangle ABC :&#10;CG/CB = GF/AB&#10;90/150 = GF/200&#10;GF = (90 × 200) / 150 = … m" rows="5"></textarea>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span></div>
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">3.a.</span><span class="brevet-q-text">Démontrer que l'aire du triangle rectangle <strong>CGF</strong> est de <strong>5 400 m²</strong>.</span><span class="brevet-q-pts">3 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Triangle CGF rectangle en G :&#10;Aire = (CG × GF) / 2 = (90 × 120) / 2 = … m²" rows="3"></textarea>
+    </div>
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">3.b.</span><span class="brevet-q-text">Le quadrilatère ABGF a une surface de <strong>9 600 m²</strong> moissonnée en <strong>80 minutes</strong>. Le temps de travail est proportionnel à la surface. Calculer le temps pour moissonner la partie restante CGF.</span><span class="brevet-q-pts">4 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="9 600 m² → 80 min&#10;5 400 m² → ? min&#10;Temps = (5 400 × 80) / 9 600 = … min" rows="3"></textarea>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">L'année suivante, il décide de <strong>clôturer son champ ABC</strong> afin d'y mettre des animaux pour l'été. Quelle longueur de clôture doit-il acheter ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Périmètre = AB + BC + AC&#10;AC = ? (Pythagore dans triangle ABC rectangle en B)&#10;AC² = AB² + BC² = 200² + 150² = … + … = …&#10;AC = √… = … m&#10;Périmètre = 200 + 150 + … = … m" rows="5"></textarea>
+  </div>
+
+</div><!-- fin exercice 2 -->
+
+<!-- ══════════ EXERCICE 1 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
