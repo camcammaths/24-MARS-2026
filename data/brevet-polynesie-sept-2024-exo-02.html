@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 2 — Brevet Polynésie Septembre 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 16px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 2</span>
+      <span class="brevet-ex-titre">températures à Strasbourg — statistiques & probabilités</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Polynésie Septembre · 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Statistiques · Tableur · Probabilités</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    On a relevé dans une feuille de calcul les températures maximales <strong>Tmax (en °C)</strong> atteintes à Strasbourg le 25 juin de chaque année de 2010 à 2018.
+  </div>
+
+  <!-- Tableau tableur -->
+  <div style="overflow-x:auto;margin-bottom:20px">
+    <table class="brevet-table">
+      <thead>
+        <tr>
+          <th style="background:#f0f0f0;color:var(--muted)"></th>
+          <th style="background:#f0f0f0;color:var(--muted)">A</th>
+          <th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="background:#f0f0f0;font-weight:700;color:var(--muted)">1</td>
+          <td style="font-weight:600">Année</td>
+          <td style="font-weight:700">2010</td><td style="font-weight:700">2011</td>
+          <td style="font-weight:700">2012</td><td style="font-weight:700">2013</td>
+          <td style="font-weight:700">2014</td><td style="font-weight:700">2015</td>
+          <td style="font-weight:700">2016</td><td style="font-weight:700">2017</td>
+          <td style="font-weight:700">2018</td>
+        </tr>
+        <tr>
+          <td style="background:#f0f0f0;font-weight:700;color:var(--muted)">2</td>
+          <td style="font-weight:600">Tmax</td>
+          <td style="color:var(--blue);font-weight:700">29</td>
+          <td style="color:var(--blue);font-weight:700">23,1</td>
+          <td style="color:var(--blue);font-weight:700">22,6</td>
+          <td style="color:var(--blue);font-weight:700">17,4</td>
+          <td style="color:var(--blue);font-weight:700">23,4</td>
+          <td style="color:var(--blue);font-weight:700">25,7</td>
+          <td style="color:var(--blue);font-weight:700">25,2</td>
+          <td style="color:var(--blue);font-weight:700">26</td>
+          <td style="color:var(--blue);font-weight:700">24</td>
+        </tr>
+        <tr>
+          <td style="background:#f0f0f0;font-weight:700;color:var(--muted)">3</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td style="background:#f0f0f0;font-weight:700;color:var(--muted)">4</td>
+          <td style="font-weight:600">Moyenne</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td style="background:#f0f0f0;font-weight:700;color:var(--muted)">5</td>
+          <td style="font-weight:600">Médiane</td>
+          <td style="font-weight:700;color:var(--orange)">24</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td style="background:#f0f0f0;font-weight:700;color:var(--muted)">6</td>
+          <td style="font-weight:600">Étendue</td>
+          <td style="font-weight:700;color:var(--orange)">11,6</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">On a oublié de calculer la moyenne de cette série. Quelle formule peut-on saisir dans la cellule <strong>B4</strong> pour que ce calcul soit effectué ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="=MOYENNE(B2:J2)" rows="1"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Donner, sans détailler les calculs, une valeur approchée au degré Celsius près de la <strong>moyenne</strong> de la série.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="(29 + 23,1 + 22,6 + 17,4 + 23,4 + 25,7 + 25,2 + 26 + 24) ÷ 9 ≈ … °C" rows="2"></textarea>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">Donner une <strong>interprétation</strong> de la médiane de cette série.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="La médiane est 24°C. Cela signifie que la moitié des températures relevées sont … à 24°C et l'autre moitié sont … à 24°C." rows="3"></textarea>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">On considère maintenant la série de 2010 à <strong>2019</strong>. L'étendue de cette nouvelle série est égale à <strong>18,5°C</strong>. Déterminer la température maximale atteinte à Strasbourg le 25 juin 2019.</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Étendue = max − min = 18,5°C&#10;Min de la série 2010–2018 = 17,4°C (2013)&#10;Étendue actuelle = 29 − 17,4 = 11,6°C&#10;Nouvelle étendue = 18,5°C > 11,6°C → la valeur de 2019 est extrême&#10;Cas 1 : Tmax 2019 est le nouveau max → Tmax − 17,4 = 18,5 → Tmax = …°C&#10;Cas 2 : Tmax 2019 est le nouveau min → 29 − Tmax = 18,5 → Tmax = …°C" rows="5"></textarea>
+  </div>
+
+  <!-- Q5 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">5.</span><span class="brevet-q-text">On crée <strong>9 fiches</strong>, une par année (2010–2018). On prend une fiche au hasard. Chaque fiche a la même probabilité d'être tirée.</span></div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">5.a.</span><span class="brevet-q-text">Quelle est la probabilité que la température écrite sur cette fiche soit égale à <strong>26°C</strong> ?</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Températures égales à 26°C : … année(s)&#10;P(T = 26°C) = …/9" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">5.b.</span><span class="brevet-q-text">Quelle est la probabilité que la température écrite soit <strong>inférieure ou égale à 24°C</strong> ?</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Températures ≤ 24°C : 23,1 ; 22,6 ; 17,4 ; 23,4 ; 24 → … valeurs&#10;P(T ≤ 24°C) = …/9" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">5.c.</span><span class="brevet-q-text">A-t-on raison de dire que l'on a <strong>plus de 40%</strong> de chance de prendre une fiche sur laquelle la température est <strong>supérieure à 25°C</strong> ?</span><span class="brevet-q-pts">3 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Températures > 25°C : 29 ; 25,7 ; 25,2 ; 26 → … valeurs&#10;P(T > 25°C) = …/9 ≈ … %&#10;Cette probabilité est-elle > 40% ? …" rows="3"></textarea>
+    </div>
+  </div>
+
+</div><!-- fin exercice 2 --></div>
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
