@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 2 — Brevet Centres Étrangers 2025</title>
+<style>
+:root {
+  --blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;
+  --bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;
+  --fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 16px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 2</span>
+      <span class="brevet-ex-titre">colis « Transport Rapide » — stats, probabilité & volumes</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Centres Étrangers · 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Statistiques · Probabilité · Volume · Masse volumique</span>
+      <span class="ctag">19 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">L'entreprise « Transport Rapide » doit livrer cinq colis A, B, C, D et E ayant des masses différentes :</div>
+
+  <!-- Tableau des masses -->
+  <div style="overflow-x:auto;margin-bottom:20px">
+    <table class="brevet-table">
+      <thead><tr><th>Nom du colis</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr></thead>
+      <tbody><tr><td style="font-weight:700;text-align:left;padding-left:14px">Masse en kg</td><td>4</td><td>9</td><td>2</td><td>7</td><td>11</td></tr></tbody>
+    </table>
+  </div>
+
+  <!-- Q1 : moyenne -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Calculer la <strong>moyenne</strong> des masses des colis en kg.</span><span class="brevet-q-pts">2 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Moyenne = (4 + 9 + 2 + 7 + 11) / 5 = … / 5 = … kg" rows="2"></textarea>
+  </div>
+
+  <!-- Q2 : médiane -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Déterminer la <strong>médiane</strong> des masses des colis en kg. Interpréter ce résultat.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Valeurs triées : 2, 4, 7, 9, 11&#10;5 valeurs → médiane = 3e valeur = … kg&#10;Interprétation : la moitié des colis pèse moins de … kg, l'autre moitié plus." rows="3"></textarea>
+  </div>
+
+  <!-- Q3 : probabilité masse < 8 kg -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">Le transporteur choisit au hasard un colis parmi les cinq pour une livraison express. Calculer la probabilité pour qu'il sélectionne un colis dont la masse est <strong>inférieure à 8 kg</strong>.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Colis de masse < 8 kg : A(4), C(2), D(7) → 3 colis&#10;P(masse < 8 kg) = 3/5" rows="2"></textarea>
+  </div>
+
+  <!-- Figure pavé droit -->
+  <div style="font-size:14px;line-height:1.7;margin-bottom:12px">Les colis ont la forme d'un <strong>pavé droit</strong> de longueur L, de largeur <em>l</em> et de hauteur <em>h</em> :</div>
+
+  <div style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px;margin-bottom:18px;display:flex;justify-content:center">
+    <svg viewBox="0 0 320 160" width="320" height="160" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="13">
+      <!--
+        Pavé droit aplati (h petit, L grand)
+        Sommets visibles :
+          A haut-gauche-avant  = (60, 30)
+          B haut-droite-avant  = (260, 30)
+          C bas-droite-avant   = (260, 55)
+          D bas-gauche-avant   = (60, 55)
+          E haut-gauche-arrière = (25, 60)  (A + vecteur profondeur)
+          F bas-gauche-arrière  = (25, 85)
+          G haut-droite-arrière = (225, 60)
+          H bas-droite-arrière  = (225, 85)
+      -->
+
+      <!-- Arêtes cachées en tirets -->
+      <line x1="25"  y1="60" x2="225" y2="60" stroke="#333" stroke-width="1.5" stroke-dasharray="6,4"/>
+      <line x1="225" y1="60" x2="260" y2="30" stroke="#333" stroke-width="1.5" stroke-dasharray="6,4"/>
+      <line x1="225" y1="60" x2="225" y2="85" stroke="#333" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+      <!-- Face dessus (visible) -->
+      <polygon points="60,30 260,30 225,60 25,60" fill="white" stroke="#333" stroke-width="2"/>
+      <!-- Face avant (visible) -->
+      <rect x="60" y="30" width="200" height="25" fill="white" stroke="#333" stroke-width="2"/>
+      <!-- Face gauche (visible) -->
+      <polygon points="60,30 25,60 25,85 60,55" fill="white" stroke="#333" stroke-width="2"/>
+      <!-- Face bas (visible) -->
+      <polygon points="60,55 260,55 225,85 25,85" fill="rgba(0,0,0,.04)" stroke="#333" stroke-width="2"/>
+      <!-- Face droite (visible) -->
+      <polygon points="260,30 260,55 225,85 225,60" fill="rgba(0,0,0,.06)" stroke="#333" stroke-width="2"/>
+
+      <!-- Cote h : flèche double à gauche -->
+      <line x1="44" y1="30" x2="44" y2="55" stroke="#333" stroke-width="1.5"/>
+      <polygon points="44,30 41,38 47,38" fill="#333"/>
+      <polygon points="44,55 41,47 47,47" fill="#333"/>
+      <text x="30" y="46" fill="#333" font-style="italic" font-weight="600">h</text>
+
+      <!-- Cote l : flèche diagonale sur la face gauche -->
+      <line x1="33" y1="88" x2="55" y2="58" stroke="#333" stroke-width="1.5"/>
+      <polygon points="55,58 50,64 44,61" fill="#333"/>
+      <polygon points="33,88 38,82 44,85" fill="#333"/>
+      <text x="25" y="82" fill="#333" font-style="italic" font-weight="600">l</text>
+
+      <!-- Cote L : flèche double en bas -->
+      <line x1="60" y1="108" x2="260" y2="108" stroke="#333" stroke-width="1.5"/>
+      <polygon points="60,108 68,105 68,111" fill="#333"/>
+      <polygon points="260,108 252,105 252,111" fill="#333"/>
+      <text x="155" y="125" fill="#333" font-style="italic" font-weight="600" text-anchor="middle">L</text>
+
+      <!-- Lignes de rappel pour cotes L -->
+      <line x1="60" y1="55" x2="60" y2="112" stroke="#333" stroke-width="0.8" stroke-dasharray="2,3"/>
+      <line x1="260" y1="55" x2="260" y2="112" stroke="#333" stroke-width="0.8" stroke-dasharray="2,3"/>
+    </svg>
+  </div>
+
+  <!-- Tableau dimensions -->
+  <div style="overflow-x:auto;margin-bottom:20px">
+    <table class="brevet-table">
+      <thead>
+        <tr><th>Colis</th><th>Longueur L (m)</th><th>Largeur l (m)</th><th>Hauteur h (m)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A</td><td>0,4</td><td>0,3</td><td>0,5</td></tr>
+        <tr><td>B</td><td>0,5</td><td>0,4</td><td>0,8</td></tr>
+        <tr><td>C</td><td>0,3</td><td>0,1</td><td>0,5</td></tr>
+        <tr><td>D</td><td>0,4</td><td>0,3</td><td>0,7</td></tr>
+        <tr><td>E</td><td>0,5</td><td>0,4</td><td>0,6</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">4.</span></div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">4.a.</span><span class="brevet-q-text">Vérifier que le volume du colis E est de <strong>0,12 m³</strong>.</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="V(E) = L × l × h = 0,5 × 0,4 × 0,6 = … m³ ✓" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">4.b.</span><span class="brevet-q-text">Montrer que la <strong>masse volumique</strong> du colis E arrondie au dixième est <strong>91,7 kg/m³</strong>.<br><small style="color:var(--muted)">Masse volumique = masse (en kg) / volume (en m³)</small></span><span class="brevet-q-pts">4 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Masse volumique E = masse / volume = 11 / 0,12 = … kg/m³ ≈ 91,7 kg/m³ ✓" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">4.c.</span><span class="brevet-q-text">Le transporteur affirme : « Le colis E est plus lourd que le colis C, donc la masse volumique du colis E est plus grande que celle du colis C ». A-t-il raison ?</span><span class="brevet-q-pts">5 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Masse volumique C = masse C / volume C&#10;Volume C = 0,3 × 0,1 × 0,5 = … m³&#10;Masse volumique C = 2 / … = … kg/m³&#10;&#10;Masse volumique E ≈ 91,7 kg/m³&#10;Masse volumique C = … kg/m³&#10;&#10;→ Le transporteur a-t-il raison ? …" rows="6"></textarea>
+    </div>
+  </div>
+
+</div><!-- fin exercice 2 -->
+
+<!-- ══════════ EXERCICE 3 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
