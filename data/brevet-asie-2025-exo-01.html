@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 1 — Brevet Asie 2025</title>
+<style>
+:root {
+  --blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;
+  --bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;
+  --fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 16px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 1</span>
+      <span class="brevet-ex-titre">QCM — 4 questions</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Asie · 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Probabilités · Pourcentages · Statistiques · Fonctions</span>
+      <span class="ctag">16 pts</span>
+    </div>
+  </div>
+  <div class="brevet-enonce">QCM — <strong>une seule réponse est exacte</strong> par question. Aucune justification n'est demandée.</div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">Question 1</span><span class="brevet-q-text">Une urne contient 4 boules bleues, 6 boules violettes, 7 boules rouges et 3 boules jaunes. On tire une boule au hasard. Quelle est la probabilité d'obtenir une boule <strong>violette</strong> ?</span><span class="brevet-q-pts">4 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:18px">
+      <div id="q1a" onclick="selQCM4('q1','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:14px;text-align:center;cursor:pointer;transition:all .15s;font-size:16px;font-weight:700">6/14</div>
+      <div id="q1b" onclick="selQCM4('q1','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:14px;text-align:center;cursor:pointer;transition:all .15s;font-size:16px;font-weight:700">1/4</div>
+      <div id="q1c" onclick="selQCM4('q1','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:14px;text-align:center;cursor:pointer;transition:all .15s;font-size:16px;font-weight:700">3/10</div>
+      <div id="q1d" onclick="selQCM4('q1','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:14px;text-align:center;cursor:pointer;transition:all .15s;font-size:16px;font-weight:700">14/20</div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">Question 2</span><span class="brevet-q-text">Calculer 70 % d'une quantité revient à multiplier cette quantité par :</span><span class="brevet-q-pts">4 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:18px">
+      <div id="q2a" onclick="selQCM4('q2','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:14px;text-align:center;cursor:pointer;transition:all .15s;font-size:16px;font-weight:700">0,30</div>
+      <div id="q2b" onclick="selQCM4('q2','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:14px;text-align:center;cursor:pointer;transition:all .15s;font-size:16px;font-weight:700">0,70</div>
+      <div id="q2c" onclick="selQCM4('q2','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:14px;text-align:center;cursor:pointer;transition:all .15s;font-size:16px;font-weight:700">1,70</div>
+      <div id="q2d" onclick="selQCM4('q2','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:14px;text-align:center;cursor:pointer;transition:all .15s;font-size:16px;font-weight:700">1,30</div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">Question 3</span><span class="brevet-q-text">On considère la série composée des 5 valeurs : <strong>7 ; 18 ; 12 ; 13 ; 15</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:18px">
+      <div id="q3a" onclick="selQCM4('q3','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:12px">L'étendue de<br>cette série est 8</div>
+      <div id="q3b" onclick="selQCM4('q3','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:12px">La médiane de<br>cette série est 12</div>
+      <div id="q3c" onclick="selQCM4('q3','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:12px">La moyenne de<br>cette série est 53</div>
+      <div id="q3d" onclick="selQCM4('q3','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:12px">La moyenne de<br>cette série est 13</div>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:10px">
+      <div style="flex:1;min-width:200px">
+        <div class="brevet-q-row"><span class="brevet-q-id">Question 4</span><span class="brevet-q-text">Une fonction affine <em>f</em> a pour représentation graphique la courbe 𝒞<sub>f</sub> ci-contre. L'expression de la fonction <em>f</em> est :</span><span class="brevet-q-pts">4 pts</span></div>
+        <div style="overflow-x:auto;margin-top:10px">
+          <table class="brevet-table">
+            <tbody>
+              <tr><td style="text-align:left;padding-left:14px;font-weight:600">Proposition A</td><td>f(x) = 2x + 4</td></tr>
+              <tr><td style="text-align:left;padding-left:14px;font-weight:600">Proposition B</td><td>f(x) = 4x − 2</td></tr>
+              <tr><td style="text-align:left;padding-left:14px;font-weight:600">Proposition C</td><td>f(x) = −2x + 4</td></tr>
+              <tr><td style="text-align:left;padding-left:14px;font-weight:600">Proposition D</td><td>f(x) = −4x + 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div style="flex-shrink:0;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:14px">
+        <svg viewBox="-0.5 -4.5 4 8" width="180" height="160" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif">
+          <g stroke="#ddd" stroke-width=".04">
+            <line x1="-0.5" y1="-4" x2="3.5" y2="-4"/><line x1="-0.5" y1="-3" x2="3.5" y2="-3"/>
+            <line x1="-0.5" y1="-2" x2="3.5" y2="-2"/><line x1="-0.5" y1="-1" x2="3.5" y2="-1"/>
+            <line x1="-0.5" y1="1" x2="3.5" y2="1"/><line x1="-0.5" y1="2" x2="3.5" y2="2"/>
+            <line x1="-0.5" y1="3" x2="3.5" y2="3"/>
+            <line x1="1" y1="-4.5" x2="1" y2="4"/><line x1="2" y1="-4.5" x2="2" y2="4"/><line x1="3" y1="-4.5" x2="3" y2="4"/>
+          </g>
+          <line x1="-0.5" y1="0" x2="3.6" y2="0" stroke="#111" stroke-width=".1"/>
+          <line x1="0" y1="-4.5" x2="0" y2="4.2" stroke="#111" stroke-width=".1"/>
+          <polygon points="3.6,0 3.4,0.08 3.4,-0.08" fill="#111"/>
+          <polygon points="0,-4.5 -0.08,-4.3 0.08,-4.3" fill="#111"/>
+          <g font-size=".28" fill="#555">
+            <text x="1" y="0.35" text-anchor="middle">1</text>
+            <text x="2" y="0.35" text-anchor="middle">2</text>
+            <text x="3" y="0.35" text-anchor="middle">3</text>
+            <text x="-0.25" y="-0.9" text-anchor="end">1</text>
+            <text x="-0.25" y="-1.9" text-anchor="end">2</text>
+            <text x="-0.25" y="-2.9" text-anchor="end">3</text>
+          </g>
+          <!-- f(x)=-2x+4 : (0,4)→SVG(0,-4), (2,0)→SVG(2,0), (3,-2)→SVG(3,2) -->
+          <line x1="0" y1="-4" x2="3" y2="2" stroke="#0021BC" stroke-width=".14"/>
+          <text x="1.8" y="-1.6" fill="#0021BC" font-size=".3" font-style="italic">𝒞f</text>
+        </svg>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">C</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:4px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">D</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px">
+      <div id="q4a" onclick="selQCM4('q4','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">f(x) = 2x + 4</div>
+      <div id="q4b" onclick="selQCM4('q4','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">f(x) = 4x − 2</div>
+      <div id="q4c" onclick="selQCM4('q4','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">f(x) = −2x + 4</div>
+      <div id="q4d" onclick="selQCM4('q4','d')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:13px">f(x) = −4x + 2</div>
+    </div>
+  </div>
+
+</div><!-- fin exercice 1 -->
+
+<!-- ══════════ EXERCICE 2 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

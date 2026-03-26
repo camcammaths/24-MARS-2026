@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 4 — Brevet Asie 2025</title>
+<style>
+:root {
+  --blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;
+  --bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;
+  --fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 16px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 4</span>
+      <span class="brevet-ex-titre">scratch — hexagone & triangles équilatéraux</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Asie · 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Scratch · Géométrie · Hexagone</span>
+      <span class="ctag">17 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    Aucune justification n'est attendue.<br><br>
+    <strong>Rappel :</strong> <span style="background:#5CB1D6;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700">s'orienter à 90</span> signifie que le lutin se dirige vers la droite.
+  </div>
+
+  <!-- PARTIE A -->
+  <div style="font-weight:700;font-size:13px;letter-spacing:.05em;margin:4px 0 16px;padding:8px 14px;background:#EEF2FF;border-radius:8px;border-left:3px solid var(--blue)">Partie A</div>
+
+  <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:16px">
+    <div style="flex:1;min-width:200px;font-size:14px;line-height:1.7">
+      Un élève souhaite tracer un hexagone à partir de <strong>6 triangles équilatéraux</strong> comme sur la figure ci-contre.<br><br>
+      Il commence par écrire le script du motif « triangle équilatéral » :
+    </div>
+    <div style="flex-shrink:0;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:10px;padding:12px">
+      <svg viewBox="-45 -40 90 80" width="90" height="80" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#0021BC" stroke-width="1.5">
+          <polygon points="0,0 30,0 15,-26"/><polygon points="0,0 15,-26 -15,-26"/>
+          <polygon points="0,0 -15,-26 -30,0"/><polygon points="0,0 -30,0 -15,26"/>
+          <polygon points="0,0 -15,26 15,26"/><polygon points="0,0 15,26 30,0"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <div style="border:1.5px solid rgba(0,0,0,.12);border-radius:10px;overflow:hidden;margin-bottom:18px;display:flex;gap:20px;flex-wrap:wrap">
+    <div style="padding:14px;font-family:'Helvetica Neue',Arial,sans-serif;display:flex;flex-direction:column;gap:3px;flex:1;min-width:220px">
+      <div style="display:flex;align-items:center;gap:6px">
+        <span style="font-size:10px;color:#888;width:14px;text-align:right">1</span>
+        <div style="position:relative;display:inline-flex;flex-direction:column">
+          <div style="margin-left:8px;width:24px;height:9px;background:#FF6680;border-radius:4px 4px 0 0"></div>
+          <div style="background:#FF6680;border-radius:0 5px 5px 5px;padding:5px 12px"><span style="font-size:11px;font-weight:700;color:#fff">définir triangle équilatéral</span></div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <span style="font-size:10px;color:#888;width:14px;text-align:right">2</span>
+        <div style="display:flex;flex-direction:column">
+          <div style="background:#FFAB19;border-radius:5px 5px 0 0;padding:5px 12px;display:inline-flex;align-items:center;gap:5px">
+            <span style="font-size:11px;font-weight:700;color:#fff">répéter</span>
+            <span style="background:rgba(0,0,0,.25);border-radius:100px;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center"><span style="font-size:10px;color:#fff">●</span></span>
+            <span style="font-size:11px;font-weight:700;color:#fff">fois</span>
+          </div>
+          <div style="border-left:5px solid #FFAB19;padding:3px 0 3px 10px;display:flex;flex-direction:column;gap:2px">
+            <div style="display:flex;align-items:center;gap:6px">
+              <span style="font-size:10px;color:#888;width:14px;text-align:right">3</span>
+              <div style="background:#5CB1D6;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px">
+                <span style="font-size:11px;font-weight:700;color:#fff">avancer de</span>
+                <span style="background:rgba(0,0,0,.25);border-radius:100px;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center"><span style="font-size:10px;color:#fff">●</span></span>
+                <span style="font-size:11px;font-weight:700;color:#fff">pas</span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <span style="font-size:10px;color:#888;width:14px;text-align:right">4</span>
+              <div style="background:#5CB1D6;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px">
+                <span style="font-size:11px;font-weight:700;color:#fff">tourner ↩ de</span>
+                <span style="background:rgba(0,0,0,.25);border-radius:100px;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center"><span style="font-size:10px;color:#fff">●</span></span>
+                <span style="font-size:11px;font-weight:700;color:#fff">degrés</span>
+              </div>
+            </div>
+          </div>
+          <div style="background:#FFAB19;border-radius:0 0 5px 5px;padding:3px 12px;display:flex;justify-content:flex-end;width:180px"><span style="color:#fff;font-size:13px">↵</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:14px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="-40 -35 80 70" width="90" height="80" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="0,-30 35,26 -35,26" fill="none" stroke="#333" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Compléter et recopier les lignes 2, 3 et 4 du script pour que le lutin dessine un triangle équilatéral de côté <strong>50 pas</strong>.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Ligne 2 : répéter … fois&#10;Ligne 3 : avancer de … pas&#10;Ligne 4 : tourner ↩ de … degrés" rows="3"></textarea>
+  </div>
+
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">L'élève teste les programmes A et B et obtient les deux dessins ci-dessous. Quel programme permet de tracer l'hexagone souhaité ?</span><span class="brevet-q-pts">4 pts</span></div>
+    <div style="border:1.5px solid rgba(0,0,0,.12);border-radius:10px;overflow:hidden;margin-bottom:12px">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr">
+        <div style="padding:10px;border-right:1px solid rgba(0,0,0,.1)">
+          <div style="font-size:12px;font-weight:700;text-align:center;margin-bottom:10px">Programme A</div>
+          <div style="display:flex;flex-direction:column;gap:2px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px">
+            <div style="background:#FFAB19;border-radius:4px;padding:4px 8px;color:#fff;font-weight:700">quand la touche A est pressée</div>
+            <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;color:#fff;font-weight:700">aller à x: 0 y: 0</div>
+            <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px;color:#fff;font-weight:700">s'orienter à <span style="background:#fff;border-radius:100px;padding:0 5px;color:#333">90</span></div>
+            <div style="background:#4CAF50;border-radius:4px;padding:4px 8px;color:#fff;font-weight:700">✏️ effacer tout</div>
+            <div style="background:#4CAF50;border-radius:4px;padding:4px 8px;color:#fff;font-weight:700">✏️ stylo en position d'écriture</div>
+            <div style="display:flex;flex-direction:column">
+              <div style="background:#FFAB19;border-radius:4px 4px 0 0;padding:4px 8px;display:inline-flex;align-items:center;gap:3px;color:#fff;font-weight:700">répéter <span style="background:#fff;border-radius:100px;padding:0 5px;color:#333">6</span> fois</div>
+              <div style="border-left:4px solid #FFAB19;padding:2px 0 2px 6px;display:flex;flex-direction:column;gap:2px">
+                <div style="background:#FF6680;border-radius:3px;padding:4px 8px;color:#fff;font-weight:700">triangle équilatéral</div>
+                <div style="background:#5CB1D6;border-radius:3px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px;color:#fff;font-weight:700">tourner ↩ de <span style="background:#fff;border-radius:100px;padding:0 5px;color:#333">60</span> degrés</div>
+              </div>
+              <div style="background:#FFAB19;border-radius:0 0 4px 4px;padding:3px 8px;display:flex;justify-content:flex-end;width:140px;color:#fff">↵</div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:10px;border-right:1px solid rgba(0,0,0,.1)">
+          <div style="font-size:12px;font-weight:700;text-align:center;margin-bottom:10px">Programme B</div>
+          <div style="display:flex;flex-direction:column;gap:2px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px">
+            <div style="background:#FFAB19;border-radius:4px;padding:4px 8px;color:#fff;font-weight:700">quand la touche B est pressée</div>
+            <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;color:#fff;font-weight:700">aller à x: 0 y: 0</div>
+            <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px;color:#fff;font-weight:700">s'orienter à <span style="background:#fff;border-radius:100px;padding:0 5px;color:#333">90</span></div>
+            <div style="background:#4CAF50;border-radius:4px;padding:4px 8px;color:#fff;font-weight:700">✏️ effacer tout</div>
+            <div style="background:#4CAF50;border-radius:4px;padding:4px 8px;color:#fff;font-weight:700">✏️ stylo en position d'écriture</div>
+            <div style="display:flex;flex-direction:column">
+              <div style="background:#FFAB19;border-radius:4px 4px 0 0;padding:4px 8px;display:inline-flex;align-items:center;gap:3px;color:#fff;font-weight:700">répéter <span style="background:#fff;border-radius:100px;padding:0 5px;color:#333">6</span> fois</div>
+              <div style="border-left:4px solid #FFAB19;padding:2px 0 2px 6px;display:flex;flex-direction:column;gap:2px">
+                <div style="background:#FF6680;border-radius:3px;padding:4px 8px;color:#fff;font-weight:700">triangle équilatéral</div>
+                <div style="background:#5CB1D6;border-radius:3px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px;color:#fff;font-weight:700">tourner ↩ de <span style="background:#fff;border-radius:100px;padding:0 5px;color:#333">120</span> degrés</div>
+              </div>
+              <div style="background:#FFAB19;border-radius:0 0 4px 4px;padding:3px 8px;display:flex;justify-content:flex-end;width:140px;color:#fff">↵</div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:10px">
+          <div style="font-size:12px;font-weight:700;text-align:center;margin-bottom:10px">Dessins obtenus</div>
+          <div style="background:#FAFAFA;border:1px solid rgba(0,0,0,.1);border-radius:6px;padding:8px;margin-bottom:6px;display:flex;justify-content:center">
+            <svg viewBox="-38 -33 76 66" width="70" height="60" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" stroke="#0021BC" stroke-width="1.3">
+                <polygon points="0,0 26,0 13,-22"/><polygon points="0,0 13,-22 -13,-22"/>
+                <polygon points="0,0 -13,-22 -26,0"/><polygon points="0,0 -26,0 -13,22"/>
+                <polygon points="0,0 -13,22 13,22"/><polygon points="0,0 13,22 26,0"/>
+              </g>
+            </svg>
+          </div>
+          <div style="background:#FAFAFA;border:1px solid rgba(0,0,0,.1);border-radius:6px;padding:8px;display:flex;justify-content:center">
+            <svg viewBox="-55 -55 110 110" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" stroke="#0021BC" stroke-width="1.5">
+                <polygon points="0,0 -26,-45 -52,0"/>
+                <polygon points="0,0 26,-45 52,0"/>
+                <polygon points="0,0 -26,45 26,45"/>
+              </g>
+              <circle cx="0" cy="0" r="3" fill="#0021BC"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Le programme … permet de tracer l'hexagone souhaité car …" rows="2"></textarea>
+  </div>
+
+  <!-- PARTIE B -->
+  <div style="font-weight:700;font-size:13px;letter-spacing:.05em;margin:20px 0 16px;padding:8px 14px;background:#FFF0E8;border-radius:8px;border-left:3px solid var(--orange)">Partie B — Hexagone régulier de 50 pas de côté</div>
+
+  <div style="font-size:14px;line-height:1.7;margin-bottom:14px">Un autre élève souhaite tracer un hexagone régulier de 50 pas de côté.</div>
+
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px">
+
+    <!-- Deux figures côte à côte -->
+    <div style="display:flex;gap:10px;flex-wrap:wrap;flex:1;min-width:300px">
+      <!-- Figure obtenue -->
+      <div style="border:1.5px solid rgba(0,0,0,.2);border-radius:4px;overflow:hidden;flex:1;min-width:140px">
+        <div style="font-size:12px;font-weight:700;text-align:center;padding:6px;border-bottom:1.5px solid rgba(0,0,0,.2)">Figure obtenue</div>
+        <div style="padding:12px;display:flex;justify-content:center">
+          <svg viewBox="-70 -55 140 120" width="160" height="138" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="11">
+            <polygon points="34.6,20 0,40 -34.6,20 -34.6,-20 0,-40 34.6,-20" fill="white" stroke="#333" stroke-width="2"/>
+            <circle cx="-34.6" cy="20" r="3" fill="#333"/>
+            <line x1="-65" y1="20" x2="-38" y2="20" stroke="#333" stroke-width="1.5" marker-end="url(#arrHex2)"/>
+            <defs><marker id="arrHex2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#333"/></marker></defs>
+            <text x="-68" y="36" fill="#333" font-weight="700" font-size="11">Point de</text>
+            <text x="-68" y="50" fill="#333" font-size="11">coordonnées (0 ; 0)</text>
+          </svg>
+        </div>
+      </div>
+      <!-- Informations sur les hexagones -->
+      <div style="border:1.5px solid rgba(0,0,0,.2);border-radius:4px;overflow:hidden;flex:1;min-width:140px">
+        <div style="font-size:12px;font-weight:700;text-align:center;padding:6px;border-bottom:1.5px solid rgba(0,0,0,.2)">Informations sur les hexagones</div>
+        <div style="padding:10px;display:flex;justify-content:center">
+          <svg viewBox="-56 -50 112 108" width="140" height="130" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="34.6,20 0,40 -34.6,20 -34.6,-20 0,-40 34.6,-20" fill="#d4d4d4" stroke="#333" stroke-width="2"/>
+            <g stroke="#333" stroke-width="1.8">
+              <line x1="23.3" y1="32.3" x2="18.3" y2="23.7"/><line x1="16.3" y1="36.3" x2="11.3" y2="27.7"/>
+              <line x1="-16.3" y1="36.3" x2="-11.3" y2="27.7"/><line x1="-23.3" y1="32.3" x2="-18.3" y2="23.7"/>
+              <line x1="-39.6" y1="4" x2="-29.6" y2="4"/><line x1="-39.6" y1="-4" x2="-29.6" y2="-4"/>
+              <line x1="-23.3" y1="-32.3" x2="-18.3" y2="-23.7"/><line x1="-16.3" y1="-36.3" x2="-11.3" y2="-27.7"/>
+              <line x1="16.3" y1="-36.3" x2="11.3" y2="-27.7"/><line x1="23.3" y1="-32.3" x2="18.3" y2="-23.7"/>
+              <line x1="39.6" y1="-4" x2="29.6" y2="-4"/><line x1="39.6" y1="4" x2="29.6" y2="4"/>
+            </g>
+            <path d="M34.6,31 A11,11 0 0,0 25.1,25.5" fill="rgba(0,0,0,.15)" stroke="#333" stroke-width="1.2"/>
+            <line x1="33" y1="14" x2="39" y2="20" stroke="#333" stroke-width="1.8"/>
+            <path d="M-9.5,45.5 A11,11 0 0,0 -9.5,34.5" fill="rgba(0,0,0,.15)" stroke="#333" stroke-width="1.2"/>
+            <line x1="-13" y1="36" x2="-7" y2="42" stroke="#333" stroke-width="1.8"/><line x1="-7" y1="36" x2="-13" y2="42" stroke="#333" stroke-width="1.8"/>
+            <path d="M-44.1,14.5 A11,11 0 0,0 -34.6,9" fill="rgba(0,0,0,.15)" stroke="#333" stroke-width="1.2"/>
+            <line x1="-39" y1="14" x2="-33" y2="20" stroke="#333" stroke-width="1.8"/><line x1="-33" y1="14" x2="-39" y2="20" stroke="#333" stroke-width="1.8"/>
+            <path d="M-34.6,-31 A11,11 0 0,0 -25.1,-25.5" fill="rgba(0,0,0,.15)" stroke="#333" stroke-width="1.2"/>
+            <line x1="-39" y1="-20" x2="-33" y2="-14" stroke="#333" stroke-width="1.8"/>
+            <path d="M9.5,-45.5 A11,11 0 0,0 9.5,-34.5" fill="rgba(0,0,0,.15)" stroke="#333" stroke-width="1.2"/>
+            <line x1="7" y1="-42" x2="13" y2="-36" stroke="#333" stroke-width="1.8"/><line x1="13" y1="-42" x2="7" y2="-36" stroke="#333" stroke-width="1.8"/>
+            <path d="M44.1,-14.5 A11,11 0 0,0 34.6,-9" fill="rgba(0,0,0,.15)" stroke="#333" stroke-width="1.2"/>
+            <line x1="33" y1="-20" x2="39" y2="-14" stroke="#333" stroke-width="1.8"/><line x1="39" y1="-20" x2="33" y2="-14" stroke="#333" stroke-width="1.8"/>
+            <text x="18" y="50" fill="#333" font-size="10" font-weight="600">120°</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Programme Partie B -->
+    <div style="flex:1;min-width:200px;border:1.5px solid rgba(0,0,0,.12);border-radius:8px;padding:14px">
+      <div style="font-size:12px;font-weight:700;margin-bottom:10px">Il a écrit le programme suivant :</div>
+      <div style="display:flex;flex-direction:column;gap:3px;font-family:'Helvetica Neue',Arial,sans-serif">
+        <div style="position:relative;display:inline-flex;flex-direction:column">
+          <div style="margin-left:8px;width:24px;height:9px;background:#FFAB19;border-radius:4px 4px 0 0"></div>
+          <div style="background:#FFAB19;border-radius:0 5px 5px 5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px">
+            <span style="font-size:11px;font-weight:700;color:#fff">quand</span>
+            <svg width="11" height="11" viewBox="0 0 14 14"><rect width="14" height="14" rx="3" fill="#3a993a"/><polygon points="3,2 12,7 3,12" fill="#fff"/></svg>
+            <span style="font-size:11px;font-weight:700;color:#fff">est cliqué</span>
+          </div>
+        </div>
+        <div style="background:#5CB1D6;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">aller à x: <span style="background:#fff;border-radius:100px;padding:0 5px;color:#333">0</span> y: <span style="background:#fff;border-radius:100px;padding:0 5px;color:#333">0</span></span></div>
+        <div style="background:#5CB1D6;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">s'orienter à</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:11px;font-weight:700;color:#333">90</span></div>
+        <div style="background:#4CAF50;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:12px">✏️</span><span style="font-size:11px;font-weight:700;color:#fff">stylo en position d'écriture</span></div>
+        <div style="background:#4CAF50;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:12px">✏️</span><span style="font-size:11px;font-weight:700;color:#fff">effacer tout</span></div>
+        <div style="display:flex;flex-direction:column">
+          <div style="background:#FFAB19;border-radius:5px 5px 0 0;padding:5px 10px;display:inline-flex;align-items:center;gap:4px">
+            <span style="font-size:11px;font-weight:700;color:#fff">répéter</span>
+            <span style="background:#fff;border-radius:100px;padding:0 7px;font-size:11px;font-weight:700;color:#333">A</span>
+            <span style="font-size:11px;font-weight:700;color:#fff">fois</span>
+          </div>
+          <div style="border-left:5px solid #FFAB19;min-height:28px;padding:4px 0 4px 10px;">
+            <div style="height:22px;background:rgba(255,171,25,.1);border-radius:4px;border:1px dashed rgba(255,171,25,.6)"></div>
+          </div>
+          <div style="background:#FFAB19;border-radius:0 0 5px 5px;padding:3px 10px;display:flex;justify-content:flex-end;width:160px"><span style="color:#fff;font-size:13px">↵</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 instructions proposées -->
+  <div style="margin-bottom:14px">
+    <div style="font-size:13px;margin-bottom:10px">Recopier le bloc « répéter » en remplaçant A par sa valeur et en le complétant avec <strong>2 instructions</strong> choisies parmi les 6 ci-dessous :</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+      <div style="background:#5CB1D6;border-radius:6px;padding:7px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">avancer de</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">50</span><span style="font-size:11px;font-weight:700;color:#fff">pas</span></div>
+      <div style="background:#5CB1D6;border-radius:6px;padding:7px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">tourner ↶ de</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">120</span><span style="font-size:11px;font-weight:700;color:#fff">degrés</span></div>
+      <div style="background:#5CB1D6;border-radius:6px;padding:7px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">tourner ↩ de</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">60</span><span style="font-size:11px;font-weight:700;color:#fff">degrés</span></div>
+      <div style="background:#5CB1D6;border-radius:6px;padding:7px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">avancer de</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">5</span><span style="font-size:11px;font-weight:700;color:#fff">pas</span></div>
+      <div style="background:#5CB1D6;border-radius:6px;padding:7px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">tourner ↩ de</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">120</span><span style="font-size:11px;font-weight:700;color:#fff">degrés</span></div>
+      <div style="background:#5CB1D6;border-radius:6px;padding:7px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">tourner ↶ de</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">60</span><span style="font-size:11px;font-weight:700;color:#fff">degrés</span></div>
+    </div>
+  </div>
+
+  <div class="brevet-q" style="margin-bottom:0">
+    <span class="lbl">Ta réponse — bloc répéter complété</span>
+    <textarea class="brevet-answer" placeholder="répéter … fois&#10;  avancer de … pas&#10;  tourner … de … degrés&#10;↵" rows="4"></textarea>
+  </div>
+
+</div><!-- fin exercice 4 -->
+
+<!-- ══════════ EXERCICE 5 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 5 — Brevet Asie 2025</title>
+<style>
+:root {
+  --blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;
+  --bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;
+  --fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 16px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 5</span>
+      <span class="brevet-ex-titre">poissons — PGCD, volumes & pourcentages</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Asie · 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Factorisation · PGCD · Volume · Pourcentage</span>
+      <span class="ctag">23 pts</span>
+    </div>
+  </div>
+
+  <!-- PARTIE A -->
+  <div style="font-weight:700;font-size:13px;letter-spacing:.05em;margin:4px 0 14px;padding:8px 14px;background:#EEF2FF;border-radius:8px;border-left:3px solid var(--blue)">Partie A</div>
+
+  <div class="brevet-enonce">
+    Un magasin a reçu <strong>650 poissons</strong> : 350 de type A et 300 de type B. La responsable souhaite les vendre par lots avec le même nombre de poissons de chaque type par lot, et tous les poissons répartis.
+  </div>
+
+  <!-- Q A.1 : facteurs premiers de 300 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Parmi les trois propositions, laquelle correspond à la décomposition en produits de facteurs premiers du nombre <strong>300</strong> ? <em style="color:var(--muted)">Aucune justification n'est demandée.</em></span><span class="brevet-q-pts">3 pts</span></div>
+    <div style="overflow-x:auto;margin:10px 0 12px">
+      <table class="brevet-table">
+        <thead>
+          <tr><th>Proposition 1</th><th>Proposition 2</th><th>Proposition 3</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2² × 5 × 15</td>
+            <td>2 × 2 × 3 × 5 × 5</td>
+            <td>22 × 3 × 5²</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="La proposition … car …" rows="1"></textarea>
+  </div>
+
+  <!-- Q A.2 : décomposition de 350 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Donner la décomposition en produit de facteurs premiers du nombre <strong>350</strong>.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="350 = 2 × 175 = 2 × 5 × 35 = 2 × 5 × 5 × 7 = …" rows="2"></textarea>
+  </div>
+
+  <!-- Q A.3 : nombre maximal de lots (PGCD) -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">Quel est le <strong>nombre maximal de lots</strong> que la responsable pourra constituer ? <em style="color:var(--muted)">(PGCD)</em></span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Le nombre maximal de lots = PGCD(350, 300)&#10;350 = 2 × 5² × 7&#10;300 = 2² × 3 × 5²&#10;PGCD = 2 × 5² = … lots" rows="4"></textarea>
+  </div>
+
+  <!-- Q A.4 : poissons par lot -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">Dans ce cas, combien y aura-t-il de poissons de chaque type dans chaque lot ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Nombre de lots = …&#10;Poissons de type A par lot = 350 / … = … poissons&#10;Poissons de type B par lot = 300 / … = … poissons" rows="3"></textarea>
+  </div>
+
+  <!-- PARTIE B -->
+  <div style="font-weight:700;font-size:13px;letter-spacing:.05em;margin:20px 0 14px;padding:8px 14px;background:#FFF0E8;border-radius:8px;border-left:3px solid var(--orange)">Partie B — poissons combattants</div>
+
+  <div class="brevet-enonce">Le magasin a d'autres poissons appelés « poissons combattants ».</div>
+
+  <!-- Q B.1 : volume aquarium -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">En captivité, il faut au moins <strong>15 litres d'eau</strong> par poisson combattant. Un aquarium est rempli aux <strong>4/5 de sa hauteur</strong>. Lequel choisir pour un poisson combattant ?</span><span class="brevet-q-pts">7 pts</span></div>
+
+    <!-- Tableau aquariums -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:12px 0">
+
+      <!-- Aquarium 1 : cylindre -->
+      <div style="border:1.5px solid rgba(0,0,0,.12);border-radius:10px;padding:14px">
+        <div style="font-size:12px;font-weight:700;margin-bottom:10px">Aquarium 1</div>
+        <!-- Cylindre SVG -->
+        <div style="display:flex;justify-content:center;margin-bottom:10px">
+          <svg viewBox="0 0 100 90" width="100" height="90" xmlns="http://www.w3.org/2000/svg">
+            <!-- Côtés verticaux -->
+            <line x1="10" y1="18" x2="10" y2="72" stroke="#333" stroke-width="2"/>
+            <line x1="90" y1="18" x2="90" y2="72" stroke="#333" stroke-width="2"/>
+            <!-- Ellipse du haut (pleine, visible) -->
+            <ellipse cx="50" cy="18" rx="40" ry="13" fill="white" stroke="#333" stroke-width="2"/>
+            <!-- Demi-ellipse bas visible (arc avant) -->
+            <path d="M10,72 A40,13 0 0,0 90,72" fill="white" stroke="#333" stroke-width="2"/>
+            <!-- Demi-ellipse bas cachée (tirets, arc arrière) -->
+            <path d="M10,72 A40,13 0 0,1 90,72" fill="none" stroke="#333" stroke-width="1.8" stroke-dasharray="6,4"/>
+          </svg>
+        </div>
+        <div style="font-size:12px;font-weight:700;margin-bottom:6px">Cylindre</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.8">
+          Diamètre de la base : 30 cm<br>
+          Hauteur : 25 cm
+        </div>
+      </div>
+
+      <!-- Aquarium 2 : pavé droit -->
+      <div style="border:1.5px solid rgba(0,0,0,.12);border-radius:10px;padding:14px">
+        <div style="font-size:12px;font-weight:700;margin-bottom:10px">Aquarium 2</div>
+        <!-- Pavé droit SVG -->
+        <div style="display:flex;justify-content:center;margin-bottom:10px">
+          <svg viewBox="0 0 80 70" width="80" height="70" xmlns="http://www.w3.org/2000/svg">
+            <!-- Face avant -->
+            <rect x="10" y="25" width="50" height="35" fill="rgba(0,33,188,.06)" stroke="#333" stroke-width="1.5"/>
+            <!-- Face dessus -->
+            <polygon points="10,25 25,10 75,10 60,25" fill="rgba(0,33,188,.04)" stroke="#333" stroke-width="1.5"/>
+            <!-- Face droite -->
+            <polygon points="60,25 75,10 75,45 60,60" fill="rgba(0,33,188,.08)" stroke="#333" stroke-width="1.5"/>
+            <!-- Arêtes cachées -->
+            <line x1="10" y1="60" x2="25" y2="45" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="25" y1="10" x2="25" y2="45" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="25" y1="45" x2="75" y2="45" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+          </svg>
+        </div>
+        <div style="font-size:12px;font-weight:700;margin-bottom:6px">Pavé droit</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.8">
+          Longueur : 28 cm<br>
+          Largeur : 28 cm<br>
+          Hauteur : 30 cm
+        </div>
+      </div>
+
+      <!-- Rappels -->
+      <div style="border:1.5px solid rgba(0,0,0,.12);border-radius:10px;padding:14px;background:#FAFAFA">
+        <div style="font-size:12px;font-weight:700;margin-bottom:10px">Rappels</div>
+        <div style="font-size:12px;line-height:1.9;color:var(--ink)">
+          Volume d'un pavé droit :<br>
+          <strong>V = L × l × H</strong><br><br>
+          Volume d'un cylindre de rayon r :<br>
+          <strong>V = π × r² × H</strong><br><br>
+          <strong>1 dm³ = 1 L</strong>
+        </div>
+      </div>
+    </div>
+
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Aquarium 1 (cylindre) : r = 15 cm = 0,15 dm, H = 25 cm = 0,25 dm&#10;Volume total = π × 0,15² × 0,25 = … dm³&#10;Volume eau = 4/5 × … = … L&#10;&#10;Aquarium 2 (pavé) : L = l = 28 cm = 0,28 dm, H = 30 cm = 0,30 dm&#10;Volume total = 0,28 × 0,28 × 0,30 = … dm³&#10;Volume eau = 4/5 × … = … L&#10;&#10;→ Choisir l'aquarium …" rows="8"></textarea>
+  </div>
+
+  <!-- Q B.2 : remise 15% -->
+  <div class="brevet-q" style="margin-bottom:0">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Un poisson combattant coûte <strong>15 €</strong> et un aquarium coûte <strong>40 €</strong>. Le vendeur propose une remise de <strong>15 %</strong> sur le prix total. Combien va payer la famille ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Prix total = 15 + 40 = 55 €&#10;Remise = 15% × 55 = 0,15 × 55 = … €&#10;Prix à payer = 55 − … = … €&#10;Ou : 55 × 0,85 = … €" rows="3"></textarea>
+  </div>
+
+</div><!-- fin exercice 5 --></div>
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

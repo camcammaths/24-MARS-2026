@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 3 — Brevet Asie 2025</title>
+<style>
+:root {
+  --blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;
+  --bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;
+  --fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 16px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 3</span>
+      <span class="brevet-ex-titre">rectangle ABCD et carré EFGH — périmètres & équation</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Asie · 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Calcul littéral · Périmètre · Tableur · Équation</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    Toutes les longueurs sont en centimètres.<br>
+    • Rectangle ABCD : <strong>AD = x</strong> et <strong>AB = 16 − 2x</strong><br>
+    • Carré EFGH : <strong>EF = 2x</strong>
+  </div>
+
+  <!-- Figures rectangle + carré -->
+  <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:20px">
+
+    <!-- Rectangle ABCD -->
+    <div style="flex:1;min-width:180px;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:14px;display:flex;justify-content:center">
+      <svg viewBox="0 0 200 120" width="190" height="114" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="11">
+        <!-- Rectangle ABCD : A bas-gauche, B bas-droite, C haut-droite, D haut-gauche -->
+        <rect x="25" y="20" width="150" height="70" fill="rgba(0,33,188,.04)" stroke="#0021BC" stroke-width="1.8"/>
+        <!-- Marques égalité côtés longs (3 barres espacées) -->
+        <line x1="85"  y1="16" x2="85"  y2="24" stroke="#0021BC" stroke-width="1.5"/>
+        <line x1="100" y1="16" x2="100" y2="24" stroke="#0021BC" stroke-width="1.5"/>
+        <line x1="115" y1="16" x2="115" y2="24" stroke="#0021BC" stroke-width="1.5"/>
+        <line x1="85"  y1="86" x2="85"  y2="94" stroke="#0021BC" stroke-width="1.5"/>
+        <line x1="100" y1="86" x2="100" y2="94" stroke="#0021BC" stroke-width="1.5"/>
+        <line x1="115" y1="86" x2="115" y2="94" stroke="#0021BC" stroke-width="1.5"/>
+        <!-- Marques égalité côtés courts (2 barres) -->
+        <line x1="20" y1="52" x2="26" y2="57" stroke="#0021BC" stroke-width="1.5"/>
+        <line x1="20" y1="58" x2="26" y2="63" stroke="#0021BC" stroke-width="1.5"/>
+        <line x1="173" y1="52" x2="179" y2="57" stroke="#0021BC" stroke-width="1.5"/>
+        <line x1="173" y1="58" x2="179" y2="63" stroke="#0021BC" stroke-width="1.5"/>
+        <!-- Angles droits -->
+        <rect x="25" y="20" width="8" height="8" fill="none" stroke="#555" stroke-width="1"/>
+        <rect x="167" y="20" width="8" height="8" fill="none" stroke="#555" stroke-width="1"/>
+        <rect x="25" y="82" width="8" height="8" fill="none" stroke="#555" stroke-width="1"/>
+        <rect x="167" y="82" width="8" height="8" fill="none" stroke="#555" stroke-width="1"/>
+        <!-- Cote x à gauche -->
+        <line x1="10" y1="20" x2="10" y2="90" stroke="#555" stroke-width="1"/>
+        <line x1="7" y1="20" x2="13" y2="20" stroke="#555" stroke-width="1"/>
+        <line x1="7" y1="90" x2="13" y2="90" stroke="#555" stroke-width="1"/>
+        <text x="4" y="59" fill="#555" font-size="11" font-style="italic">x</text>
+        <!-- Cote 16-2x en bas -->
+        <line x1="25" y1="104" x2="175" y2="104" stroke="#555" stroke-width="1"/>
+        <line x1="25" y1="101" x2="25" y2="107" stroke="#555" stroke-width="1"/>
+        <line x1="175" y1="101" x2="175" y2="107" stroke="#555" stroke-width="1"/>
+        <text x="100" y="114" text-anchor="middle" fill="#555" font-size="11" font-style="italic">16 − 2x</text>
+        <!-- Labels -->
+        <text x="18"  y="18"  fill="#333" font-weight="700">D</text>
+        <text x="178" y="18"  fill="#333" font-weight="700">C</text>
+        <text x="18"  y="100" fill="#333" font-weight="700">A</text>
+        <text x="178" y="100" fill="#333" font-weight="700">B</text>
+      </svg>
+    </div>
+
+    <!-- Carré EFGH -->
+    <div style="flex:1;min-width:160px;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:14px;display:flex;justify-content:center">
+      <svg viewBox="0 0 165 175" width="150" height="159" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="11">
+        <!-- Carré EFGH : H haut-gauche, G haut-droite, F bas-droite, E bas-gauche -->
+        <rect x="22" y="15" width="120" height="120" fill="none" stroke="#333" stroke-width="2"/>
+
+        <!-- Angles droits aux 4 coins -->
+        <rect x="22" y="15"  width="9" height="9" fill="none" stroke="#333" stroke-width="1.2"/>
+        <rect x="133" y="15"  width="9" height="9" fill="none" stroke="#333" stroke-width="1.2"/>
+        <rect x="22" y="126" width="9" height="9" fill="none" stroke="#333" stroke-width="1.2"/>
+        <rect x="133" y="126" width="9" height="9" fill="none" stroke="#333" stroke-width="1.2"/>
+
+        <!-- Côté HG (haut, y=15) : barre perpendiculaire centrale + 2×2 barres obliques -->
+        <line x1="82" y1="9"  x2="82" y2="21" stroke="#333" stroke-width="1.5"/>
+        <line x1="70" y1="10" x2="75" y2="20" stroke="#0021BC" stroke-width="2"/>
+        <line x1="75" y1="10" x2="80" y2="20" stroke="#0021BC" stroke-width="2"/>
+        <line x1="84" y1="10" x2="89" y2="20" stroke="#0021BC" stroke-width="2"/>
+        <line x1="89" y1="10" x2="94" y2="20" stroke="#0021BC" stroke-width="2"/>
+
+        <!-- Côté EF (bas, y=135) -->
+        <line x1="82" y1="129" x2="82" y2="141" stroke="#333" stroke-width="1.5"/>
+        <line x1="70" y1="130" x2="75" y2="140" stroke="#0021BC" stroke-width="2"/>
+        <line x1="75" y1="130" x2="80" y2="140" stroke="#0021BC" stroke-width="2"/>
+        <line x1="84" y1="130" x2="89" y2="140" stroke="#0021BC" stroke-width="2"/>
+        <line x1="89" y1="130" x2="94" y2="140" stroke="#0021BC" stroke-width="2"/>
+
+        <!-- Côté HE (gauche, x=22) : barre perpendiculaire + 2×2 barres obliques -->
+        <line x1="16" y1="75" x2="28" y2="75" stroke="#333" stroke-width="1.5"/>
+        <line x1="16" y1="63" x2="28" y2="68" stroke="#0021BC" stroke-width="2"/>
+        <line x1="16" y1="69" x2="28" y2="74" stroke="#0021BC" stroke-width="2"/>
+        <line x1="16" y1="81" x2="28" y2="86" stroke="#0021BC" stroke-width="2"/>
+        <line x1="16" y1="75" x2="28" y2="80" stroke="#0021BC" stroke-width="2"/>
+
+        <!-- Côté GF (droite, x=142) -->
+        <line x1="136" y1="75" x2="148" y2="75" stroke="#333" stroke-width="1.5"/>
+        <line x1="136" y1="63" x2="148" y2="68" stroke="#0021BC" stroke-width="2"/>
+        <line x1="136" y1="69" x2="148" y2="74" stroke="#0021BC" stroke-width="2"/>
+        <line x1="136" y1="81" x2="148" y2="86" stroke="#0021BC" stroke-width="2"/>
+        <line x1="136" y1="75" x2="148" y2="80" stroke="#0021BC" stroke-width="2"/>
+
+        <!-- Cote 2x en bas avec flèches -->
+        <line x1="22" y1="155" x2="142" y2="155" stroke="#555" stroke-width="1.2"/>
+        <polygon points="22,155 28,152 28,158" fill="#555"/>
+        <polygon points="142,155 136,152 136,158" fill="#555"/>
+        <text x="82" y="168" text-anchor="middle" fill="#555" font-size="11" font-style="italic">2x</text>
+
+        <!-- Labels -->
+        <text x="7"   y="13"  fill="#333" font-weight="700" font-size="12">H</text>
+        <text x="145" y="13"  fill="#333" font-weight="700" font-size="12">G</text>
+        <text x="7"   y="148" fill="#333" font-weight="700" font-size="12">E</text>
+        <text x="145" y="148" fill="#333" font-weight="700" font-size="12">F</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- PARTIE A -->
+  <div style="font-weight:700;font-size:13px;letter-spacing:.05em;margin:4px 0 14px;padding:8px 14px;background:#EEF2FF;border-radius:8px;border-left:3px solid var(--blue)">PARTIE A — x = 1,5 cm</div>
+
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">A.1.</span><span class="brevet-q-text">Calculer le périmètre du carré <strong>EFGH</strong>.</span><span class="brevet-q-pts">2 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="EF = 2x = 2×1,5 = 3 cm&#10;Périmètre EFGH = 4 × 3 = … cm" rows="2"></textarea>
+  </div>
+
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">A.2.</span><span class="brevet-q-text">Calculer <strong>AB</strong>.</span><span class="brevet-q-pts">2 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="AB = 16 − 2x = 16 − 2×1,5 = 16 − 3 = … cm" rows="2"></textarea>
+  </div>
+
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">A.3.</span><span class="brevet-q-text">Construire en vraie grandeur le rectangle <strong>ABCD</strong>.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="AD = x = 1,5 cm, AB = 13 cm&#10;Rectangle ABCD : longueur 13 cm, largeur 1,5 cm" rows="2"></textarea>
+  </div>
+
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">A.4.</span><span class="brevet-q-text">Les périmètres de ABCD et EFGH sont-ils égaux ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Périmètre ABCD = 2×(AD + AB) = 2×(1,5 + 13) = 2×14,5 = … cm&#10;Périmètre EFGH = 12 cm&#10;… ≠ 12 → non, ils ne sont pas égaux." rows="3"></textarea>
+  </div>
+
+</div><!-- fin exercice 3 -->
+
+<!-- ══════════ EXERCICE 4 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

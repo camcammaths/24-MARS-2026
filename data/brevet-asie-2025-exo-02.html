@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 2 — Brevet Asie 2025</title>
+<style>
+:root {
+  --blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;
+  --bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;
+  --fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 16px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 2</span>
+      <span class="brevet-ex-titre">triangles CDE et GCF — pythagore, thalès & semblables</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Asie · 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Pythagore · Thalès · Aires · Triangles semblables</span>
+      <span class="ctag">24 pts</span>
+    </div>
+  </div>
+
+  <!-- Énoncé + figure 1 -->
+  <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;margin-bottom:20px">
+    <div style="flex:1;min-width:220px">
+      <div class="brevet-enonce" style="margin-top:0">
+        Dans la figure ci-contre (pas en vraie grandeur) :<br><br>
+        • G, C et E sont alignés<br>
+        • F, C et D sont alignés<br>
+        • (GF) // (DE)<br>
+        • Triangle CDE <strong>rectangle en D</strong><br>
+        • <strong>CD = 21,6 cm</strong> &nbsp;•&nbsp; <strong>CE = 29,1 cm</strong> &nbsp;•&nbsp; <strong>FC = 17,2 cm</strong>
+      </div>
+    </div>
+    <div style="flex-shrink:0;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:14px">
+      <svg viewBox="0 0 260 238" width="210" height="192" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+        <!--
+          G=(80,15), F=(80,110), C=(150,110), D=(230,110), E=(230,218)
+          G, C, E alignés sur le segment GE
+          FD horizontal, F-C-D alignés
+          Triangle CGF rectangle en F (GF vertical, FC horizontal)
+          Triangle CDE rectangle en D (CD horizontal, DE vertical)
+          (GF) // (DE)
+        -->
+        <!-- Segment GE (diagonale passant par C) -->
+        <line x1="80" y1="15" x2="230" y2="218" stroke="#333" stroke-width="1.8"/>
+        <!-- Segment FD (horizontal) -->
+        <line x1="80" y1="110" x2="230" y2="110" stroke="#333" stroke-width="1.8"/>
+        <!-- Segment GF (vertical gauche) -->
+        <line x1="80" y1="15" x2="80" y2="110" stroke="#333" stroke-width="1.8"/>
+        <!-- Segment DE (vertical droite) -->
+        <line x1="230" y1="110" x2="230" y2="218" stroke="#333" stroke-width="1.8"/>
+        <!-- Angle droit en D -->
+        <rect x="218" y="110" width="12" height="12" fill="none" stroke="#555" stroke-width="1.3"/>
+        <!-- Points -->
+        <circle cx="80"  cy="15"  r="3" fill="#333"/>
+        <circle cx="80"  cy="110" r="3" fill="#333"/>
+        <circle cx="150" cy="110" r="3" fill="#333"/>
+        <circle cx="230" cy="110" r="3" fill="#333"/>
+        <circle cx="230" cy="218" r="3" fill="#333"/>
+        <!-- Labels -->
+        <text x="68"  y="12"  fill="#333" font-weight="700">G</text>
+        <text x="64"  y="115" fill="#333" font-weight="700">F</text>
+        <text x="153" y="125" fill="#333" font-weight="700">C</text>
+        <text x="234" y="108" fill="#333" font-weight="700">D</text>
+        <text x="234" y="222" fill="#333" font-weight="700">E</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Montrer que la longueur <strong>DE = 19,5 cm</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Triangle CDE rectangle en D → Pythagore :&#10;CE² = CD² + DE²&#10;29,1² = 21,6² + DE²&#10;DE² = 846,81 − 466,56 = 380,25&#10;DE = √380,25 = 19,5 cm ✓" rows="4"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Calculer l'aire du triangle <strong>CDE</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Triangle CDE rectangle en D :&#10;Aire = (CD × DE) / 2 = (21,6 × 19,5) / 2 = 420,12 / 2 = 210,06 cm²" rows="3"></textarea>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">Calculer la longueur <strong>GF</strong> arrondie au millimètre près.</span><span class="brevet-q-pts">6 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="(GF) // (DE), G-C-E alignés et F-C-D alignés → Thalès :&#10;GF/DE = FC/CD&#10;GF = DE × FC/CD = 19,5 × 17,2/21,6 ≈ … cm" rows="3"></textarea>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">On trace une droite (d) perpendiculaire à (FC) coupant [GC] en A et [FC] en B. L'aire du triangle ABC = <strong>23,4 cm²</strong>.</span></div>
+
+    <!-- Figure 2 -->
+    <div style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:14px;margin:12px 0;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap">
+      <svg viewBox="0 0 290 248" width="260" height="222" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+        <!--
+          G=(80,15), F=(80,130), C=(179,130), D=(260,130), E=(260,225)
+          C = intersection exacte de GE et FD
+          GF vertical, FD horizontal, DE vertical
+          Triangle CGF rectangle en F, Triangle CDE rectangle en D
+        -->
+        <!-- Segment GE diagonal (G→E passant par C) -->
+        <line x1="80" y1="15" x2="260" y2="225" stroke="#333" stroke-width="1.8"/>
+        <!-- Segment FD horizontal -->
+        <line x1="80" y1="130" x2="260" y2="130" stroke="#333" stroke-width="1.8"/>
+        <!-- Segment GF vertical -->
+        <line x1="80" y1="15" x2="80" y2="130" stroke="#333" stroke-width="1.8"/>
+        <!-- Segment DE vertical -->
+        <line x1="260" y1="130" x2="260" y2="225" stroke="#333" stroke-width="1.8"/>
+        <!-- Angle droit en D -->
+        <rect x="248" y="130" width="12" height="12" fill="none" stroke="#555" stroke-width="1.3"/>
+
+        <!-- Droite (d) verticale en x=115 -->
+        <line x1="115" y1="5" x2="115" y2="175" stroke="#555" stroke-width="1.2" stroke-dasharray="4,3"/>
+
+        <!-- Triangle ABC ombré : A=(115,55.8), B=(115,130), C=(179,130) -->
+        <polygon points="115,56 179,130 115,130" fill="rgba(238,110,52,.15)" stroke="#EE6E34" stroke-width="1.5"/>
+        <!-- Angle droit en B -->
+        <rect x="115" y="118" width="12" height="12" fill="none" stroke="#EE6E34" stroke-width="1.3"/>
+
+        <!-- Points -->
+        <circle cx="80"  cy="15"  r="3" fill="#333"/>
+        <circle cx="80"  cy="130" r="3" fill="#333"/>
+        <circle cx="115" cy="56"  r="3" fill="#EE6E34"/>
+        <circle cx="115" cy="130" r="3" fill="#EE6E34"/>
+        <circle cx="179" cy="130" r="3" fill="#333"/>
+        <circle cx="260" cy="130" r="3" fill="#333"/>
+        <circle cx="260" cy="225" r="3" fill="#333"/>
+
+        <!-- Labels -->
+        <text x="68"  y="12"  fill="#333"    font-weight="700">G</text>
+        <text x="64"  y="145" fill="#333"    font-weight="700">F</text>
+        <text x="94"  y="52"  fill="#EE6E34" font-weight="700">A</text>
+        <text x="104" y="148" fill="#EE6E34" font-weight="700">B</text>
+        <text x="182" y="145" fill="#333"    font-weight="700">C</text>
+        <text x="264" y="128" fill="#333"    font-weight="700">D</text>
+        <text x="264" y="230" fill="#333"    font-weight="700">E</text>
+        <text x="118" y="10"  fill="#555"    font-size="11" font-style="italic">d</text>
+        <text x="170" y="90"  fill="#555"    font-size="11">Aire<tspan baseline-shift="sub" font-size="8">ABC</tspan> = 23,4 cm²</text>
+      </svg>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">4.a.</span><span class="brevet-q-text">Montrer que l'aire du triangle ABC est égale à <strong>1/9 de l'aire du triangle CDE</strong>.</span><span class="brevet-q-pts">5 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Aire CDE = 210,06 cm²&#10;1/9 × Aire CDE = 210,06 / 9 ≈ 23,34 ≈ 23,4 cm²&#10;Or Aire ABC = 23,4 cm² ✓" rows="3"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">4.b.</span><span class="brevet-q-text">Les triangles ABC et EDC sont semblables. Déterminer la longueur <strong>AB</strong>.</span><span class="brevet-q-pts">5 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Rapport des aires = 1/9 → rapport de similitude = 1/3&#10;AB correspond à ED dans le triangle semblable :&#10;AB/ED = 1/3&#10;AB = 19,5/3 = 6,5 cm" rows="4"></textarea>
+    </div>
+  </div>
+
+</div><!-- fin exercice 2 -->
+
+<!-- ══════════ EXERCICE 3 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
