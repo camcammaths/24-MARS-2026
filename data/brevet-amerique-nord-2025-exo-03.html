@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 3 — Brevet Amérique Nord 2025</title>
+<style>
+:root {
+  --blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;
+  --bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;
+  --fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 16px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 3</span>
+      <span class="brevet-ex-titre">programmes de calcul A et B</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Amérique du Nord · 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Calcul littéral · Factorisation · Équations</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">On considère les deux programmes de calcul suivants.</div>
+
+  <!-- Les deux programmes -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px">
+
+    <!-- Programme A -->
+    <div style="border:1.5px solid rgba(0,0,0,.12);border-radius:12px;padding:18px">
+      <div style="font-size:13px;font-weight:700;margin-bottom:14px">Programme A</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0"></div>
+          <span style="font-size:13px">Choisir un nombre</span>
+        </div>
+        <div style="width:1px;height:10px;background:rgba(0,0,0,.15);margin-left:3px"></div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0"></div>
+          <span style="font-size:13px">Multiplier par 3</span>
+        </div>
+        <div style="width:1px;height:10px;background:rgba(0,0,0,.15);margin-left:3px"></div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0"></div>
+          <span style="font-size:13px">Ajouter 15</span>
+        </div>
+        <div style="width:1px;height:10px;background:rgba(0,0,0,.15);margin-left:3px"></div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0"></div>
+          <span style="font-size:13px">Diviser par 3</span>
+        </div>
+        <div style="width:1px;height:10px;background:rgba(0,0,0,.15);margin-left:3px"></div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0"></div>
+          <span style="font-size:13px">Soustraire le nombre de départ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Programme B : diagramme -->
+    <div style="border:1.5px solid rgba(0,0,0,.12);border-radius:12px;padding:18px">
+      <div style="font-size:13px;font-weight:700;margin-bottom:14px">Programme B</div>
+      <svg viewBox="0 0 220 200" width="100%" style="max-height:190px" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="11">
+        <!-- "Choisir un nombre" en haut -->
+        <rect x="55" y="5" width="110" height="28" rx="4" fill="#EEF2FF" stroke="var(--blue)" stroke-width="1.3"/>
+        <text x="110" y="23" text-anchor="middle" font-weight="700" fill="var(--blue)" font-size="10">Choisir un nombre</text>
+
+        <!-- Flèches vers gauche et droite -->
+        <line x1="85"  y1="33" x2="55"  y2="65" stroke="#333" stroke-width="1.2" marker-end="url(#arr)"/>
+        <line x1="135" y1="33" x2="165" y2="65" stroke="#333" stroke-width="1.2" marker-end="url(#arr)"/>
+
+        <!-- "Soustraire 1" à gauche -->
+        <rect x="5" y="65" width="90" height="26" rx="4" fill="#FAFAFA" stroke="#333" stroke-width="1.2"/>
+        <text x="50" y="82" text-anchor="middle" font-size="10" fill="#333">Soustraire 1</text>
+
+        <!-- "Soustraire 6" à droite -->
+        <rect x="125" y="65" width="90" height="26" rx="4" fill="#FAFAFA" stroke="#333" stroke-width="1.2"/>
+        <text x="170" y="82" text-anchor="middle" font-size="10" fill="#333">Soustraire 6</text>
+
+        <!-- Flèches vers "Multiplier" -->
+        <line x1="50"  y1="91" x2="90"  y2="120" stroke="#333" stroke-width="1.2" marker-end="url(#arr)"/>
+        <line x1="170" y1="91" x2="130" y2="120" stroke="#333" stroke-width="1.2" marker-end="url(#arr)"/>
+
+        <!-- "Multiplier les deux résultats" -->
+        <rect x="30" y="120" width="160" height="28" rx="4" fill="#FAFAFA" stroke="#333" stroke-width="1.2"/>
+        <text x="110" y="133" text-anchor="middle" font-size="9.5" fill="#333">Multiplier les deux</text>
+        <text x="110" y="144" text-anchor="middle" font-size="9.5" fill="#333">résultats obtenus</text>
+
+        <!-- Flèche vers "Ajouter 5" -->
+        <line x1="110" y1="148" x2="110" y2="165" stroke="#333" stroke-width="1.2" marker-end="url(#arr)"/>
+
+        <!-- "Ajouter 5" -->
+        <rect x="70" y="165" width="80" height="26" rx="4" fill="#FFF0E8" stroke="var(--orange)" stroke-width="1.3"/>
+        <text x="110" y="182" text-anchor="middle" font-weight="700" fill="var(--orange)" font-size="10">Ajouter 5</text>
+
+        <defs>
+          <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="#333"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Montrer que, lorsque le nombre choisi est <strong>4</strong>, le résultat obtenu avec le programme A est <strong>5</strong>.</span><span class="brevet-q-pts">2 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="4 → ×3 → 12 → +15 → 27 → ÷3 → 9 → −4 = 5 ✓" rows="2"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Montrer que, lorsque le nombre choisi est <strong>−2</strong>, le résultat obtenu avec le programme A est <strong>5</strong>.</span><span class="brevet-q-pts">2 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="−2 → ×3 → −6 → +15 → 9 → ÷3 → 3 → −(−2) = 3+2 = 5 ✓" rows="2"></textarea>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">Justifier que l'affirmation suivante est vraie : <strong>« Le programme A donne toujours le même résultat. »</strong></span><span class="brevet-q-pts">5 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Soit x le nombre choisi.&#10;x → ×3 → 3x → +15 → 3x+15 → ÷3 → (3x+15)/3 = x+5 → −x → x+5−x = 5&#10;Le programme A donne toujours 5, quel que soit x. ✓" rows="4"></textarea>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">Lorsque le nombre choisi est <strong>10</strong>, quel résultat obtient-on avec le programme B ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="10 → soustraire 1 → 9&#10;10 → soustraire 6 → 4&#10;9 × 4 = 36 → +5 = …" rows="3"></textarea>
+  </div>
+
+  <!-- Q5 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">5.</span><span class="brevet-q-text">Il existe exactement <strong>deux nombres</strong> pour lesquels les programmes A et B fournissent des résultats identiques. Quels sont ces deux nombres ?</span><span class="brevet-q-pts">8 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Programme A donne toujours 5.&#10;Programme B avec x : (x−1)(x−6) + 5&#10;Résultats identiques → (x−1)(x−6) + 5 = 5&#10;(x−1)(x−6) = 0&#10;x−1 = 0 → x = …&#10;x−6 = 0 → x = …&#10;Les deux nombres sont … et …" rows="6"></textarea>
+  </div>
+
+</div><!-- fin exercice 3 -->
+
+<!-- ══════════ EXERCICE 4 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

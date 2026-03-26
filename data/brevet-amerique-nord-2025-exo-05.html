@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 5 — Brevet Amérique Nord 2025</title>
+<style>
+:root {
+  --blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;
+  --bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;
+  --fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 16px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 5</span>
+      <span class="brevet-ex-titre">scratch — motifs, script principal & probabilités</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Amérique du Nord · 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Scratch · Géométrie · Probabilités · Fréquences</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+  <div class="brevet-enonce">Aucune justification n'est attendue dans cet exercice.</div>
+
+  <!-- PARTIE 1 -->
+  <div style="font-weight:700;font-size:13px;letter-spacing:.05em;margin:4px 0 16px;padding:8px 14px;background:#EEF2FF;border-radius:8px;border-left:3px solid var(--blue)">Partie 1 — les motifs</div>
+
+  <!-- 3 scripts côte à côte -->
+  <div style="border:1.5px solid rgba(0,0,0,.12);border-radius:12px;overflow:hidden;margin-bottom:18px">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr)">
+
+      <!-- Script 1 -->
+      <div style="padding:14px">
+        <div style="font-size:12px;font-weight:700;text-align:center;margin-bottom:10px">Script 1</div>
+        <div style="display:flex;flex-direction:column;gap:3px;font-family:'Helvetica Neue',Arial,sans-serif">
+          <div style="position:relative;display:inline-flex;flex-direction:column">
+            <div style="margin-left:8px;width:24px;height:9px;background:#FF6680;border-radius:4px 4px 0 0"></div>
+            <div style="background:#FF6680;border-radius:0 5px 5px 5px;padding:5px 10px"><span style="font-size:11px;font-weight:700;color:#fff">définir</span><span style="background:rgba(0,0,0,.2);border-radius:3px;padding:1px 7px;font-size:11px;color:#fff;font-weight:600;margin-left:5px">Motif 1</span></div>
+          </div>
+          <div style="background:#4CAF50;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:5px"><span style="font-size:12px">✏️</span><span style="font-size:11px;font-weight:700;color:#fff">stylo en position d'écriture</span></div>
+          <div style="display:flex;flex-direction:column">
+            <div style="background:#FFAB19;border-radius:5px 5px 0 0;padding:5px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">répéter</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">3</span><span style="font-size:11px;font-weight:700;color:#fff">fois</span></div>
+            <div style="border-left:5px solid #FFAB19;padding:2px 0 2px 8px;display:flex;flex-direction:column;gap:2px">
+              <div style="background:#5CB1D6;border-radius:5px;padding:4px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">avancer de</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">30</span><span style="font-size:11px;font-weight:700;color:#fff">pas</span></div>
+              <div style="background:#5CB1D6;border-radius:5px;padding:4px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">tourner ↺ de</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">120</span><span style="font-size:11px;font-weight:700;color:#fff">degrés</span></div>
+            </div>
+            <div style="background:#FFAB19;border-radius:0 0 5px 5px;padding:3px 10px;display:flex;justify-content:flex-end;width:170px"><span style="color:#fff;font-size:13px">↵</span></div>
+          </div>
+          <div style="background:#4CAF50;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:5px"><span style="font-size:12px">✏️</span><span style="font-size:11px;font-weight:700;color:#fff">relever le stylo</span></div>
+        </div>
+      </div>
+
+      <!-- Script 2 -->
+      <div style="padding:14px;border-left:1.5px solid rgba(0,0,0,.1)">
+        <div style="font-size:12px;font-weight:700;text-align:center;margin-bottom:10px">Script 2</div>
+        <div style="display:flex;flex-direction:column;gap:3px;font-family:'Helvetica Neue',Arial,sans-serif">
+          <div style="position:relative;display:inline-flex;flex-direction:column">
+            <div style="margin-left:8px;width:24px;height:9px;background:#FF6680;border-radius:4px 4px 0 0"></div>
+            <div style="background:#FF6680;border-radius:0 5px 5px 5px;padding:5px 10px"><span style="font-size:11px;font-weight:700;color:#fff">définir</span><span style="background:rgba(0,0,0,.2);border-radius:3px;padding:1px 7px;font-size:11px;color:#fff;font-weight:600;margin-left:5px">Motif 2</span></div>
+          </div>
+          <div style="background:#4CAF50;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:5px"><span style="font-size:12px">✏️</span><span style="font-size:11px;font-weight:700;color:#fff">stylo en position d'écriture</span></div>
+          <div style="display:flex;flex-direction:column">
+            <div style="background:#FFAB19;border-radius:5px 5px 0 0;padding:5px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">répéter</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">6</span><span style="font-size:11px;font-weight:700;color:#fff">fois</span></div>
+            <div style="border-left:5px solid #FFAB19;padding:2px 0 2px 8px;display:flex;flex-direction:column;gap:2px">
+              <div style="background:#5CB1D6;border-radius:5px;padding:4px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">avancer de</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">30</span><span style="font-size:11px;font-weight:700;color:#fff">pas</span></div>
+              <div style="background:#5CB1D6;border-radius:5px;padding:4px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">tourner ↺ de</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">60</span><span style="font-size:11px;font-weight:700;color:#fff">degrés</span></div>
+            </div>
+            <div style="background:#FFAB19;border-radius:0 0 5px 5px;padding:3px 10px;display:flex;justify-content:flex-end;width:170px"><span style="color:#fff;font-size:13px">↵</span></div>
+          </div>
+          <div style="background:#4CAF50;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:5px"><span style="font-size:12px">✏️</span><span style="font-size:11px;font-weight:700;color:#fff">relever le stylo</span></div>
+        </div>
+      </div>
+
+      <!-- Script 3 -->
+      <div style="padding:14px;border-left:1.5px solid rgba(0,0,0,.1)">
+        <div style="font-size:12px;font-weight:700;text-align:center;margin-bottom:10px">Script 3</div>
+        <div style="display:flex;flex-direction:column;gap:3px;font-family:'Helvetica Neue',Arial,sans-serif">
+          <div style="position:relative;display:inline-flex;flex-direction:column">
+            <div style="margin-left:8px;width:24px;height:9px;background:#FF6680;border-radius:4px 4px 0 0"></div>
+            <div style="background:#FF6680;border-radius:0 5px 5px 5px;padding:5px 10px"><span style="font-size:11px;font-weight:700;color:#fff">définir</span><span style="background:rgba(0,0,0,.2);border-radius:3px;padding:1px 7px;font-size:11px;color:#fff;font-weight:600;margin-left:5px">Motif 3</span></div>
+          </div>
+          <div style="background:#4CAF50;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:5px"><span style="font-size:12px">✏️</span><span style="font-size:11px;font-weight:700;color:#fff">stylo en position d'écriture</span></div>
+          <div style="display:flex;flex-direction:column">
+            <div style="background:#FFAB19;border-radius:5px 5px 0 0;padding:5px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">répéter</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">2</span><span style="font-size:11px;font-weight:700;color:#fff">fois</span></div>
+            <div style="border-left:5px solid #FFAB19;padding:2px 0 2px 8px;display:flex;flex-direction:column;gap:2px">
+              <div style="background:#5CB1D6;border-radius:5px;padding:4px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">avancer de</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">30</span><span style="font-size:11px;font-weight:700;color:#fff">pas</span></div>
+              <div style="background:#9966FF;border-radius:8px;padding:8px 12px;text-align:center"><span style="font-size:10px;color:#fff;font-weight:600">Partie du script effacée<br>(voir question 2)</span></div>
+            </div>
+            <div style="background:#FFAB19;border-radius:0 0 5px 5px;padding:3px 10px;display:flex;justify-content:flex-end;width:170px"><span style="color:#fff;font-size:13px">↵</span></div>
+          </div>
+          <div style="background:#4CAF50;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:5px"><span style="font-size:12px">✏️</span><span style="font-size:11px;font-weight:700;color:#fff">relever le stylo</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q1 : associer scripts et dessins -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Les scripts 1 et 2 permettent chacun d'obtenir un des dessins ci-dessous. Associer chacun des scripts à son dessin.</span><span class="brevet-q-pts">4 pts</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;border:1.5px solid rgba(0,0,0,.12);border-radius:10px;overflow:hidden">
+      <div style="padding:14px;text-align:center">
+        <div style="font-size:12px;font-weight:700;margin-bottom:10px">Dessin 1</div>
+        <svg viewBox="-5 -5 130 110" width="120" height="100" xmlns="http://www.w3.org/2000/svg">
+          <!-- Hexagone régulier (Script 2 : répéter 6×, tourner 60°) -->
+          <polygon points="60,5 104,30 104,80 60,105 16,80 16,30" fill="none" stroke="#333" stroke-width="1.8"/>
+        </svg>
+      </div>
+      <div style="padding:14px;text-align:center;border-left:1.5px solid rgba(0,0,0,.1)">
+        <div style="font-size:12px;font-weight:700;margin-bottom:10px">Dessin 2</div>
+        <svg viewBox="-5 -5 100 90" width="100" height="90" xmlns="http://www.w3.org/2000/svg">
+          <!-- Triangle équilatéral (Script 1 : répéter 3×, tourner 120°) -->
+          <polygon points="50,5 95,83 5,83" fill="none" stroke="#333" stroke-width="1.8"/>
+        </svg>
+      </div>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Script 1 → Dessin …&#10;Script 2 → Dessin …" rows="2"></textarea>
+  </div>
+
+  <!-- Q2 : script 3 effacé — losange -->
+  <div class="brevet-q">
+    <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:10px">
+      <div style="flex:1;min-width:200px">
+        <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Le script 3 permet d'obtenir le losange ci-contre. La partie effacée contient les 3 instructions A, B et C. Recopier dans le bon ordre les instructions cachées. <strong>Chaque instruction ne doit être utilisée qu'une seule fois.</strong></span><span class="brevet-q-pts">4 pts</span></div>
+      </div>
+      <!-- Losange SVG -->
+      <div style="flex-shrink:0;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:10px;padding:12px;text-align:center">
+        <svg viewBox="-5 -5 120 80" width="120" height="80" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="10">
+          <!-- Losange : départ bas-gauche, angle 60° en bas-droite, 120° en haut -->
+          <!-- côté 30pas : 0→30→120°→30→60°→fin -->
+          <polygon points="0,50 52,50 104,20 52,20" fill="none" stroke="#333" stroke-width="2"/>
+          <!-- Annotations angles -->
+          <text x="72" y="54" fill="#555">60°</text>
+          <text x="46" y="16" fill="#555">120°</text>
+          <!-- Cotes -->
+          <text x="20" y="68" fill="#555">30 pas</text>
+          <text x="75" y="12" fill="#555">30 pas</text>
+          <!-- Départ -->
+          <circle cx="0" cy="50" r="3" fill="#EE6E34"/>
+          <text x="3" y="65" fill="#EE6E34" font-size="9">Départ</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 3 instructions -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;border:1.5px solid rgba(0,0,0,.12);border-radius:10px;overflow:hidden">
+      <div style="padding:12px;text-align:center">
+        <div style="font-size:11px;font-weight:700;margin-bottom:8px">Instruction A</div>
+        <div style="background:#5CB1D6;border-radius:5px;padding:6px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">tourner ↺ de</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">60</span><span style="font-size:11px;font-weight:700;color:#fff">degrés</span></div>
+      </div>
+      <div style="padding:12px;text-align:center;border-left:1.5px solid rgba(0,0,0,.1)">
+        <div style="font-size:11px;font-weight:700;margin-bottom:8px">Instruction B</div>
+        <div style="background:#5CB1D6;border-radius:5px;padding:6px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">tourner ↺ de</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">120</span><span style="font-size:11px;font-weight:700;color:#fff">degrés</span></div>
+      </div>
+      <div style="padding:12px;text-align:center;border-left:1.5px solid rgba(0,0,0,.1)">
+        <div style="font-size:11px;font-weight:700;margin-bottom:8px">Instruction C</div>
+        <div style="background:#5CB1D6;border-radius:5px;padding:6px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">avancer de</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">30</span><span style="font-size:11px;font-weight:700;color:#fff">pas</span></div>
+      </div>
+    </div>
+    <span class="lbl">Ta réponse — ordre des 3 instructions cachées</span>
+    <textarea class="brevet-answer" placeholder="1re instruction : …&#10;2e instruction : …&#10;3e instruction : …" rows="3"></textarea>
+  </div>
+
+  <!-- PARTIE 2 -->
+  <div style="font-weight:700;font-size:13px;letter-spacing:.05em;margin:20px 0 16px;padding:8px 14px;background:#FFF0E8;border-radius:8px;border-left:3px solid var(--orange)">Partie 2 — le script principal</div>
+
+  <!-- Script principal -->
+  <div style="border:1.5px solid rgba(0,0,0,.12);border-radius:12px;padding:16px;margin-bottom:18px;display:flex;gap:20px;flex-wrap:wrap">
+    <div style="font-family:'Helvetica Neue',Arial,sans-serif;display:flex;flex-direction:column;gap:3px;flex:1;min-width:200px">
+      <!-- Quand -->
+      <div style="position:relative;display:inline-flex;flex-direction:column">
+        <div style="margin-left:8px;width:24px;height:9px;background:#FFAB19;border-radius:4px 4px 0 0"></div>
+        <div style="background:#FFAB19;border-radius:0 5px 5px 5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">Quand</span><svg width="11" height="11" viewBox="0 0 14 14"><rect width="14" height="14" rx="3" fill="#3a993a"/><polygon points="3,2 12,7 3,12" fill="#fff"/></svg><span style="font-size:11px;font-weight:700;color:#fff">est cliqué</span></div>
+      </div>
+      <div style="background:#5CB1D6;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">aller à x:</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">−200</span><span style="font-size:11px;font-weight:700;color:#fff">y:</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">0</span></div>
+      <div style="background:#4CAF50;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:12px">✏️</span><span style="font-size:11px;font-weight:700;color:#fff">effacer tout</span></div>
+      <div style="background:#5CB1D6;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">s'orienter à</span><span style="background:#fff;border-radius:100px;padding:0 6px;font-size:11px;font-weight:700;color:#333">90</span></div>
+      <div style="background:#FF8C1A;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap"><span style="font-size:11px;font-weight:700;color:#fff">mettre Motif à</span><div style="background:#4CAF50;border-radius:100px;padding:1px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:11px;font-weight:700;color:#fff">nombre aléatoire entre</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:11px;font-weight:700;color:#333">1</span><span style="font-size:11px;font-weight:700;color:#fff">et</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:11px;font-weight:700;color:#333">3</span></div></div>
+      <!-- si Motif = 3 alors -->
+      <div style="display:flex;flex-direction:column;margin-top:2px">
+        <div style="background:#FFAB19;border-radius:5px 5px 0 0;padding:5px 10px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:11px;font-weight:700;color:#fff">si</span><div style="background:#9966FF;border-radius:100px;padding:1px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:11px;font-weight:700;color:#fff">Motif</span><span style="font-size:11px;font-weight:700;color:#fff">=</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:11px;font-weight:700;color:#333">3</span></div><span style="font-size:11px;font-weight:700;color:#fff">alors</span></div>
+        <div style="border-left:5px solid #FFAB19;padding:2px 0 2px 10px;display:flex;flex-direction:column;gap:2px">
+          <div style="display:flex;flex-direction:column">
+            <div style="background:#FFAB19;border-radius:4px 4px 0 0;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:11px;font-weight:700;color:#fff">répéter</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:11px;font-weight:700;color:#333">6</span><span style="font-size:11px;font-weight:700;color:#fff">fois</span></div>
+            <div style="border-left:5px solid #FFAB19;padding:2px 0 2px 8px;display:flex;flex-direction:column;gap:2px">
+              <div style="background:#FF6680;border-radius:4px;padding:4px 8px"><span style="font-size:11px;font-weight:700;color:#fff">Motif 3</span></div>
+              <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:11px;font-weight:700;color:#fff">avancer de</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:11px;font-weight:700;color:#333">60</span><span style="font-size:11px;font-weight:700;color:#fff">pas</span></div>
+            </div>
+            <div style="background:#FFAB19;border-radius:0 0 4px 4px;padding:3px 8px;display:flex;justify-content:flex-end;width:140px"><span style="color:#fff;font-size:13px">↵</span></div>
+          </div>
+          <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:12px">💬</span><span style="font-size:11px;font-weight:700;color:#fff">dire</span><span style="background:#fff;border-radius:4px;padding:1px 8px;font-size:11px;font-weight:700;color:#333">Voici le dessin !</span></div>
+        </div>
+        <!-- sinon -->
+        <div style="background:#FFAB19;padding:4px 10px;margin-left:0"><span style="font-size:11px;font-weight:700;color:#fff">sinon</span></div>
+        <div style="border-left:5px solid #FFAB19;padding:2px 0 2px 10px">
+          <div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:4px"><span style="font-size:12px">💬</span><span style="font-size:11px;font-weight:700;color:#fff">dire</span><span style="background:#fff;border-radius:4px;padding:1px 8px;font-size:11px;font-weight:700;color:#333">Perdu !</span></div>
+        </div>
+        <div style="background:#FFAB19;border-radius:0 0 5px 5px;padding:4px 10px;height:12px"></div>
+      </div>
+    </div>
+    <!-- Rappels -->
+    <div style="flex-shrink:0;min-width:200px;border:1.5px solid rgba(0,0,0,.1);border-radius:10px;padding:14px">
+      <div style="font-size:12px;font-weight:700;margin-bottom:10px">Rappels</div>
+      <div style="background:#FF8C1A;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px;margin-bottom:6px"><span style="font-size:11px;font-weight:700;color:#fff">nombre aléatoire entre</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:11px;font-weight:700;color:#333">1</span><span style="font-size:11px;font-weight:700;color:#fff">et</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:11px;font-weight:700;color:#333">3</span></div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:12px">donne un nombre entier au hasard parmi 1 ; 2 et 3.</div>
+      <div style="background:#5CB1D6;border-radius:5px;padding:5px 10px;display:inline-flex;align-items:center;gap:4px;margin-bottom:6px"><span style="font-size:11px;font-weight:700;color:#fff">s'orienter à</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:11px;font-weight:700;color:#333">90</span></div>
+      <div style="font-size:12px;color:var(--muted)">oriente le lutin horizontalement vers la droite.</div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">Quelles sont les <strong>coordonnées du point de départ</strong> du lutin ?</span><span class="brevet-q-pts">2 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="x = … et y = …" rows="1"></textarea>
+  </div>
+
+  <!-- Q4 : 5 captures d'écran -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">Parmi les 5 captures d'écran proposées ci-dessous, <strong>seules deux sont possibles</strong>. Lesquelles ?</span><span class="brevet-q-pts">4 pts</span></div>
+
+    <div style="border:1.5px solid rgba(0,0,0,.12);border-radius:10px;overflow:hidden;margin-bottom:12px">
+      <!-- Capture 1 -->
+      <div style="display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid rgba(0,0,0,.1)">
+        <div style="padding:10px 14px;font-size:12px;font-weight:600;border-right:1px solid rgba(0,0,0,.1);display:flex;align-items:center">Capture d'écran n° 1</div>
+        <div style="padding:10px 14px">
+          <div style="font-size:11px;font-weight:700;text-align:center;margin-bottom:6px">Voici le dessin !</div>
+          <svg viewBox="0 0 280 40" width="260" height="38" xmlns="http://www.w3.org/2000/svg">
+            <!-- 6 losanges accolés formant une bande -->
+            <g fill="none" stroke="#333" stroke-width="1.3">
+              <polygon points="0,30 18,10 36,30 18,50"/><polygon points="36,30 54,10 72,30 54,50"/>
+              <polygon points="72,30 90,10 108,30 90,50"/><polygon points="108,30 126,10 144,30 126,50"/>
+              <polygon points="144,30 162,10 180,30 162,50"/><polygon points="180,30 198,10 216,30 198,50"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <!-- Capture 2 -->
+      <div style="display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid rgba(0,0,0,.1)">
+        <div style="padding:10px 14px;font-size:12px;font-weight:600;border-right:1px solid rgba(0,0,0,.1);display:flex;align-items:center">Capture d'écran n° 2</div>
+        <div style="padding:10px 14px">
+          <div style="font-size:11px;font-weight:700;text-align:center;margin-bottom:6px">Voici le dessin !</div>
+          <svg viewBox="0 0 320 50" width="300" height="48" xmlns="http://www.w3.org/2000/svg">
+            <!-- 6 losanges espacés -->
+            <g fill="none" stroke="#333" stroke-width="1.3">
+              <polygon points="0,35 15,15 30,35 15,55"/><polygon points="50,35 65,15 80,35 65,55"/>
+              <polygon points="100,35 115,15 130,35 115,55"/><polygon points="150,35 165,15 180,35 165,55"/>
+              <polygon points="200,35 215,15 230,35 215,55"/><polygon points="250,35 265,15 280,35 265,55"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <!-- Capture 3 -->
+      <div style="display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid rgba(0,0,0,.1)">
+        <div style="padding:10px 14px;font-size:12px;font-weight:600;border-right:1px solid rgba(0,0,0,.1);display:flex;align-items:center">Capture d'écran n° 3</div>
+        <div style="padding:10px 14px;display:flex;align-items:center">
+          <div style="font-size:13px;font-weight:700;color:#555">Perdu !</div>
+        </div>
+      </div>
+      <!-- Capture 4 -->
+      <div style="display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid rgba(0,0,0,.1)">
+        <div style="padding:10px 14px;font-size:12px;font-weight:600;border-right:1px solid rgba(0,0,0,.1);display:flex;align-items:center">Capture d'écran n° 4</div>
+        <div style="padding:10px 14px">
+          <div style="font-size:11px;font-weight:700;text-align:center;margin-bottom:6px">Voici le dessin !</div>
+          <svg viewBox="0 0 180 50" width="160" height="48" xmlns="http://www.w3.org/2000/svg">
+            <!-- 3 losanges espacés -->
+            <g fill="none" stroke="#333" stroke-width="1.3">
+              <polygon points="0,35 18,15 36,35 18,55"/><polygon points="60,35 78,15 96,35 78,55"/>
+              <polygon points="120,35 138,15 156,35 138,55"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <!-- Capture 5 -->
+      <div style="display:grid;grid-template-columns:140px 1fr">
+        <div style="padding:10px 14px;font-size:12px;font-weight:600;border-right:1px solid rgba(0,0,0,.1);display:flex;align-items:center">Capture d'écran n° 5</div>
+        <div style="padding:10px 14px">
+          <svg viewBox="-45 -45 90 90" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+            <!-- 6 losanges en rosette -->
+            <g fill="none" stroke="#333" stroke-width="1.2" transform="rotate(0)">
+              <polygon points="0,0 15,-26 30,0 15,26"/>
+              <polygon points="0,0 15,-26 30,0 15,26" transform="rotate(60)"/>
+              <polygon points="0,0 15,-26 30,0 15,26" transform="rotate(120)"/>
+              <polygon points="0,0 15,-26 30,0 15,26" transform="rotate(180)"/>
+              <polygon points="0,0 15,-26 30,0 15,26" transform="rotate(240)"/>
+              <polygon points="0,0 15,-26 30,0 15,26" transform="rotate(300)"/>
+            </g>
+          </svg>
+          <span style="font-size:11px;font-weight:700;margin-left:10px">Voici le dessin !</span>
+        </div>
+      </div>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Les deux captures possibles sont les n° … et n° …&#10;Car Motif=3 déclenche 6× Motif3+avancer60 → …&#10;Captures impossibles : n°… car …" rows="3"></textarea>
+  </div>
+
+  <!-- Q5 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">5.</span><span class="brevet-q-text">On clique sur le drapeau vert et on observe le message affiché. Quelle est la probabilité que le message affiché soit <strong>« Voici le dessin ! »</strong> ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Le message 'Voici le dessin !' s'affiche si Motif = 3.&#10;Motif est tiré au hasard parmi {1, 2, 3} → P(Motif=3) = …/3" rows="2"></textarea>
+  </div>
+
+  <!-- Q6 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">6.</span><span class="brevet-q-text">On lance le programme <strong>100 fois</strong>. Résultats obtenus :</span></div>
+    <div style="overflow-x:auto;margin:10px 0 14px">
+      <table class="brevet-table">
+        <thead><tr><th>Message du lutin</th><th>« Voici le dessin ! »</th><th>« Perdu ! »</th></tr></thead>
+        <tbody><tr><td style="font-weight:700">Effectif</td><td>40</td><td>60</td></tr></tbody>
+      </table>
+    </div>
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">6.a.</span><span class="brevet-q-text">Calculer la <strong>fréquence</strong> de l'affichage « Voici le dessin ! ».</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Fréquence = 40/100 = …" rows="1"></textarea>
+    </div>
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">6.b.</span><span class="brevet-q-text">Pourquoi ce résultat est-il <strong>différent</strong> de celui obtenu à la question 5 ?</span><span class="brevet-q-pts">1 pt</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="La fréquence (résultat expérimental sur 100 essais) est différente de la probabilité théorique (1/3) car il s'agit d'un résultat aléatoire. La fréquence se rapproche de la probabilité lorsque le nombre d'essais augmente." rows="3"></textarea>
+    </div>
+  </div>
+
+</div><!-- fin exercice 5 --></div>
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

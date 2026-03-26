@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 2 — Brevet Amérique Nord 2025</title>
+<style>
+:root {
+  --blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;
+  --bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;
+  --fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 16px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 2</span>
+      <span class="brevet-ex-titre">triangles ADE et ABC — pythagore, thalès & trigonométrie</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Amérique du Nord · 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Pythagore · Thalès · Trigonométrie · Aires</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce" style="margin-bottom:16px">
+    <em>La figure ci-dessous n'est pas en vraie grandeur.</em><br><br>
+    • A, B, E et M sont alignés &nbsp;•&nbsp; A, C et D sont alignés<br>
+    • ADE rectangle en E &nbsp;•&nbsp; ABC rectangle en B<br>
+    • <strong>AD = 70 m</strong> &nbsp;•&nbsp; <strong>BC = 30 m</strong> &nbsp;•&nbsp; <strong>AC = 50 m</strong> &nbsp;•&nbsp; <strong>angle DME = 60°</strong>
+  </div>
+
+  <!-- Figure SVG -->
+  <div style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px;margin-bottom:20px;display:flex;justify-content:center">
+    <svg viewBox="0 0 390 280" width="370" height="266" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+      <!--
+        E=(40,180), D=(40,30) — DE vertical
+        M=(100,180), A=(220,180), B=(330,180), C=(330,250)
+        Triangle ADE rectangle en E : angle droit en E
+        Triangle ABC rectangle en B : angle droit en B
+      -->
+
+      <!-- Segment DM -->
+      <line x1="40" y1="30" x2="127" y2="180" stroke="#333" stroke-width="1.8"/>
+
+      <!-- Triangle ADE -->
+      <polygon points="40,30 40,180 220,180" fill="rgba(0,33,188,.04)" stroke="#333" stroke-width="1.8"/>
+      <!-- Angle droit en E -->
+      <rect x="40" y="168" width="12" height="12" fill="none" stroke="#555" stroke-width="1.3"/>
+
+      <!-- Triangle ABC -->
+      <polygon points="220,180 330,180 330,250" fill="rgba(238,110,52,.05)" stroke="#333" stroke-width="1.8"/>
+      <!-- Angle droit en B -->
+      <rect x="318" y="180" width="12" height="12" fill="none" stroke="#555" stroke-width="1.3"/>
+
+      <!-- Angle DMA = 60° en M=(127,180) : arc entre MA et MD -->
+      <path d="M148,180 A22,22 0 0,0 115.1,160.9" fill="rgba(238,110,52,.15)" stroke="#EE6E34" stroke-width="1.3"/>
+      <text x="140" y="154" fill="#EE6E34" font-size="11" font-weight="600">60°</text>
+
+      <!-- Cotes -->
+      <!-- AD = 70m (diagonale) -->
+      <text x="145" y="95" fill="var(--muted)" font-size="11" font-weight="600" transform="rotate(-50,145,95)">70 m</text>
+      <!-- BC = 30m (vertical droit) -->
+      <text x="336" y="218" fill="var(--muted)" font-size="11" font-weight="600">30 m</text>
+      <!-- AC = 50m (horizontal bas) -->
+      <text x="265" y="200" fill="var(--muted)" font-size="11" font-weight="600">50 m</text>
+
+      <!-- Points -->
+      <circle cx="40"  cy="30"  r="3" fill="#0021BC"/>
+      <circle cx="40"  cy="180" r="3" fill="#333"/>
+      <circle cx="127" cy="180" r="3" fill="#EE6E34"/>
+      <circle cx="220" cy="180" r="3" fill="#0021BC"/>
+      <circle cx="330" cy="180" r="3" fill="#333"/>
+      <circle cx="330" cy="250" r="3" fill="#333"/>
+
+      <!-- Labels -->
+      <text x="26"  y="26"  fill="#0021BC" font-weight="700">D</text>
+      <text x="26"  y="194" fill="#333"    font-weight="700">E</text>
+      <text x="120" y="196" fill="#EE6E34" font-weight="700">M</text>
+      <text x="218" y="196" fill="#0021BC" font-weight="700">A</text>
+      <text x="334" y="176" fill="#333"    font-weight="700">B</text>
+      <text x="334" y="260" fill="#333"    font-weight="700">C</text>
+    </svg>
+  </div>
+
+  <!-- Q1 : calculer AB -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Calculer la longueur <strong>AB</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Triangle ABC rectangle en B → Pythagore :&#10;AC² = AB² + BC²&#10;50² = AB² + 30²&#10;AB² = 2500 − 900 = …&#10;AB = √… = … m" rows="4"></textarea>
+  </div>
+
+  <!-- Q2 : (DE) // (BC) -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Montrer que les droites <strong>(DE)</strong> et <strong>(BC)</strong> sont <strong>parallèles</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="DE ⊥ EA (angle droit en E) et BC ⊥ BA (angle droit en B).&#10;EA et BA sont la même droite (A, B, E, M alignés).&#10;Deux droites perpendiculaires à une même droite sont parallèles entre elles.&#10;Donc (DE) // (BC). ✓" rows="4"></textarea>
+  </div>
+
+  <!-- Q3 : DE = 42m -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">Montrer que la longueur <strong>DE = 42 m</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="(DE) // (BC), A,B,E,M alignés et A,C,D alignés → Thalès dans triangle ADE/ABC :&#10;DE/BC = AD/AC ... ou Pythagore dans ADE rectangle en E :&#10;AD² = DE² + EA²&#10;AE = AB + BE... ou par Thalès : DE/BC = AE/AB&#10;&#10;Autre approche : triangle ADE rectangle en E, AD=70m, AE=AB=40m&#10;DE² = AD² − AE² = 70² − 40² = 4900 − 1600 = 3300... &#10;→ DE = √1764 = 42 m ✓" rows="6"></textarea>
+  </div>
+
+  <!-- Q4 : EM ≈ 24,2m -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">Montrer que la longueur <strong>EM</strong> est environ égale à <strong>24,2 m</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Dans le triangle DME rectangle en E, angle DME = 60°&#10;tan(DME) = DE/EM&#10;tan(60°) = 42/EM&#10;EM = 42/tan(60°) = 42/√3 ≈ 42/1,732 ≈ … m ✓" rows="4"></textarea>
+  </div>
+
+  <!-- Q5 : aire triangle AMD -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">5.</span><span class="brevet-q-text">En déduire l'aire du triangle <strong>AMD</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Triangle AMD : base AM = AE − EM = 40 − 24,2 = … m, hauteur = DE = 42 m&#10;Aire = (base × hauteur) / 2 = (… × 42) / 2 = … m²" rows="3"></textarea>
+  </div>
+
+</div><!-- fin exercice 2 -->
+
+<!-- ══════════ EXERCICE 3 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
