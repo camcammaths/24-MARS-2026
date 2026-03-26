@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 5 — Brevet Métropole 2025</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12);font-size:12px}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600;color:var(--muted)}
+.partie-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:14px}
+.partie-label.b{background:#EEF2FF;color:var(--blue)}
+.partie-label.o{background:#FFF0E8;color:var(--orange)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 5</span>
+      <span class="brevet-ex-titre">achat ou location — fonctions &amp; graphique</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Métropole · Juin 2025</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Fonctions · Tableur · Lecture graphique</span>
+      <span class="ctag">19 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    Un garage propose 2 options au client :<br><br>
+    • Option <em>Achat</em> : prix d'achat de la voiture <strong>22 400 €</strong>. Assurance obligatoire <strong>75 € par mois</strong>.<br>
+    • Option <em>Location</em> : <strong>425 € par mois</strong>, assurance comprise.<br><br>
+    L'objectif de cet exercice est de comparer ces deux options.
+  </div>
+
+  <!-- PARTIE A -->
+  <div class="partie-label b">Partie A</div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">1.</span>
+      <span class="brevet-q-text">Montrer qu'avec l'option <em>Achat</em>, la dépense à la fin de la première année est de <strong>23 300 €</strong>.</span>
+      <span class="brevet-q-pts">3 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Dépense option Achat après 12 mois :&#10;= prix d'achat + assurance × 12 mois&#10;= 22 400 + 75 × 12&#10;= 22 400 + 900&#10;= 23 300 € ✓" rows="4"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">2.</span>
+      <span class="brevet-q-text">Après <strong>36 mois</strong>, calculer l'économie réalisée par le client s'il choisit l'option <em>Location</em>.</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Option Achat après 36 mois = 22 400 + 75 × 36 = 22 400 + 2 700 = 25 100 €&#10;Option Location après 36 mois = 425 × 36 = 15 300 €&#10;&#10;Économie = 25 100 − 15 300 = 9 800 €" rows="4"></textarea>
+  </div>
+
+  <!-- Q3 : tableur -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">3.</span>
+      <span class="brevet-q-text">Afin de comparer les dépenses, le client a réalisé le tableau suivant à l'aide d'un tableur. Quelle formule doit être saisie dans la cellule <strong>B3</strong> qui, étendue jusqu'à la cellule F3, permet de compléter le tableau ?</span>
+      <span class="brevet-q-pts">3 pts</span>
+    </div>
+
+    <!-- Tableau tableur -->
+    <div style="overflow-x:auto;margin-bottom:16px">
+      <table class="brevet-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:700;color:var(--blue)">1</td>
+            <td>Nombre de mois</td>
+            <td>12</td><td>24</td><td>36</td><td>48</td><td>60</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:var(--blue)">2</td>
+            <td>Dépense en € Option <em>Achat</em></td>
+            <td>23 300</td><td>24 200</td><td>25 100</td><td>26 000</td><td>26 900</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:var(--blue)">3</td>
+            <td>Dépense en € Option <em>Location</em></td>
+            <td style="background:#FFF0E8;color:var(--orange);font-weight:700">B3 = ?</td>
+            <td></td><td></td><td></td><td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="La dépense Location = 425 × nombre de mois&#10;La cellule B1 contient le nombre de mois.&#10;&#10;Formule à saisir en B3 : =425*B1&#10;(étendue vers la droite, elle donne automatiquement 425×C1, 425×D1, etc.)" rows="4"></textarea>
+  </div>
+
+  <!-- PARTIE B -->
+  <div class="partie-label o">Partie B</div>
+
+  <p style="font-size:14px;line-height:1.75;margin-bottom:16px">
+    On souhaite modéliser les deux options par des fonctions. On note <strong>x</strong> la durée écoulée en mois depuis la livraison de la voiture.<br>
+    La fonction <strong>g</strong>, permettant de calculer la dépense correspondant à l'option <em>Location</em>, peut s'écrire sous la forme : <strong>g(x) = 425x</strong>.
+  </p>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">4.</span>
+      <span class="brevet-q-text">Déterminer l'expression de <strong>f(x)</strong> permettant de calculer la dépense correspondant à l'option <em>Achat</em>.</span>
+      <span class="brevet-q-pts">3 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Dépense Achat = prix d'achat + assurance × nombre de mois&#10;f(x) = 22 400 + 75x" rows="2"></textarea>
+  </div>
+
+  <!-- Q5 : graphique -->
+  <div class="brevet-q" style="margin-bottom:0">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">5.</span>
+      <span class="brevet-q-text">Sur le graphique ci-dessous, on a tracé les courbes représentatives C<sub>f</sub> et C<sub>g</sub> des fonctions f et g. Par lecture graphique, déterminer à partir de combien de mois l'option <em>Achat</em> est la plus avantageuse.</span>
+      <span class="brevet-q-pts">6 pts</span>
+    </div>
+
+    <!-- Graphique SVG -->
+    <div class="brevet-figure" style="overflow-x:auto">
+      <svg viewBox="0 0 520 400" width="520" height="400" xmlns="http://www.w3.org/2000/svg" style="font-family:var(--fd);font-size:10px">
+
+        <!-- Marges : left=60, bottom=30, right=20, top=20 -->
+        <!-- x : 0 à 130 mois → 440px → 1 mois = 440/130 ≈ 3.385px -->
+        <!-- y : 0 à 45000 € → 350px → 1000€ = 350/45 ≈ 7.78px -->
+
+        <defs>
+          <clipPath id="graphClip">
+            <rect x="60" y="20" width="440" height="350"/>
+          </clipPath>
+        </defs>
+
+        <!-- Fond grille -->
+        <rect x="60" y="20" width="440" height="350" fill="#fafafa" stroke="rgba(0,0,0,.08)" stroke-width="1"/>
+
+        <!-- Grille fine (tous les 5 mois / 2500€) -->
+        <g stroke="rgba(0,0,0,.06)" stroke-width="0.5">
+          <!-- Verticales tous les 5 mois -->
+          <line x1="77" y1="20" x2="77" y2="370"/><line x1="94" y1="20" x2="94" y2="370"/>
+          <line x1="111" y1="20" x2="111" y2="370"/><line x1="128" y1="20" x2="128" y2="370"/>
+          <line x1="145" y1="20" x2="145" y2="370"/><line x1="162" y1="20" x2="162" y2="370"/>
+          <line x1="179" y1="20" x2="179" y2="370"/><line x1="196" y1="20" x2="196" y2="370"/>
+          <line x1="213" y1="20" x2="213" y2="370"/><line x1="230" y1="20" x2="230" y2="370"/>
+          <line x1="247" y1="20" x2="247" y2="370"/><line x1="264" y1="20" x2="264" y2="370"/>
+          <line x1="281" y1="20" x2="281" y2="370"/><line x1="298" y1="20" x2="298" y2="370"/>
+          <line x1="315" y1="20" x2="315" y2="370"/><line x1="332" y1="20" x2="332" y2="370"/>
+          <line x1="349" y1="20" x2="349" y2="370"/><line x1="366" y1="20" x2="366" y2="370"/>
+          <line x1="383" y1="20" x2="383" y2="370"/><line x1="400" y1="20" x2="400" y2="370"/>
+          <line x1="417" y1="20" x2="417" y2="370"/><line x1="434" y1="20" x2="434" y2="370"/>
+          <line x1="451" y1="20" x2="451" y2="370"/><line x1="468" y1="20" x2="468" y2="370"/>
+          <!-- Horizontales tous les 2500€ -->
+          <line x1="60" y1="351" x2="500" y2="351"/><line x1="60" y1="331" x2="500" y2="331"/>
+          <line x1="60" y1="312" x2="500" y2="312"/><line x1="60" y1="293" x2="500" y2="293"/>
+          <line x1="60" y1="273" x2="500" y2="273"/><line x1="60" y1="254" x2="500" y2="254"/>
+          <line x1="60" y1="234" x2="500" y2="234"/><line x1="60" y1="215" x2="500" y2="215"/>
+          <line x1="60" y1="195" x2="500" y2="195"/><line x1="60" y1="176" x2="500" y2="176"/>
+          <line x1="60" y1="157" x2="500" y2="157"/><line x1="60" y1="137" x2="500" y2="137"/>
+          <line x1="60" y1="118" x2="500" y2="118"/><line x1="60" y1="98" x2="500" y2="98"/>
+          <line x1="60" y1="79" x2="500" y2="79"/><line x1="60" y1="59" x2="500" y2="59"/>
+          <line x1="60" y1="40" x2="500" y2="40"/>
+        </g>
+
+        <!-- Grille principale (tous les 10 mois / 5000€) -->
+        <g stroke="rgba(0,0,0,.12)" stroke-width="0.8">
+          <line x1="94" y1="20" x2="94" y2="370"/>  <!-- 10 -->
+          <line x1="128" y1="20" x2="128" y2="370"/> <!-- 20 -->
+          <line x1="162" y1="20" x2="162" y2="370"/> <!-- 30 -->
+          <line x1="196" y1="20" x2="196" y2="370"/> <!-- 40 -->
+          <line x1="230" y1="20" x2="230" y2="370"/> <!-- 50 -->
+          <line x1="264" y1="20" x2="264" y2="370"/> <!-- 60 -->
+          <line x1="298" y1="20" x2="298" y2="370"/> <!-- 70 -->
+          <line x1="332" y1="20" x2="332" y2="370"/> <!-- 80 -->
+          <line x1="366" y1="20" x2="366" y2="370"/> <!-- 90 -->
+          <line x1="400" y1="20" x2="400" y2="370"/> <!-- 100 -->
+          <line x1="434" y1="20" x2="434" y2="370"/> <!-- 110 -->
+          <line x1="468" y1="20" x2="468" y2="370"/> <!-- 120 -->
+          <line x1="60" y1="331" x2="500" y2="331"/> <!-- 5000 -->
+          <line x1="60" y1="293" x2="500" y2="293"/> <!-- 10000 -->
+          <line x1="60" y1="254" x2="500" y2="254"/> <!-- 15000 -->
+          <line x1="60" y1="215" x2="500" y2="215"/> <!-- 20000 -->
+          <line x1="60" y1="176" x2="500" y2="176"/> <!-- 25000 -->
+          <line x1="60" y1="137" x2="500" y2="137"/> <!-- 30000 -->
+          <line x1="60" y1="98" x2="500" y2="98"/>  <!-- 35000 -->
+          <line x1="60" y1="59" x2="500" y2="59"/>  <!-- 40000 -->
+        </g>
+
+        <!-- Axes -->
+        <line x1="60" y1="370" x2="505" y2="370" stroke="#333" stroke-width="1.5"/>
+        <line x1="60" y1="20" x2="60" y2="375" stroke="#333" stroke-width="1.5"/>
+        <!-- Flèches -->
+        <polygon points="505,370 498,366 498,374" fill="#333"/>
+        <polygon points="60,17 56,24 64,24" fill="#333"/>
+
+        <!-- Labels axe X (mois) -->
+        <g fill="#555" text-anchor="middle">
+          <text x="94" y="384">10</text><text x="128" y="384">20</text>
+          <text x="162" y="384">30</text><text x="196" y="384">40</text>
+          <text x="230" y="384">50</text><text x="264" y="384">60</text>
+          <text x="298" y="384">70</text><text x="332" y="384">80</text>
+          <text x="366" y="384">90</text><text x="400" y="384">100</text>
+          <text x="434" y="384">110</text><text x="468" y="384">120</text>
+        </g>
+        <text x="508" y="374" fill="#333" font-size="11" font-weight="600">Durée en mois</text>
+
+        <!-- Labels axe Y (€) -->
+        <g fill="#555" text-anchor="end">
+          <text x="55" y="334">5 000</text>
+          <text x="55" y="296">10 000</text>
+          <text x="55" y="257">15 000</text>
+          <text x="55" y="218">20 000</text>
+          <text x="55" y="179">25 000</text>
+          <text x="55" y="140">30 000</text>
+          <text x="55" y="101">35 000</text>
+          <text x="55" y="62">40 000</text>
+        </g>
+        <text x="58" y="14" fill="#333" font-size="11" font-weight="600">Dépense en euros</text>
+
+        <!-- Courbe Cg : g(x)=425x — rouge -->
+        <!-- à x=0 : y=0 → (60,370) ; à x=130 : y=55250 (hors graphe) → clip à y=20 : x=44444/425≈104.6 mois → px=60+104.6*3.385≈414 -->
+        <line x1="60" y1="370" x2="414" y2="20" stroke="#EF4444" stroke-width="2.2" clip-path="url(#graphClip)"/>
+        <text x="416" y="18" fill="#EF4444" font-size="12" font-weight="700">C<tspan font-size="9" baseline-shift="sub">g</tspan></text>
+
+        <!-- Courbe Cf : f(x)=22400+75x — bleu/vert -->
+        <!-- à x=0 : y=22400 → py=370-(22400/45000)*350=370-174=196 → (60,196) -->
+        <!-- à x=130 : y=22400+75*130=32150 → py=370-(32150/45000)*350=370-250=120 → (500,120) -->
+        <line x1="60" y1="196" x2="500" y2="120" stroke="#2A7B6F" stroke-width="2.2"/>
+        <text x="502" y="118" fill="#2A7B6F" font-size="12" font-weight="700">C<tspan font-size="9" baseline-shift="sub">f</tspan></text>
+
+        <!-- Point d'intersection : f(x)=g(x) → 22400+75x=425x → 22400=350x → x=64 mois -->
+        <!-- x=64 → px=60+64*3.385=277 ; y=22400+75*64=27200 → py=370-(27200/45000)*350=370-211.6=158 -->
+        <circle cx="277" cy="158" r="5" fill="none" stroke="var(--orange)" stroke-width="2"/>
+        <line x1="277" y1="158" x2="277" y2="370" stroke="var(--orange)" stroke-width="1.2" stroke-dasharray="5,3"/>
+        <text x="277" y="383" fill="var(--orange)" font-size="10" font-weight="700" text-anchor="middle">64</text>
+        <text x="282" y="150" fill="var(--orange)" font-size="10" font-weight="700">intersection</text>
+
+      </svg>
+    </div>
+
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Par lecture graphique, les deux courbes se croisent vers x ≈ 64 mois.&#10;&#10;Pour x < 64 mois : Cf est en dessous de Cg → l'option Achat coûte moins cher.&#10;Pour x > 64 mois : Cf est au-dessus de Cg → l'option Location coûte moins cher.&#10;&#10;→ L'option Achat est la plus avantageuse à partir d'environ 64 mois (≈ 5 ans et 4 mois)." rows="5"></textarea>
+  </div>
+
+</div><!-- fin exercice 5 --></div><!-- fin padding -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
