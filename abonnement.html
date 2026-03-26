@@ -16,18 +16,18 @@
 html, body {
   width: 100%;
   height: 100%;
+  margin: 0;
   overflow: hidden;
-  background: #1a1a1a;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .stage {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100vw;
+  aspect-ratio: 16 / 9;
+  width: 100%;
   max-width: calc(100vh * 16 / 9);
-  height: calc(100vw * 9 / 16);
   max-height: 100vh;
   background: var(--bg);
   color: var(--ink);
@@ -36,10 +36,8 @@ html, body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   overflow: hidden;
+  font-size: clamp(8px, 1.15vw, 18px);
 }
-
-/* scale everything with vw relative to the stage */
-.stage { font-size: clamp(10px, 1.1vw, 16px); }
 
 /* NAV */
 .nav {
@@ -145,9 +143,9 @@ html, body {
 .right {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: .7em;
   background: var(--bg);
   padding: 1.8em 2em;
+  gap: .7em;
   align-items: stretch;
 }
 
