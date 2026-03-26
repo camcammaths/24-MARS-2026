@@ -1,5 +1,5 @@
 // PRÉPA BREVET — Base de données des exercices
-// 35 exercices
+// 81 exercices · 16 sujets · 2024 & 2025
 
 var data = [
   {
@@ -333,6 +333,17 @@ var data = [
     points: 20
   },
   {
+    id: "brevet-nouvelle-caledonie-2025-exo-06",
+    fichier: "data/brevet-nouvelle-caledonie-2025-exo-06.html",
+    titre: "scripts &amp; figures géométriques",
+    source: "Brevet Nouvelle-Calédonie 2025",
+    annee: 2025,
+    session: "Nouvelle-Calédonie",
+    notion: "Scratch",
+    notions: ["Scratch", "Figures", "Angles"],
+    points: 20
+  },
+  {
     id: "brevet-polynesie-2025-exo-01",
     fichier: "data/brevet-polynesie-2025-exo-01.html",
     titre: "escalade — tableur &amp; statistiques",
@@ -385,6 +396,501 @@ var data = [
     session: "Polynésie",
     notion: "Probabilités",
     notions: ["Probabilités", "Scratch", "Simulation"],
+    points: 20
+  },
+  {
+    id: "brevet-amerique-nord-2025-exo-01",
+    fichier: "data/brevet-amerique-nord-2025-exo-01.html",
+    titre: "cinq situations indépendantes",
+    source: "Brevet Amérique Nord 2025",
+    annee: 2025,
+    session: "Amérique Nord",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Arithmétique", "Pourcentages"],
+    points: 20
+  },
+  {
+    id: "brevet-amerique-nord-2025-exo-02",
+    fichier: "data/brevet-amerique-nord-2025-exo-02.html",
+    titre: "triangles ADE et ABC — pythagore, thalès & trigonométrie",
+    source: "Brevet Amérique Nord 2025",
+    annee: 2025,
+    session: "Amérique Nord",
+    notion: "Pythagore",
+    notions: ["Pythagore", "Thalès", "Trigonométrie"],
+    points: 20
+  },
+  {
+    id: "brevet-amerique-nord-2025-exo-03",
+    fichier: "data/brevet-amerique-nord-2025-exo-03.html",
+    titre: "programmes de calcul A et B",
+    source: "Brevet Amérique Nord 2025",
+    annee: 2025,
+    session: "Amérique Nord",
+    notion: "Calcul littéral",
+    notions: ["Calcul littéral", "Factorisation", "Équations"],
+    points: 20
+  },
+  {
+    id: "brevet-amerique-nord-2025-exo-04",
+    fichier: "data/brevet-amerique-nord-2025-exo-04.html",
+    titre: "course de Malo — graphique & vitesses",
+    source: "Brevet Amérique Nord 2025",
+    annee: 2025,
+    session: "Amérique Nord",
+    notion: "Lecture graphique",
+    notions: ["Lecture graphique", "Proportionnalité", "Vitesse"],
+    points: 20
+  },
+  {
+    id: "brevet-amerique-nord-2025-exo-05",
+    fichier: "data/brevet-amerique-nord-2025-exo-05.html",
+    titre: "scratch — motifs, script principal & probabilités",
+    source: "Brevet Amérique Nord 2025",
+    annee: 2025,
+    session: "Amérique Nord",
+    notion: "Scratch",
+    notions: ["Scratch", "Géométrie", "Probabilités"],
+    points: 20
+  },
+  {
+    id: "brevet-asie-2025-exo-01",
+    fichier: "data/brevet-asie-2025-exo-01.html",
+    titre: "QCM — 4 questions",
+    source: "Brevet Asie 2025",
+    annee: 2025,
+    session: "Asie",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Pourcentages", "Statistiques"],
+    points: 20
+  },
+  {
+    id: "brevet-asie-2025-exo-02",
+    fichier: "data/brevet-asie-2025-exo-02.html",
+    titre: "triangles CDE et GCF — pythagore, thalès & semblables",
+    source: "Brevet Asie 2025",
+    annee: 2025,
+    session: "Asie",
+    notion: "Pythagore",
+    notions: ["Pythagore", "Thalès", "Aires"],
+    points: 20
+  },
+  {
+    id: "brevet-asie-2025-exo-03",
+    fichier: "data/brevet-asie-2025-exo-03.html",
+    titre: "rectangle ABCD et carré EFGH — périmètres & équation",
+    source: "Brevet Asie 2025",
+    annee: 2025,
+    session: "Asie",
+    notion: "Calcul littéral",
+    notions: ["Calcul littéral", "Périmètre", "Tableur"],
+    points: 20
+  },
+  {
+    id: "brevet-asie-2025-exo-04",
+    fichier: "data/brevet-asie-2025-exo-04.html",
+    titre: "scratch — hexagone & triangles équilatéraux",
+    source: "Brevet Asie 2025",
+    annee: 2025,
+    session: "Asie",
+    notion: "Scratch",
+    notions: ["Scratch", "Géométrie", "Hexagone"],
+    points: 20
+  },
+  {
+    id: "brevet-asie-2025-exo-05",
+    fichier: "data/brevet-asie-2025-exo-05.html",
+    titre: "poissons — PGCD, volumes & pourcentages",
+    source: "Brevet Asie 2025",
+    annee: 2025,
+    session: "Asie",
+    notion: "Factorisation",
+    notions: ["Factorisation", "PGCD", "Volume"],
+    points: 20
+  },
+  {
+    id: "brevet-centres-etrangers-2025-exo-01",
+    fichier: "data/brevet-centres-etrangers-2025-exo-01.html",
+    titre: "QCM — 5 questions",
+    source: "Brevet Centres Étrangers 2025",
+    annee: 2025,
+    session: "Centres Étrangers",
+    notion: "Factorisation",
+    notions: ["Factorisation", "Tableur", "Homothétie"],
+    points: 20
+  },
+  {
+    id: "brevet-centres-etrangers-2025-exo-02",
+    fichier: "data/brevet-centres-etrangers-2025-exo-02.html",
+    titre: "colis « Transport Rapide » — stats, probabilité & volumes",
+    source: "Brevet Centres Étrangers 2025",
+    annee: 2025,
+    session: "Centres Étrangers",
+    notion: "Statistiques",
+    notions: ["Statistiques", "Probabilité", "Volume"],
+    points: 20
+  },
+  {
+    id: "brevet-centres-etrangers-2025-exo-03",
+    fichier: "data/brevet-centres-etrangers-2025-exo-03.html",
+    titre: "calcul littéral &amp; équations",
+    source: "Brevet Centres Étrangers 2025",
+    annee: 2025,
+    session: "Centres Étrangers",
+    notion: "Développer",
+    notions: ["Développer", "Factoriser", "Équation"],
+    points: 20
+  },
+  {
+    id: "brevet-centres-etrangers-2025-exo-04",
+    fichier: "data/brevet-centres-etrangers-2025-exo-04.html",
+    titre: "géométrie — triangles &amp; Pythagore",
+    source: "Brevet Centres Étrangers 2025",
+    annee: 2025,
+    session: "Centres Étrangers",
+    notion: "Pythagore",
+    notions: ["Pythagore", "Thalès", "Trigonométrie"],
+    points: 20
+  },
+  {
+    id: "brevet-centres-etrangers-2025-exo-05",
+    fichier: "data/brevet-centres-etrangers-2025-exo-05.html",
+    titre: "statistiques &amp; probabilités",
+    source: "Brevet Centres Étrangers 2025",
+    annee: 2025,
+    session: "Centres Étrangers",
+    notion: "Moyenne",
+    notions: ["Moyenne", "Médiane", "Probabilité"],
+    points: 20
+  },
+  {
+    id: "brevet-martinique-2024-exo-01",
+    fichier: "data/brevet-martinique-2024-exo-01.html",
+    titre: "dragées de mariage — probabilités & PGCD",
+    source: "Brevet Martinique 2024",
+    annee: 2024,
+    session: "Martinique",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Arithmétique", "PGCD"],
+    points: 20
+  },
+  {
+    id: "brevet-martinique-2024-exo-02",
+    fichier: "data/brevet-martinique-2024-exo-02.html",
+    titre: "QCM — 6 questions",
+    source: "Brevet Martinique 2024",
+    annee: 2024,
+    session: "Martinique",
+    notion: "Puissances",
+    notions: ["Puissances", "Stats", "Géométrie"],
+    points: 20
+  },
+  {
+    id: "brevet-martinique-2024-exo-03",
+    fichier: "data/brevet-martinique-2024-exo-03.html",
+    titre: "course d'Oscar — thalès, pythagore & trigonométrie",
+    source: "Brevet Martinique 2024",
+    annee: 2024,
+    session: "Martinique",
+    notion: "Thalès",
+    notions: ["Thalès", "Pythagore", "Trigonométrie"],
+    points: 20
+  },
+  {
+    id: "brevet-martinique-2024-exo-04",
+    fichier: "data/brevet-martinique-2024-exo-04.html",
+    titre: "programme de calcul & scratch",
+    source: "Brevet Martinique 2024",
+    annee: 2024,
+    session: "Martinique",
+    notion: "Algèbre",
+    notions: ["Algèbre", "Factorisation", "Scratch"],
+    points: 20
+  },
+  {
+    id: "brevet-martinique-2024-exo-05",
+    fichier: "data/brevet-martinique-2024-exo-05.html",
+    titre: "octogone EFGHIJKL — aires & volume piscine",
+    source: "Brevet Martinique 2024",
+    annee: 2024,
+    session: "Martinique",
+    notion: "Aires",
+    notions: ["Aires", "Volume", "Proportionnalité"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-2024-exo-01",
+    fichier: "data/brevet-metropole-2024-exo-01.html",
+    titre: "roulette de casino — probabilités",
+    source: "Brevet Métropole 2024",
+    annee: 2024,
+    session: "Métropole",
+    notion: "Probabilités",
+    notions: ["Probabilités"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-2024-exo-02",
+    fichier: "data/brevet-metropole-2024-exo-02.html",
+    titre: "programmes de calcul A et B",
+    source: "Brevet Métropole 2024",
+    annee: 2024,
+    session: "Métropole",
+    notion: "Algèbre",
+    notions: ["Algèbre", "Scratch"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-2024-exo-03",
+    fichier: "data/brevet-metropole-2024-exo-03.html",
+    titre: "cercle, triangle et aires",
+    source: "Brevet Métropole 2024",
+    annee: 2024,
+    session: "Métropole",
+    notion: "Géométrie",
+    notions: ["Géométrie", "Aires", "Thalès"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-2024-exo-04",
+    fichier: "data/brevet-metropole-2024-exo-04.html",
+    titre: "QCM — 6 questions",
+    source: "Brevet Métropole 2024",
+    annee: 2024,
+    session: "Métropole",
+    notion: "Fonctions",
+    notions: ["Fonctions", "Calcul", "Géométrie"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-2024-exo-05",
+    fichier: "data/brevet-metropole-2024-exo-05.html",
+    titre: "club de natation — sachets & piscine",
+    source: "Brevet Métropole 2024",
+    annee: 2024,
+    session: "Métropole",
+    notion: "PGCD",
+    notions: ["PGCD", "Volume", "Proportionnalité"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-septembre-2024-exo-01",
+    fichier: "data/brevet-metropole-septembre-2024-exo-01.html",
+    titre: "affirmations — vrai ou faux justifié",
+    source: "Brevet Métropole Septembre 2024",
+    annee: 2024,
+    session: "Métropole Septembre",
+    notion: "Arithmétique",
+    notions: ["Arithmétique", "Probabilités", "Algèbre"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-septembre-2024-exo-02",
+    fichier: "data/brevet-metropole-septembre-2024-exo-02.html",
+    titre: "champ de blé — thalès, aires & périmètre",
+    source: "Brevet Métropole Septembre 2024",
+    annee: 2024,
+    session: "Métropole Septembre",
+    notion: "Thalès",
+    notions: ["Thalès", "Aires", "Proportionnalité"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-septembre-2024-exo-03",
+    fichier: "data/brevet-metropole-septembre-2024-exo-03.html",
+    titre: "panneaux solaires — statistiques & trigonométrie",
+    source: "Brevet Métropole Septembre 2024",
+    annee: 2024,
+    session: "Métropole Septembre",
+    notion: "Statistiques",
+    notions: ["Statistiques", "Pourcentages", "Trigonométrie"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-septembre-2024-exo-04",
+    fichier: "data/brevet-metropole-septembre-2024-exo-04.html",
+    titre: "fonction f — tableur, antécédents, factorisation",
+    source: "Brevet Métropole Septembre 2024",
+    annee: 2024,
+    session: "Métropole Septembre",
+    notion: "Fonctions",
+    notions: ["Fonctions", "Algèbre", "Tableur"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-septembre-2024-exo-05",
+    fichier: "data/brevet-metropole-septembre-2024-exo-05.html",
+    titre: "quadrilatère ABCD & programme Scratch",
+    source: "Brevet Métropole Septembre 2024",
+    annee: 2024,
+    session: "Métropole Septembre",
+    notion: "Géométrie",
+    notions: ["Géométrie", "Scratch", "Angles"],
+    points: 20
+  },
+  {
+    id: "brevet-polynesie-2024-exo-01",
+    fichier: "data/brevet-polynesie-2024-exo-01.html",
+    titre: "QCM — 5 questions",
+    source: "Brevet Polynésie 2024",
+    annee: 2024,
+    session: "Polynésie",
+    notion: "Pythagore",
+    notions: ["Pythagore", "Fonctions", "Homothétie"],
+    points: 20
+  },
+  {
+    id: "brevet-polynesie-2024-exo-02",
+    fichier: "data/brevet-polynesie-2024-exo-02.html",
+    titre: "jeux olympiques — statistiques & pourcentages",
+    source: "Brevet Polynésie 2024",
+    annee: 2024,
+    session: "Polynésie",
+    notion: "Statistiques",
+    notions: ["Statistiques", "Pourcentages", "Moyenne"],
+    points: 20
+  },
+  {
+    id: "brevet-polynesie-2024-exo-03",
+    fichier: "data/brevet-polynesie-2024-exo-03.html",
+    titre: "centre aquatique olympique — géométrie & énergie",
+    source: "Brevet Polynésie 2024",
+    annee: 2024,
+    session: "Polynésie",
+    notion: "Pythagore",
+    notions: ["Pythagore", "Trigonométrie", "Volume"],
+    points: 20
+  },
+  {
+    id: "brevet-polynesie-2024-exo-04",
+    fichier: "data/brevet-polynesie-2024-exo-04.html",
+    titre: "boules numérotées — probabilités",
+    source: "Brevet Polynésie 2024",
+    annee: 2024,
+    session: "Polynésie",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Dénombrement"],
+    points: 20
+  },
+  {
+    id: "brevet-polynesie-2024-exo-05",
+    fichier: "data/brevet-polynesie-2024-exo-05.html",
+    titre: "fonctions f et g — tableur, programme, factorisation",
+    source: "Brevet Polynésie 2024",
+    annee: 2024,
+    session: "Polynésie",
+    notion: "Fonctions",
+    notions: ["Fonctions", "Algèbre", "Tableur"],
+    points: 20
+  },
+  {
+    id: "brevet-polynesie-sept-2024-exo-01",
+    fichier: "data/brevet-polynesie-sept-2024-exo-01.html",
+    titre: "questions indépendantes",
+    source: "Brevet Polynésie Septembre 2024",
+    annee: 2024,
+    session: "Polynésie Septembre",
+    notion: "Arithmétique",
+    notions: ["Arithmétique", "Notation", "Vitesse"],
+    points: 20
+  },
+  {
+    id: "brevet-polynesie-sept-2024-exo-02",
+    fichier: "data/brevet-polynesie-sept-2024-exo-02.html",
+    titre: "températures à Strasbourg — statistiques & probabilités",
+    source: "Brevet Polynésie Septembre 2024",
+    annee: 2024,
+    session: "Polynésie Septembre",
+    notion: "Statistiques",
+    notions: ["Statistiques", "Tableur", "Probabilités"],
+    points: 20
+  },
+  {
+    id: "brevet-polynesie-sept-2024-exo-03",
+    fichier: "data/brevet-polynesie-sept-2024-exo-03.html",
+    titre: "triangles rectangles ONM, OPQ, ORS",
+    source: "Brevet Polynésie Septembre 2024",
+    annee: 2024,
+    session: "Polynésie Septembre",
+    notion: "Trigonométrie",
+    notions: ["Trigonométrie", "Pythagore", "Agrandissement"],
+    points: 20
+  },
+  {
+    id: "brevet-polynesie-sept-2024-exo-04",
+    fichier: "data/brevet-polynesie-sept-2024-exo-04.html",
+    titre: "pentagone régulier & scratch — transformations",
+    source: "Brevet Polynésie Septembre 2024",
+    annee: 2024,
+    session: "Polynésie Septembre",
+    notion: "Géométrie",
+    notions: ["Géométrie", "Angles", "Scratch"],
+    points: 20
+  },
+  {
+    id: "brevet-polynesie-sept-2024-exo-05",
+    fichier: "data/brevet-polynesie-sept-2024-exo-05.html",
+    titre: "piscine cylindrique — volume & fonction V(t)",
+    source: "Brevet Polynésie Septembre 2024",
+    annee: 2024,
+    session: "Polynésie Septembre",
+    notion: "Volume",
+    notions: ["Volume", "Fonctions", "Lecture graphique"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-2025-exo-01",
+    fichier: "data/brevet-metropole-2025-exo-01.html",
+    titre: "urnes &amp; probabilités",
+    source: "Brevet Métropole 2025",
+    annee: 2025,
+    session: "Métropole",
+    notion: "Probabilités",
+    notions: ["Probabilités", "Multiples", "Nombres premiers"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-2025-exo-02",
+    fichier: "data/brevet-metropole-2025-exo-02.html",
+    titre: "aquathlon — course à pied &amp; natation",
+    source: "Brevet Métropole 2025",
+    annee: 2025,
+    session: "Métropole",
+    notion: "Pythagore",
+    notions: ["Pythagore", "Thalès", "Trigonométrie"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-2025-exo-03",
+    fichier: "data/brevet-metropole-2025-exo-03.html",
+    titre: "QCM — 5 questions",
+    source: "Brevet Métropole 2025",
+    annee: 2025,
+    session: "Métropole",
+    notion: "Proportionnalité",
+    notions: ["Proportionnalité", "Transformations", "Aire"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-2025-exo-04",
+    fichier: "data/brevet-metropole-2025-exo-04.html",
+    titre: "programmes de calcul &amp; Scratch",
+    source: "Brevet Métropole 2025",
+    annee: 2025,
+    session: "Métropole",
+    notion: "Calcul littéral",
+    notions: ["Calcul littéral", "Équation", "Scratch"],
+    points: 20
+  },
+  {
+    id: "brevet-metropole-2025-exo-05",
+    fichier: "data/brevet-metropole-2025-exo-05.html",
+    titre: "achat ou location — fonctions &amp; graphique",
+    source: "Brevet Métropole 2025",
+    annee: 2025,
+    session: "Métropole",
+    notion: "Fonctions",
+    notions: ["Fonctions", "Tableur", "Lecture graphique"],
     points: 20
   }
 ];
