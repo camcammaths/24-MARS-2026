@@ -281,13 +281,13 @@ html, body {
     </div>
     <div class="nav-r">
       <ul class="nav-links">
-        <li><a href="#">accueil</a></li>
-        <li><a href="#">mon parcours</a></li>
-        <li><a href="#">planning</a></li>
-        <li><a href="#">ressources</a></li>
-        <li class="on"><a href="#">s'inscrire ✦</a></li>
+        <li data-page="accueil"><a href="index.html">accueil</a></li>
+        <li data-page="parcours"><a href="parcours.html">mon parcours</a></li>
+        <li data-page="planning"><a href="planning.html">planning</a></li>
+        <li data-page="ressources"><a href="ressources.html">ressources</a></li>
+        <li data-page="abonnement" class="on" style="color:var(--orange);opacity:1;font-weight:600"><a href="abonnement.html">s'inscrire ✦</a></li>
       </ul>
-      <a class="cta" href="#">générer un brevet →</a>
+      <a class="cta" href="generer.html">générer un brevet →</a>
     </div>
   </nav>
 
@@ -421,6 +421,16 @@ html, body {
 </div>
 
 <script>
+function goTo(page) { window.location.href = page + '.html'; }
+
+document.addEventListener('DOMContentLoaded', function () {
+  var current = location.pathname.split('/').pop().replace('.html', '') || 'accueil';
+  document.querySelectorAll('.nav-links li[data-page]').forEach(function (li) {
+    if (li.dataset.page === current) li.classList.add('on');
+    else li.classList.remove('on');
+  });
+});
+
 function togglePricing(e) {
   var tm = document.getElementById("tog-month"),
       ty = document.getElementById("tog-year"),
