@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 3 — Brevet Polynésie 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:10px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 14px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:14px}
+.brevet-table td:first-child{background:#f8f8f8;font-weight:600}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 3</span>
+      <span class="brevet-ex-titre">centre aquatique olympique — géométrie & énergie</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Polynésie · 27 juin 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Pythagore · Trigonométrie · Volume</span>
+      <span class="ctag">22 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    Alyssa (point A, gradins Nord) et Jules (point J, gradins Sud) visitent le Centre Aquatique Olympique de Saint-Denis.<br><br>
+    <strong>AC = FJ = 15 m ; BC = 27 m ; FH = 7 m ; EF = 18 m.</strong><br>
+    Les points F, J et D sont alignés. Les points F, H et E sont alignés. Les points C, B, D, E sont alignés.<br>
+    <em style="color:var(--muted);font-size:13px">La figure n'est pas à l'échelle.</em>
+  </div>
+
+  <!-- Figure SVG -->
+  <div style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.06);border-radius:14px;padding:20px;margin-bottom:20px;overflow-x:auto">
+    <svg viewBox="0 0 520 200" width="500" height="192" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+      <!--
+        Triangle DFE :
+          D=(260,150) bas-gauche, F=(400,30) haut, E=(460,150) bas-droite
+          H sur FE : FH=7m, FE=18m → H divise FE à 7/18 depuis F
+          H = F + (7/18)×(E-F) = (400+7/18×60, 30+7/18×120) = (400+23, 30+47) = (423,77)
+          Angle droit en H : FH ⊥ HE... non, H est juste un point sur FE
+
+          En fait d'après l'énoncé : "Les points F, H et E sont alignés" et FH=7m, EF=18m
+          Donc H est sur le segment FE avec FH=7 et HE=18-7=11
+          Et l'angle droit est en H avec HD ⊥ FE (H est le pied de la hauteur de D sur FE)
+
+          J sur FD, FJ=15m.
+
+        Points :
+          D=(260,150), E=(460,150), F=(400,30)
+          FE direction : (460-400,150-30)=(60,120), longueur=√(3600+14400)=√18000≈134px
+          H sur FE à 7/18 depuis F : H=(400+7/18*60, 30+7/18*120)=(423,77)
+          Angle droit : HD ⊥ FE
+
+          J sur FD à 15/FD depuis F :
+          FD=√((400-260)²+(30-150)²)=√(19600+14400)=√34000≈184px
+          J = F + (15m/FD_m)×(D-F), FD en mètres...
+          (figure non à l'échelle, on place J visuellement entre F et D à ~40% du chemin)
+          J=(340, 78)
+      -->
+
+      <!-- Gradins Nord : triangle ABC rectangle en C -->
+      <polygon points="20,50 90,150 20,150" fill="rgba(0,33,188,.05)" stroke="#333" stroke-width="1.5"/>
+      <rect x="20" y="140" width="10" height="10" fill="none" stroke="#555" stroke-width="1.2"/>
+
+      <!-- Piscine olympique : rectangle hachuré -->
+      <defs>
+        <pattern id="hatch2" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="6" stroke="#aaa" stroke-width="1.5"/>
+        </pattern>
+      </defs>
+      <rect x="90" y="130" width="170" height="20" fill="url(#hatch2)" stroke="#555" stroke-width="1.5"/>
+
+      <!-- Triangle DFE avec :
+           - angle droit en E : FE ⊥ DE
+           - F=(440,30), E=(440,150), D=(260,150)
+           - FE vertical=18m, DE horizontal
+           - J sur FD : FJ=15m, FD total (pixels)
+             FD=√((440-260)²+(30-150)²)=√(180²+120²)=√(32400+14400)=√46800≈216px
+             FJ/FD (mètres) inconnu mais on place J visuellement à ~40% de FD depuis F
+             J = F + 0.4×(D-F) = (440+0.4×(260-440), 30+0.4×(150-30))
+               = (440-72, 30+48) = (368, 78)
+           - H sur FE : FHJ rectangle en H → H est le pied de la perpendiculaire de J sur FE
+             FE est vertical (x=440), donc H a même y que J : H=(440, 78)
+             FH = distance F à H = 78-30 = 48px ~ 7m ✓ (cohérent avec FH=7m)
+           - Angle droit en H : JH ⊥ FH (JH horizontal, FH vertical) ✓
+           - Angle droit en E : FE ⊥ DE ✓
+      -->
+
+      <!-- Triangle DFE (gradins Sud) : rectangle en E -->
+      <polygon points="260,150 440,30 440,150" fill="rgba(238,110,52,.05)" stroke="#333" stroke-width="1.5"/>
+
+      <!-- Angle droit en E -->
+      <rect x="430" y="140" width="10" height="10" fill="none" stroke="#555" stroke-width="1.2"/>
+
+      <!-- J sur FD : J=(368,78) -->
+      <!-- H pied perpendiculaire de J sur FE : H=(440,78) -->
+      <circle cx="440" cy="78" r="3" fill="#333"/>
+      <circle cx="368" cy="78" r="3" fill="#0021BC"/>
+
+      <!-- Segment JH (perpendiculaire de J à FE) -->
+      <line x1="368" y1="78" x2="440" y2="78" stroke="#333" stroke-width="1.5"/>
+
+      <!-- Angle droit en H -->
+      <rect x="430" y="68" width="10" height="10" fill="none" stroke="#555" stroke-width="1.2"/>
+
+      <!-- Segment JD (pointillés, pour montrer la distance à la piscine) -->
+      <line x1="368" y1="78" x2="260" y2="150" stroke="#0021BC" stroke-width="1.2" stroke-dasharray="4,2"/>
+
+      <!-- Axe C-B-D-E -->
+      <line x1="10" y1="150" x2="450" y2="150" stroke="#333" stroke-width="1.2"/>
+
+      <!-- Points -->
+      <circle cx="440" cy="30"  r="3" fill="#EE6E34"/>
+      <circle cx="440" cy="150" r="3" fill="#333"/>
+      <circle cx="260" cy="150" r="3" fill="#333"/>
+
+      <!-- Labels côté droit -->
+      <text x="444" y="24"  fill="#EE6E34" font-weight="700">F</text>
+      <text x="444" y="81"  fill="#333"    font-weight="700">H</text>
+      <text x="352" y="73"  fill="#0021BC" font-weight="700">J</text>
+      <text x="438" y="163" fill="#333"    font-weight="700">E</text>
+      <text x="255" y="163" fill="#333"    font-weight="700">D</text>
+
+      <!-- Cotes -->
+      <text x="448" y="57"  fill="var(--muted)" font-size="10">FH=7</text>
+      <text x="448" y="118" fill="var(--muted)" font-size="10">HE=11</text>
+      <text x="395" y="73"  fill="var(--muted)" font-size="10">JH</text>
+      <text x="390" y="118" fill="var(--muted)" font-size="10" transform="rotate(-34,390,118)">FJ=15</text>
+      <text x="438" y="163" fill="#333"    font-weight="700">E</text>
+      <text x="255" y="163" fill="#333"    font-weight="700">D</text>
+
+      <!-- Cotes -->
+      <text x="448" y="56"  fill="var(--muted)" font-size="10">FH=7</text>
+      <text x="448" y="117" fill="var(--muted)" font-size="10">HE=11</text>
+      <text x="388" y="70"  fill="var(--muted)" font-size="10">JH</text>
+      <text x="408" y="122" fill="var(--muted)" font-size="10" transform="rotate(-43,408,122)">EF=18</text>
+
+      <!-- Labels côté gauche (Nord) -->
+      <text x="8"   y="46"  fill="#0021BC" font-weight="700">A</text>
+      <text x="8"   y="163" fill="#333"    font-weight="700">C</text>
+      <text x="87"  y="163" fill="#333"    font-weight="700">B</text>
+
+      <!-- Labels zones -->
+      <text x="18"  y="178" text-anchor="middle" fill="var(--muted)" font-size="10">Gradins Nord</text>
+      <text x="175" y="178" text-anchor="middle" fill="var(--muted)" font-size="10">Piscine olympique</text>
+      <text x="375" y="178" text-anchor="middle" fill="var(--muted)" font-size="10">Gradins Sud</text>
+
+      <!-- Cotes côté gauche -->
+      <text x="4"  y="102" text-anchor="middle" fill="var(--muted)" font-size="10" transform="rotate(-90,4,102)">AC=15</text>
+      <text x="55" y="145" text-anchor="middle" fill="var(--muted)" font-size="10">BC=27</text>
+    </svg>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Jules et Alyssa discutent pour savoir qui est le mieux placé.</span></div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.a.</span><span class="brevet-q-text">Calculer la distance entre Alyssa et le bord de la piscine, c'est-à-dire la longueur <strong>AB</strong>. Arrondir au mètre près.</span><span class="brevet-q-pts">4 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Triangle ABC rectangle en C :&#10;AB² = AC² + BC² = 15² + 27² = … + … = …&#10;AB = √… ≈ … m" rows="3"></textarea>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.b.</span><span class="brevet-q-text">Vérifier que la distance entre Jules et le bord de la piscine, c'est-à-dire la longueur <strong>JD</strong>, est de <strong>24 m</strong>, arrondie au mètre près.</span><span class="brevet-q-pts">4 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="FJ = 15m, FH = 7m, EF = 18m.&#10;Utiliser Thalès ou Pythagore pour trouver JD…&#10;Triangle FHE : FE = 18m, FH = 7m → HE = √(FE²-FH²) = …&#10;Par Thalès (J sur FD) : JD/HE = FJ/FE → JD = …" rows="4"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">1.c.</span><span class="brevet-q-text">En déduire lequel des deux amis est le <strong>plus proche</strong> d'un bord de la piscine.</span><span class="brevet-q-pts">1 pt</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="AB ≈ … m et JD ≈ 24 m → … est le plus proche." rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">2.</span>
+      <span class="brevet-q-text">Pour respecter les normes de sécurité, l'angle d'inclinaison <strong>ABC</strong> des gradins Nord ne doit pas dépasser <strong>35°</strong>. Les gradins Nord respectent-ils cette norme ?</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Triangle ABC rectangle en C :&#10;tan(ABC) = AC/BC = 15/27 = …&#10;Angle ABC = arctan(…) ≈ …°&#10;Cet angle est-il ≤ 35° ? Conclusion : …" rows="4"></textarea>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">3.</span>
+      <span class="brevet-q-text">Le toit du Centre Aquatique a une surface de <strong>5 000 m²</strong>. On estime que <strong>4 678,4 m²</strong> est recouvert de panneaux photovoltaïques.<br>
+      Chaque panneau mesure <strong>1 m × 1,7 m</strong> et produit environ <strong>350 kWh par an</strong>.<br>
+      Montrer que la quantité annuelle d'énergie produite est de <strong>963 200 kWh</strong>.</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+
+    <!-- Illustration panneau -->
+    <div style="display:inline-flex;align-items:center;gap:16px;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:10px;padding:12px 16px;margin-bottom:10px">
+      <svg viewBox="0 0 85 52" width="85" height="52" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="81" height="48" fill="#1a3a6b" stroke="#111" stroke-width="1.5" rx="2"/>
+        <g fill="#4a90d9" opacity="0.7">
+          <rect x="8" y="8" width="7" height="7" rx="1"/><rect x="18" y="8" width="7" height="7" rx="1"/>
+          <rect x="28" y="8" width="7" height="7" rx="1"/><rect x="38" y="8" width="7" height="7" rx="1"/>
+          <rect x="48" y="8" width="7" height="7" rx="1"/><rect x="58" y="8" width="7" height="7" rx="1"/>
+          <rect x="68" y="8" width="7" height="7" rx="1"/>
+          <rect x="8" y="19" width="7" height="7" rx="1"/><rect x="18" y="19" width="7" height="7" rx="1"/>
+          <rect x="28" y="19" width="7" height="7" rx="1"/><rect x="38" y="19" width="7" height="7" rx="1"/>
+          <rect x="48" y="19" width="7" height="7" rx="1"/><rect x="58" y="19" width="7" height="7" rx="1"/>
+          <rect x="68" y="19" width="7" height="7" rx="1"/>
+          <rect x="8" y="30" width="7" height="7" rx="1"/><rect x="18" y="30" width="7" height="7" rx="1"/>
+          <rect x="28" y="30" width="7" height="7" rx="1"/><rect x="38" y="30" width="7" height="7" rx="1"/>
+          <rect x="48" y="30" width="7" height="7" rx="1"/><rect x="58" y="30" width="7" height="7" rx="1"/>
+          <rect x="68" y="30" width="7" height="7" rx="1"/>
+        </g>
+        <!-- cotes -->
+        <text x="42" y="56" text-anchor="middle" fill="#333" font-size="9" font-family="-apple-system,sans-serif">1,7 m</text>
+        <text x="-4" y="28" fill="#333" font-size="9" font-family="-apple-system,sans-serif" transform="rotate(-90,-4,28)" text-anchor="middle">1 m</text>
+      </svg>
+      <div style="font-size:12px;line-height:1.8;color:var(--ink)">
+        <strong>Dimensions :</strong> 1 m × 1,7 m<br>
+        <strong>Énergie produite :</strong> ~350 kWh/an
+      </div>
+    </div>
+
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Aire d'un panneau = 1 × 1,7 = … m²&#10;Nombre de panneaux = 4678,4 ÷ … = …&#10;Énergie totale = … × 350 = … kWh" rows="3"></textarea>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">4.</span>
+      <span class="brevet-q-text">La piscine olympique est un pavé droit de dimensions <strong>50 m × 25 m × 3 m</strong>. L'eau est à 18°C et doit être chauffée à 26°C. On estime qu'il faut <strong>9,3 kWh</strong> pour chauffer <strong>1 m³</strong> d'eau de 18° à 26°. Quelle quantité d'énergie (en kWh) sera nécessaire pour chauffer toute l'eau de la piscine ?</span>
+      <span class="brevet-q-pts">5 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Volume de la piscine = 50 × 25 × 3 = … m³&#10;Énergie nécessaire = … × 9,3 = … kWh" rows="3"></textarea>
+  </div>
+
+</div><!-- fin exercice 3 -->
+
+<!-- ══════════ EXERCICE 1 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
