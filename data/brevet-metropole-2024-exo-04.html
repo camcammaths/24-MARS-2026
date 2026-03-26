@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 4 — Brevet Métropole 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 4</span>
+      <span class="brevet-ex-titre">QCM — 6 questions</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Métropole Guadeloupe–Guyane · 1er juillet 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Fonctions · Calcul · Géométrie · Statistiques</span>
+      <span class="ctag">18 pts</span>
+    </div>
+  </div>
+  <div class="brevet-enonce">
+    QCM — <strong>une seule réponse est exacte</strong> par question.<br>
+    Aucune justification n'est demandée. Recopier le numéro de la question et la lettre correspondant à la réponse exacte.
+  </div>
+
+  <!-- Macro pour une ligne QCM à 3 choix -->
+  <!-- Q1 : f(x)=3x-2, image de -4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">On considère la fonction <em>f</em> définie par <strong>f(x) = 3x − 2</strong>. Quelle est l'image de <strong>−4</strong> par cette fonction ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse C</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:16px">
+      <div id="e4q1a" onclick="selQCM3('e4q1','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">−14</div>
+      <div id="e4q1b" onclick="selQCM3('e4q1','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">−10</div>
+      <div id="e4q1c" onclick="selQCM3('e4q1','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">−3</div>
+    </div>
+  </div>
+
+  <!-- Q2 : (-5)³ -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Combien vaut <strong>(−5)³</strong> ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse C</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:16px">
+      <div id="e4q2a" onclick="selQCM3('e4q2','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">−125</div>
+      <div id="e4q2b" onclick="selQCM3('e4q2','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">−15</div>
+      <div id="e4q2c" onclick="selQCM3('e4q2','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">125</div>
+    </div>
+  </div>
+
+  <!-- Q3 : translation C→A, image de J -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">Quelle est l'image du point J par la translation qui transforme C en A ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <!-- Grille de points SVG -->
+    <div style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:10px;padding:16px;margin-bottom:10px;display:flex;justify-content:center">
+      <svg viewBox="0 0 200 130" width="200" height="130" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="11" font-weight="600">
+        <!-- Grille de points : 4 colonnes × 3 lignes, espacement 40px -->
+        <!-- Ligne 1 (y=25) : B(20,25) C(60,25) G(100,25) H(140,25) -->
+        <!-- Ligne 2 (y=65) : A(20,65) D(60,65) J(100,65) I(140,65) -->
+        <!-- Ligne 3 (y=105) : F(20,105) E(60,105) L(100,105) K(140,105) -->
+        <!-- Points -->
+        <g fill="#333">
+          <circle cx="20"  cy="25"  r="3"/><text x="14" y="18">B</text>
+          <circle cx="60"  cy="25"  r="3"/><text x="54" y="18">C</text>
+          <circle cx="100" cy="25"  r="3"/><text x="94" y="18">G</text>
+          <circle cx="140" cy="25"  r="3"/><text x="134" y="18">H</text>
+          <circle cx="20"  cy="65"  r="3"/><text x="8"  y="62">A</text>
+          <circle cx="60"  cy="65"  r="3"/><text x="48" y="62">D</text>
+          <circle cx="100" cy="65"  r="3"/><text x="88" y="62">J</text>
+          <circle cx="140" cy="65"  r="3"/><text x="132" y="62">I</text>
+          <circle cx="20"  cy="105" r="3"/><text x="10" y="102">F</text>
+          <circle cx="60"  cy="105" r="3"/><text x="50" y="102">E</text>
+          <circle cx="100" cy="105" r="3"/><text x="90" y="102">L</text>
+          <circle cx="140" cy="105" r="3"/><text x="130" y="102">K</text>
+        </g>
+        <!-- Vecteur C→A en bleu (indication) -->
+        <defs><marker id="arr3" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0021BC"/></marker></defs>
+        <line x1="60" y1="25" x2="22" y2="63" stroke="#0021BC" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#arr3)"/>
+        <text x="30" y="48" fill="#0021BC" font-size="10" font-style="italic">C→A</text>
+      </svg>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse C</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:16px">
+      <div id="e4q3a" onclick="selQCM3('e4q3','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">H</div>
+      <div id="e4q3b" onclick="selQCM3('e4q3','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">E</div>
+      <div id="e4q3c" onclick="selQCM3('e4q3','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">D</div>
+    </div>
+  </div>
+
+  <!-- Q4 : antécédent de 3 par f (graphique) -->
+  <div class="brevet-q">
+    <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:10px">
+      <div style="flex:1;min-width:180px">
+        <div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">Quel est l'<strong>antécédent de 3</strong> par la fonction <em>f</em> ?</span><span class="brevet-q-pts">3 pts</span></div>
+      </div>
+      <!-- Graphique SVG -->
+      <div style="flex-shrink:0;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:10px;padding:12px">
+        <svg viewBox="-3.5 -3.5 7 7" width="140" height="140" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size=".35">
+          <!-- Grille -->
+          <g stroke="#e0e0e0" stroke-width=".04">
+            <line x1="-3" y1="-3" x2="-3" y2="3"/><line x1="-2" y1="-3" x2="-2" y2="3"/>
+            <line x1="-1" y1="-3" x2="-1" y2="3"/><line x1="1" y1="-3" x2="1" y2="3"/>
+            <line x1="2" y1="-3" x2="2" y2="3"/><line x1="3" y1="-3" x2="3" y2="3"/>
+            <line x1="-3" y1="-3" x2="3" y2="-3"/><line x1="-3" y1="-2" x2="3" y2="-2"/>
+            <line x1="-3" y1="-1" x2="3" y2="-1"/><line x1="-3" y1="1" x2="3" y2="1"/>
+            <line x1="-3" y1="2" x2="3" y2="2"/><line x1="-3" y1="3" x2="3" y2="3"/>
+          </g>
+          <!-- Axes -->
+          <line x1="-3.2" y1="0" x2="3.2" y2="0" stroke="#333" stroke-width=".07"/>
+          <line x1="0" y1="-3.2" x2="0" y2="3.2" stroke="#333" stroke-width=".07"/>
+          <!-- Labels axes -->
+          <text x="-3" y=".5" text-anchor="middle" fill="#666" font-size=".3">-3</text>
+          <text x="-2" y=".5" text-anchor="middle" fill="#666" font-size=".3">-2</text>
+          <text x="-1" y=".5" text-anchor="middle" fill="#666" font-size=".3">-1</text>
+          <text x="1" y=".5" text-anchor="middle" fill="#666" font-size=".3">1</text>
+          <text x="2" y=".5" text-anchor="middle" fill="#666" font-size=".3">2</text>
+          <text x="3" y=".5" text-anchor="middle" fill="#666" font-size=".3">3</text>
+          <text x=".15" y="-1" font-size=".3" fill="#666">1</text>
+          <text x=".15" y="-2" font-size=".3" fill="#666">2</text>
+          <text x=".15" y="-3" font-size=".3" fill="#666">3</text>
+          <text x=".15" y="1" font-size=".3" fill="#666">-1</text>
+          <text x=".15" y="2" font-size=".3" fill="#666">-2</text>
+          <text x=".15" y="3" font-size=".3" fill="#666">-3</text>
+          <!-- Courbe f (droite décroissante bleue) -->
+          <line x1="-1" y1="-3" x2="2.5" y2="3" stroke="#0021BC" stroke-width=".1"/>
+          <!-- Label Cf -->
+          <text x="2" y="-1.6" fill="#0021BC" font-size=".35" font-style="italic">𝒞f</text>
+          <!-- Point (0,0) marqué -->
+          <circle cx="0" cy="0" r=".08" fill="#333"/>
+        </svg>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse C</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:16px">
+      <div id="e4q4a" onclick="selQCM3('e4q4','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">3</div>
+      <div id="e4q4b" onclick="selQCM3('e4q4','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">−3</div>
+      <div id="e4q4c" onclick="selQCM3('e4q4','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">0</div>
+    </div>
+  </div>
+
+  <!-- Q5 : médiane -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">5.</span><span class="brevet-q-text">On a mesuré les tailles, en m, de sept élèves : <span style="font-family:'Courier New',monospace;background:#EEF2FF;padding:2px 8px;border-radius:4px;color:var(--blue);font-size:13px">1,46 ; 1,65 ; 1,6 ; 1,72 ; 1,7 ; 1,67 ; 1,75</span>. Quelle est la <strong>médiane</strong>, en m, de ces tailles ?</span><span class="brevet-q-pts">3 pts</span></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse C</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:16px">
+      <div id="e4q5a" onclick="selQCM3('e4q5','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">1,72</div>
+      <div id="e4q5b" onclick="selQCM3('e4q5','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">1,67</div>
+      <div id="e4q5c" onclick="selQCM3('e4q5','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">1,65</div>
+    </div>
+  </div>
+
+  <!-- Q6 : cos alpha triangle rectangle -->
+  <div class="brevet-q">
+    <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:10px">
+      <div style="flex:1;min-width:200px">
+        <div class="brevet-q-row"><span class="brevet-q-id">6.</span><span class="brevet-q-text">Dans le triangle ABC rectangle en A ci-contre, quelle est la valeur de <strong>cos α</strong> ?</span><span class="brevet-q-pts">3 pts</span></div>
+      </div>
+      <!-- Figure triangle -->
+      <div style="flex-shrink:0;background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:10px;padding:12px">
+        <svg viewBox="0 0 120 100" width="120" height="100" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+          <!-- Triangle ABC rectangle en A : A(10,85) B(90,85) C(10,15) -->
+          <polygon points="10,85 90,85 10,15" fill="rgba(0,33,188,.05)" stroke="#333" stroke-width="1.5"/>
+          <!-- Angle droit en A -->
+          <rect x="10" y="75" width="10" height="10" fill="none" stroke="#333" stroke-width="1.2"/>
+          <!-- Angle alpha en B -->
+          <path d="M80,85 A14,14 0 0,0 73.5,75" fill="none" stroke="#EE6E34" stroke-width="1.2"/>
+          <!-- Labels -->
+          <text x="5"  y="92" fill="#333" font-weight="700">A</text>
+          <text x="93" y="92" fill="#333" font-weight="700">B</text>
+          <text x="3"  y="14" fill="#333" font-weight="700">C</text>
+          <!-- Cotes -->
+          <text x="48" y="96" text-anchor="middle" fill="var(--muted)" font-size="11">4</text>
+          <text x="3"  y="52" text-anchor="middle" fill="var(--muted)" font-size="11">3</text>
+          <text x="57" y="46" fill="var(--muted)" font-size="11" transform="rotate(-52,57,46)">5</text>
+          <!-- Alpha -->
+          <text x="76" y="76" fill="#EE6E34" font-size="11" font-style="italic">α</text>
+        </svg>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:4px">
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-radius:4px 0 0 4px;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse A</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse B</div>
+      <div style="background:#EEF2FF;border:1.5px solid var(--blue);border-left:none;border-radius:0 4px 4px 0;padding:5px;text-align:center;font-size:11px;font-weight:700;color:var(--blue)">Réponse C</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">
+      <div id="e4q6a" onclick="selQCM3('e4q6','a')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:0 0 0 8px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">0,8</div>
+      <div id="e4q6b" onclick="selQCM3('e4q6','b')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">0,75</div>
+      <div id="e4q6c" onclick="selQCM3('e4q6','c')" style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-left:none;border-radius:0 0 8px 0;padding:12px;text-align:center;cursor:pointer;transition:all .15s;font-size:15px;font-weight:600">0,6</div>
+    </div>
+  </div>
+
+</div><!-- fin exercice 4 --></div><!-- fin padding -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

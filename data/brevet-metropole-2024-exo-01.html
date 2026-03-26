@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 1 — Brevet Métropole 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 1</span>
+      <span class="brevet-ex-titre">roulette de casino — probabilités</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Métropole Guadeloupe–Guyane · 1er juillet 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Probabilités</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    Au casino, la roulette est un jeu de hasard pour lequel chaque joueur mise au choix sur un ou plusieurs numéros.<br>
+    On lance une bille sur une roue qui tourne, numérotée de <strong>0 à 36</strong>.<br>
+    La bille a la même probabilité de s'arrêter sur chaque numéro.
+  </div>
+
+  <!-- Roue de roulette SVG -->
+  <div class="brevet-figure">
+    <svg viewBox="0 0 260 260" width="240" height="240" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif">
+      <!-- Roue de roulette : 37 cases (0-36), alternance noir/rouge/noir, 0 en vert -->
+      <!-- Cercle extérieur -->
+      <circle cx="130" cy="130" r="125" fill="#1a1a1a" stroke="#111" stroke-width="2"/>
+      <!-- Cercle intérieur (centre blanc) -->
+      <circle cx="130" cy="130" r="55" fill="white" stroke="#333" stroke-width="2"/>
+
+      <!-- 37 secteurs de 360/37 ≈ 9.73° chacun -->
+      <!-- Numéros de la roulette européenne dans l'ordre de la roue : -->
+      <!-- 0,32,15,19,4,21,2,25,17,34,6,27,13,36,11,30,8,23,10,5,24,16,33,1,20,14,31,9,22,18,29,7,28,12,35,3,26 -->
+      <!-- Couleurs : 0=vert, rouges=1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36 noirs=les autres pairs et impairs restants -->
+
+      <defs>
+        <style>
+          .rouge { fill: #c0392b; }
+          .noir  { fill: #1a1a1a; }
+          .vert  { fill: #27ae60; }
+          .num   { fill: white; font-size: 7px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+        </style>
+      </defs>
+
+      <!-- Génération des 37 secteurs à la main, angle de départ -90° (haut), sens horaire -->
+      <!-- Chaque secteur = 9.7297°, rayon externe=124, rayon interne=57 -->
+      <!-- Ordre des numéros sur la roue européenne (sens horaire depuis 0 en haut) -->
+
+      <!-- Macro : pour chaque secteur i (0..36), angle_start = -90 + i*9.7297, angle_end = angle_start + 9.7297 -->
+      <!-- numéros = [0,32,15,19,4,21,2,25,17,34,6,27,13,36,11,30,8,23,10,5,24,16,33,1,20,14,31,9,22,18,29,7,28,12,35,3,26] -->
+      <!-- couleurs rouges (roulette européenne) : 1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36 -->
+
+      <!-- Secteurs calculés (cx=130, cy=130, R=124, r=57) -->
+      <!-- path arc : M cx+r*cos(a1) cy+r*sin(a1) L cx+R*cos(a1) cy+R*sin(a1) A R R 0 0 1 cx+R*cos(a2) cy+R*sin(a2) L cx+r*cos(a2) cy+r*sin(a2) A r r 0 0 0 cx+r*cos(a1) cy+r*sin(a1) Z -->
+
+      <!-- Secteur 0 (vert) : -90° à -80.27° -->
+      <path d="M130,73 L130,6 A124,124 0 0,1 145.9,6.8 L139.3,39.6 A57,57 0 0,0 130,73 Z" class="vert"/>
+      <!-- On va simplifier en utilisant des polygones approximatifs pour les 37 secteurs -->
+      <!-- Approche: générer via transform rotate -->
+
+      <g transform="translate(130,130)">
+        <!-- 37 secteurs, chacun rotate de i * (360/37) degrés -->
+        <!-- Secteur template: pointe vers le haut, largeur 9.7297° -->
+        <!-- Les numéros dans l'ordre, rouges marqués -->
+
+        <!-- Numéro 0 - VERT -->
+        <g transform="rotate(0)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#27ae60"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">0</text>
+        </g>
+        <!-- Numéro 32 - ROUGE -->
+        <g transform="rotate(9.73)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">32</text>
+        </g>
+        <!-- Numéro 15 - NOIR -->
+        <g transform="rotate(19.46)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">15</text>
+        </g>
+        <!-- Numéro 19 - ROUGE -->
+        <g transform="rotate(29.19)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">19</text>
+        </g>
+        <!-- Numéro 4 - NOIR -->
+        <g transform="rotate(38.92)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">4</text>
+        </g>
+        <!-- Numéro 21 - ROUGE -->
+        <g transform="rotate(48.65)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">21</text>
+        </g>
+        <!-- Numéro 2 - NOIR -->
+        <g transform="rotate(58.38)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">2</text>
+        </g>
+        <!-- Numéro 25 - ROUGE -->
+        <g transform="rotate(68.11)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">25</text>
+        </g>
+        <!-- Numéro 17 - NOIR -->
+        <g transform="rotate(77.84)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">17</text>
+        </g>
+        <!-- Numéro 34 - ROUGE -->
+        <g transform="rotate(87.57)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">34</text>
+        </g>
+        <!-- Numéro 6 - NOIR -->
+        <g transform="rotate(97.30)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">6</text>
+        </g>
+        <!-- Numéro 27 - ROUGE -->
+        <g transform="rotate(107.03)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">27</text>
+        </g>
+        <!-- Numéro 13 - NOIR -->
+        <g transform="rotate(116.76)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">13</text>
+        </g>
+        <!-- Numéro 36 - ROUGE -->
+        <g transform="rotate(126.49)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">36</text>
+        </g>
+        <!-- Numéro 11 - NOIR -->
+        <g transform="rotate(136.22)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">11</text>
+        </g>
+        <!-- Numéro 30 - ROUGE -->
+        <g transform="rotate(145.95)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">30</text>
+        </g>
+        <!-- Numéro 8 - NOIR -->
+        <g transform="rotate(155.68)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">8</text>
+        </g>
+        <!-- Numéro 23 - ROUGE -->
+        <g transform="rotate(165.41)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">23</text>
+        </g>
+        <!-- Numéro 10 - NOIR -->
+        <g transform="rotate(175.14)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">10</text>
+        </g>
+        <!-- Numéro 5 - ROUGE -->
+        <g transform="rotate(184.86)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">5</text>
+        </g>
+        <!-- Numéro 24 - NOIR -->
+        <g transform="rotate(194.59)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">24</text>
+        </g>
+        <!-- Numéro 16 - ROUGE -->
+        <g transform="rotate(204.32)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">16</text>
+        </g>
+        <!-- Numéro 33 - NOIR -->
+        <g transform="rotate(214.05)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">33</text>
+        </g>
+        <!-- Numéro 1 - ROUGE -->
+        <g transform="rotate(223.78)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">1</text>
+        </g>
+        <!-- Numéro 20 - NOIR -->
+        <g transform="rotate(233.51)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">20</text>
+        </g>
+        <!-- Numéro 14 - ROUGE -->
+        <g transform="rotate(243.24)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">14</text>
+        </g>
+        <!-- Numéro 31 - NOIR -->
+        <g transform="rotate(252.97)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">31</text>
+        </g>
+        <!-- Numéro 9 - ROUGE -->
+        <g transform="rotate(262.70)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">9</text>
+        </g>
+        <!-- Numéro 22 - NOIR -->
+        <g transform="rotate(272.43)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">22</text>
+        </g>
+        <!-- Numéro 18 - ROUGE -->
+        <g transform="rotate(282.16)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">18</text>
+        </g>
+        <!-- Numéro 29 - NOIR -->
+        <g transform="rotate(291.89)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">29</text>
+        </g>
+        <!-- Numéro 7 - ROUGE -->
+        <g transform="rotate(301.62)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">7</text>
+        </g>
+        <!-- Numéro 28 - NOIR -->
+        <g transform="rotate(311.35)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">28</text>
+        </g>
+        <!-- Numéro 12 - ROUGE -->
+        <g transform="rotate(321.08)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">12</text>
+        </g>
+        <!-- Numéro 35 - NOIR -->
+        <g transform="rotate(330.81)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">35</text>
+        </g>
+        <!-- Numéro 3 - ROUGE -->
+        <g transform="rotate(340.54)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#c0392b"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">3</text>
+        </g>
+        <!-- Numéro 26 - NOIR -->
+        <g transform="rotate(350.27)">
+          <path d="M0,-57 L0,-124 A124,124 0 0,1 10.5,-123.6 L4.8,-56.8 A57,57 0 0,0 0,-57 Z" fill="#111"/>
+          <text transform="rotate(4.86) translate(0,-95)" class="num">26</text>
+        </g>
+      </g>
+
+      <!-- Cercle intérieur blanc (cache le centre des secteurs) -->
+      <circle cx="130" cy="130" r="56" fill="white" stroke="#ccc" stroke-width="1.5"/>
+      <!-- Petit cercle central -->
+      <circle cx="130" cy="130" r="8" fill="#888" stroke="#555" stroke-width="1"/>
+      <!-- Point bille -->
+      <circle cx="130" cy="42" r="5" fill="#333"/>
+    </svg>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">1.</span>
+      <span class="brevet-q-text">Expliquer pourquoi la probabilité que la bille s'arrête sur le numéro 7 est <strong>1/37</strong>.</span>
+      <span class="brevet-q-pts">4 pts</span>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="La roue comporte … numéros (de 0 à 36), chacun ayant la même probabilité d'être choisi.&#10;Donc P(7) = 1/…" rows="3"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">2.</span>
+      <span class="brevet-q-text">Déterminer la probabilité que la bille s'arrête sur une case à la fois <strong>noire et paire</strong>.</span>
+      <span class="brevet-q-pts">6 pts</span>
+    </div>
+    <div style="font-size:13px;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:10px;line-height:1.7">
+      Cases noires paires sur une roulette européenne : <strong>2, 4, 6, 8, 10, 20, 22, 24, 26, 28, 29, 31, 33, 35</strong><br>
+      <em style="font-size:12px;color:var(--muted)">(Note : les cases noires sont les nombres non rouges et non zéro)</em>
+    </div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Compter les cases noires ET paires…&#10;P(noire et paire) = …/37" rows="3"></textarea>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">3.</span>
+      <span class="brevet-q-text"></span>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">3.a.</span>
+        <span class="brevet-q-text">Déterminer la probabilité que la bille s'arrête sur un numéro <strong>inférieur ou égal à 6</strong>.</span>
+        <span class="brevet-q-pts">3 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Les numéros ≤ 6 sont : 0, 1, 2, 3, 4, 5, 6 → … numéros&#10;P(≤ 6) = …/37" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">3.b.</span>
+        <span class="brevet-q-text">En déduire la probabilité que la bille s'arrête sur un numéro <strong>supérieur ou égal à 7</strong>.</span>
+        <span class="brevet-q-pts">3 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="P(≥ 7) = 1 − P(≤ 6) = 1 − … = …" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">3.c.</span>
+        <span class="brevet-q-text">Un joueur affirme qu'on a <strong>plus de 3 chances sur 4</strong> d'obtenir un numéro supérieur ou égal à 7. A-t-il raison ?</span>
+        <span class="brevet-q-pts">4 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="3 chances sur 4 = 3/4 = 0,75&#10;Comparer P(≥ 7) avec 3/4…&#10;Conclusion : le joueur a-t-il raison ?" rows="3"></textarea>
+    </div>
+  </div>
+
+</div><!-- fin exercice 1 -->
+
+<!-- ══════════ EXERCICE 2 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 5 — Brevet Métropole 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-figure{display:flex;justify-content:center;margin:16px 0;background:#FAFAFA;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,.06)}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 5</span>
+      <span class="brevet-ex-titre">club de natation — sachets & piscine</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Métropole Guadeloupe–Guyane · 1er juillet 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">PGCD · Volume · Proportionnalité</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    Un club de natation propose un après-midi découverte pour les enfants.
+  </div>
+
+  <!-- PARTIE A -->
+  <div style="font-weight:700;font-size:13px;color:var(--ink);letter-spacing:.05em;margin:4px 0 12px;padding:8px 14px;background:#EEF2FF;border-radius:8px;border-left:3px solid var(--blue)">PARTIE A — Sachets cadeaux</div>
+
+  <div style="font-size:14px;color:var(--ink);line-height:1.75;margin-bottom:18px;padding:12px 16px;background:#FAFAFA;border-radius:10px;border:1.5px solid rgba(0,0,0,.07)">
+    La présidente du club veut offrir des petits sachets cadeaux tous identiques contenant des autocollants et des drapeaux avec le logo du club. Elle a acheté <strong>330 autocollants</strong> et <strong>132 drapeaux</strong> et veut tous les utiliser. Elle veut que, dans chaque sachet, il y ait exactement le même nombre d'autocollants et exactement le même nombre de drapeaux.
+  </div>
+
+  <!-- A.1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Pourquoi n'est-il pas possible de faire <strong>15 sachets</strong> ?</span><span class="brevet-q-pts">2 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Vérifier si 15 divise 330 et 132 :&#10;330 ÷ 15 = … et 132 ÷ 15 = …&#10;Conclusion : 15 ne divise pas …, donc ce n'est pas possible." rows="3"></textarea>
+  </div>
+
+  <!-- A.2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span></div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">2.a.</span><span class="brevet-q-text">Décomposer <strong>330</strong> et <strong>132</strong> en produits de facteurs premiers.</span><span class="brevet-q-pts">4 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="330 = 2 × … × … × …&#10;132 = 2 × … × … × …" rows="3"></textarea>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">2.b.</span><span class="brevet-q-text">En déduire le <strong>plus grand nombre de sachets</strong> que la présidente pourra réaliser.</span><span class="brevet-q-pts">4 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Le plus grand nombre de sachets = PGCD(330, 132) = …" rows="2"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">2.c.</span><span class="brevet-q-text">Dans ce cas, combien mettra-t-elle d'<strong>autocollants</strong> et de <strong>drapeaux</strong> dans chaque sachet ?</span><span class="brevet-q-pts">2 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Autocollants par sachet : 330 ÷ … = …&#10;Drapeaux par sachet : 132 ÷ … = …" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- PARTIE B -->
+  <div style="font-weight:700;font-size:13px;color:var(--ink);letter-spacing:.05em;margin:20px 0 12px;padding:8px 14px;background:#FFF0E8;border-radius:8px;border-left:3px solid var(--orange)">PARTIE B — La piscine</div>
+
+  <!-- Figure pavé droit + données -->
+  <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:18px">
+    <!-- SVG pavé droit piscine -->
+    <div class="brevet-figure" style="flex:1;min-width:200px">
+      <svg viewBox="0 0 280 180" width="260" height="168" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+        <!-- Pavé droit : longueur 25m, largeur 15m, hauteur 2m -->
+        <!-- Perspective cavalière, très plat (hauteur faible) -->
+        <!-- Face avant : A(30,140) B(30,110) C(220,110) D(220,140) -->
+        <!-- Face dessus : B(30,110) E(60,70) F(250,70) C(220,110) -->
+        <!-- Face droite : C(220,110) F(250,70) G(250,100) D(220,140) -->
+
+        <!-- Face dessus (gris clair) -->
+        <polygon points="30,110 60,70 250,70 220,110" fill="#ddd" stroke="#111" stroke-width="1.5"/>
+        <!-- Face avant (blanc) -->
+        <polygon points="30,140 30,110 220,110 220,140" fill="white" stroke="#111" stroke-width="1.5"/>
+        <!-- Face droite (gris) -->
+        <polygon points="220,110 250,70 250,100 220,140" fill="#c8c8c8" stroke="#111" stroke-width="1.5"/>
+
+        <!-- Arêtes cachées -->
+        <line x1="30" y1="140" x2="60" y2="100" stroke="#888" stroke-width="1" stroke-dasharray="5,3"/>
+        <line x1="60" y1="100" x2="60" y2="70" stroke="#888" stroke-width="1" stroke-dasharray="5,3"/>
+        <line x1="60" y1="100" x2="250" y2="100" stroke="#888" stroke-width="1" stroke-dasharray="5,3"/>
+        <line x1="250" y1="100" x2="220" y2="140" stroke="#888" stroke-width="1" stroke-dasharray="5,3"/>
+
+        <!-- Eau (remplissage 9/10) - bande bleue sur la face avant -->
+        <polygon points="30,140 30,113 220,113 220,140" fill="rgba(0,150,255,.15)" stroke="none"/>
+        <line x1="30" y1="113" x2="220" y2="113" stroke="#3B82F6" stroke-width="1.2" stroke-dasharray="4,2"/>
+
+        <!-- Label 9/10 -->
+        <text x="125" y="132" text-anchor="middle" fill="#3B82F6" font-size="11" font-style="italic">9/10 remplie</text>
+
+        <!-- Cotes -->
+        <text x="125" y="155" text-anchor="middle" fill="#333" font-size="12" font-weight="600">25 m</text>
+        <text x="238" y="88" fill="#333" font-size="12" font-weight="600">2 m</text>
+        <text x="244" y="130" fill="#333" font-size="12" font-weight="600">15 m</text>
+
+        <!-- Flèche longueur -->
+        <line x1="30" y1="152" x2="220" y2="152" stroke="#555" stroke-width="1"/>
+        <line x1="30" y1="148" x2="30" y2="156" stroke="#555" stroke-width="1"/>
+        <line x1="220" y1="148" x2="220" y2="156" stroke="#555" stroke-width="1"/>
+        <!-- Flèche hauteur -->
+        <line x1="228" y1="110" x2="228" y2="140" stroke="#555" stroke-width="1"/>
+        <line x1="224" y1="110" x2="232" y2="110" stroke="#555" stroke-width="1"/>
+        <line x1="224" y1="140" x2="232" y2="140" stroke="#555" stroke-width="1"/>
+        <!-- Flèche largeur -->
+        <line x1="236" y1="70" x2="236" y2="100" stroke="#555" stroke-width="1" stroke-dasharray="3,2"/>
+        <line x1="232" y1="70" x2="240" y2="70" stroke="#555" stroke-width="1"/>
+        <line x1="232" y1="100" x2="240" y2="100" stroke="#555" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <!-- Données -->
+    <div style="flex-shrink:0;font-size:13px;line-height:2;color:var(--ink)">
+      Elle est remplie aux <strong>9/10</strong> du volume.<br>
+      1 m³ d'eau coûte <strong>4,14 €</strong>.<br>
+      <em style="color:var(--muted);font-size:12px">Dimensions : 25 m × 15 m × 2 m</em>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">B.</span><span class="brevet-q-text">Combien coûte le remplissage de la piscine ?</span><span class="brevet-q-pts">8 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Volume total = 25 × 15 × 2 = … m³&#10;Volume d'eau = (9/10) × … = … m³&#10;Coût = … × 4,14 = … €" rows="4"></textarea>
+  </div>
+
+</div><!-- fin exercice 5 -->
+
+<!-- ══════════ EXERCICE 4 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
