@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 5 — Brevet Polynésie Septembre 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 16px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 5</span>
+      <span class="brevet-ex-titre">piscine cylindrique — volume & fonction V(t)</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Polynésie Septembre · 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Volume · Fonctions · Lecture graphique</span>
+      <span class="ctag">23 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    La piscine du camping « le Rocher » dispose d'un bassin <strong>cylindrique</strong> de rayon <strong>3,60 m</strong> et de hauteur <strong>1,50 m</strong>. En fin de saison, on utilise une pompe de débit <strong>14,1 m³/h</strong> pour vider l'eau.
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Montrer que le volume du bassin, arrondi au dixième de m³, est <strong>61,1 m³</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="V = π × r² × h = π × 3,60² × 1,50 = π × 12,96 × 1,50 = … ≈ 61,1 m³ ✓" rows="2"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Le bassin est plein. On met en route la pompe. Au bout de <strong>2 heures</strong>, quel volume d'eau en m³ reste-t-il à vider ?</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Volume pompé en 2h = 2 × 14,1 = … m³&#10;Volume restant = 61,1 − … = … m³" rows="2"></textarea>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">On considère la fonction <strong>V : t ↦ 61,1 − 0,235t</strong> (t en minutes, V en m³).</span></div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">3.a.</span><span class="brevet-q-text">Montrer que l'expression V(t) permet de déterminer le volume d'eau en m³ qu'il reste à vider en fonction de la durée t (en minutes) d'utilisation de la pompe.</span><span class="brevet-q-pts">4 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Débit = 14,1 m³/h = 14,1/60 m³/min = 0,235 m³/min&#10;Volume pompé en t minutes = 0,235 × t&#10;Volume restant = 61,1 − 0,235t = V(t) ✓" rows="3"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">3.b.</span><span class="brevet-q-text">Calculer le temps nécessaire pour que le volume restant soit égal à <strong>30 m³</strong>. Valeur approchée à la minute près.</span><span class="brevet-q-pts">4 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="V(t) = 30 → 61,1 − 0,235t = 30&#10;0,235t = 61,1 − 30 = …&#10;t = … / 0,235 ≈ … minutes" rows="3"></textarea>
+    </div>
+  </div>
+
+  <!-- Q4 : graphique -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">Voici la représentation graphique de la fonction V.</span></div>
+
+    <!-- Graphique SVG -->
+    <div style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:12px;padding:16px;margin-bottom:14px">
+      <svg viewBox="-50 -20 400 200" width="100%" style="max-height:200px" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="11">
+        <!-- Grille -->
+        <g stroke="#e0e0e0" stroke-width="0.8">
+          <!-- Verticales tous les 50 -->
+          <line x1="0"   y1="-10" x2="0"   y2="160"/>
+          <line x1="50"  y1="-10" x2="50"  y2="160"/>
+          <line x1="100" y1="-10" x2="100" y2="160"/>
+          <line x1="150" y1="-10" x2="150" y2="160"/>
+          <line x1="200" y1="-10" x2="200" y2="160"/>
+          <line x1="250" y1="-10" x2="250" y2="160"/>
+          <line x1="300" y1="-10" x2="300" y2="160"/>
+          <!-- Horizontales : V(t) axe, 100→y=0, 50→y=50, 0→y=100 -->
+          <!-- Échelle : 100m³ = 100px, 1m³=1px -->
+          <!-- V(0)=61.1, V(260)=0 -->
+          <!-- y = 100 - V → y=0 quand V=100, y=50 quand V=50, y=61 quand V=39 -->
+          <line x1="-10" y1="0"   x2="310" y2="0"/>
+          <line x1="-10" y1="50"  x2="310" y2="50"/>
+          <line x1="-10" y1="100" x2="310" y2="100"/>
+          <line x1="-10" y1="150" x2="310" y2="150"/>
+        </g>
+
+        <!-- Axes -->
+        <line x1="-10" y1="100" x2="315" y2="100" stroke="#333" stroke-width="1.5"/>
+        <line x1="0"   y1="-15" x2="0"   y2="165" stroke="#333" stroke-width="1.5"/>
+
+        <!-- Flèches axes -->
+        <polygon points="315,100 308,97 308,103" fill="#333"/>
+        <polygon points="0,-15 -3,-8 3,-8" fill="#333"/>
+
+        <!-- Labels axe x -->
+        <text x="50"  y="112" text-anchor="middle" fill="#555">50</text>
+        <text x="100" y="112" text-anchor="middle" fill="#555">100</text>
+        <text x="150" y="112" text-anchor="middle" fill="#555">150</text>
+        <text x="200" y="112" text-anchor="middle" fill="#555">200</text>
+        <text x="250" y="112" text-anchor="middle" fill="#555">250</text>
+        <text x="300" y="112" text-anchor="middle" fill="#555">300</text>
+        <text x="318" y="103" fill="#333" font-style="italic">t</text>
+
+        <!-- Labels axe y -->
+        <text x="-8" y="53"  text-anchor="end" fill="#555">50</text>
+        <text x="-8" y="3"   text-anchor="end" fill="#555">100</text>
+        <text x="-14" y="-10" text-anchor="end" fill="#555" font-style="italic">V(t)</text>
+
+        <!-- Droite V(t) = 61,1 - 0,235t -->
+        <!-- V(0) = 61,1 → y = 100 - 61,1 = 38,9 ≈ 39 -->
+        <!-- V(260) = 0 → y = 100 → t=260, y=100 -->
+        <!-- V(300) = 61,1 - 0,235×300 = 61,1 - 70,5 = -9,4 → y = 100+9,4 = 109,4 -->
+        <line x1="0" y1="39" x2="300" y2="109.4" stroke="#0021BC" stroke-width="2.5"/>
+
+        <!-- Point de référence V(0)=61,1 -->
+        <circle cx="0" cy="39" r="3" fill="#0021BC"/>
+      </svg>
+    </div>
+
+    <div class="brevet-enonce" style="margin:0 0 14px">Répondre aux questions suivantes par une <strong>lecture graphique</strong>.</div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">4.a.</span><span class="brevet-q-text">Déterminer l'<strong>antécédent de 40</strong> par la fonction V. Interpréter le résultat.</span><span class="brevet-q-pts">4 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Sur le graphique, lire t quand V(t) = 40 :&#10;t ≈ … minutes&#10;Interprétation : après … minutes de pompage, il reste 40 m³ d'eau dans le bassin." rows="3"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">4.b.</span><span class="brevet-q-text">Déterminer le temps nécessaire pour que la pompe vide <strong>complètement</strong> le bassin.</span><span class="brevet-q-pts">3 pts</span></div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Sur le graphique, lire t quand V(t) = 0 :&#10;t ≈ … minutes ≈ … h … min" rows="2"></textarea>
+    </div>
+  </div>
+
+</div><!-- fin exercice 5 -->
+
+<!-- ══════════ EXERCICE 2 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
