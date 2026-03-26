@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 4 — Brevet Polynésie Septembre 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;text-decoration:none}
+.btn-blue{background:var(--blue);color:#fff}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.brevet-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--white);border:1.5px solid rgba(0,0,0,.15)}
+.brevet-table th{background:#EEF2FF;padding:9px 14px;text-align:center;font-weight:700;color:var(--blue);border:1px solid rgba(0,0,0,.12)}
+.brevet-table td{padding:10px 16px;text-align:center;border:1px solid rgba(0,0,0,.1);font-size:13px}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 4</span>
+      <span class="brevet-ex-titre">pentagone régulier & scratch — transformations</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Polynésie Septembre · 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Géométrie · Angles · Scratch · Transformations</span>
+      <span class="ctag">19 pts</span>
+    </div>
+  </div>
+
+  <!-- Q1 : pentagone régulier, angle FEy = 72° -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">DEFGH est un pentagone régulier et le point E appartient à la demi-droite [Dy). Tous les angles du pentagone régulier mesurent <strong>108°</strong>. Justifier que l'angle <strong>FEy</strong> mesure <strong>72°</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+
+    <!-- Figure pentagone -->
+    <div style="background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px;margin-bottom:12px;display:flex;justify-content:center">
+      <svg viewBox="0 0 220 200" width="200" height="182" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+        <!--
+          Pentagone régulier DEFGH, E en bas-droite sur la demi-droite Dy
+          Sommets pentagone régulier centré en (100,95), rayon=70
+          Côté bas DE horizontal : D en bas-gauche, E en bas-droite
+          Angle de départ : sommet du bas à gauche
+          Sommets (sens anti-horaire depuis D) :
+          D=(43,140), E=(157,140), F=(191,97), G=(110,30), H=(9,97)
+          → trop large, réduisons : centre=(105,100), rayon=60
+          Pentagone avec côté bas horizontal :
+          angles : 270° (haut), puis +72° chaque sommet
+          Pour avoir D en bas-gauche et E en bas-droite :
+          angle D depuis centre = 180°+54° = 234°
+          angle E = 234°+72° = 306°... 
+          Plus simple : placer D et E sur la ligne y=150
+        -->
+        <!-- Pentagone DEFGH : D=(50,150), E=(150,150), puis 3 sommets vers le haut -->
+        <!-- côté DE = 100px, pentagone régulier -->
+        <!-- Sommets calculés : centre x=100, y=150-r*cos(36°) -->
+        <!-- r = 100/(2*sin(36°)) = 100/1.176 = 85px -->
+        <!-- centre y = 150 - 85*cos(36°) = 150 - 68.8 = 81.2 -->
+        <polygon points="50,150 150,150 182,97 100,30 18,97"
+                 fill="rgba(0,33,188,.04)" stroke="#333" stroke-width="2"/>
+
+        <!-- Demi-droite Dy : prolonge DE vers la droite -->
+        <line x1="50" y1="150" x2="200" y2="150" stroke="#333" stroke-width="1.5"/>
+
+        <!-- Arc angle FEy ≈ 72° en E=(150,150) -->
+        <!-- F est en (182,97), direction EF depuis E -->
+        <path d="M175,150 A25,25 0 0,0 168,128" fill="rgba(238,110,52,.15)" stroke="#EE6E34" stroke-width="1.5"/>
+
+        <!-- Points -->
+        <circle cx="50"  cy="150" r="3" fill="#333"/>
+        <circle cx="150" cy="150" r="3" fill="#333"/>
+        <circle cx="182" cy="97"  r="3" fill="#333"/>
+        <circle cx="100" cy="30"  r="3" fill="#333"/>
+        <circle cx="18"  cy="97"  r="3" fill="#333"/>
+
+        <!-- Labels -->
+        <text x="36"  y="165" fill="#333" font-weight="700">D</text>
+        <text x="153" y="165" fill="#333" font-weight="700">E</text>
+        <text x="186" y="96"  fill="#333" font-weight="700">F</text>
+        <text x="97"  y="24"  fill="#333" font-weight="700">G</text>
+        <text x="4"   y="96"  fill="#333" font-weight="700">H</text>
+        <text x="198" y="165" fill="#555" font-style="italic">y</text>
+      </svg>
+    </div>
+
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="L'angle DEF = 108° (angle du pentagone régulier).&#10;D, E et y sont alignés (demi-droite [Dy)).&#10;Les angles DEF et FEy sont supplémentaires :&#10;angle FEy = 180° − 108° = 72° ✓" rows="4"></textarea>
+  </div>
+
+  <!-- Q2 : Scratch -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Dans la suite de cet exercice, aucune justification n'est attendue.</span></div>
+
+    <!-- Q2a : compléter le bloc pentagone -->
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">2.a.</span><span class="brevet-q-text">Compléter le bloc <strong>« pentagone »</strong> pour obtenir un pentagone régulier. La variable <strong>« longueur »</strong> permet de modifier la longueur des côtés.</span><span class="brevet-q-pts">4 pts</span></div>
+
+      <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-top:10px">
+        <!-- Bloc pentagone à compléter -->
+        <div style="font-family:'Helvetica Neue',Arial,sans-serif">
+          <div style="position:relative;display:inline-flex;flex-direction:column;margin-bottom:3px">
+            <div style="margin-left:8px;width:24px;height:9px;background:#FF6680;border-radius:4px 4px 0 0"></div>
+            <div style="background:#FF6680;border-radius:0 5px 5px 5px;padding:6px 12px">
+              <span style="font-size:12px;font-weight:700;color:#fff">définir</span>
+              <span style="background:rgba(0,0,0,.2);border-radius:3px;padding:1px 8px;font-size:11px;color:#fff;font-weight:600;margin-left:5px">pentagone</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:3px">
+            <div style="background:#4CAF50;border-radius:5px;padding:5px 12px;display:inline-flex;align-items:center;gap:5px">
+              <span style="font-size:12px">✏️</span><span style="font-size:12px;font-weight:700;color:#fff">stylo en position d'écriture</span>
+            </div>
+            <!-- répéter avec case vide -->
+            <div style="display:flex;flex-direction:column">
+              <div style="background:#FFAB19;border-radius:5px 5px 0 0;padding:5px 12px;display:inline-flex;align-items:center;gap:5px">
+                <span style="font-size:12px;font-weight:700;color:#fff">répéter</span>
+                <span style="background:rgba(255,255,255,.3);border-radius:8px;padding:2px 16px;font-size:12px;font-weight:700;color:#fff;border:2px dashed rgba(255,255,255,.6)">…</span>
+                <span style="font-size:12px;font-weight:700;color:#fff">fois</span>
+              </div>
+              <div style="border-left:5px solid #FFAB19;padding:3px 0 3px 10px;display:flex;flex-direction:column;gap:3px">
+                <div style="background:#5CB1D6;border-radius:5px;padding:5px 12px;display:inline-flex;align-items:center;gap:5px">
+                  <span style="font-size:12px;font-weight:700;color:#fff">avancer de</span>
+                  <span style="background:#FF8C1A;border-radius:100px;padding:1px 8px;font-size:11px;font-weight:700;color:#fff">longueur</span>
+                  <span style="font-size:12px;font-weight:700;color:#fff">pas</span>
+                </div>
+                <div style="background:#5CB1D6;border-radius:5px;padding:5px 12px;display:inline-flex;align-items:center;gap:5px">
+                  <span style="font-size:12px;font-weight:700;color:#fff">tourner ↺ de</span>
+                  <span style="background:rgba(255,255,255,.3);border-radius:8px;padding:2px 16px;font-size:12px;font-weight:700;color:#fff;border:2px dashed rgba(255,255,255,.6)">…</span>
+                  <span style="font-size:12px;font-weight:700;color:#fff">degrés</span>
+                </div>
+              </div>
+              <div style="background:#FFAB19;border-radius:0 0 5px 5px;padding:3px 12px;display:flex;justify-content:flex-end;width:180px">
+                <span style="color:#fff;font-size:14px">↵</span>
+              </div>
+            </div>
+            <div style="background:#4CAF50;border-radius:5px;padding:5px 12px;display:inline-flex;align-items:center;gap:5px">
+              <span style="font-size:12px">✏️</span><span style="font-size:12px;font-weight:700;color:#fff">relever le stylo</span>
+            </div>
+          </div>
+        </div>
+        <div style="flex:1;min-width:180px">
+          <span class="lbl">Ta réponse</span>
+          <textarea class="brevet-answer" placeholder="répéter … fois (un pentagone a … côtés)&#10;tourner de … degrés (360°/5 = … ou angle extérieur = 180°−108° = …°)" rows="3"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2b : 3 programmes + 3 copies d'écran -->
+    <div class="aff-block">
+      <div class="brevet-q-row"><span class="brevet-q-id">2.b.</span><span class="brevet-q-text">Associer chaque programme (Camille, Lou, Zoé) à la copie d'écran correspondante et à la transformation utilisée (translation, symétrie centrale, rotation).</span><span class="brevet-q-pts">6 pts</span></div>
+
+      <!-- 3 programmes -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0">
+
+        <!-- Programme Camille -->
+        <div style="border:1.5px solid rgba(0,0,0,.1);border-radius:10px;padding:12px">
+          <div style="font-size:12px;font-weight:700;text-align:center;margin-bottom:10px;color:var(--blue)">Camille</div>
+          <div style="display:flex;flex-direction:column;gap:2px;font-family:'Helvetica Neue',Arial,sans-serif">
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">1</span>
+              <div style="position:relative;display:inline-flex;flex-direction:column"><div style="margin-left:6px;width:20px;height:8px;background:#FFAB19;border-radius:3px 3px 0 0"></div><div style="background:#FFAB19;border-radius:0 4px 4px 4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:10px;font-weight:700;color:#fff">Quand</span><svg width="10" height="10" viewBox="0 0 14 14"><rect width="14" height="14" rx="3" fill="#3a993a"/><polygon points="3,2 12,7 3,12" fill="#fff"/></svg><span style="font-size:10px;font-weight:700;color:#fff">est cliqué</span></div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">2</span><div style="background:#4CAF50;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:11px">✏️</span><span style="font-size:10px;font-weight:700;color:#fff">effacer tout</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">3</span><div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:10px;font-weight:700;color:#fff">aller à x:</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">0</span><span style="font-size:10px;font-weight:700;color:#fff">y:</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">0</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">4</span><div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:10px;font-weight:700;color:#fff">s'orienter à</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">90</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">5</span><div style="background:#FF8C1A;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:10px;font-weight:700;color:#fff">mettre longueur à</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">60</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">6</span><div style="background:#FF6680;border-radius:4px;padding:4px 8px"><span style="font-size:10px;font-weight:700;color:#fff">pentagone</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">7</span><div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:10px;font-weight:700;color:#fff">avancer de</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">120</span><span style="font-size:10px;font-weight:700;color:#fff">pas</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">8</span><div style="background:#FF6680;border-radius:4px;padding:4px 8px"><span style="font-size:10px;font-weight:700;color:#fff">pentagone</span></div></div>
+          </div>
+        </div>
+
+        <!-- Programme Lou -->
+        <div style="border:1.5px solid rgba(0,0,0,.1);border-radius:10px;padding:12px">
+          <div style="font-size:12px;font-weight:700;text-align:center;margin-bottom:10px;color:var(--blue)">Lou</div>
+          <div style="display:flex;flex-direction:column;gap:2px;font-family:'Helvetica Neue',Arial,sans-serif">
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">1</span><div style="position:relative;display:inline-flex;flex-direction:column"><div style="margin-left:6px;width:20px;height:8px;background:#FFAB19;border-radius:3px 3px 0 0"></div><div style="background:#FFAB19;border-radius:0 4px 4px 4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:10px;font-weight:700;color:#fff">Quand</span><svg width="10" height="10" viewBox="0 0 14 14"><rect width="14" height="14" rx="3" fill="#3a993a"/><polygon points="3,2 12,7 3,12" fill="#fff"/></svg><span style="font-size:10px;font-weight:700;color:#fff">est cliqué</span></div></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">2</span><div style="background:#4CAF50;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:11px">✏️</span><span style="font-size:10px;font-weight:700;color:#fff">effacer tout</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">3</span><div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:10px;font-weight:700;color:#fff">aller à x:</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">0</span><span style="font-size:10px;font-weight:700;color:#fff">y:</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">0</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">4</span><div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:10px;font-weight:700;color:#fff">s'orienter à</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">90</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">5</span><div style="background:#FF8C1A;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:10px;font-weight:700;color:#fff">mettre longueur à</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">60</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">6</span><div style="background:#FF6680;border-radius:4px;padding:4px 8px"><span style="font-size:10px;font-weight:700;color:#fff">pentagone</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">7</span><div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:10px;font-weight:700;color:#fff">tourner ↺ de</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">60</span><span style="font-size:10px;font-weight:700;color:#fff">degrés</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">8</span><div style="background:#FF6680;border-radius:4px;padding:4px 8px"><span style="font-size:10px;font-weight:700;color:#fff">pentagone</span></div></div>
+          </div>
+        </div>
+
+        <!-- Programme Zoé -->
+        <div style="border:1.5px solid rgba(0,0,0,.1);border-radius:10px;padding:12px">
+          <div style="font-size:12px;font-weight:700;text-align:center;margin-bottom:10px;color:var(--blue)">Zoé</div>
+          <div style="display:flex;flex-direction:column;gap:2px;font-family:'Helvetica Neue',Arial,sans-serif">
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">1</span><div style="position:relative;display:inline-flex;flex-direction:column"><div style="margin-left:6px;width:20px;height:8px;background:#FFAB19;border-radius:3px 3px 0 0"></div><div style="background:#FFAB19;border-radius:0 4px 4px 4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:10px;font-weight:700;color:#fff">Quand</span><svg width="10" height="10" viewBox="0 0 14 14"><rect width="14" height="14" rx="3" fill="#3a993a"/><polygon points="3,2 12,7 3,12" fill="#fff"/></svg><span style="font-size:10px;font-weight:700;color:#fff">est cliqué</span></div></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">2</span><div style="background:#4CAF50;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:11px">✏️</span><span style="font-size:10px;font-weight:700;color:#fff">effacer tout</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">3</span><div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:10px;font-weight:700;color:#fff">aller à x:</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">0</span><span style="font-size:10px;font-weight:700;color:#fff">y:</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">0</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">4</span><div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:10px;font-weight:700;color:#fff">s'orienter à</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">90</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">5</span><div style="background:#FF8C1A;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:10px;font-weight:700;color:#fff">mettre longueur à</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">60</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">6</span><div style="background:#FF6680;border-radius:4px;padding:4px 8px"><span style="font-size:10px;font-weight:700;color:#fff">pentagone</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">7</span><div style="background:#5CB1D6;border-radius:4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:10px;font-weight:700;color:#fff">tourner ↺ de</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:10px;font-weight:700;color:#333">180</span><span style="font-size:10px;font-weight:700;color:#fff">degrés</span></div></div>
+            <div style="display:flex;align-items:center;gap:5px"><span style="font-size:10px;color:#888;width:12px">8</span><div style="background:#FF6680;border-radius:4px;padding:4px 8px"><span style="font-size:10px;font-weight:700;color:#fff">pentagone</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 copies d'écran -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px">
+        <!-- Copie 1 : symétrie centrale (pentagone + image superposée) -->
+        <div style="border:1.5px solid rgba(0,0,0,.1);border-radius:10px;padding:12px;text-align:center">
+          <div style="font-size:11px;font-weight:700;margin-bottom:8px">Copie d'écran 1</div>
+          <svg viewBox="-60 -60 120 120" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+            <!-- Pentagone original centré légèrement à gauche -->
+            <polygon points="-20,-40 15,-40 35,-5 0,20 -40,-5" fill="none" stroke="#333" stroke-width="1.5"/>
+            <!-- Image par symétrie centrale (point O=0,0) : chaque point P → -P -->
+            <polygon points="20,40 -15,40 -35,5 0,-20 40,5" fill="none" stroke="#333" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <!-- Copie 2 : rotation (pentagone tourné 60°) -->
+        <div style="border:1.5px solid rgba(0,0,0,.1);border-radius:10px;padding:12px;text-align:center">
+          <div style="font-size:11px;font-weight:700;margin-bottom:8px">Copie d'écran 2</div>
+          <svg viewBox="-55 -60 110 120" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+            <!-- Pentagone original -->
+            <polygon points="0,-40 35,-5 20,30 -20,30 -35,-5" fill="none" stroke="#333" stroke-width="1.5"/>
+            <!-- Image par rotation 60° -->
+            <polygon points="35,-20 40,20 5,42 -30,22 -30,-18" fill="none" stroke="#333" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <!-- Copie 3 : translation (2 pentagones côte à côte) -->
+        <div style="border:1.5px solid rgba(0,0,0,.1);border-radius:10px;padding:12px;text-align:center">
+          <div style="font-size:11px;font-weight:700;margin-bottom:8px">Copie d'écran 3</div>
+          <svg viewBox="-55 -35 110 70" width="100" height="64" xmlns="http://www.w3.org/2000/svg">
+            <!-- Pentagone gauche -->
+            <polygon points="-40,-28 -20,-28 -8,-5 -30,12 -52,-5" fill="none" stroke="#333" stroke-width="1.5"/>
+            <!-- Pentagone droit (translation de +60px) -->
+            <polygon points="20,-28 40,-28 52,-5 30,12 8,-5" fill="none" stroke="#333" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Camille → Copie … → transformation : …&#10;Lou → Copie … → transformation : …&#10;Zoé → Copie … → transformation : …" rows="3"></textarea>
+    </div>
+
+    <!-- Q2c : programme de Sofia (homothétie) -->
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row"><span class="brevet-q-id">2.c.</span><span class="brevet-q-text">Sofia souhaite illustrer l'effet d'une <strong>homothétie</strong> sur un pentagone. Compléter le tableau en indiquant l'ordre d'apparition de chaque instruction dans le programme de Sofia.</span><span class="brevet-q-pts">5 pts</span></div>
+
+      <div style="overflow-x:auto;margin-top:10px">
+        <table class="brevet-table">
+          <thead>
+            <tr>
+              <th style="text-align:left">Instruction</th>
+              <th>Ordre dans le programme de Sofia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div style="background:#4CAF50;border-radius:4px;padding:4px 10px;display:inline-flex;align-items:center;gap:4px;font-family:'Helvetica Neue',Arial,sans-serif"><span style="font-size:11px">✏️</span><span style="font-size:11px;font-weight:700;color:#fff">effacer tout</span></div></td>
+              <td style="text-align:center;font-size:14px;color:var(--muted)">…</td>
+            </tr>
+            <tr>
+              <td><div style="background:#5CB1D6;border-radius:4px;padding:4px 10px;display:inline-flex;align-items:center;gap:3px;font-family:'Helvetica Neue',Arial,sans-serif"><span style="font-size:11px;font-weight:700;color:#fff">s'orienter à</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:11px;font-weight:700;color:#333">90</span></div></td>
+              <td style="text-align:center;font-size:14px;color:var(--muted)">…</td>
+            </tr>
+            <tr>
+              <td><div style="background:#FF6680;border-radius:4px;padding:4px 10px;font-family:'Helvetica Neue',Arial,sans-serif"><span style="font-size:11px;font-weight:700;color:#fff">pentagone</span></div></td>
+              <td style="text-align:center;font-weight:700;color:var(--ink)">6<sup>e</sup></td>
+            </tr>
+            <tr>
+              <td><div style="position:relative;display:inline-flex;flex-direction:column;font-family:'Helvetica Neue',Arial,sans-serif"><div style="margin-left:6px;width:20px;height:8px;background:#FFAB19;border-radius:3px 3px 0 0"></div><div style="background:#FFAB19;border-radius:0 4px 4px 4px;padding:4px 8px;display:inline-flex;align-items:center;gap:3px"><span style="font-size:11px;font-weight:700;color:#fff">Quand</span><svg width="10" height="10" viewBox="0 0 14 14"><rect width="14" height="14" rx="3" fill="#3a993a"/><polygon points="3,2 12,7 3,12" fill="#fff"/></svg><span style="font-size:11px;font-weight:700;color:#fff">est cliqué</span></div></div></td>
+              <td style="text-align:center;font-weight:700;color:var(--ink)">1<sup>re</sup></td>
+            </tr>
+            <tr>
+              <td><div style="background:#FF8C1A;border-radius:4px;padding:4px 10px;display:inline-flex;align-items:center;gap:3px;font-family:'Helvetica Neue',Arial,sans-serif"><span style="font-size:11px;font-weight:700;color:#fff">mettre longueur à</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:11px;font-weight:700;color:#333">60</span></div></td>
+              <td style="text-align:center;font-size:14px;color:var(--muted)">…</td>
+            </tr>
+            <tr>
+              <td><div style="background:#5CB1D6;border-radius:4px;padding:4px 10px;display:inline-flex;align-items:center;gap:3px;font-family:'Helvetica Neue',Arial,sans-serif"><span style="font-size:11px;font-weight:700;color:#fff">aller à x:</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:11px;font-weight:700;color:#333">0</span><span style="font-size:11px;font-weight:700;color:#fff">y:</span><span style="background:#fff;border-radius:100px;padding:0 5px;font-size:11px;font-weight:700;color:#333">0</span></div></td>
+              <td style="text-align:center;font-size:14px;color:var(--muted)">…</td>
+            </tr>
+            <tr>
+              <td><div style="background:#FF6680;border-radius:4px;padding:4px 10px;font-family:'Helvetica Neue',Arial,sans-serif"><span style="font-size:11px;font-weight:700;color:#fff">pentagone</span></div></td>
+              <td style="text-align:center;font-size:14px;color:var(--muted)">…</td>
+            </tr>
+            <tr>
+              <td><div style="background:#FF8C1A;border-radius:4px;padding:4px 10px;display:inline-flex;align-items:center;gap:3px;font-family:'Helvetica Neue',Arial,sans-serif"><span style="font-size:11px;font-weight:700;color:#fff">mettre longueur à</span><div style="background:#4CAF50;border-radius:100px;padding:1px 6px;display:inline-flex;align-items:center;gap:2px"><span style="font-size:11px;font-weight:700;color:#fff">longueur</span><span style="font-size:11px;font-weight:700;color:#fff">×</span><span style="background:#fff;border-radius:100px;padding:0 4px;font-size:11px;font-weight:700;color:#333">1.5</span></div></div></td>
+              <td style="text-align:center;font-size:14px;color:var(--muted)">…</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div><!-- fin exercice 4 -->
+
+<!-- ══════════ EXERCICE 5 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
