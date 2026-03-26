@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 4 — Brevet Martinique 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 4</span>
+      <span class="brevet-ex-titre">programme de calcul & scratch</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Martinique · 3 juillet 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Algèbre · Factorisation · Scratch</span>
+      <span class="ctag">18 pts</span>
+    </div>
+  </div>
+
+  <!-- Programme encadré -->
+  <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;margin-bottom:22px">
+    <div style="flex:1;min-width:240px">
+      <div class="brevet-enonce" style="margin-top:0">
+        On considère le programme de calcul suivant :
+      </div>
+      <div style="border:2px solid rgba(0,0,0,.15);border-radius:10px;padding:16px 20px;font-size:14px;line-height:2.2;color:var(--ink)">
+        • Choisir un nombre<br>
+        • Mettre ce nombre au carré<br>
+        • Soustraire le triple du nombre de départ<br>
+        • Soustraire 4
+      </div>
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Montrer que si on choisit <strong>5</strong> comme nombre de départ, le résultat du programme est <strong>6</strong>.</span><span class="brevet-q-pts">2 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="5² = 25 → − 3×5 = 25−15 = 10 → −4 = 6 ✓" rows="2"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">On choisit <em>x</em> comme nombre de départ. Exprimer le résultat du programme en fonction de <em>x</em>.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="x² → − 3x → − 4&#10;Résultat = x² − 3x − 4" rows="2"></textarea>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">Vérifier que l'on peut écrire ce résultat sous la forme <strong>(x + 1)(x − 4)</strong>.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Développer (x+1)(x−4) :&#10;= x² − 4x + x − 4&#10;= x² − 3x − 4 ✓" rows="3"></textarea>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">Déterminer les nombres à choisir au départ pour que le résultat du programme soit <strong>0</strong>.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="(x+1)(x−4) = 0&#10;x+1 = 0 → x = … ou x−4 = 0 → x = …&#10;Les nombres de départ sont : … et …" rows="3"></textarea>
+  </div>
+
+  <!-- Q5 : Scratch -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">5.</span><span class="brevet-q-text">Juliette a écrit le programme ci-dessous. Recopier et compléter les <strong>lignes 4 et 6</strong> afin que le programme corresponde au programme de calcul encadré.</span><span class="brevet-q-pts">7 pts</span></div>
+
+    <!-- Blocs Scratch -->
+    <div style="background:#e8e8e8;border-radius:12px;padding:18px 22px;margin:12px 0;display:inline-flex;flex-direction:column;gap:4px;font-family:'Helvetica Neue',Arial,sans-serif;min-width:340px">
+
+      <!-- Ligne 1 : Quand drapeau -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">1</span>
+        <div style="position:relative;display:inline-flex;flex-direction:column">
+          <div style="margin-left:12px;width:30px;height:11px;background:#FFAB19;border-radius:6px 6px 0 0"></div>
+          <div style="background:#FFAB19;border-radius:0 6px 6px 6px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px">
+            <span style="font-size:12px;font-weight:700;color:#fff">quand</span>
+            <svg width="14" height="14" viewBox="0 0 14 14"><rect width="14" height="14" rx="3" fill="#3a993a"/><polygon points="3,2 12,7 3,12" fill="#fff"/></svg>
+            <span style="font-size:12px;font-weight:700;color:#fff">est cliqué</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ligne 2 : demander -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">2</span>
+        <div style="background:#5CB1D6;border-radius:5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px">
+          <span style="font-size:12px;font-weight:700;color:#fff">demander</span>
+          <span style="background:#fff;border-radius:100px;padding:2px 10px;font-size:11px;color:#222;font-weight:500;border:1px solid #ccc">Choisir un nombre</span>
+          <span style="font-size:12px;font-weight:700;color:#fff">et attendre</span>
+        </div>
+      </div>
+
+      <!-- Ligne 3 : mettre x à réponse -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">3</span>
+        <div style="background:#FF8C1A;border-radius:5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px">
+          <span style="font-size:12px;font-weight:700;color:#fff">mettre</span>
+          <span style="background:rgba(0,0,0,.2);border-radius:3px;padding:2px 7px;font-size:11px;color:#fff;font-weight:600">x ▾</span>
+          <span style="font-size:12px;font-weight:700;color:#fff">à</span>
+          <span style="background:#4a9a20;border-radius:100px;padding:2px 10px;font-size:11px;color:#fff;font-weight:700">réponse</span>
+        </div>
+      </div>
+
+      <!-- Ligne 4 : mettre y à ...×... — À COMPLÉTER -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">4</span>
+        <div style="background:#FF8C1A;border-radius:5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;outline:3px dashed rgba(0,33,188,.5);outline-offset:2px">
+          <span style="font-size:12px;font-weight:700;color:#fff">mettre</span>
+          <span style="background:rgba(0,0,0,.2);border-radius:3px;padding:2px 7px;font-size:11px;color:#fff;font-weight:600">y ▾</span>
+          <span style="font-size:12px;font-weight:700;color:#fff">à</span>
+          <div style="background:#5CB1D6;border-radius:100px;padding:2px 8px;display:inline-flex;align-items:center;gap:5px">
+            <span style="background:rgba(255,255,255,.3);border-radius:100px;padding:1px 10px;font-size:12px;color:#fff;font-weight:700">…</span>
+            <span style="font-size:13px;font-weight:700;color:#fff">×</span>
+            <span style="background:rgba(255,255,255,.3);border-radius:100px;padding:1px 10px;font-size:12px;color:#fff;font-weight:700">…</span>
+          </div>
+        </div>
+        <span style="font-size:11px;color:#0021BC;font-weight:700;font-style:italic">← à compléter</span>
+      </div>
+
+      <!-- Ligne 5 : mettre z à 3×x -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">5</span>
+        <div style="background:#FF8C1A;border-radius:5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px">
+          <span style="font-size:12px;font-weight:700;color:#fff">mettre</span>
+          <span style="background:rgba(0,0,0,.2);border-radius:3px;padding:2px 7px;font-size:11px;color:#fff;font-weight:600">z ▾</span>
+          <span style="font-size:12px;font-weight:700;color:#fff">à</span>
+          <div style="background:#5CB1D6;border-radius:100px;padding:2px 8px;display:inline-flex;align-items:center;gap:5px">
+            <span style="background:#fff;border-radius:100px;padding:1px 8px;font-size:12px;color:#333;font-weight:700">3</span>
+            <span style="font-size:13px;font-weight:700;color:#fff">×</span>
+            <span style="background:#4a9a20;border-radius:100px;padding:1px 8px;font-size:11px;color:#fff;font-weight:700">x</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ligne 6 : mettre Résultat à ...−...−4 — À COMPLÉTER -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">6</span>
+        <div style="background:#FF8C1A;border-radius:5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px;outline:3px dashed rgba(0,33,188,.5);outline-offset:2px">
+          <span style="font-size:12px;font-weight:700;color:#fff">mettre</span>
+          <span style="background:rgba(0,0,0,.2);border-radius:3px;padding:2px 7px;font-size:11px;color:#fff;font-weight:600">Résultat ▾</span>
+          <span style="font-size:12px;font-weight:700;color:#fff">à</span>
+          <div style="background:#5CB1D6;border-radius:100px;padding:2px 8px;display:inline-flex;align-items:center;gap:4px">
+            <span style="background:rgba(255,255,255,.3);border-radius:100px;padding:1px 10px;font-size:12px;color:#fff;font-weight:700">…</span>
+            <span style="font-size:13px;font-weight:700;color:#fff">−</span>
+            <span style="background:rgba(255,255,255,.3);border-radius:100px;padding:1px 10px;font-size:12px;color:#fff;font-weight:700">…</span>
+            <span style="font-size:13px;font-weight:700;color:#fff">−</span>
+            <span style="background:#fff;border-radius:100px;padding:1px 8px;font-size:12px;color:#333;font-weight:700">4</span>
+          </div>
+        </div>
+        <span style="font-size:11px;color:#0021BC;font-weight:700;font-style:italic">← à compléter</span>
+      </div>
+
+      <!-- Ligne 7 : dire Résultat pendant 5 secondes -->
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;font-weight:700;color:#666;width:16px;text-align:right">7</span>
+        <div style="background:#9966FF;border-radius:5px;padding:7px 12px;display:inline-flex;align-items:center;gap:6px">
+          <span style="font-size:12px;font-weight:700;color:#fff">dire</span>
+          <span style="background:#FF8C1A;border-radius:100px;padding:2px 10px;font-size:11px;color:#fff;font-weight:700">Résultat</span>
+          <span style="font-size:12px;font-weight:700;color:#fff">pendant</span>
+          <span style="background:#fff;border-radius:100px;padding:2px 8px;font-size:12px;color:#333;font-weight:700">5</span>
+          <span style="font-size:12px;font-weight:700;color:#fff">secondes</span>
+        </div>
+      </div>
+    </div>
+
+    <span class="lbl">Lignes 4 et 6 complétées</span>
+    <textarea class="brevet-answer" placeholder="Ligne 4 : mettre y à … × … (y = x²)&#10;Ligne 6 : mettre Résultat à … − … − 4 (y − z − 4)" rows="3"></textarea>
+  </div>
+
+</div><!-- fin exercice 4 -->
+
+<!-- ══════════ EXERCICE 5 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

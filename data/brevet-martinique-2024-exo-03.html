@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 3 — Brevet Martinique 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 3</span>
+      <span class="brevet-ex-titre">course d'Oscar — thalès, pythagore & trigonométrie</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Martinique · 3 juillet 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Thalès · Pythagore · Trigonométrie</span>
+      <span class="ctag">22 pts</span>
+    </div>
+  </div>
+
+  <!-- Énoncé + figure -->
+  <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;margin-bottom:20px">
+    <div style="flex:1;min-width:240px">
+      <div class="brevet-enonce" style="margin-top:0">
+        Dans le <strong>triangle DLA rectangle en L</strong>, le point J appartient au segment [DA] et le point K appartient au segment [DL].<br><br>
+        On donne :<br>
+        <strong>DL = 600 m ; KJ = 200 m ; DJ = 520 m ; KL = 120 m</strong>.<br><br>
+        <em style="color:var(--muted);font-size:12px">La figure n'est pas à l'échelle.</em>
+      </div>
+    </div>
+
+    <!-- Figure SVG -->
+    <div style="flex-shrink:0">
+      <svg viewBox="0 0 280 290" width="260" height="270" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif" font-size="12">
+        <!--
+          Triangle DLA rectangle en L (angle droit en L) :
+          DL vertical, LA horizontal → angle droit en L parfaitement visible
+          D=(60,250), L=(60,50), A=(240,50)
+          K sur DL : DK=480/600 → K=(60,90)
+          J sur DA : DJ=520/650 → J=(204,90) — KJ horizontal ✓
+        -->
+        <defs>
+          <marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+            <path d="M0,0 L7,3.5 L0,7 Z" fill="#0021BC"/>
+          </marker>
+        </defs>
+
+        <!-- Triangle DLA rectangle en L -->
+        <polygon points="60,250 60,50 240,50" fill="rgba(0,33,188,.04)" stroke="#333" stroke-width="1.8"/>
+
+        <!-- Angle droit en L (DL vertical ⊥ LA horizontal) -->
+        <polyline points="60,62 72,62 72,50" fill="none" stroke="#555" stroke-width="1.5"/>
+
+        <!-- Segment KJ horizontal (KJ ∥ LA) -->
+        <line x1="60" y1="90" x2="204" y2="90" stroke="#EE6E34" stroke-width="2"/>
+
+        <!-- Angle droit en K (DK vertical ⊥ KJ horizontal) -->
+        <polyline points="60,102 72,102 72,90" fill="none" stroke="#555" stroke-width="1.2"/>
+
+        <!-- Flèches course D→K→J→A -->
+        <line x1="60" y1="250" x2="60" y2="97" stroke="#0021BC" stroke-width="1.5" marker-end="url(#arrow)"/>
+        <line x1="60" y1="90" x2="198" y2="90" stroke="#0021BC" stroke-width="1.5" marker-end="url(#arrow)"/>
+        <line x1="204" y1="90" x2="234" y2="52" stroke="#0021BC" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+        <!-- Segment DA pointillé -->
+        <line x1="60" y1="250" x2="240" y2="50" stroke="#aaa" stroke-width="1" stroke-dasharray="5,3"/>
+
+        <!-- Points -->
+        <circle cx="60"  cy="250" r="3" fill="#333"/>
+        <circle cx="60"  cy="50"  r="3" fill="#333"/>
+        <circle cx="240" cy="50"  r="3" fill="#333"/>
+        <circle cx="60"  cy="90"  r="3" fill="#EE6E34"/>
+        <circle cx="204" cy="90"  r="3" fill="#EE6E34"/>
+
+        <!-- Labels -->
+        <text x="44"  y="264" fill="#333"    font-weight="700">D</text>
+        <text x="40"  y="46"  fill="#333"    font-weight="700">L</text>
+        <text x="244" y="46"  fill="#333"    font-weight="700">A</text>
+        <text x="40"  y="93"  fill="#EE6E34" font-weight="700">K</text>
+        <text x="208" y="86"  fill="#EE6E34" font-weight="700">J</text>
+
+        <!-- Cotes -->
+        <text x="44" y="172" fill="var(--muted)" font-size="10" text-anchor="middle">600 m</text>
+        <text x="152" y="44" fill="var(--muted)" font-size="10" text-anchor="middle">250 m</text>
+        <text x="34" y="70"  fill="var(--muted)" font-size="10">KL=120</text>
+        <text x="134" y="84" fill="var(--muted)" font-size="10" text-anchor="middle">KJ=200 m</text>
+        <text x="155" y="192" fill="var(--muted)" font-size="10" transform="rotate(-47,155,192)">DJ=520 m</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span><span class="brevet-q-text">Montrer que la longueur <strong>DK = 480 m</strong>.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="K sur DL, KL=120m, DL=600m → DK = DL − KL = 600 − 120 = … m" rows="2"></textarea>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">2.</span><span class="brevet-q-text">Montrer que le triangle DKJ est <strong>rectangle en K</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Utiliser la réciproque du théorème de Pythagore dans DKJ :&#10;DK² + KJ² = 480² + 200² = … + … = …&#10;DJ² = 520² = …&#10;DK² + KJ² = DJ² ? → triangle DKJ rectangle en K" rows="4"></textarea>
+  </div>
+
+  <!-- Q3 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">3.</span><span class="brevet-q-text">Justifier que les droites <strong>(KJ)</strong> et <strong>(LA)</strong> sont <strong>parallèles</strong>.</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="K sur DL, J sur DA, et triangle DKJ rectangle en K → KJ ⊥ DK&#10;Triangle DLA rectangle en L → LA ⊥ DL&#10;DK et DL sont sur la même droite, donc KJ ⊥ DL et LA ⊥ DL&#10;Deux droites perpendiculaires à une même droite sont… → (KJ) ∥ (LA)" rows="4"></textarea>
+  </div>
+
+  <!-- Q4 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">4.</span><span class="brevet-q-text">Montrer que le segment [DA] mesure <strong>650 m</strong>.</span><span class="brevet-q-pts">3 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Triangle DLA rectangle en L → DA² = DL² + LA²&#10;Par Thalès (KJ ∥ LA) : LA/KJ = DL/DK → LA = KJ × DL/DK = 200 × 600/480 = … m&#10;DA² = 600² + 250² = … + … = … → DA = √… = … m" rows="4"></textarea>
+  </div>
+
+  <!-- Q5 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">5.</span><span class="brevet-q-text">Calculer la longueur du trajet <strong>DKJA</strong> fléché sur la figure.</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Trajet DKJA = DK + KJ + JA&#10;DK = 480 m&#10;KJ = 200 m&#10;JA = DA − DJ = 650 − 520 = … m&#10;Total = … + … + … = … m" rows="4"></textarea>
+  </div>
+
+  <!-- Q6 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">6.</span><span class="brevet-q-text">Un photographe place une caméra au point D. Pour filmer l'ensemble de la course sans bouger la caméra, l'angle <strong>LDA</strong> doit être inférieur à <strong>25°</strong>. Est-ce le cas ?</span><span class="brevet-q-pts">4 pts</span></div>
+    <span class="lbl">Ta réponse</span>
+    <textarea class="brevet-answer" placeholder="Dans le triangle DLA rectangle en L :&#10;tan(LDA) = LA/DL = 250/600 = …&#10;Angle LDA = arctan(…) ≈ …°&#10;Cet angle est-il < 25° ? Conclusion : …" rows="4"></textarea>
+  </div>
+
+</div><!-- fin exercice 3 -->
+
+<!-- ══════════ EXERCICE 4 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice 1 — Brevet Martinique 2024</title>
+<style>
+:root{--blue:#0021BC;--blue-lt:#BDD4E7;--orange:#EE6E34;--rose:#D0A6C6;--bg:#EDEEF0;--white:#FFFFFF;--ink:rgb(25,8,6);--muted:#8A8DAA;--fd:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--fb:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--fb);-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:flex-start;padding:28px 48px 0;position:relative}
+.logo{text-decoration:none;color:inherit}
+.logo-top{font-size:13px;color:var(--ink);display:block}
+.logo-bot{font-family:var(--fd);font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:.9;text-transform:uppercase;display:block}
+.logo-bot span{color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:32px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links li{font-size:14px;opacity:.6;cursor:pointer;transition:opacity .15s}
+.nav-links li:hover{opacity:1}
+.cta{font-family:var(--fd);font-size:13px;font-weight:600;background:var(--blue);color:#fff;padding:11px 24px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.divider{height:1px;background:rgba(0,0,0,.1);margin:0 48px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:2px;display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fd);font-size:13px;font-weight:600;padding:13px 28px;border-radius:100px;cursor:pointer;border:none;text-transform:lowercase;transition:opacity .15s;text-decoration:none}
+.btn:hover{opacity:.85}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(0,0,0,.15);padding:12px 26px}
+.ctag{font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;border:1.5px solid rgba(0,0,0,.1);color:var(--muted)}
+.ctag.b{background:#EEF2FF;border-color:var(--blue);color:var(--blue)}
+.brevet-ex{background:var(--white);border-radius:18px;padding:32px;margin-bottom:14px}
+.brevet-ex-num{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.brevet-ex-titre{font-family:var(--fd);font-size:20px;font-weight:500;text-transform:lowercase;letter-spacing:-.02em;display:block}
+.brevet-enonce{font-size:14px;line-height:1.75;color:#3A3D6B;background:rgba(0,33,188,.03);border-left:3px solid var(--blue-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0 22px}
+.brevet-q{margin-bottom:20px}
+.brevet-q-row{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.brevet-q-id{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--blue);flex-shrink:0}
+.brevet-q-text{font-size:14px;color:var(--ink);line-height:1.5;flex:1}
+.brevet-q-pts{font-size:11px;font-weight:700;color:var(--orange);background:#FFF0E8;padding:3px 10px;border-radius:100px;white-space:nowrap}
+.brevet-answer{width:100%;font-family:var(--fb);font-size:14px;color:var(--ink);background:#FAFAFA;border:1.5px solid rgba(0,0,0,.08);border-radius:10px;padding:12px 14px;resize:vertical;transition:border-color .15s;line-height:1.6}
+.brevet-answer:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.brevet-answer::placeholder{color:var(--muted)}
+.lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:block}
+.aff-block{background:#FAFAFA;border:1.5px solid rgba(0,0,0,.07);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.footer-bar{background:var(--blue);padding:16px 48px;display:flex;justify-content:space-between;align-items:center}
+.footer-bar-links{display:flex;gap:40px}
+.footer-bar-links a{font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none}
+.footer-bar-copy{font-size:12px;color:rgba(255,255,255,.35)}
+</style>
+</head>
+<body>
+<div style="padding:36px 48px 72px;max-width:880px">
+<div class="brevet-ex">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:14px">
+    <div>
+      <span class="brevet-ex-num">Exercice 1</span>
+      <span class="brevet-ex-titre">dragées de mariage — probabilités & PGCD</span>
+      <span style="font-size:11px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Brevet Martinique · 2024</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <span class="ctag b">Probabilités · Arithmétique · PGCD</span>
+      <span class="ctag">20 pts</span>
+    </div>
+  </div>
+
+  <div class="brevet-enonce">
+    Anne et Jean ont acheté <strong>630 dragées roses</strong> et <strong>810 dragées blanches</strong> qu'ils ont mises dans un sachet. Les dragées sont indiscernables au toucher.
+  </div>
+
+  <!-- Illustration dragées -->
+  <div style="display:flex;gap:8px;justify-content:center;margin-bottom:20px;flex-wrap:wrap">
+    <div style="background:#FFB6C1;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#c0392b;font-weight:700;box-shadow:inset 0 2px 4px rgba(0,0,0,.1)"></div>
+    <div style="background:#FFB6C1;border-radius:50%;width:28px;height:28px;box-shadow:inset 0 2px 4px rgba(0,0,0,.1)"></div>
+    <div style="background:#FFB6C1;border-radius:50%;width:28px;height:28px;box-shadow:inset 0 2px 4px rgba(0,0,0,.1)"></div>
+    <span style="font-size:13px;color:var(--muted);align-self:center">× 630 roses</span>
+    <div style="width:1px;background:rgba(0,0,0,.1);margin:0 8px"></div>
+    <div style="background:#f0f0f0;border-radius:50%;width:28px;height:28px;box-shadow:inset 0 2px 4px rgba(0,0,0,.1)"></div>
+    <div style="background:#f0f0f0;border-radius:50%;width:28px;height:28px;box-shadow:inset 0 2px 4px rgba(0,0,0,.1)"></div>
+    <div style="background:#f0f0f0;border-radius:50%;width:28px;height:28px;box-shadow:inset 0 2px 4px rgba(0,0,0,.1)"></div>
+    <span style="font-size:13px;color:var(--muted);align-self:center">× 810 blanches</span>
+  </div>
+
+  <!-- Q1 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row"><span class="brevet-q-id">1.</span></div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">1.a.</span>
+        <span class="brevet-q-text">Combien Anne et Jean ont-ils acheté de dragées au total ?</span>
+        <span class="brevet-q-pts">2 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Total = 630 + 810 = … dragées" rows="1"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">1.b.</span>
+        <span class="brevet-q-text">Anne prend au hasard une dragée dans le sachet. Quelle est la probabilité qu'elle obtienne une dragée <strong>blanche</strong> ?</span>
+        <span class="brevet-q-pts">3 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="P(blanche) = 810 / … = …" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="brevet-q">
+    <div class="brevet-q-row">
+      <span class="brevet-q-id">2.</span>
+      <span class="brevet-q-text">Ils réalisent des <strong>ballotins</strong> pour leur mariage tels que :<br>
+      — le nombre de dragées roses est le même dans chaque ballotin ;<br>
+      — le nombre de dragées blanches est le même dans chaque ballotin ;<br>
+      — toutes les dragées sont utilisées.
+      </span>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">2.a.</span>
+        <span class="brevet-q-text">Peuvent-ils réaliser <strong>21 ballotins</strong> ?</span>
+        <span class="brevet-q-pts">3 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Vérifier si 21 divise 630 et 810 :&#10;630 ÷ 21 = … et 810 ÷ 21 = …&#10;Conclusion : …" rows="3"></textarea>
+    </div>
+
+    <div class="aff-block">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">2.b.</span>
+        <span class="brevet-q-text">Décomposer <strong>630</strong> et <strong>810</strong> en produits de facteurs premiers.</span>
+        <span class="brevet-q-pts">4 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="630 = 2 × … × … × …&#10;810 = 2 × … × … × …" rows="3"></textarea>
+    </div>
+
+    <div class="aff-block" style="margin-bottom:0">
+      <div class="brevet-q-row">
+        <span class="brevet-q-id">2.c.</span>
+        <span class="brevet-q-text">En déduire le <strong>nombre maximum de ballotins</strong> qu'Anne et Jean pourront réaliser. Donner alors la composition de chaque ballotin.</span>
+        <span class="brevet-q-pts">8 pts</span>
+      </div>
+      <span class="lbl">Ta réponse</span>
+      <textarea class="brevet-answer" placeholder="Nombre max de ballotins = PGCD(630, 810) = …&#10;(prendre les facteurs premiers communs avec le plus petit exposant)&#10;&#10;Chaque ballotin contiendra :&#10;— … dragées roses (630 ÷ …)&#10;— … dragées blanches (810 ÷ …)" rows="6"></textarea>
+    </div>
+  </div>
+
+</div><!-- fin exercice 1 -->
+
+<!-- ══════════ EXERCICE 2 ══════════ -->
+<div style="margin-top:24px"><a href="index.html" class="btn btn-blue">← Retour au site</a></div>
+</div>
+<div class="footer-bar">
+  <div class="footer-bar-links"><a>Instagram</a><a>Newsletter</a><a>LinkedIn</a></div>
+  <span class="footer-bar-copy">© 2026 Prépa Brevet</span>
+</div>
+<script>
+function selQCM3(q,opt){['a','b','c'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+function selQCM4(q,opt){['a','b','c','d'].forEach(function(o){var el=document.getElementById(q+o);if(!el)return;el.style.background='#FAFAFA';el.style.borderColor='rgba(0,0,0,.08)';el.style.color='var(--ink)';});var s=document.getElementById(q+opt);if(s){s.style.background='#EEF2FF';s.style.borderColor='var(--blue)';s.style.color='var(--blue)';}}
+</script>
+</body>
+</html>
